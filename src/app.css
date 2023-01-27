@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	html {
+		@apply font-sans;
+		@apply font-normal;
+		@apply bg-[#375398];
+		@apply text-xs sm:text-base;
+	}
+}
+
+.h1 {
+	@apply font-bold pb-5;
+}
