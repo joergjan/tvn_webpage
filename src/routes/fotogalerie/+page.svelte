@@ -1,10 +1,10 @@
 <script>
+	// @ts-nocheck
 	import axios from 'axios';
+	import Gallery from 'svelte-image-gallery';
 
 	let flickrPhotoJson = [];
-	/**
-	 * @type {any[]}
-	 */
+
 	let flickrPhotoLink = [];
 
 	// use Flickr API to get all JSON Objects of Photos of a FLickr Group
@@ -28,6 +28,10 @@
 			});
 	}
 	getPhotos();
+
+	function handleClick(e) {
+		console.log(e.detail.src);
+	}
 </script>
 
 <title>TVN | Fotogalerie</title>
@@ -36,8 +40,10 @@
 	<div class="h1">Fotogalerie</div>
 
 	<div class="container">
-		{#each flickrPhotoLink as href}
-			<img src={href} alt="" />
-		{/each}
+		<Gallery on:click={handleClick}>
+			{#each flickrPhotoLink as href}
+				<img src={href} alt="" />
+			{/each}
+		</Gallery>
 	</div>
 </div>
