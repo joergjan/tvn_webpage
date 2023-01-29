@@ -2,7 +2,7 @@
 	import '../app.css';
 
 	const titles = [
-		{ name: 'Unser Verein', href: '/' },
+		{ name: 'Unser Verein', href: '/home' },
 		{ name: 'Riegen', href: '/riegen' },
 		{ name: 'Kontakt', href: '/kontakt' },
 		{ name: 'Fotogalerie', href: '/fotogalerie' },

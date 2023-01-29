@@ -28,10 +28,6 @@
 			});
 	}
 	getPhotos();
-
-	function handleClick(e) {
-		console.log(e.detail.src);
-	}
 </script>
 
 <title>TVN | Fotogalerie</title>
@@ -40,7 +36,7 @@
 	<div class="h1">Fotogalerie</div>
 
 	<div class="container">
-		<Gallery on:click={handleClick}>
+		<Gallery>
 			{#each flickrPhotoLink as href}
 				<img src={href} alt="" />
 			{/each}

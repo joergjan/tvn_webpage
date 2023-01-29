@@ -6,7 +6,8 @@
 			description:
 				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
 
-			imageUrl: './images/riegen/aktive.png',
+			imageUrl: './images/riegen/beispiel.jpeg',
+
 			leiter: {
 				name: 'Jan Jörg',
 				imageUrl: './images/people/avatar.jpeg'
@@ -18,8 +19,7 @@
 			description:
 				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
 
-			imageUrl: './images/riegen/frauenriege.png',
-
+			imageUrl: './images/riegen/beispiel.jpeg',
 			leiter: {
 				name: 'Sabrina Akeret',
 				imageUrl: './images/people/avatar.jpeg'
@@ -31,7 +31,7 @@
 			description:
 				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
 
-			imageUrl: './images/riegen/mannerriege.png',
+			imageUrl: './images/riegen/beispiel.jpeg',
 
 			leiter: {
 				name: 'Philipp Rot',
@@ -44,7 +44,8 @@
 			description:
 				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
 
-			imageUrl: './images/riegen/elki.png',
+			imageUrl: './images/riegen/beispiel.jpeg',
+
 			leiter: {
 				name: 'Jan Jörg',
 				imageUrl: './images/people/avatar.jpeg'
@@ -56,7 +57,8 @@
 			description:
 				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
 
-			imageUrl: './images/riegen/kitu.png',
+			imageUrl: './images/riegen/beispiel.jpeg',
+
 			leiter: {
 				name: 'Jan Jörg',
 				imageUrl: './images/people/avatar.jpeg'
@@ -68,7 +70,7 @@
 			description:
 				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
 
-			imageUrl: './images/riegen/kleineJugi.png',
+			imageUrl: './images/riegen/beispiel.jpeg',
 
 			leiter: {
 				name: 'Sabrina Akeret',
@@ -81,7 +83,7 @@
 			description:
 				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
 
-			imageUrl: './images/riegen/grosseJugi.png',
+			imageUrl: './images/riegen/beispiel.jpeg',
 
 			leiter: {
 				name: 'Philipp Rot',
