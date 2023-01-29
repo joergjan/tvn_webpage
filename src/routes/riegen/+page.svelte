@@ -104,9 +104,8 @@
 
 <div class="grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
 	{#each riegen as riege}
-		<div class="flex flex-col rounded-lg shadow-lg">
-			<img class="h-48 w-full object-cover" src={riege.imageUrl} alt={riege.riege} />
-
+		<div class="flex flex-col rounded-b-lg shadow-lg">
+			<img class="h-48 w-full rounded-t-lg object-cover" src={riege.imageUrl} alt={riege.riege} />
 			<div class="flex flex-1 flex-col p-6">
 				<div class="flex-1">
 					<div class="text-sm font-medium text-tvbluelight">
