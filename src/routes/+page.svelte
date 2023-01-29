@@ -34,7 +34,5 @@
 		<div class="bg-tvbluelight h-4 rounded" style="width: {barWidth}%" />
 	</div>
 {:else}
-	<div class="" transition:fade>
-		<img class="p-20" src="./images/logos/turner_webpage.png" alt="turner" />
-	</div>
+	<img class="px-5 py-10" src="./images/logos/turner_webpage.png" alt="turner" />
 {/if}

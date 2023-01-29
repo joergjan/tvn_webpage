@@ -4,7 +4,8 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				tvbluelight: '#375398'
+				tvbluelight: '#375398',
+				tvyellow: '#E3BE53'
 			}
 		}
 	},
