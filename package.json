@@ -12,9 +12,13 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
+		"@popperjs/core": "^2.11.6",
 		"@sveltejs/adapter-auto": "^1.0.0",
 		"@sveltejs/kit": "^1.0.0",
 		"autoprefixer": "^10.4.13",
+		"classnames": "^2.3.2",
+		"flowbite": "^1.6.3",
+		"flowbite-svelte": "^0.29.12",
 		"postcss": "^8.4.21",
 		"prettier": "^2.8.0",
 		"prettier-plugin-svelte": "^2.8.1",
