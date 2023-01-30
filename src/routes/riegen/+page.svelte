@@ -15,7 +15,7 @@
 		},
 		{
 			riege: 'Frauenriege',
-			age: 'nach eigenem Ermessen',
+			age: 'Beitritt nach eigenem Ermessen',
 			description:
 				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
 
@@ -27,7 +27,7 @@
 		},
 		{
 			riege: 'Männerriege',
-			age: 'nach eigenem Ermessen',
+			age: 'Beitritt nach eigenem Ermessen',
 			description:
 				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
 
@@ -97,21 +97,16 @@
 
 <div class="h1">Riegen</div>
 
-<div class="text-xl text-center  text-gray-500">
-	Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa libero labore natus atque, ducimus
-	sed.
-</div>
-
 <div class="grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
 	{#each riegen as riege}
 		<div class="flex flex-col rounded-b-lg shadow-lg">
 			<img class="h-48 w-full rounded-t-lg object-cover" src={riege.imageUrl} alt={riege.riege} />
 			<div class="flex flex-1 flex-col p-6">
 				<div class="flex-1">
-					<div class="bold text-tvbluelight">
+					<div class="text-sm text-tvbluelight">
 						{riege.age}
 					</div>
-					<div class="h4">
+					<div class="h4 py-1">
 						{riege.riege}
 					</div>
 					<div class="mt-1 text-gray-500">

@@ -19,29 +19,28 @@
 
 <div class="py-5 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 font-bold">
 	<div class="text-white bg-tvbluelight">
-		<div class="place-content-start">
+		<div class="flex place-content-end">
 			<a href="/home">
 				<div class="flex items-center hover:text-gray-400">
+					<div class="h5 pr-5">Turnverein Nussbaumen</div>
 					<div class="">
 						<img class="h-10" src="./images/logos/turner.png" alt="TVN" />
 					</div>
-					<div class="pl-5">Turnverein Nussbaumen</div>
 				</div>
 			</a>
 		</div>
-		<div class="place-content-end -mr-10 lg:flex hidden">
-			{#each titles as title}
-				<a class="hover:text-gray-400 px-10" href={title.href}>{title.name}</a>
-			{/each}
-		</div>
-		<div class="absolute top-3 right-5 md:hidden text-white">
-			<Hamburger bind:open --color="white" --layer-height="2px" --layer-width="25px" />
+		<div class="text-white">
+			<div class="absolute top-3">
+				<Hamburger bind:open --color="white" --layer-height="2px" --layer-width="25px" />
+			</div>
 			{#if open}
-				{#each titles as title}
-					<div class="py-3">
-						<a class="hover:text-gray-400" href={title.href}>{title.name}</a>
-					</div>
-				{/each}
+				<div class="bg-tvbluelight w-screen pt-2">
+					{#each titles as title}
+						<div class="py-3">
+							<a class="hover:text-gray-400" href={title.href}>{title.name}</a>
+						</div>
+					{/each}
+				</div>
 			{/if}
 		</div>
 	</div>
@@ -60,7 +59,7 @@
 				<a class="hover:text-gray-400 px-5" href={title.href}>{title.name}</a>
 			{/each}
 		</nav>
-		<div class="mt-5 flex justify-center space-x-6 items-center">
+		<div class="flex justify-center space-x-6 mt-5 items-center">
 			<a
 				href="https://www.facebook.com/people/TV-Nussbaumen/100064088556190/"
 				target="_blank"
@@ -119,6 +118,6 @@
 				/>
 			</a>
 		</div>
-		<div class="mt-8 text-center">&copy; 2023 Turnverein Nussbaumen.</div>
+		<div class="my-5 text-center">&copy; 2023 Turnverein Nussbaumen.</div>
 	</div>
 </div>
