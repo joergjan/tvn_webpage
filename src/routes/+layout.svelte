@@ -38,13 +38,13 @@
 </div>
 
 <div>
-	<div class="overflow-hidden py-8 sm:py-14 px-4 sm:px-6 bg-tvbluelight text-white">
-		<nav class="sm:flex sm:flex-wrap justify-center hidden">
+	<div class="bg-tvbluelight text-white">
+		<nav class="sm:flex sm:flex-wrap justify-center hidden mt-5">
 			{#each titles as title}
 				<a class="hover:text-gray-400 px-5" href={title.href}>{title.name}</a>
 			{/each}
 		</nav>
-		<div class="mt-8 flex justify-center space-x-6 items-center">
+		<div class="mt-5 flex justify-center space-x-6 items-center">
 			<a
 				href="https://www.facebook.com/people/TV-Nussbaumen/100064088556190/"
 				target="_blank"
