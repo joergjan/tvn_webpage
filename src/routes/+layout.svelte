@@ -16,7 +16,8 @@
 		{ name: 'Riegen', href: '/riegen' },
 		{ name: 'Kontakt', href: '/kontakt' },
 		{ name: 'Fotogalerie', href: '/fotogalerie' },
-		{ name: 'Downloads', href: '/doianien' }
+		{ name: 'Downloads', href: '/downloads' },
+		{ name: '404 Test', href: '/error' }
 	];
 </script>
 
