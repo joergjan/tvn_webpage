@@ -1,5 +1,6 @@
 <script>
 	import '../app.css';
+	import Icon from '@iconify/svelte';
 
 	const titles = [
 		{ name: 'Unser Verein', href: '/home' },
@@ -10,11 +11,11 @@
 	];
 </script>
 
-<div class="py-5 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<div class="py-5 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 font-bold">
 	<div class="text-white bg-tvbluelight">
 		<div class="place-content-start">
 			<a href="/home">
-				<div class="flex items-center">
+				<div class="flex items-center hover:text-gray-400">
 					<div class="">
 						<img class="h-10" src="./images/logos/turner.png" alt="TVN" />
 					</div>
@@ -22,9 +23,9 @@
 				</div>
 			</a>
 		</div>
-		<div class="place-content-end -mr-10">
+		<div class="flex place-content-end -mr-10">
 			{#each titles as title}
-				<a class="px-10" href={title.href}>{title.name}</a>
+				<a class="hover:text-gray-400 px-10" href={title.href}>{title.name}</a>
 			{/each}
 		</div>
 	</div>
@@ -36,10 +37,72 @@
 	</div>
 </div>
 
-<div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 hidden sm:block">
-	<nav class="py-3 text-white flex justify-around">
-		{#each titles as title}
-			<a class="hover:text-gray-400" href={title.href}>{title.name}</a>
-		{/each}
-	</nav>
+<div>
+	<div class="overflow-hidden py-8 sm:py-14 px-4 sm:px-6 bg-tvbluelight text-white">
+		<nav class="sm:flex sm:flex-wrap justify-center hidden">
+			{#each titles as title}
+				<a class="hover:text-gray-400 px-5" href={title.href}>{title.name}</a>
+			{/each}
+		</nav>
+		<div class="mt-8 flex justify-center space-x-6 items-center">
+			<a
+				href="https://www.facebook.com/people/TV-Nussbaumen/100064088556190/"
+				target="_blank"
+				rel="noreferrer"
+				class="text-white"
+			>
+				<Icon
+					icon="ant-design:facebook-filled"
+					class="text-white hover:text-gray-400 sm:hidden flex"
+					width="20"
+					height="20"
+				/>
+				<Icon
+					icon="ant-design:facebook-filled"
+					class="text-white hover:text-gray-400 hidden sm:flex"
+					width="25"
+					height="25"
+				/>
+			</a>
+			<a
+				href="https://www.instagram.com/tvnussbaumen/"
+				target="_blank"
+				rel="noreferrer"
+				class="text-white"
+			>
+				<Icon
+					icon="gg:instagram"
+					class="text-white hover:text-gray-400 sm:hidden flex"
+					width="18"
+					height="18"
+				/>
+				<Icon
+					icon="gg:instagram"
+					class="text-white hover:text-gray-400 hidden sm:flex"
+					width="23"
+					height="23"
+				/>
+			</a>
+			<a
+				href="https://www.flickr.com/groups/14819815@N20/"
+				target="_blank"
+				rel="noreferrer"
+				class="text-white"
+			>
+				<Icon
+					icon="raphael:flickr"
+					class="text-white hover:text-gray-400 sm:hidden flex"
+					width="20"
+					height="20"
+				/>
+				<Icon
+					icon="raphael:flickr"
+					class="text-white hover:text-gray-400 hidden sm:flex"
+					width="25"
+					height="25"
+				/>
+			</a>
+		</div>
+		<div class="mt-8 text-center">&copy; 2023 Turnverein Nussbaumen.</div>
+	</div>
 </div>

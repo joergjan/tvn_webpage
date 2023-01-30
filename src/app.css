@@ -12,5 +12,24 @@
 }
 
 .h1 {
-	@apply font-bold pb-5;
+	@apply pb-5 text-4xl;
+}
+
+.h2 {
+	@apply pb-4 text-3xl;
+}
+
+.h3 {
+	@apply pb-3 text-2xl;
+}
+
+.h4 {
+	@apply pb-2 text-xl;
+}
+
+.h1,
+.h2,
+.h3,
+.h4 {
+	@apply font-["Avenir_Heavy"];
 }
