@@ -108,10 +108,10 @@
 			<img class="h-48 w-full rounded-t-lg object-cover" src={riege.imageUrl} alt={riege.riege} />
 			<div class="flex flex-1 flex-col p-6">
 				<div class="flex-1">
-					<div class="text-sm font-medium text-tvbluelight">
+					<div class="bold text-tvbluelight">
 						{riege.age}
 					</div>
-					<div class="text-xl font-semibold text-gray-900">
+					<div class="h4">
 						{riege.riege}
 					</div>
 					<div class="mt-1 text-gray-500">

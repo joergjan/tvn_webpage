@@ -12,24 +12,25 @@
 }
 
 .h1 {
-	@apply pb-5 text-4xl;
+	@apply py-5 text-4xl uppercase;
 }
 
 .h2 {
-	@apply pb-4 text-3xl;
+	@apply text-3xl uppercase;
 }
 
 .h3 {
-	@apply pb-3 text-2xl;
+	@apply text-2xl uppercase;
 }
 
 .h4 {
-	@apply pb-2 text-xl;
+	@apply text-xl uppercase;
 }
 
 .h1,
 .h2,
 .h3,
-.h4 {
+.h4,
+.bold {
 	@apply font-["Avenir_Heavy"];
 }

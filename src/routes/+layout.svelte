@@ -34,8 +34,8 @@
 				<a class="hover:text-gray-400 px-10" href={title.href}>{title.name}</a>
 			{/each}
 		</div>
-		<div class="absolute top-5 right-5 md:hidden text-white">
-			<Hamburger bind:open />
+		<div class="absolute top-3 right-5 md:hidden text-white">
+			<Hamburger bind:open --color="white" --layer-height="2px" --layer-width="25px" />
 			{#if open}
 				{#each titles as title}
 					<div class="py-3">
