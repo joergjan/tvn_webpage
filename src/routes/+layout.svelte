@@ -8,6 +8,10 @@
 
 	let open;
 
+	function close() {
+		open = false;
+	}
+
 	const titles = [
 		{ name: 'Unser Verein', href: '/home' },
 		{ name: 'Riegen', href: '/riegen' },
@@ -37,7 +41,7 @@
 				<div class="bg-tvbluelight w-screen pt-2">
 					{#each titles as title}
 						<div class="py-3">
-							<a class="hover:text-gray-400" href={title.href}>{title.name}</a>
+							<a class="hover:text-gray-400" href={title.href} on:click={close}>{title.name} </a>
 						</div>
 					{/each}
 				</div>
