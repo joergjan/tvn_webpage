@@ -11,7 +11,11 @@ module.exports = {
 				tvbluelight: '#375398',
 				tvyellow: '#E3BE53'
 			}
+		},
+		fontFamily: {
+			sans: 'Avenir'
 		}
 	},
+
 	plugins: [require('flowbite/plugin')]
 };

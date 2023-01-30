@@ -1,8 +1,6 @@
 <script>
 	import '../app.css';
 
-	import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
-
 	const titles = [
 		{ name: 'Unser Verein', href: '/home' },
 		{ name: 'Riegen', href: '/riegen' },
@@ -12,22 +10,25 @@
 	];
 </script>
 
-<Navbar let:hidden let:toggle>
-	<NavBrand href="/home">
-		<img src="./images/logos/turner.png" class="mr-3 h-6 sm:h-9" alt="TVN" />
-		<span class="self-center whitespace-nowrap text-xl font-semiboldtext-white">
-			Turnverein Nussbaumen
-		</span>
-	</NavBrand>
-	<NavHamburger on:click={toggle} />
-	<NavUl {hidden}>
-		{#each titles as title}
-			<NavLi href={title.href} active={true}>
-				{title.name}
-			</NavLi>
-		{/each}
-	</NavUl>
-</Navbar>
+<div class="py-5 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+	<div class="text-white bg-tvbluelight">
+		<div class="place-content-start">
+			<a href="/home">
+				<div class="flex items-center">
+					<div class="">
+						<img class="h-10" src="./images/logos/turner.png" alt="TVN" />
+					</div>
+					<div class="pl-5">Turnverein Nussbaumen</div>
+				</div>
+			</a>
+		</div>
+		<div class="place-content-end -mr-10">
+			{#each titles as title}
+				<a class="px-10" href={title.href}>{title.name}</a>
+			{/each}
+		</div>
+	</div>
+</div>
 
 <div class="bg-white">
 	<div class="py-5 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
