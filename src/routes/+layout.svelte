@@ -1,6 +1,12 @@
 <script>
+	// @ts-nocheck
+
 	import '../app.css';
 	import Icon from '@iconify/svelte';
+	import { Dropdown } from 'carbon-components-svelte';
+	import { Hamburger } from 'svelte-hamburgers';
+
+	let open;
 
 	const titles = [
 		{ name: 'Unser Verein', href: '/home' },
@@ -23,10 +29,20 @@
 				</div>
 			</a>
 		</div>
-		<div class="flex place-content-end -mr-10">
+		<div class="place-content-end -mr-10 lg:flex hidden">
 			{#each titles as title}
 				<a class="hover:text-gray-400 px-10" href={title.href}>{title.name}</a>
 			{/each}
+		</div>
+		<div class="absolute top-5 right-5 md:hidden text-white">
+			<Hamburger bind:open />
+			{#if open}
+				{#each titles as title}
+					<div class="py-3">
+						<a class="hover:text-gray-400" href={title.href}>{title.name}</a>
+					</div>
+				{/each}
+			{/if}
 		</div>
 	</div>
 </div>
@@ -39,7 +55,7 @@
 
 <div>
 	<div class="bg-tvbluelight text-white">
-		<nav class="sm:flex sm:flex-wrap justify-center hidden mt-5">
+		<nav class="md:flex md:flex-wrap justify-center hidden mt-5">
 			{#each titles as title}
 				<a class="hover:text-gray-400 px-5" href={title.href}>{title.name}</a>
 			{/each}
@@ -53,13 +69,13 @@
 			>
 				<Icon
 					icon="ant-design:facebook-filled"
-					class="text-white hover:text-gray-400 sm:hidden flex"
+					class="text-white hover:text-gray-400 md:hidden flex"
 					width="20"
 					height="20"
 				/>
 				<Icon
 					icon="ant-design:facebook-filled"
-					class="text-white hover:text-gray-400 hidden sm:flex"
+					class="text-white hover:text-gray-400 hidden md:flex"
 					width="25"
 					height="25"
 				/>
@@ -72,13 +88,13 @@
 			>
 				<Icon
 					icon="gg:instagram"
-					class="text-white hover:text-gray-400 sm:hidden flex"
+					class="text-white hover:text-gray-400 md:hidden flex"
 					width="18"
 					height="18"
 				/>
 				<Icon
 					icon="gg:instagram"
-					class="text-white hover:text-gray-400 hidden sm:flex"
+					class="text-white hover:text-gray-400 hidden md:flex"
 					width="23"
 					height="23"
 				/>
