@@ -1,5 +1,5 @@
 <title>TV Nussbaumen</title>
 
-<div class="justify-items-center">
-	<img class="flex px-5 py-10" src="./images/logos/turner_webpage.png" alt="turner" />
+<div class="flex justify-center overflow-hidden">
+	<img class="py-24 scale-150" src="./images/logos/turner_webpage.png" alt="turner" />
 </div>
