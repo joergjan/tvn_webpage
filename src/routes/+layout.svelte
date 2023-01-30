@@ -3,7 +3,6 @@
 
 	import '../app.css';
 	import Icon from '@iconify/svelte';
-	import { Dropdown } from 'carbon-components-svelte';
 	import { Hamburger } from 'svelte-hamburgers';
 
 	let open;
@@ -13,18 +12,18 @@
 	}
 
 	const titles = [
-		{ name: 'Unser Verein', href: '/home' },
+		{ name: 'Unser Verein', href: '/' },
 		{ name: 'Riegen', href: '/riegen' },
 		{ name: 'Kontakt', href: '/kontakt' },
 		{ name: 'Fotogalerie', href: '/fotogalerie' },
-		{ name: 'Downloads', href: '/downloads' }
+		{ name: 'Downloads', href: '/doianien' }
 	];
 </script>
 
 <div class="py-5 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 font-bold">
 	<div class="text-white bg-tvbluelight">
 		<div class="flex place-content-end">
-			<a href="/home">
+			<a href="/">
 				<div class="flex items-center hover:text-gray-400">
 					<div class="h5 pr-5">Turnverein Nussbaumen</div>
 					<div class="">
@@ -38,7 +37,7 @@
 				<Hamburger bind:open --color="white" --layer-height="2px" --layer-width="25px" />
 			</div>
 			{#if open}
-				<div class="bg-tvbluelight w-screen pt-2">
+				<div class="bg-tvbluelight w-screen pt-10 sm:pt-5">
 					{#each titles as title}
 						<div class="py-3">
 							<a class="hover:text-gray-400" href={title.href} on:click={close}>{title.name} </a>
