@@ -31,7 +31,11 @@
 }
 
 .hover {
-	@apply hover:text-gray-500;
+	@apply hover:text-gray-400;
+}
+
+.link {
+	@apply text-blue-600 hover:text-gray-500 underline;
 }
 
 /* 

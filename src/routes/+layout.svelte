@@ -26,11 +26,7 @@
 		<div class="flex h-16 justify-between">
 			<div class="flex flex-shrink-0 items-center">
 				<a href="/">
-					<img
-						class="h-8 w-auto block"
-						src="./images/logos/turner.png"
-						alt="Turnverein Nussbaumen"
-					/>
+					<img class="h-10 block" src="./images/logos/turner.png" alt="Turnverein Nussbaumen" />
 				</a>
 				<div class="pl-5 hover hidden lg:flex">
 					<a href="/">Turnverein Nussbaumen</a>
@@ -150,7 +146,9 @@
 					</svg>
 				</a>
 			</div>
-			<p class="mt-10 text-center text-xs leading-5 ">&copy; 2023 Turnverein Nussbaumen.</p>
+			<div class="mt-10 text-center text-xs leading-5 ">
+				&copy; 2023 <a href="/" class="underline hover">Turnverein Nussbaumen</a>.
+			</div>
 		</div>
 	</footer>
 </div>

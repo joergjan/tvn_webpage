@@ -30,10 +30,10 @@
 	getPhotos();
 </script>
 
-<title>TVN | Fotogalerie</title>
+<title>TVN | Galerie</title>
 
 <div>
-	<div class="h1">Fotogalerie</div>
+	<div class="h1">Galerie</div>
 
 	<div class="container">
 		<Gallery>
