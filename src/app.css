@@ -6,7 +6,6 @@
 	html {
 		@apply font-sans;
 		@apply font-normal;
-		@apply bg-[#375398];
 		@apply text-xs sm:text-base text-gray-800;
 	}
 }

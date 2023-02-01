@@ -22,13 +22,14 @@
 </script>
 
 <nav class="bg-white sticky top-0 z-50">
+	<div class="bg-tvbluelight h-3" />
 	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 		<div class="flex h-16 justify-between">
 			<div class="flex flex-shrink-0 items-center">
 				<a href="/">
 					<img class="h-10 block" src="./images/logos/turner.png" alt="Turnverein Nussbaumen" />
 				</a>
-				<div class="pl-5 hover hidden lg:flex">
+				<div class="pl-5 hover flex md:hidden lg:flex">
 					<a href="/">Turnverein Nussbaumen</a>
 				</div>
 			</div>
@@ -114,12 +115,13 @@
 			<slot />
 		</div>
 	</div>
-	<footer class="bg-white">
-		<div class="mx-auto max-w-7xl overflow-hidden pb-20 pt-8 px-6 sm:py-24 lg:px-8">
+	<footer>
+		<div class="bg-tvbluelight h-1 mt-10 mb-8" />
+		<div class="mx-auto max-w-7xl overflow-hidden pb-20 pt-0 px-6 lg:px-8">
 			<nav class="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
 				{#each titles as title}
 					<div class="pb-6">
-						<a href={title.href} class="leading-6 hover">{title.name}</a>
+						<a href={title.href} class="hover">{title.name}</a>
 					</div>
 				{/each}
 			</nav>
