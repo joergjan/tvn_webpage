@@ -1,12 +1,11 @@
 <script>
 	import '../app.css';
-	import Icon from '@iconify/svelte';
 
 	const titles = [
 		{ name: 'Unser Verein', href: '/' },
 		{ name: 'Riegen', href: '/riegen' },
 		{ name: 'Kontakt', href: '/kontakt' },
-		{ name: 'Fotogalerie', href: '/fotogalerie' },
+		{ name: 'Galerie', href: '/galerie' },
 		{ name: 'Downloads', href: '/downloads' },
 		{ name: '404 Test', href: '/error' }
 	];
@@ -22,24 +21,20 @@
 	}
 </script>
 
-<nav class="bg-white shadow">
+<nav class="bg-white sticky top-0 z-50">
 	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 		<div class="flex h-16 justify-between">
 			<div class="flex">
 				<div class="flex flex-shrink-0 items-center">
-					<img
-						class="block h-8 w-auto lg:hidden"
-						src="./images/logos/turner.png"
-						alt="Turnverein Nussbaumen"
-					/>
-					<img
-						class="hidden h-8 w-auto lg:block"
-						src="./images/logos/turner.png"
-						alt="Turnverein Nussbaumen"
-					/>
+					<a href="/">
+						<img
+							class="h-8 w-auto block"
+							src="./images/logos/turner.png"
+							alt="Turnverein Nussbaumen"
+						/>
+					</a>
 				</div>
 				<div class="hidden md:ml-6 md:flex md:space-x-8">
-					<!-- Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" -->
 					{#each titles as title}
 						<a
 							href={title.href}
@@ -60,14 +55,6 @@
 					aria-expanded="false"
 					on:click={menuToggle}
 				>
-					<span class="sr-only">Open main menu</span>
-					<!--
-			  Icon when menu is closed.
-  
-			  Heroicon name: outline/bars-3
-  
-			  Menu open: "hidden", Menu closed: "block"
-			-->
 					<svg
 						class="block h-6 w-6"
 						xmlns="http://www.w3.org/2000/svg"
@@ -108,7 +95,7 @@
 
 	<!-- Mobile menu, show/hide based on menu state. -->
 	{#if open}
-		<div class="md:hidden" id="mobile-menu">
+		<div class="md:hidden">
 			<div class="border-t border-gray-200 pt-4 pb-3">
 				<div class="mt-3 space-y-1">
 					{#each titles as title}
@@ -124,7 +111,7 @@
 	{/if}
 </nav>
 
-<div class="overflow-scroll h-screen">
+<div class="relative">
 	<div class="bg-white">
 		<div class="py-5 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-0">
 			<slot />
@@ -168,7 +155,7 @@
 				</a>
 			</div>
 			<p class="mt-10 text-center text-xs leading-5 text-gray-500">
-				&copy; 2023 Turnverein Nussbaumen, Inc. All rights reserved.
+				&copy; 2023 Turnverein Nussbaumen.
 			</p>
 		</div>
 	</footer>
