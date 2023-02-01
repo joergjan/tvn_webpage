@@ -11,6 +11,37 @@
 	}
 }
 
+/* 
+//
+//
+//
+		hover, buttons, badges
+//
+*/
+
+.button-gray {
+	@apply inline-flex items-center;
+	@apply border-gray-300 border rounded-md;
+	@apply shadow-sm hover:bg-gray-100;
+}
+
+.badge-blue {
+	@apply inline-flex items-center;
+	@apply bg-tvbluelight text-white rounded-2xl hover:opacity-80;
+}
+
+.hover {
+	@apply hover:text-gray-500;
+}
+
+/* 
+//
+//
+//
+		fonts an titles
+//
+*/
+
 .h1 {
 	@apply py-5 text-4xl tracking-wide;
 }

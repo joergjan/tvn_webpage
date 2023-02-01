@@ -24,33 +24,34 @@
 <nav class="bg-white sticky top-0 z-50">
 	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 		<div class="flex h-16 justify-between">
-			<div class="flex">
-				<div class="flex flex-shrink-0 items-center">
-					<a href="/">
-						<img
-							class="h-8 w-auto block"
-							src="./images/logos/turner.png"
-							alt="Turnverein Nussbaumen"
-						/>
-					</a>
+			<div class="flex flex-shrink-0 items-center">
+				<a href="/">
+					<img
+						class="h-8 w-auto block"
+						src="./images/logos/turner.png"
+						alt="Turnverein Nussbaumen"
+					/>
+				</a>
+				<div class="pl-5 hover hidden lg:flex">
+					<a href="/">Turnverein Nussbaumen</a>
 				</div>
-				<div class="hidden md:ml-6 md:flex md:space-x-8">
-					{#each titles as title}
-						<a
-							href={title.href}
-							class="inline-flex items-center border-b-2 hover:border-tvbluelight px-1 pt-1 text-sm font-medium"
-							tabindex="-1"
-							role="menuitem">{title.name}</a
-						>
-					{/each}
-				</div>
+			</div>
+			<div class="hidden md:ml-6 md:flex md:space-x-8">
+				{#each titles as title}
+					<a
+						href={title.href}
+						class="inline-flex items-center border-b-2 hover:border-tvbluelight hover px-1 pt-1 text font-medium"
+						tabindex="-1"
+						role="menuitem">{title.name}</a
+					>
+				{/each}
 			</div>
 
 			<div class="-mr-2 flex items-center md:hidden">
 				<!-- Mobile menu button -->
 				<button
 					type="button"
-					class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+					class="inline-flex items-center justify-center rounded-md p-2 hover:bg-gray-100 hover focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
 					aria-controls="mobile-menu"
 					aria-expanded="false"
 					on:click={menuToggle}
@@ -101,7 +102,7 @@
 					{#each titles as title}
 						<a
 							href={title.href}
-							class="block px-4 py-2 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800"
+							class="block px-4 py-2 hover hover:bg-gray-100"
 							on:click={menuToggle}>{title.name}</a
 						>
 					{/each}
@@ -118,21 +119,16 @@
 		</div>
 	</div>
 	<footer class="bg-white">
-		<div class="mx-auto max-w-7xl overflow-hidden py-20 px-6 sm:py-24 lg:px-8">
+		<div class="mx-auto max-w-7xl overflow-hidden pb-20 pt-8 px-6 sm:py-24 lg:px-8">
 			<nav class="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
 				{#each titles as title}
 					<div class="pb-6">
-						<a href={title.href} class="text-sm leading-6 text-gray-600 hover:text-gray-900"
-							>{title.name}</a
-						>
+						<a href={title.href} class="leading-6 hover">{title.name}</a>
 					</div>
 				{/each}
 			</nav>
 			<div class="mt-10 flex justify-center space-x-10">
-				<a
-					href="https://www.facebook.com/people/TV-Nussbaumen/100064088556190/"
-					class="text-gray-400 hover:text-gray-500"
-				>
+				<a href="https://www.facebook.com/people/TV-Nussbaumen/100064088556190/" class="hover">
 					<span class="sr-only">Facebook</span>
 					<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 						<path
@@ -143,7 +139,7 @@
 					</svg>
 				</a>
 
-				<a href="https://www.instagram.com/tvnussbaumen/" class="text-gray-400 hover:text-gray-500">
+				<a href="https://www.instagram.com/tvnussbaumen/" class="hover">
 					<span class="sr-only">Instagram</span>
 					<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 						<path
@@ -154,9 +150,7 @@
 					</svg>
 				</a>
 			</div>
-			<p class="mt-10 text-center text-xs leading-5 text-gray-500">
-				&copy; 2023 Turnverein Nussbaumen.
-			</p>
+			<p class="mt-10 text-center text-xs leading-5 ">&copy; 2023 Turnverein Nussbaumen.</p>
 		</div>
 	</footer>
 </div>

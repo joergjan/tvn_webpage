@@ -22,7 +22,7 @@
 		<Leiter />
 		<div class="mt-10 lg:grid lg:grid-cols-5 h-108 lg:h-96">
 			<div class="lg:col-span-1 lg:col-start-1">
-				<div>Turnverein Nussbaumen</div>
+				<div class="font-semibold">TV Nussbaumen</div>
 				<div>c/o Christian Thurnheer</div>
 				<div>Altwingerten 1</div>
 				<div>8537 Nussbaumen</div>

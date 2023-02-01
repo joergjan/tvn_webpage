@@ -41,13 +41,11 @@
 			</div>
 
 			<div class="h5 text-semibold">{person.name}</div>
-			<div class="text-sm text-tvbluelight font-semibold">{person.role}</div>
+			<div class="text-sm text-gray-600 font-semibold">{person.role}</div>
 
 			<div class="pt-2">
 				<a href={person.mail}>
-					<button
-						class="inline-flex items-center rounded-md border border-gray-300 px-2 py-1 text-sm font-medium  shadow-sm hover:bg-gray-100"
-					>
+					<button class="px-2 py-1 text-sm button-gray">
 						Mail
 						<svg
 							class="h-4 pl-2"

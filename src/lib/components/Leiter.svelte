@@ -52,18 +52,13 @@
 				<img class="rounded-lg shadow-xl" src={person.imageUrl} alt={person.name} />
 
 				<div class="pt-2 pb-1">{person.name}</div>
-				<a
-					href="/riegen"
-					class="bg-tvbluelight text-white text-sm px-2 py-1 rounded-lg hover:opacity-80"
-				>
+				<a href="/riegen" class="text-sm px-3 py-1 badge-blue">
 					{person.role}
 				</a>
 
 				<div class="pt-2">
 					<a href={person.mail}>
-						<button
-							class="inline-flex items-center rounded-md border border-gray-300 px-2 py-1 text-sm font-medium  shadow-sm hover:bg-gray-100"
-						>
+						<button class="px-2 py-1 text-sm button-gray">
 							Mail
 							<svg
 								class="h-4 pl-2"
