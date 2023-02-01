@@ -11,12 +11,13 @@
 
 <title>TV Nussbaumen</title>
 
-<div class="flex justify-center overflow-hidden">
-	<img
-		class="z-10 py-24 scale-150 md:scale-100"
-		src="./images/logos/turner_webpage.png"
-		alt="turner"
-	/>
+<div class="hidden md:flex relative ">
+	<div class="relative justify-center items-center -my-52">
+		<img class="h-[1200px] z-50" src="./images/logos/turner_webpage_bg.png" alt="turner" />
+		<div class="absolute z-40 top-72 left-1/4 w-screen">
+			<img class="w-1/2 z-40" src="./images/logos/turner_webpage.png" alt="turner" />
+		</div>
+	</div>
 </div>
 
 {#each quotes as quote}

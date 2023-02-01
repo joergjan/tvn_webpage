@@ -6,8 +6,7 @@
 		{ name: 'Riegen', href: '/riegen' },
 		{ name: 'Kontakt', href: '/kontakt' },
 		{ name: 'Galerie', href: '/galerie' },
-		{ name: 'Downloads', href: '/downloads' },
-		{ name: '404 Test', href: '/error' }
+		{ name: 'Downloads', href: '/downloads' }
 	];
 
 	let open = false;
@@ -21,7 +20,7 @@
 	}
 </script>
 
-<nav class="bg-white sticky top-0 z-50">
+<nav class="bg-white sticky top-0 z-30">
 	<div class="bg-tvbluelight h-3" />
 	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 		<div class="flex h-16 justify-between">
