@@ -10,6 +10,16 @@
 		{ name: 'Downloads', href: '/downloads' },
 		{ name: '404 Test', href: '/error' }
 	];
+
+	let open = false;
+
+	function menuToggle() {
+		if (open) {
+			open = false;
+		} else {
+			open = true;
+		}
+	}
 </script>
 
 <nav class="bg-white shadow">
@@ -48,6 +58,7 @@
 					class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
 					aria-controls="mobile-menu"
 					aria-expanded="false"
+					on:click={menuToggle}
 				>
 					<span class="sr-only">Open main menu</span>
 					<!--
@@ -96,29 +107,21 @@
 	</div>
 
 	<!-- Mobile menu, show/hide based on menu state. -->
-	<div class="md:hidden" id="mobile-menu">
-		<div class="space-y-1 pt-2 pb-3">
-			<!-- Current: "bg-indigo-50 border-indigo-500 text-indigo-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" -->
-			{#each titles as title}
-				<a
-					href={title.href}
-					class="block border-l-4 border-indigo-500 bg-indigo-50 py-2 pl-3 pr-4 text-base font-medium text-indigo-700"
-					>{title.name}</a
-				>
-			{/each}
-		</div>
-		<div class="border-t border-gray-200 pt-4 pb-3">
-			<div class="mt-3 space-y-1">
-				{#each titles as title}
-					<a
-						href={title.href}
-						class="block px-4 py-2 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800"
-						>{title.name}</a
-					>
-				{/each}
+	{#if open}
+		<div class="md:hidden" id="mobile-menu">
+			<div class="border-t border-gray-200 pt-4 pb-3">
+				<div class="mt-3 space-y-1">
+					{#each titles as title}
+						<a
+							href={title.href}
+							class="block px-4 py-2 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800"
+							on:click={menuToggle}>{title.name}</a
+						>
+					{/each}
+				</div>
 			</div>
 		</div>
-	</div>
+	{/if}
 </nav>
 
 <div class="overflow-scroll h-screen">
