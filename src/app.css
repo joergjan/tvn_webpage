@@ -8,6 +8,11 @@
 		@apply font-normal;
 		@apply text-xs sm:text-base text-gray-800;
 	}
+	base {
+		@apply font-sans;
+		@apply font-normal;
+		@apply text-xs sm:text-base text-gray-800;
+	}
 }
 
 /* 
