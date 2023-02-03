@@ -6,6 +6,7 @@
 		{ name: 'Riegen', href: '/riegen' },
 		{ name: 'Kontakt', href: '/kontakt' },
 		{ name: 'Galerie', href: '/galerie' },
+		{ name: 'Bollä Dunnschtig', href: '/bolle' },
 		{ name: 'Downloads', href: '/downloads' }
 	];
 
@@ -20,7 +21,7 @@
 	}
 </script>
 
-<nav class="bg-white sticky top-0 z-30">
+<nav class="bg-white sticky top-0 z-10">
 	<div class="bg-tvbluelight h-3" />
 	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 		<div class="flex h-16 justify-between">
@@ -36,7 +37,7 @@
 				{#each titles as title}
 					<a
 						href={title.href}
-						class="inline-flex items-center border-b-2 hover:border-tvbluelight hover px-1 pt-1 text font-medium"
+						class="inline-flex items-center border-b-2 border-tvbluelight hover:border-gray-400 hover px-1 pt-1 text font-medium"
 						tabindex="-1"
 						role="menuitem">{title.name}</a
 					>

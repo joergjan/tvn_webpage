@@ -12,5 +12,9 @@ module.exports = {
 		fontFamily: {
 			sans: 'Avenir Light'
 		}
-	}
+	},
+	corePlugins: {
+		aspectRatio: false
+	},
+	plugins: [require('@tailwindcss/aspect-ratio')]
 };
