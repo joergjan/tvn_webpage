@@ -1,11 +1,10 @@
 <script>
-	// @ts-ignore
-	import { riegen } from '$lib/components/riegen.ts';
+	import { Riegen } from '../components/riegen';
 </script>
 
-<div class="grid md:grid-cols-3 sm:grid-cols-2 gap-x-2 gap-y-4">
-	{#each riegen as riege}
-		<div class="col-box-1 overflow-scroll">
+<div class="grid lg:grid-cols-3 md:grid-cols-2 gap-x-2 gap-y-4">
+	{#each Riegen as riege}
+		<div class="col-box-1 overflow-scroll border-2 rounded-lg">
 			<a href="/riegen">
 				<div class="lg:p-5 md:pd-4 p-2 relative">
 					<h4 class="h4">{riege.name}</h4>

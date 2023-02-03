@@ -1,96 +1,5 @@
 <script>
-	const riegen = [
-		{
-			riege: 'Aktive',
-			age: 'ab 16 Jahren',
-			description:
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
-
-			imageUrl: './images/riegen/beispiel.jpeg',
-
-			leiter: {
-				name: 'Jan Jörg',
-				imageUrl: './images/people/avatar.jpeg'
-			}
-		},
-		{
-			riege: 'Frauenriege',
-			age: 'Beitritt nach eigenem Ermessen',
-			description:
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
-
-			imageUrl: './images/riegen/beispiel.jpeg',
-			leiter: {
-				name: 'Sabrina Akeret',
-				imageUrl: './images/people/avatar.jpeg'
-			}
-		},
-		{
-			riege: 'Männerriege',
-			age: 'Beitritt nach eigenem Ermessen',
-			description:
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
-
-			imageUrl: './images/riegen/beispiel.jpeg',
-
-			leiter: {
-				name: 'Philipp Rot',
-				imageUrl: './images/people/avatar.jpeg'
-			}
-		},
-		{
-			riege: 'ElKi',
-			age: 'ab 2 Jahren',
-			description:
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
-
-			imageUrl: './images/riegen/beispiel.jpeg',
-
-			leiter: {
-				name: 'Jan Jörg',
-				imageUrl: './images/people/avatar.jpeg'
-			}
-		},
-		{
-			riege: 'KiTu',
-			age: 'ab Kindergarten',
-			description:
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
-
-			imageUrl: './images/riegen/beispiel.jpeg',
-
-			leiter: {
-				name: 'Jan Jörg',
-				imageUrl: './images/people/avatar.jpeg'
-			}
-		},
-		{
-			riege: 'Kleine Jugi',
-			age: 'ab 1. Klasse',
-			description:
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
-
-			imageUrl: './images/riegen/beispiel.jpeg',
-
-			leiter: {
-				name: 'Sabrina Akeret',
-				imageUrl: './images/people/avatar.jpeg'
-			}
-		},
-		{
-			riege: 'Grosse Jugi',
-			age: 'ab 4. Klasse',
-			description:
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
-
-			imageUrl: './images/riegen/beispiel.jpeg',
-
-			leiter: {
-				name: 'Philipp Rot',
-				imageUrl: './images/people/avatar.jpeg'
-			}
-		}
-	];
+	import { Riegen } from '$lib/components/riegen';
 </script>
 
 <title>TVN | Riegen</title>
@@ -98,16 +7,16 @@
 <div class="h1">Riegen</div>
 
 <div class="grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-	{#each riegen as riege}
+	{#each Riegen as riege}
 		<div class="flex flex-col rounded-b-lg shadow-lg">
-			<img class="h-48 w-full rounded-t-lg object-cover" src={riege.imageUrl} alt={riege.riege} />
+			<img class="h-48 w-full rounded-t-lg object-cover" src={riege.imageUrl} alt={riege.name} />
 			<div class="flex flex-1 flex-col p-6">
 				<div class="flex-1">
 					<div class="text-sm text-tvbluelight">
 						{riege.age}
 					</div>
 					<div class="h4 py-1">
-						{riege.riege}
+						{riege.name}
 					</div>
 					<div class="mt-1 text-gray-500">
 						{riege.description}
