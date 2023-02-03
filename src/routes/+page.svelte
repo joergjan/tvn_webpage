@@ -11,10 +11,6 @@
 	</div>
 </div>
 
-<div class="absolute sm:hidden top-[30px] z-40 right-[10px] -mt-24 -mr-24">
-	<img class="z-48 w-[240px]" src="./images/logos/turner_webpage_bg.png" alt="turner" />
-</div>
-
 <div class="pt-30">
 	<Quotes />
 </div>
