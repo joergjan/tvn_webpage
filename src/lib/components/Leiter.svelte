@@ -6,14 +6,18 @@
 	{#each Leiter as person}
 		<li>
 			<div class="">
-				<img class="rounded-lg shadow-xl" src={person.imageUrl} alt={person.name} />
+				<div class="flex justify-center">
+					<img class="rounded-lg shadow-lg" src={person.imageUrl} alt={person.name} />
+				</div>
+				<div class="pt-2 pb-1 flex justify-center">{person.name}</div>
 
-				<div class="pt-2 pb-1">{person.name}</div>
-				<a href="/riegen" class="text-sm px-3 py-1 badge-blue">
-					{person.role}
-				</a>
+				<div class="flex justify-center">
+					<a href="/riegen" class="text-sm px-3 py-1 badge-blue flex">
+						{person.role}
+					</a>
+				</div>
 
-				<div class="pt-2">
+				<div class="pt-2 flex justify-center">
 					<a href={person.mail}>
 						<button class="px-2 py-1 text-sm button-gray">
 							Mail

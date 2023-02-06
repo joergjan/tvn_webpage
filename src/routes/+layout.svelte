@@ -10,6 +10,8 @@
 		{ name: 'Downloads', href: '/downloads' }
 	];
 
+	let selected = 0;
+
 	let open = false;
 
 	function menuToggle() {
@@ -26,22 +28,37 @@
 	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 		<div class="flex h-16 justify-between">
 			<div class="flex flex-shrink-0 items-center">
-				<a href="/">
+				<a href="/" on:click={() => (selected = 0)}>
 					<img class="h-10 block" src="./images/logos/turner.png" alt="Turnverein Nussbaumen" />
 				</a>
 				<div class="pl-5 hover flex md:hidden lg:flex">
-					<a href="/">Turnverein Nussbaumen</a>
+					<a href="/" on:click={() => (selected = 0)}>Turnverein Nussbaumen</a>
 				</div>
 			</div>
 			<div class="hidden md:ml-6 md:flex md:space-x-8">
-				{#each titles as title}
-					<a
-						href={title.href}
-						class="inline-flex items-center border-b-2 border-tvbluelight hover:border-gray-400 hover px-1 pt-1 text font-medium"
-						tabindex="-1"
-						role="menuitem">{title.name}</a
-					>
-				{/each}
+				{#key selected}
+					{#each titles as title, i}
+						{#if selected != i}
+							<a
+								href={title.href}
+								class="inline-flex items-center border-b-2 border-tvbluelight hover:border-gray-400 hover px-1 pt-1 text font-medium"
+								tabindex="-1"
+								on:click={() => (selected = i)}
+								class:selected={selected === i}
+								role="menuitem">{title.name}</a
+							>
+						{:else}
+							<a
+								href={title.href}
+								class="inline-flex items-center border-b-2 border-gray-400 text-gray-400 px-1 pt-1 text font-medium"
+								tabindex="-1"
+								on:click={() => (selected = i)}
+								class:selected={selected === i}
+								role="menuitem">{title.name}</a
+							>
+						{/if}
+					{/each}
+				{/key}
 			</div>
 
 			<div class="-mr-2 flex items-center md:hidden">

@@ -13,7 +13,7 @@
 	<div class="md:grid lg:grid-cols-3 md:grid-cols-2">
 		<div class="flex justify-center lg:-my-8">
 			<img
-				class="rounded-lg shadow-xl"
+				class="rounded-lg shadow-lg"
 				src="./images/people/avatar.jpeg"
 				alt="Zitat des Präsidenten"
 			/>

@@ -2,9 +2,11 @@
 	import { Riegen } from '../components/riegen';
 </script>
 
-<div class="grid lg:grid-cols-3 md:grid-cols-2 gap-x-2 gap-y-4">
+<div class="grid lg:grid-cols-3 md:grid-cols-2 gap-x-2 gap-y-4 ">
 	{#each Riegen as riege}
-		<div class="col-box-1 border-2 rounded-lg">
+		<div
+			class="col-box-1 rounded-lg shadow-lg hover:border-[2px] hover:-my-[4px] hover:border-tvbluelight"
+		>
 			<a href="/riegen">
 				<div class="lg:p-5 md:pd-4 p-2 relative">
 					<h4 class="h4">{riege.name}</h4>

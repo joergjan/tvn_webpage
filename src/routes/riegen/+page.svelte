@@ -22,6 +22,12 @@
 						{riege.description}
 					</div>
 				</div>
+				<div class="pt-3 text-sm">
+					<div>{riege.day1}: {riege.time1}</div>
+					{#if riege.twodays}
+						<div>{riege.day2}: {riege.time2}</div>
+					{/if}
+				</div>
 				<div class="mt-3 flex items-center">
 					<div>
 						<div class="sr-only">{riege.leiter.name}</div>
@@ -33,7 +39,7 @@
 					</div>
 
 					<div class="ml-3">
-						<div class="text-sm font-medium text-gray-900">
+						<div class="text-sm text-gray-900">
 							<div>{riege.leiter.name}</div>
 						</div>
 						<div class="flex space-x-1 text-sm text-gray-500" />

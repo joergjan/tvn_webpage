@@ -5,16 +5,16 @@
 <ul class="sm:grid sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3">
 	{#each Vorstand as person}
 		<li>
-			<div class="py-4">
-				<img class="rounded-lg shadow-xl" src={person.imageUrl} alt={person.name} />
+			<div class="py-4 flex justify-center">
+				<img class="rounded-lg shadow-lg" src={person.imageUrl} alt={person.name} />
 			</div>
 
-			<div class="h5 text-semibold">{person.name}</div>
-			<div class="text-sm text-gray-600 font-semibold">{person.role}</div>
+			<div class="h5 text-semibold flex justify-center">{person.name}</div>
+			<div class="text-sm text-gray-600 font-medium flex justify-center">{person.role}</div>
 
-			<div class="pt-2">
+			<div class="pt-2 flex justify-center">
 				<a href={person.mail}>
-					<button class="px-2 py-1 text-sm button-gray">
+					<button class="px-2 py-1 text-sm button-gray ">
 						Mail
 						<svg
 							class="h-4 pl-2"

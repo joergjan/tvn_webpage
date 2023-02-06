@@ -1,8 +1,37 @@
 <script>
-	const titles = [
-		{ name: 'Event', href: '/bolle/anlass' },
-		{ name: 'Aufbau', href: '/bolle/aufbau' }
+	const pages = [
+		{
+			name: 'Event',
+			hrefImg: './images/bolle/bolle_voll.PNG',
+			text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+			moreInfo: false
+		},
+		{
+			name: 'Aufbau',
+			hrefImg: './images/bolle/bolle_planung.jpg',
+			text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+			moreInfo: false
+		},
+		{
+			name: 'Diverses',
+			hrefImg: './images/gif/runnerColor.gif',
+			text: 'blablabla'
+		},
+		{
+			name: 'Sicherheit',
+			hrefImg: './images/gif/runnerColor.gif',
+			text: 'Um die Sicherheit gewährleisten zu können folgt der Turnverein',
+			moreInfo: false
+		},
+		{
+			name: 'Anreise',
+			hrefImg: './images/gif/runnerColor.gif',
+			text: 'Die Anreise kann via ÖV oder per Auto erfolgen. Wir kennzeichnen Parkplätze in der Nähe des Events. Die Nächste Bushaltestelle ist "Schulhaus Nussbaumen". Büsse verkehren ab Frauenfeld auf Nussbaumen bis 12:00 Uhr',
+			moreInfo: false
+		}
 	];
+
+	let selected = 0;
 </script>
 
 <title>TVN | Bollä Dunnschtig</title>
@@ -10,33 +39,34 @@
 <div class="h1">Bollä Dunnschtig</div>
 
 <div class="bg-white">
-	<section aria-labelledby="features-heading">
-		<div class="mx-auto max-w-2xl px-4 lg:max-w-none lg:px-0">
-			<div class="max-w-3xl">
-				<p class="mt-4 text-gray-500">
-					The Organize modular system offers endless options for arranging your favorite and most
-					used items. Keep everything at reach and in its place, while dressing up your workspace.
-				</p>
-			</div>
-
-			<div class="mt-4">
-				<div class="-mx-4 flex overflow-x-auto sm:mx-0">
-					<div class="flex-auto border-b border-gray-200 px-4 sm:px-0">
-						<div class="-mb-px flex space-x-10" aria-orientation="horizontal" role="tablist">
-							{#each titles as title}
-								<button
-									id="features-tab-1"
-									class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap border-b-2 py-6 text-sm font-medium"
-									aria-controls="features-panel-1"
-									role="tab"
-									type="button"
-								>
-									<a href={title.href}>{title.name}</a>
-								</button>
-							{/each}
-						</div>
-					</div>
+	<div class="max-w-3xl">
+		<p class="mt-4 text-gray-500">
+			The Organize modular system offers endless options for arranging your favorite and most used
+			items. Keep everything at reach and in its place, while dressing up your workspace.
+		</p>
+	</div>
+	<div class="mt-4">
+		<div class="-mx-4 flex overflow-x-auto sm:mx-0">
+			<div class="flex-auto border-b border-gray-200 px-4 sm:px-0">
+				<div class="-mb-px flex space-x-10" aria-orientation="horizontal" role="tablist">
+					{#each pages as page, i}
+						<button
+							id="features-tab-1"
+							class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap border-b-2 py-6 text-sm font-medium"
+							aria-controls="features-panel-1"
+							role="tab"
+							type="button"
+							on:click={() => (selected = i)}
+							class:selected={selected === i}
+						>
+							{page.name}
+						</button>
+					{/each}
 				</div>
+			</div>
+		</div>
+		{#each pages as page, i}
+			{#if selected == i}
 				<div
 					id="features-panel-1"
 					class="space-y-16 pt-10 lg:pt-16"
@@ -46,11 +76,9 @@
 				>
 					<div class="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:gap-x-8">
 						<div class="mt-6 lg:col-span-5 lg:mt-0">
-							<h3 class="text-lg font-medium text-gray-900">Adaptive and modular</h3>
+							<h3 class="text-lg font-medium text-gray-900">{page.name}</h3>
 							<p class="mt-2 text-sm text-gray-500">
-								The Organize base set allows you to configure and evolve your setup as your items
-								and habits change. The included trays and optional add-ons are easily rearranged to
-								achieve that perfect setup.
+								{page.text}
 							</p>
 						</div>
 						<div class="lg:col-span-7">
@@ -58,7 +86,7 @@
 								class="aspect-w-2 aspect-h-1 overflow-hidden rounded-lg bg-gray-100 sm:aspect-w-5 sm:aspect-h-2"
 							>
 								<img
-									src="https://tailwindui.com/img/ecommerce-images/product-feature-06-detail-01.jpg"
+									src={page.hrefImg}
 									alt="Maple organizer base with slots, supporting white polycarbonate trays of various sizes."
 									class="object-cover object-center"
 								/>
@@ -66,97 +94,7 @@
 						</div>
 					</div>
 				</div>
-
-				<div
-					id="features-panel-2"
-					class="space-y-16 pt-10 lg:pt-16"
-					aria-labelledby="features-tab-2"
-					role="tabpanel"
-					tabindex="0"
-				>
-					<div class="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:gap-x-8">
-						<div class="mt-6 lg:col-span-5 lg:mt-0">
-							<h3 class="text-lg font-medium text-gray-900">Natural wood options</h3>
-							<p class="mt-2 text-sm text-gray-500">
-								Organize has options for rich walnut and bright maple base materials. Accent your
-								desk with a contrasting material, or match similar woods for a calm and cohesive
-								look. Every base is hand sanded and finished.
-							</p>
-						</div>
-						<div class="lg:col-span-7">
-							<div
-								class="aspect-w-2 aspect-h-1 overflow-hidden rounded-lg bg-gray-100 sm:aspect-w-5 sm:aspect-h-2"
-							>
-								<img
-									src="https://tailwindui.com/img/ecommerce-images/product-feature-06-detail-02.jpg"
-									alt="Walnut organizer base with pen, sticky note, phone, and bin trays, next to modular drink coaster attachment."
-									class="object-cover object-center"
-								/>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div
-					id="features-panel-3"
-					class="space-y-16 pt-10 lg:pt-16"
-					aria-labelledby="features-tab-3"
-					role="tabpanel"
-					tabindex="0"
-				>
-					<div class="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:gap-x-8">
-						<div class="mt-6 lg:col-span-5 lg:mt-0">
-							<h3 class="text-lg font-medium text-gray-900">Helpful around the home</h3>
-							<p class="mt-2 text-sm text-gray-500">
-								Our customers use Organize throughout the house to bring efficiency to many daily
-								routines. Enjoy Organize in your workspace, kitchen, living room, entry way, garage,
-								and more. We can&#039;t wait to see how you&#039;ll use it!
-							</p>
-						</div>
-						<div class="lg:col-span-7">
-							<div
-								class="aspect-w-2 aspect-h-1 overflow-hidden rounded-lg bg-gray-100 sm:aspect-w-5 sm:aspect-h-2"
-							>
-								<img
-									src="https://tailwindui.com/img/ecommerce-images/product-feature-06-detail-03.jpg"
-									alt="Walnut organizer base with white polycarbonate trays in the kitchen with various kitchen utensils."
-									class="object-cover object-center"
-								/>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div
-					id="features-panel-4"
-					class="space-y-16 pt-10 lg:pt-16"
-					aria-labelledby="features-tab-4"
-					role="tabpanel"
-					tabindex="0"
-				>
-					<div class="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:gap-x-8">
-						<div class="mt-6 lg:col-span-5 lg:mt-0">
-							<h3 class="text-lg font-medium text-gray-900">Everything you&#039;ll need</h3>
-							<p class="mt-2 text-sm text-gray-500">
-								The Organize base set includes the pen, phone, small, and large trays to help you
-								group all your essential items. Expand your set with the drink coaster and headphone
-								stand add-ons.
-							</p>
-						</div>
-						<div class="lg:col-span-7">
-							<div
-								class="aspect-w-2 aspect-h-1 overflow-hidden rounded-lg bg-gray-100 sm:aspect-w-5 sm:aspect-h-2"
-							>
-								<img
-									src="https://tailwindui.com/img/ecommerce-images/product-feature-06-detail-04.jpg"
-									alt="Walnut organizer system on black leather desk mat on top of white desk."
-									class="object-cover object-center"
-								/>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+			{/if}
+		{/each}
+	</div>
 </div>
