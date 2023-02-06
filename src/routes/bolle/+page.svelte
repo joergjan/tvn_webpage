@@ -15,7 +15,8 @@
 		{
 			name: 'Diverses',
 			hrefImg: './images/gif/runnerColor.gif',
-			text: 'blablabla'
+			text: 'blablabla',
+			moreInfo: false
 		},
 		{
 			name: 'Sicherheit',
@@ -106,6 +107,7 @@
 					</div>
 				</div>
 			{/if}
+			{#if page.moreInfo} <div>aewoigbawegü</div> {/if}
 		{/each}
 	</div>
 </div>
