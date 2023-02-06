@@ -41,26 +41,37 @@
 <div class="bg-white">
 	<div class="max-w-3xl">
 		<p class="mt-4 text-gray-500">
-			The Organize modular system offers endless options for arranging your favorite and most used
-			items. Keep everything at reach and in its place, while dressing up your workspace.
+			Der Bollä Dunnschtig wird jedes Jahr vom TV Nussbaumen organisiert
 		</p>
 	</div>
 	<div class="mt-4">
 		<div class="-mx-4 flex overflow-x-auto sm:mx-0">
 			<div class="flex-auto border-b border-gray-200 px-4 sm:px-0">
-				<div class="-mb-px flex space-x-10" aria-orientation="horizontal" role="tablist">
+				<div class="-mb-px flex space-x-10" aria-orientation="horizontal">
 					{#each pages as page, i}
-						<button
-							id="features-tab-1"
-							class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap border-b-2 py-6 text-sm font-medium"
-							aria-controls="features-panel-1"
-							role="tab"
-							type="button"
-							on:click={() => (selected = i)}
-							class:selected={selected === i}
-						>
-							{page.name}
-						</button>
+						{#if selected != i}
+							<button
+								id="features-tab-1"
+								class="hover:text-gray-400 border-tvbluelight hover:border-gray-400 hover whitespace-nowrap border-b-2 py-6 text-sm font-medium"
+								aria-controls="features-panel-1"
+								role="tab"
+								type="button"
+								on:click={() => (selected = i)}
+								class:selected={selected === i}
+							>
+								{page.name}
+							</button>
+						{:else}<button
+								id="features-tab-1"
+								class="border-gray-400 text-gray-400 whitespace-nowrap border-b-2 py-6 text-sm font-medium"
+								aria-controls="features-panel-1"
+								role="tab"
+								type="button"
+								on:click={() => (selected = i)}
+								class:selected={selected === i}
+							>
+								{page.name}
+							</button>{/if}
 					{/each}
 				</div>
 			</div>
