@@ -1,4 +1,26 @@
+// ageID :: 0 steht für Jugendriegen (u16) // 1 steht für Aktive und höher (ü16)
+
 export const Riegen = [
+	{
+		name: 'Aktive',
+		time1: '19:30 - 21:15 Uhr',
+		day1: 'Montag',
+		time2: '20:15 - 22:00 Uhr',
+		day2: 'Freitag',
+		twodays: true,
+		badgename: 'Aktive',
+		age: 'ab 16 Jahren',
+		ageID: 1,
+		description:
+			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
+
+		imageUrl: './images/riegen/beispiel.jpeg',
+
+		leiter: {
+			name: 'Jan Jörg',
+			imageUrl: './images/people/avatar.jpeg'
+		}
+	},
 		{
 		name: 'Frauenriege',
 		time1: '20:00 - 21:30 Uhr',
@@ -6,6 +28,7 @@ export const Riegen = [
 		twodays: false,
 		badgename: 'Frauenriege',
 		age: 'Beitritt nach eigenem Ermessen',
+		ageID: 1,
 		description:
 			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
 
@@ -22,6 +45,7 @@ export const Riegen = [
 		twodays: false,
 		badgename: 'KiTu',
 		age: 'ab Kindergarten',
+		ageID: 0,
 		description:
 			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
 
@@ -39,6 +63,7 @@ export const Riegen = [
 		twodays: false,
 		badgename: 'Jugi Klein',
 		age: 'ab 1. Klasse',
+		ageID: 0,
 		description:
 			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
 
@@ -56,6 +81,7 @@ export const Riegen = [
 		twodays: false,
 		badgename: 'Jugi Gross',
 		age: 'ab 4. Klasse',
+		ageID: 0,
 		description:
 			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
 
@@ -73,6 +99,7 @@ export const Riegen = [
 		twodays: false,
 		badgename: 'Männerriege',
 		age: 'Beitritt nach eigenem Ermessen',
+		ageID: 1,
 		description:
 			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
 
@@ -90,6 +117,7 @@ export const Riegen = [
 		twodays: false,
 		badgename: 'ElKi',
 		age: 'ab 2 Jahren',
+		ageID: 0,
 		description:
 			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
 
@@ -100,23 +128,5 @@ export const Riegen = [
 			imageUrl: './images/people/avatar.jpeg'
 		}
 	},
-	{
-		name: 'Aktive',
-		time1: '19:30 - 21:15 Uhr',
-		day1: 'Montag',
-		time2: '20:15 - 22:00 Uhr',
-		day2: 'Freitag',
-		twodays: true,
-		badgename: 'Aktive',
-		age: 'ab 16 Jahren',
-		description:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
-
-		imageUrl: './images/riegen/beispiel.jpeg',
-
-		leiter: {
-			name: 'Jan Jörg',
-			imageUrl: './images/people/avatar.jpeg'
-		}
-	}
+	
 ];
