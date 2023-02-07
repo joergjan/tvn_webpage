@@ -2,33 +2,70 @@
 	const pages = [
 		{
 			name: 'Event',
-			hrefImg: './images/bolle/bolle_voll.PNG',
-			text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-			moreInfo: false
+			parts: [
+				{
+					name: 'Event',
+					hrefImg: './images/bolle/bolle_voll.PNG',
+					text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+					moreInfo: 0
+				},
+				{
+					name: 'another part',
+					hrefImg: './images/bolle/bolle_voll.PNG',
+					text: 'some other text',
+					moreInfo: 0
+				}
+			]
 		},
 		{
 			name: 'Aufbau',
-			hrefImg: './images/bolle/bolle_planung.jpg',
-			text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-			moreInfo: false
+			parts: [
+				{
+					name: 'Aufbau',
+					hrefImg: './images/bolle/bolle_planung.jpg',
+					text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+					moreInfo: 0
+				}
+			]
 		},
 		{
 			name: 'Diverses',
-			hrefImg: './images/gif/runnerColor.gif',
-			text: 'blablabla',
-			moreInfo: false
+			parts: [
+				{
+					name: 'Diverses',
+					hrefImg: './images/gif/runnerColor.gif',
+					text: 'blablabla',
+					moreInfo: 0
+				}
+			]
 		},
 		{
 			name: 'Sicherheit',
-			hrefImg: './images/gif/runnerColor.gif',
-			text: 'Um die Sicherheit gewährleisten zu können folgt der Turnverein',
-			moreInfo: false
+			parts: [
+				{
+					name: 'Sicherheit',
+					hrefImg: './images/gif/runnerColor.gif',
+					text: 'Um die Sicherheit gewährleisten zu können folgt der Turnverein',
+					moreInfo: 0
+				},
+				{
+					name: 'teil zwei der Sicherheit',
+					hrefImg: './images/gif/runnerColor.gif',
+					text: 'orboiqbb',
+					moreInfo: 0
+				}
+			]
 		},
 		{
 			name: 'Anreise',
-			hrefImg: './images/gif/runnerColor.gif',
-			text: 'Die Anreise kann via ÖV oder per Auto erfolgen. Wir kennzeichnen Parkplätze in der Nähe des Events. Die Nächste Bushaltestelle ist "Schulhaus Nussbaumen". Büsse verkehren ab Frauenfeld auf Nussbaumen bis 12:00 Uhr',
-			moreInfo: false
+			parts: [
+				{
+					name: 'Anreise',
+					hrefImg: './images/gif/runnerColor.gif',
+					text: 'Die Anreise kann via ÖV oder per Auto erfolgen. Wir kennzeichnen Parkplätze in der Nähe des Events. Die Nächste Bushaltestelle ist "Schulhaus Nussbaumen". Büsse verkehren ab Frauenfeld auf Nussbaumen bis 12:00 Uhr',
+					moreInfo: 0
+				}
+			]
 		}
 	];
 
@@ -78,36 +115,37 @@
 			</div>
 		</div>
 		{#each pages as page, i}
-			{#if selected == i}
-				<div
-					id="features-panel-1"
-					class="space-y-16 pt-10 lg:pt-16"
-					aria-labelledby="features-tab-1"
-					role="tabpanel"
-					tabindex="0"
-				>
-					<div class="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:gap-x-8">
-						<div class="mt-6 lg:col-span-5 lg:mt-0">
-							<h3 class="text-lg font-medium text-gray-900">{page.name}</h3>
-							<p class="mt-2 text-sm text-gray-500">
-								{page.text}
-							</p>
-						</div>
-						<div class="lg:col-span-7">
-							<div
-								class="aspect-w-2 aspect-h-1 overflow-hidden rounded-lg bg-gray-100 sm:aspect-w-5 sm:aspect-h-2"
-							>
-								<img
-									src={page.hrefImg}
-									alt="Maple organizer base with slots, supporting white polycarbonate trays of various sizes."
-									class="object-cover object-center"
-								/>
+			{#each page.parts as part}
+				{#if selected == i}
+					<div
+						id="features-panel-1"
+						class="space-y-16 pt-10 lg:pt-16"
+						aria-labelledby="features-tab-1"
+						role="tabpanel"
+						tabindex="0"
+					>
+						<div class="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:gap-x-8">
+							<div class="mt-6 lg:col-span-5 lg:mt-0">
+								<h3 class="text-lg font-medium text-gray-900">{part.name}</h3>
+								<p class="mt-2 text-sm text-gray-500">
+									{part.text}
+								</p>
+							</div>
+							<div class="lg:col-span-7">
+								<div
+									class="aspect-w-2 aspect-h-1 overflow-hidden rounded-lg bg-gray-100 sm:aspect-w-5 sm:aspect-h-2"
+								>
+									<img
+										src={part.hrefImg}
+										alt="Maple organizer base with slots, supporting white polycarbonate trays of various sizes."
+										class="object-cover object-center"
+									/>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-			{/if}
-			{#if page.moreInfo} <div>aewoigbawegü</div> {/if}
+				{/if}
+			{/each}
 		{/each}
 	</div>
 </div>

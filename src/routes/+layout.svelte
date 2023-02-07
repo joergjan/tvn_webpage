@@ -136,9 +136,9 @@
 		<div class="bg-tvbluelight h-1 mt-10 mb-8" />
 		<div class="mx-auto max-w-7xl overflow-hidden pb-20 pt-0 px-6 lg:px-8">
 			<nav class="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
-				{#each titles as title}
+				{#each titles as title, i}
 					<div class="pb-6">
-						<a href={title.href} class="hover">{title.name}</a>
+						<a href={title.href} class="hover" on:click={() => (selected = i)}>{title.name}</a>
 					</div>
 				{/each}
 			</nav>
@@ -166,7 +166,9 @@
 				</a>
 			</div>
 			<div class="mt-10 text-center text-xs leading-5 ">
-				&copy; 2023 <a href="/" class="underline hover">Turnverein Nussbaumen</a>.
+				&copy; 2023 <a href="/" class="underline hover" on:click={() => (selected = 0)}
+					>Turnverein Nussbaumen</a
+				>.
 			</div>
 		</div>
 	</footer>
