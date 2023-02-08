@@ -3,9 +3,6 @@
 
 	let aktive = true;
 	let jugi = true;
-	/**
-	 * @type {string | number}
-	 */
 	let ageSelector = 2;
 
 	function checkAktive() {

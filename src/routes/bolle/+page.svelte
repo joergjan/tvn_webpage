@@ -109,7 +109,8 @@
 								class:selected={selected === i}
 							>
 								{page.name}
-							</button>{/if}
+							</button>
+						{/if}
 					{/each}
 				</div>
 			</div>
@@ -133,13 +134,9 @@
 							</div>
 							<div class="lg:col-span-7">
 								<div
-									class="aspect-w-2 aspect-h-1 overflow-hidden rounded-lg bg-gray-100 sm:aspect-w-5 sm:aspect-h-2"
+									class="aspect-w-2 aspect-h-1 overflow-hidden rounded-lg sm:aspect-w-5 sm:aspect-h-2 shadow-lg"
 								>
-									<img
-										src={part.hrefImg}
-										alt="Maple organizer base with slots, supporting white polycarbonate trays of various sizes."
-										class="object-cover object-center"
-									/>
+									<img src={part.hrefImg} alt={part.name} class="object-cover object-center" />
 								</div>
 							</div>
 						</div>

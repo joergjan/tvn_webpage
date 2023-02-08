@@ -2,33 +2,33 @@
 	const Jahresprogramme = [
 		{
 			name: 'Jahresprogramm Aktive',
-			path: './images/gif/runnerColor.gif'
+			path: './files/?'
 		},
 		{
 			name: 'Jahresprogramm Jugendriegen',
-			path: './images/gif/runnerColor.gif'
+			path: './files/?'
 		}
 	];
 
 	const Statuten = [
 		{
 			name: 'Statuten',
-			path: './images/gif/runnerColor.gif'
+			path: './files/?'
 		}
 	];
 
 	const Reglemente = [
 		{
 			name: 'Organisationsreglement',
-			path: './images/gif/runnerColor.gif'
+			path: './files/?'
 		},
 		{
 			name: 'Reglement Jugendriegen',
-			path: './images/gif/runnerColor.gif'
+			path: './files/?'
 		},
 		{
 			name: 'Entschädigungsreglement',
-			path: './images/gif/runnerColor.gif'
+			path: './files/?'
 		}
 	];
 </script>

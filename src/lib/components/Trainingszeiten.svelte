@@ -3,7 +3,7 @@
 </script>
 
 <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-x-2 gap-y-4 ">
-	{#each Riegen as riege}
+	{#each Riegen.reverse() as riege}
 		<div class="col-box-1 rounded-lg shadow-lg hover:text-gray-400">
 			<a href="/riegen">
 				<div class="lg:p-5 md:pd-4 p-2 relative">

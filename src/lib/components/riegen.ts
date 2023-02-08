@@ -21,20 +21,21 @@ export const Riegen = [
 			imageUrl: './images/people/avatar.jpeg'
 		}
 	},
-		{
-		name: 'Frauenriege',
-		time1: '20:00 - 21:30 Uhr',
-		day1: 'Mittwoch',
+	{
+		name: 'Eltern-Kind ElKi',
+		time1: '09:15 - 10:15 Uhr',
+		day1: 'Donnerstag',
 		twodays: false,
-		badgename: 'Frauenriege',
-		age: 'Beitritt nach eigenem Ermessen',
-		ageID: 1,
+		badgename: 'ElKi',
+		age: 'ab 2 Jahren',
+		ageID: 0,
 		description:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
+			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
 
 		imageUrl: './images/riegen/beispiel.jpeg',
+
 		leiter: {
-			name: 'Sabrina Akeret',
+			name: 'Jan Jörg',
 			imageUrl: './images/people/avatar.jpeg'
 		}
 	},
@@ -111,22 +112,22 @@ export const Riegen = [
 		}
 	},
 	{
-		name: 'Eltern-Kind ElKi',
-		time1: '09:15 - 10:15 Uhr',
-		day1: 'Donnerstag',
+		name: 'Frauenriege',
+		time1: '20:00 - 21:30 Uhr',
+		day1: 'Mittwoch',
 		twodays: false,
-		badgename: 'ElKi',
-		age: 'ab 2 Jahren',
-		ageID: 0,
+		badgename: 'Frauenriege',
+		age: 'Beitritt nach eigenem Ermessen',
+		ageID: 1,
 		description:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
+			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
 
 		imageUrl: './images/riegen/beispiel.jpeg',
-
 		leiter: {
-			name: 'Jan Jörg',
+			name: 'Sabrina Akeret',
 			imageUrl: './images/people/avatar.jpeg'
 		}
 	},
+	
 	
 ];
