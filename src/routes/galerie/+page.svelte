@@ -2,6 +2,7 @@
 	// @ts-nocheck
 	import axios from 'axios';
 	import Gallery from 'svelte-image-gallery';
+	import SimpleGallery from '$lib/components/SimpleGallery.svelte';
 
 	let flickrPhotoJsonAktive = [];
 	let flickrPhotoJsonJugi = [];
@@ -16,7 +17,7 @@
 			.then((response) => {
 				flickrPhotoJsonAktive = response.data.photos.photo;
 				for (var i = 0; i < flickrPhotoJsonAktive.length; i++) {
-					flickrPhotoLinkAktive[i] =
+					flickrPhotoLinkAktive[i].largeURL =
 						'https://live.staticflickr.com/' +
 						flickrPhotoJsonAktive[i].server +
 						'/' +
@@ -24,6 +25,18 @@
 						'_' +
 						flickrPhotoJsonAktive[i].secret +
 						'_b.jpg';
+
+					flickrPhotoLinkAktive[i].thumbnailURL =
+						'https://live.staticflickr.com/' +
+						flickrPhotoJsonAktive[i].server +
+						'/' +
+						flickrPhotoJsonAktive[i].id +
+						'_' +
+						flickrPhotoJsonAktive[i].secret +
+						'_s.jpg';
+
+					flickrPhotoJsonAktive[i].width = '100%';
+					flickrPhotoJsonAktive[i].height = '100%';
 				}
 			});
 	}
@@ -60,21 +73,19 @@
 
 	<div class="h2">Erwachsene</div>
 
-	<div class="container">
-		<Gallery>
-			{#each flickrPhotoLinkAktive as href}
-				<img src={href} alt="" />
-			{/each}
-		</Gallery>
-	</div>
+	<Gallery>
+		{#each flickrPhotoLinkAktive as image}
+			<img src={image.largeURL} alt="" />
+		{/each}
+	</Gallery>
 
 	<div class="h2 pt-5">Jugendriegen</div>
 
-	<div class="container">
-		<Gallery>
-			{#each flickrPhotoLinkJugi as href}
-				<img src={href} alt="" />
-			{/each}
-		</Gallery>
-	</div>
+	<Gallery>
+		{#each flickrPhotoLinkJugi as href}
+			<img src={href} alt="" />
+		{/each}
+	</Gallery>
 </div>
+
+<SimpleGallery galleryID="my-test-gallery" {images} />

@@ -24,16 +24,22 @@
 </script>
 
 <nav class="bg-white sticky top-0 z-10">
-	<div class="bg-tvbluelight h-3" />
-	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-		<div class="flex h-16 justify-between">
+	<div class="bg-tvbluelight h-3 z-30" />
+	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-2 z-30">
+		<div class="flex h-16 justify-between mt-2">
 			<div class="flex flex-shrink-0 items-center">
 				<a href="/" on:click={() => (selected = 0)}>
-					<img class="h-10 block" src="./images/logos/turner.png" alt="Turnverein Nussbaumen" />
+					<img
+						class="h-10 lg:hidden block"
+						src="./images/logos/turner.png"
+						alt="Turnverein Nussbaumen"
+					/>
+					<img
+						class="h-14 hidden lg:block"
+						src="./images/logos/logo.png"
+						alt="Turnverein Nussbaumen"
+					/>
 				</a>
-				<div class="pl-5 hover flex md:hidden lg:flex">
-					<a href="/" on:click={() => (selected = 0)}>Turnverein Nussbaumen</a>
-				</div>
 			</div>
 			<div class="hidden md:ml-6 md:flex md:space-x-8">
 				{#key selected}
@@ -128,7 +134,7 @@
 
 <div class="relative">
 	<div class="bg-white">
-		<div class="py-5 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-0">
+		<div class="py-5 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 			<slot />
 		</div>
 	</div>

@@ -2,11 +2,11 @@
 	import { Riegen } from '../components/riegen';
 </script>
 
-<div class="grid lg:grid-cols-3 md:grid-cols-2 gap-x-2 gap-y-4 ">
+<div class="grid lg:grid-cols-3 md:grid-cols-2 gap-x-2 gap-y-2">
 	{#each Riegen.reverse() as riege}
 		<div class="col-box-1 rounded-lg shadow-lg hover:text-gray-400">
 			<a href="/riegen">
-				<div class="lg:p-5 md:pd-4 p-2 relative">
+				<div class="m-5 relative">
 					<h4 class="h4">{riege.name}</h4>
 					<div>{riege.day1}</div>
 					<div>{riege.time1}</div>
