@@ -23,19 +23,19 @@
 	}
 </script>
 
-<nav class="sticky top-0 z-10">
-	<div class="bg-tvbluelight h-3" />
-	<div class="bg-white mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-		<div class="flex h-16 justify-between pt-2">
+<nav class="sticky top-0 z-20 opacity-[98%]">
+	<div class="bg-tvbluelight h-3 opacity-100" />
+	<div class="bg-white mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-30">
+		<div class="flex h-16 justify-between pt-2 opacity-100">
 			<div class="flex flex-shrink-0 items-center">
 				<a href="/" on:click={() => (selected = 0)}>
 					<img
-						class="h-10 lg:hidden block"
+						class="h-12 lg:hidden md:block hidden"
 						src="./images/logos/turner.png"
 						alt="Turnverein Nussbaumen"
 					/>
 					<img
-						class="h-14 hidden lg:block"
+						class="h-12 md:hidden lg:block block"
 						src="./images/logos/logo.png"
 						alt="Turnverein Nussbaumen"
 					/>
