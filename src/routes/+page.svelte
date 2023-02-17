@@ -5,7 +5,7 @@
 
 <title>TV Nussbaumen</title>
 
-<div class="hidden md:block md:-mt-32 md:-mb-20 lg:-mt-48 z-20">
+<div class="hidden md:block md:-mt-32 md:-mb-20 lg:-mt-48">
 	<div class="justify-center items-center">
 		<img class="" src="./images/logos/turner_webpage.png" alt="turner" />
 	</div>

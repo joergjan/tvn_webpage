@@ -70,5 +70,5 @@
 .h3,
 .h4,
 .bold {
-	@apply font-["Avenir_Heavy"] uppercase;
+	@apply font-bold uppercase;
 }

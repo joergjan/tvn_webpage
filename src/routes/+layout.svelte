@@ -23,10 +23,10 @@
 	}
 </script>
 
-<nav class="bg-white sticky top-0 z-10">
-	<div class="bg-tvbluelight h-3 z-30" />
-	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-2 z-30">
-		<div class="flex h-16 justify-between mt-2">
+<nav class="sticky top-0 z-10">
+	<div class="bg-tvbluelight h-3" />
+	<div class="bg-white mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+		<div class="flex h-16 justify-between pt-2">
 			<div class="flex flex-shrink-0 items-center">
 				<a href="/" on:click={() => (selected = 0)}>
 					<img
@@ -130,6 +130,9 @@
 			</div>
 		</div>
 	{/if}
+
+	<div class="bg-white h-3 md:block hidden" />
+	<div class="bg-gradient-to-b from-white h-3" />
 </nav>
 
 <div class="relative">
