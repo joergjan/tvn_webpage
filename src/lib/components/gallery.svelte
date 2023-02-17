@@ -1,7 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	// @ts-ignore
-	import PhotoSwipeLightbox from 'photoswipe/lightbox';
+	// import PhotoSwipeLightbox from 'photoswipe/lightbox';
 	import 'photoswipe/style.css';
 	/**
 	 * @type {any}
@@ -12,6 +11,7 @@
 	 */
 	export let images;
 
+	/**
 	onMount(() => {
 		let lightbox = new PhotoSwipeLightbox({
 			gallery: '#' + galleryID,
@@ -20,6 +20,7 @@
 		});
 		lightbox.init();
 	});
+	**/
 </script>
 
 <div class="pswp-gallery" id={galleryID}>
