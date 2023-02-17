@@ -48,7 +48,7 @@
 */
 
 .h1 {
-	@apply py-5 text-4xl tracking-wide;
+	@apply pb-5 md:pt-5 text-4xl tracking-wide;
 }
 
 .h2 {

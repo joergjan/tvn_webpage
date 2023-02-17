@@ -16,7 +16,7 @@
 			.then((response) => {
 				flickrPhotoJsonAktive = response.data.photos.photo;
 				for (var i = 0; i < flickrPhotoJsonAktive.length; i++) {
-					flickrPhotoLinkAktive[i].largeURL =
+					flickrPhotoLinkAktive[i] =
 						'https://live.staticflickr.com/' +
 						flickrPhotoJsonAktive[i].server +
 						'/' +
@@ -24,18 +24,6 @@
 						'_' +
 						flickrPhotoJsonAktive[i].secret +
 						'_b.jpg';
-
-					flickrPhotoLinkAktive[i].thumbnailURL =
-						'https://live.staticflickr.com/' +
-						flickrPhotoJsonAktive[i].server +
-						'/' +
-						flickrPhotoJsonAktive[i].id +
-						'_' +
-						flickrPhotoJsonAktive[i].secret +
-						'_s.jpg';
-
-					flickrPhotoJsonAktive[i].width = '100%';
-					flickrPhotoJsonAktive[i].height = '100%';
 				}
 			});
 	}
@@ -73,8 +61,8 @@
 	<div class="h2">Erwachsene</div>
 
 	<Gallery>
-		{#each flickrPhotoLinkAktive as image}
-			<img src={image.largeURL} alt="" />
+		{#each flickrPhotoLinkAktive as href}
+			<img src={href} alt="" />
 		{/each}
 	</Gallery>
 
