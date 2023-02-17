@@ -2,7 +2,6 @@
 	// @ts-nocheck
 	import axios from 'axios';
 	import Gallery from 'svelte-image-gallery';
-	import SimpleGallery from '$lib/components/SimpleGallery.svelte';
 
 	let flickrPhotoJsonAktive = [];
 	let flickrPhotoJsonJugi = [];
@@ -87,5 +86,3 @@
 		{/each}
 	</Gallery>
 </div>
-
-<SimpleGallery galleryID="my-test-gallery" {images} />

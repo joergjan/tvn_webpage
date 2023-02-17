@@ -1,5 +1,4 @@
 <script>
-	import { onMount } from 'svelte';
 	// import PhotoSwipeLightbox from 'photoswipe/lightbox';
 	import 'photoswipe/style.css';
 	/**
