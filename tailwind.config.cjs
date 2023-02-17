@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 
@@ -8,9 +9,6 @@ module.exports = {
 				tvbluelight: '#375398',
 				tvyellow: '#E3BE53'
 			}
-		},
-		fontFamily: {
-			sans: 'Montserrat'
 		}
 	},
 	corePlugins: {
