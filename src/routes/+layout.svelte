@@ -23,9 +23,9 @@
 	}
 </script>
 
-<nav class="sticky top-0 z-20 opacity-[98%]">
+<nav class="sticky top-0 z-20">
 	<div class="bg-tvbluelight h-3 opacity-100" />
-	<div class="bg-white mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-30">
+	<div class="bg-white mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-30 md:opacity-[98%]">
 		<div class="flex h-16 justify-between pt-2 opacity-100">
 			<div class="flex flex-shrink-0 items-center">
 				<a href="/" on:click={() => (selected = 0)}>
@@ -116,13 +116,13 @@
 
 	<!-- Mobile menu, show/hide based on menu state. -->
 	{#if open}
-		<div class="md:hidden">
-			<div class="border-t border-gray-200 pt-4 pb-3">
+		<div class="md:hidden absolute bg-white w-full h-screen">
+			<div class="pt-5 pb-3">
 				<div class="mt-3 space-y-1">
 					{#each titles as title}
 						<a
 							href={title.href}
-							class="block px-4 py-2 hover hover:bg-gray-100"
+							class="block px-4 py-2 hover place-content-end hover:bg-gray-100"
 							on:click={menuToggle}>{title.name}</a
 						>
 					{/each}
