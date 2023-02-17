@@ -4,13 +4,10 @@
 
 @layer base {
 	html {
-		@apply font-sans;
-		@apply font-normal;
-		@apply text-xs sm:text-base text-gray-800;
+		@apply text-gray-800;
 	}
 	@font-face {
 		font-family: Sen;
-		font-weight: 400;
 		src: url('https://fonts.googleapis.com/css2?family=Sen&display=swap');
 	}
 }
