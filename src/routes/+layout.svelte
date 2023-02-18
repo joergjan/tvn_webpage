@@ -123,16 +123,14 @@
 	<!-- Mobile menu, show/hide based on menu state. -->
 	{#if open}
 		<div class="md:hidden absolute bg-white w-full h-screen">
-			<div class="pt-5 pb-3">
-				<div class="mt-3 space-y-1">
-					{#each titles as title}
-						<a
-							href={title.href}
-							class="block px-4 py-2 hover place-content-end hover:bg-gray-100"
-							on:click={menuToggle}>{title.name}</a
-						>
-					{/each}
-				</div>
+			<div class="mt-2 space-y-1">
+				{#each titles as title}
+					<a
+						href={title.href}
+						class="block px-4 py-2 hover place-content-end hover:bg-gray-100"
+						on:click={menuToggle}>{title.name}</a
+					>
+				{/each}
 			</div>
 		</div>
 	{/if}
