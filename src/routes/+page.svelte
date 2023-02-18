@@ -42,7 +42,7 @@
 				width="100%"
 				height="100%"
 				loading="lazy"
-				src="www.google.com/maps/embed/v1/place?key=AIzaSyCqL-wkzG0GGKyEOAHyY4kky2zDbKz5u-Y&q=primarschule+nussbaumen+tg"
+				src="http://www.google.com/maps/embed/v1/place?key=AIzaSyCqL-wkzG0GGKyEOAHyY4kky2zDbKz5u-Y&q=primarschule+nussbaumen+tg"
 			/>
 		</div>
 	</div>
