@@ -1,6 +1,5 @@
 <script>
 	import { Riegen } from '$lib/components/riegen';
-	import { select_multiple_value } from 'svelte/internal';
 
 	let ageSelector = 2;
 	let active = false;
@@ -32,12 +31,9 @@
 	}
 </script>
 
-<title>TVN | Riegen</title>
-
 <div class="h1">Riegen</div>
 
 <div
-	class=""
 	on:mouseleave={() => {
 		active = false;
 	}}
@@ -111,7 +107,7 @@
 									}}
 								>
 									<div class="flex justify-between">
-										<p class="font-semibold ml-12">{item.name}</p>
+										<p class="font-medium ml-12">{item.name}</p>
 									</div>
 									<p class="mt-2 ml-12">{item.description}</p>
 
@@ -145,7 +141,7 @@
 								}}
 							>
 								<div class="flex justify-between">
-									<p class="font-semibold ml-12">{item.name}</p>
+									<p class="font-medium ml-12">{item.name}</p>
 								</div>
 								<p class="mt-2 ml-12">{item.description}</p>
 							</button>

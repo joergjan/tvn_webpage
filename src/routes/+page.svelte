@@ -1,9 +1,8 @@
 <script>
 	import Trainingszeiten from '$lib/components/Trainingszeiten.svelte';
 	import Quotes from '$lib/components/Quotes.svelte';
+	import Aktuelles from '$lib/components/Aktuelles.svelte';
 </script>
-
-<title>TV Nussbaumen</title>
 
 <div class="h1 md:hidden">Unser Verein</div>
 
@@ -13,10 +12,17 @@
 	</div>
 </div>
 
-<div class="pt-30">
+<div class="pt-20">
 	<Quotes />
 </div>
+
 <div class="pt-20">
+	<div class="h1">Aktuelles</div>
+	<Aktuelles />
+</div>
+
+<div class="pt-20">
+	<div class="h1">Trainingszeiten</div>
 	<Trainingszeiten />
 </div>
 

@@ -53,8 +53,6 @@
 	getPhotosJugi();
 </script>
 
-<title>TVN | Galerie</title>
-
 <div>
 	<div class="h1">Galerie</div>
 

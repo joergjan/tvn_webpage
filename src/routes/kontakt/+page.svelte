@@ -3,8 +3,6 @@
 	import Leiter from '$lib/components/Leiter.svelte';
 </script>
 
-<title>TVN | Kontakt</title>
-
 <div class="h1">Kontakt</div>
 
 <div>

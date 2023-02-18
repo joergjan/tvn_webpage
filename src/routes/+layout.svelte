@@ -1,20 +1,16 @@
 <script>
 	import '../app.css';
-
-	const titles = [
-		{ name: 'Unser Verein', href: '/' },
-		{ name: 'Riegen', href: '/riegen' },
-		{ name: 'Kontakt', href: '/kontakt' },
-		{ name: 'Galerie', href: '/galerie' },
-		{ name: 'Bollä Dunnschtig', href: '/bolle' },
-		{ name: 'Downloads', href: '/downloads' }
-	];
-
-	let selected = 0;
+	import { currentPage } from '$lib/components/stores';
+	import { titles } from '$lib/components/navbar';
 
 	let open = false;
 
 	let current = 'burger';
+	let currentPageValue = 0;
+
+	currentPage.subscribe((value) => {
+		currentPageValue = value;
+	});
 
 	function menuToggle() {
 		if (open) {
@@ -27,12 +23,14 @@
 	}
 </script>
 
+<title>{titles[currentPageValue].title}</title>
+
 <nav class="sticky top-0 z-20">
 	<div class="bg-tvbluelight h-3 opacity-100" />
 	<div class="bg-white mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-30 md:opacity-[98%]">
 		<div class="flex h-16 justify-between pt-2 opacity-100">
 			<div class="flex flex-shrink-0 items-center">
-				<a href="/" on:click={() => (selected = 0)}>
+				<a href="/" on:click={() => currentPage.update((n) => (n = 0))}>
 					<img
 						class="h-12 lg:hidden md:block hidden"
 						src="./images/logos/turner.png"
@@ -46,15 +44,15 @@
 				</a>
 			</div>
 			<div class="hidden md:ml-6 md:flex md:space-x-8">
-				{#key selected}
+				{#key currentPage}
 					{#each titles as title, i}
-						{#if selected != i}
+						{#if currentPageValue != i}
 							<a
 								href={title.href}
 								class="inline-flex items-center border-b-2 border-tvbluelight hover:border-gray-400 hover px-1 pt-1 text font-medium"
 								tabindex="-1"
-								on:click={() => (selected = i)}
-								class:selected={selected === i}
+								on:click={() => currentPage.update((n) => (n = i))}
+								class:currentPage={currentPageValue === i}
 								role="menuitem">{title.name}</a
 							>
 						{:else}
@@ -62,8 +60,8 @@
 								href={title.href}
 								class="inline-flex items-center border-b-2 border-gray-400 text-gray-400 px-1 pt-1 text font-medium"
 								tabindex="-1"
-								on:click={() => (selected = i)}
-								class:selected={selected === i}
+								on:click={() => currentPage.update((n) => (n = i))}
+								class:currentPage={currentPageValue === i}
 								role="menuitem">{title.name}</a
 							>
 						{/if}
@@ -153,7 +151,9 @@
 			<nav class="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
 				{#each titles as title, i}
 					<div class="pb-6">
-						<a href={title.href} class="hover" on:click={() => (selected = i)}>{title.name}</a>
+						<a href={title.href} class="hover" on:click={() => currentPage.update((n) => (n = i))}
+							>{title.name}</a
+						>
 					</div>
 				{/each}
 			</nav>
@@ -181,8 +181,10 @@
 				</a>
 			</div>
 			<div class="mt-10 text-center text-xs leading-5 ">
-				&copy; 2023 <a href="/" class="underline hover" on:click={() => (selected = 0)}
-					>Turnverein Nussbaumen</a
+				&copy; 2023 <a
+					href="/"
+					class="underline hover"
+					on:click={() => currentPage.update((n) => (n = 0))}>Turnverein Nussbaumen</a
 				>.
 			</div>
 		</div>
