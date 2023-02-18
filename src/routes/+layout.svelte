@@ -26,7 +26,7 @@
 <title>{titles[currentPageValue].title}</title>
 
 <nav class="sticky top-0 z-20">
-	<div class="bg-tvbluelight md:h-3 h-2 opacity-100" />
+	<div class="bg-tvbluelight md:h-3 h-1 opacity-100" />
 	<div
 		class="bg-white mx-auto max-w-7xl pt-2 pb-2 md:pb-0 px-4 sm:px-6 lg:px-8 z-30 md:opacity-[98%]"
 	>
