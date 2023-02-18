@@ -14,10 +14,14 @@
 
 	let open = false;
 
+	let current = 'burger';
+
 	function menuToggle() {
 		if (open) {
+			current = 'burger';
 			open = false;
 		} else {
+			current = 'cross';
 			open = true;
 		}
 	}
@@ -71,12 +75,13 @@
 				<!-- Mobile menu button -->
 				<button
 					type="button"
-					class="inline-flex items-center justify-center rounded-md p-2 hover:bg-gray-100 hover focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+					class=" {current === 'burger' ? 'burgerMenu' : 'hidden'}"
 					aria-controls="mobile-menu"
 					aria-expanded="false"
 					on:click={menuToggle}
 				>
 					<svg
+						id="burger"
 						class="block h-6 w-6"
 						xmlns="http://www.w3.org/2000/svg"
 						fill="none"
@@ -91,16 +96,17 @@
 							d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
 						/>
 					</svg>
-					<!--
-			  Icon when menu is open.
-  
-			  Heroicon name: outline/x-mark
-  
-			  Menu open: "block", Menu closed: "hidden"
-			-->
+				</button>
+				<button
+					type="button"
+					class={current === 'cross' ? 'burgerMenu' : 'hidden'}
+					aria-controls="mobile-menu"
+					aria-expanded="false"
+					on:click={menuToggle}
+				>
 					<svg
-						class="hidden h-6 w-6"
-						xmlns="http://www.w3.org/2000/svg"
+						id="cross"
+						class="block h-6 w-6"
 						fill="none"
 						viewBox="0 0 24 24"
 						stroke-width="1.5"

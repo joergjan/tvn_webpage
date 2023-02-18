@@ -12,6 +12,10 @@
 	}
 }
 
+.burgerMenu {
+	@apply active:rotate-45 inline-flex items-center justify-center rounded-md p-2 active:text-gray-300;
+}
+
 /* 
 //
 //
