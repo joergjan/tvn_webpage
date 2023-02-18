@@ -26,9 +26,11 @@
 <title>{titles[currentPageValue].title}</title>
 
 <nav class="sticky top-0 z-20">
-	<div class="bg-tvbluelight h-3 opacity-100" />
-	<div class="bg-white mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-30 md:opacity-[98%]">
-		<div class="flex h-16 justify-between pt-2 opacity-100">
+	<div class="bg-tvbluelight md:h-3 h-2 opacity-100" />
+	<div
+		class="bg-white mx-auto max-w-7xl pt-2 pb-2 md:pb-0 px-4 sm:px-6 lg:px-8 z-30 md:opacity-[98%]"
+	>
+		<div class="flex h-16 justify-between py-2 opacity-100">
 			<div class="flex flex-shrink-0 items-center">
 				<a href="/" on:click={() => currentPage.update((n) => (n = 0))}>
 					<img
