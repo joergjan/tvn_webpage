@@ -1,6 +1,6 @@
 <script>
 	import { currentPage } from '$lib/components/stores';
-	import { titles } from '$lib/components/navbar';
+	import { titles } from './navbar';
 
 	let bollePage = 0;
 

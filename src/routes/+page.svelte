@@ -1,7 +1,7 @@
 <script>
-	import Trainingszeiten from '$lib/components/Trainingszeiten.svelte';
-	import Quotes from '$lib/components/Quotes.svelte';
-	import Aktuelles from '$lib/components/Aktuelles.svelte';
+	import Trainingszeiten from './Trainingszeiten.svelte';
+	import Quotes from './Quotes.svelte';
+	import Aktuelles from './Aktuelles.svelte';
 </script>
 
 <div class="h1 md:hidden">Unser Verein</div>
@@ -42,7 +42,7 @@
 				width="100%"
 				height="100%"
 				loading="lazy"
-				src="http://www.google.com/maps/embed/v1/place?key=AIzaSyCqL-wkzG0GGKyEOAHyY4kky2zDbKz5u-Y&q=primarschule+nussbaumen+tg"
+				src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCqL-wkzG0GGKyEOAHyY4kky2zDbKz5u-Y&q=primarschule+nussbaumen+tg"
 			/>
 		</div>
 	</div>

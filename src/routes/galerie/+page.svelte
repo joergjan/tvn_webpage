@@ -1,74 +1,123 @@
 <script>
-	// @ts-nocheck
-	import axios from 'axios';
-	import Gallery from 'svelte-image-gallery';
-
-	let flickrPhotoJsonAktive = [];
-	let flickrPhotoJsonJugi = [];
-	let flickrPhotoLinkAktive = [];
-	let flickrPhotoLinkJugi = [];
-
-	function getPhotosAktive() {
-		axios
-			.get(
-				'https://api.flickr.com/services/rest?method=flickr.groups.pools.getPhotos&api_key=ebf8b5a8addf16333494732b8eef8e19&group_id=14819815@N20&format=json&nojsoncallback=true'
-			)
-			.then((response) => {
-				flickrPhotoJsonAktive = response.data.photos.photo;
-				for (var i = 0; i < flickrPhotoJsonAktive.length; i++) {
-					flickrPhotoLinkAktive[i] =
-						'https://live.staticflickr.com/' +
-						flickrPhotoJsonAktive[i].server +
-						'/' +
-						flickrPhotoJsonAktive[i].id +
-						'_' +
-						flickrPhotoJsonAktive[i].secret +
-						'_b.jpg';
-				}
-			});
-	}
-
-	getPhotosAktive();
-
-	function getPhotosJugi() {
-		axios
-			.get(
-				'https://api.flickr.com/services/rest?method=flickr.groups.pools.getPhotos&api_key=ebf8b5a8addf16333494732b8eef8e19&group_id=14849220@N23&format=json&nojsoncallback=true'
-			)
-			.then((response) => {
-				flickrPhotoJsonJugi = response.data.photos.photo;
-				for (var i = 0; i < flickrPhotoJsonJugi.length; i++) {
-					flickrPhotoLinkJugi[i] =
-						'https://live.staticflickr.com/' +
-						flickrPhotoJsonJugi[i].server +
-						'/' +
-						flickrPhotoJsonJugi[i].id +
-						'_' +
-						flickrPhotoJsonJugi[i].secret +
-						'_b.jpg';
-				}
-			});
-	}
-
-	getPhotosJugi();
+	import { flickrPhotoLinkAktive, flickrPhotoLinkJugi } from './images';
 </script>
 
-<div>
-	<div class="h1">Galerie</div>
+<div class="h1">Galerie</div>
 
-	<div class="h2">Erwachsene</div>
+<div class="h2">Erwachsene</div>
 
-	<Gallery>
-		{#each flickrPhotoLinkAktive as href}
-			<img src={href} alt="" />
-		{/each}
-	</Gallery>
+{#each flickrPhotoLinkAktive as { imgUrl, id }}
+	<div class="mySlides">
+		<div class="numbertext">{id} / {flickrPhotoLinkAktive.length}</div>
+		<img src={imgUrl} alt="" />
+	</div>
+{/each}
 
-	<div class="h2 pt-5">Jugendriegen</div>
+<div class="h2 pt-5">Jugendriegen</div>
 
-	<Gallery>
-		{#each flickrPhotoLinkJugi as href}
-			<img src={href} alt="" />
-		{/each}
-	</Gallery>
+<div class="container">
+	<!-- Full-width images with number text -->
+	{#each flickrPhotoLinkJugi as { imgUrl, id }}
+		<div class="mySlides">
+			<div class="numbertext">{id} / {flickrPhotoLinkAktive.length}</div>
+			<img src={imgUrl} alt="" style="width:100%" />
+		</div>
+	{/each}
 </div>
+
+<style>
+	* {
+		box-sizing: border-box;
+	}
+
+	.numbertext {
+		color: #f2f2f2;
+		font-size: 12px;
+		padding: 8px 12px;
+		position: absolute;
+		top: 0;
+	}
+
+	/* Position the image container (needed to position the left and right arrows) */
+	.container {
+		position: relative;
+	}
+
+	/* Hide the images by default */
+	.mySlides {
+		display: none;
+	}
+
+	/* Add a pointer when hovering over the thumbnail images */
+	.cursor {
+		cursor: pointer;
+	}
+
+	/* Next & previous buttons */
+	.prev,
+	.next {
+		cursor: pointer;
+		position: absolute;
+		top: 40%;
+		width: auto;
+		padding: 16px;
+		margin-top: -50px;
+		color: white;
+		font-weight: bold;
+		font-size: 20px;
+		border-radius: 0 3px 3px 0;
+		user-select: none;
+		-webkit-user-select: none;
+	}
+
+	/* Position the "next button" to the right */
+	.next {
+		right: 0;
+		border-radius: 3px 0 0 3px;
+	}
+
+	/* On hover, add a black background color with a little bit see-through */
+	.prev:hover,
+	.next:hover {
+		background-color: rgba(0, 0, 0, 0.8);
+	}
+
+	/* Number text (1/3 etc) */
+	.numbertext {
+		color: #f2f2f2;
+		font-size: 12px;
+		padding: 8px 12px;
+		position: absolute;
+		top: 0;
+	}
+
+	/* Container for image text */
+	.caption-container {
+		text-align: center;
+		background-color: #222;
+		padding: 2px 16px;
+		color: white;
+	}
+
+	.row:after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+
+	/* Six columns side by side */
+	.column {
+		float: left;
+		width: 16.66%;
+	}
+
+	/* Add a transparency effect for thumnbail images */
+	.demo {
+		opacity: 0.6;
+	}
+
+	.active,
+	.demo:hover {
+		opacity: 1;
+	}
+</style>

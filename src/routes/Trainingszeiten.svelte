@@ -1,5 +1,5 @@
 <script>
-	import { Riegen } from '../components/riegen';
+	import { Riegen } from '../lib/components/riegen';
 </script>
 
 <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-x-2 gap-y-2">

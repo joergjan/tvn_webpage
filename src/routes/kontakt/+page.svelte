@@ -1,6 +1,6 @@
 <script>
-	import Vorstand from '$lib/components/Vorstand.svelte';
-	import Leiter from '$lib/components/Leiter.svelte';
+	import Vorstand from './Vorstand.svelte';
+	import Leiter from './Leiter.svelte';
 </script>
 
 <div class="h1">Kontakt</div>
@@ -33,7 +33,7 @@
 					width="100%"
 					height="100%"
 					loading="lazy"
-					src="http://www.google.com/maps/embed/v1/place?key=AIzaSyCqL-wkzG0GGKyEOAHyY4kky2zDbKz5u-Y&q=altwingerten+1+Nussbaumen"
+					src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCqL-wkzG0GGKyEOAHyY4kky2zDbKz5u-Y&q=altwingerten+1+Nussbaumen"
 				/>
 			</div>
 		</div>

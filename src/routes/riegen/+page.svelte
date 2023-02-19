@@ -1,5 +1,5 @@
 <script>
-	import { Riegen } from '$lib/components/riegen';
+	import { Riegen } from '../../lib/components/riegen';
 
 	let ageSelector = 2;
 	let active = false;

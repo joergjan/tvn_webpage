@@ -1,5 +1,5 @@
 <script>
-	import { Vorstand } from '$lib/components/vorstand';
+	import { Vorstand } from './vorstand';
 </script>
 
 <ul class="sm:grid sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3">

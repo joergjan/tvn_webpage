@@ -1,5 +1,5 @@
 <script>
-	import { Leiter } from '$lib/components/leiter';
+	import { Leiter } from './leiter';
 </script>
 
 <ul class="sm:grid sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3">
