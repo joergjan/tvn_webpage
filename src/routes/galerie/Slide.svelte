@@ -5,9 +5,9 @@
 	export let imageShowing: boolean;
 </script>
 
-<div class="hidden relative" class:showImage={imageShowing}>
+<div class="hidden" class:showImage={imageShowing}>
 	<div class="text-white bg-gray-700 opacity-30 font-sm p-2 absolute top-0">
 		{slideNo + 1} / {totalSlides}
 	</div>
-	<img src={imgUrl} alt="" />
+	<img id="image" src={imgUrl} alt="" />
 </div>

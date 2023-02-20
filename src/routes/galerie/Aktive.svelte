@@ -53,22 +53,24 @@
 
 <div class="h2">Erwachsene</div>
 
-<div class="relative">
-	{#each flickrPhotoLinkAktive as { href, no }}
-		<Slide
-			imgUrl={href}
-			slideNo={no}
-			totalSlides={flickrPhotoLinkAktive.length}
-			imageShowing={no === imageShowIndex}
-		/>
-	{/each}
-
-	<button class="prevImg" on:click={previousSlide}>&#10094;</button>
-	<button class="nextImg" on:click={nextSlide}>&#10095;</button>
-
-	<div class="row">
+<div class="">
+	<div class="relative max-w-2xl">
 		{#each flickrPhotoLinkAktive as { href, no }}
-			<div class="column">
+			<Slide
+				imgUrl={href}
+				slideNo={no}
+				totalSlides={flickrPhotoLinkAktive.length}
+				imageShowing={no === imageShowIndex}
+			/>
+		{/each}
+
+		<button class="prevImg" on:click={previousSlide}>&#10094;</button>
+		<button class="nextImg" on:click={nextSlide}>&#10095;</button>
+	</div>
+
+	<div class="flex">
+		{#each flickrPhotoLinkAktive as { href, no }}
+			<div class="w-[16%]">
 				<button
 					on:click={() => {
 						imageShowIndex = no;
@@ -82,41 +84,3 @@
 		{/each}
 	</div>
 </div>
-
-<style>
-	/* On hover, add a black background color with a little bit see-through */
-	.prev:hover,
-	.next:hover {
-		background-color: rgba(0, 0, 0, 0.8);
-	}
-
-	/* Container for image text */
-	.caption-container {
-		text-align: center;
-		background-color: #222;
-		padding: 2px 16px;
-		color: white;
-	}
-
-	.row:after {
-		content: '';
-		display: table;
-		clear: both;
-	}
-
-	/* Six columns side by side */
-	.column {
-		float: left;
-		width: 16.66%;
-	}
-
-	/* Add a transparency effect for thumnbail images */
-	.demo {
-		opacity: 0.6;
-	}
-
-	.active,
-	.demo:hover {
-		opacity: 1;
-	}
-</style>

@@ -24,7 +24,7 @@
 }
 
 .showImage {
-	@apply block;
+	@apply flex;
 }
 
 .prevImg {
