@@ -11,6 +11,37 @@
 		src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;600;700;900&display=swap');
 	}
 }
+/* 
+//
+//
+//
+		Image Galery
+//
+*/
+
+.thumbnailImage {
+	@apply opacity-90;
+}
+
+.showImage {
+	@apply block;
+}
+
+.prevImg {
+	@apply absolute top-[42%] p-5 text-white hover:bg-gray-300 hover:opacity-50 text-lg bg-gray-700 opacity-30 rounded-r-lg;
+}
+
+.nextImg {
+	@apply absolute top-[42%] p-5 right-0 text-white hover:bg-gray-300 hover:opacity-50 text-lg bg-gray-700 opacity-30 rounded-l-lg;
+}
+
+/* 
+//
+//
+//
+		layout / menu
+//
+*/
 
 .burgerMenu {
 	@apply active:rotate-45 inline-flex items-center justify-center rounded-md p-2 active:text-gray-300;
