@@ -48,7 +48,7 @@
 		</button>
 		<div class="min-h-screen">
 			<div class="relative max-w-2xl">
-				<div class="">
+				<div class="pt-40">
 					{#each photos as { href, no }}
 						<Slide
 							imgUrl={href}
