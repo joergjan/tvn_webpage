@@ -6,8 +6,10 @@
 </script>
 
 <div class="hidden" class:showImage={imageShowing}>
-	<div class="text-white bg-gray-700 opacity-30 font-sm p-2 absolute top-0">
-		{slideNo + 1} / {totalSlides}
+	<div class="h-[500px]">
+		<div class="text-white bg-gray-700 opacity-30 font-sm p-2 absolute top-0">
+			{slideNo + 1} / {totalSlides}
+		</div>
+		<img id="image" src={imgUrl} alt="" />
 	</div>
-	<img id="image" src={imgUrl} alt="" />
 </div>

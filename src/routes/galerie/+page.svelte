@@ -6,5 +6,3 @@
 <div class="h1">Galerie</div>
 
 <Aktive />
-
-<Jugi />

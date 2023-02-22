@@ -1,10 +1,10 @@
 <script lang="ts">
 	import axios from 'axios';
-	import Slide from './Slide.svelte';
+	import Galery from './Galery.svelte';
 
 	let flickrPhotoJsonAktive = [];
 
-	const flickrPhotoLinkAktive: { href: string; no: number }[] = [];
+	let flickrPhotoLinkAktive: { href: string; no: number }[] = [];
 
 	function getPhotosAktive() {
 		axios
@@ -29,58 +29,9 @@
 			});
 	}
 
-	getPhotosAktive();
-
-	let imageShowIndex = 0;
-	$: console.log(imageShowIndex);
-
-	function previousSlide() {
-		if (imageShowIndex != 0) {
-			imageShowIndex--;
-		} else {
-			imageShowIndex = flickrPhotoLinkAktive.length - 1;
-		}
-	}
-
-	function nextSlide() {
-		if (imageShowIndex != flickrPhotoLinkAktive.length - 1) {
-			imageShowIndex++;
-		} else {
-			imageShowIndex = 0;
-		}
-	}
+	$: getPhotosAktive();
 </script>
 
 <div class="h2">Erwachsene</div>
 
-<div class="">
-	<div class="relative max-w-2xl">
-		{#each flickrPhotoLinkAktive as { href, no }}
-			<Slide
-				imgUrl={href}
-				slideNo={no}
-				totalSlides={flickrPhotoLinkAktive.length}
-				imageShowing={no === imageShowIndex}
-			/>
-		{/each}
-
-		<button class="prevImg" on:click={previousSlide}>&#10094;</button>
-		<button class="nextImg" on:click={nextSlide}>&#10095;</button>
-	</div>
-
-	<div class="flex">
-		{#each flickrPhotoLinkAktive as { href, no }}
-			<div class="w-[16%]">
-				<button
-					on:click={() => {
-						imageShowIndex = no;
-					}}
-					class="opacity-30"
-					class:thumbnailImage={no === imageShowIndex}
-				>
-					<img src={href} alt="The Woods" />
-				</button>
-			</div>
-		{/each}
-	</div>
-</div>
+<Galery photos={flickrPhotoLinkAktive} />

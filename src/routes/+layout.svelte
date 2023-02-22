@@ -135,8 +135,8 @@
 		</div>
 	{/if}
 
-	<div class="bg-white h-3 md:block hidden" />
-	<div class="bg-gradient-to-b from-white h-3" />
+	<div class="bg-white h-2 md:block hidden" />
+	<div class="bg-gradient-to-b from-white h-3 md:opacity-[98%]" />
 </nav>
 
 <div class="relative">

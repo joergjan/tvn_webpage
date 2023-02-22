@@ -19,8 +19,12 @@
 //
 */
 
+.stopScroll {
+	@apply h-full overflow-hidden;
+}
+
 .thumbnailImage {
-	@apply opacity-90;
+	@apply opacity-100;
 }
 
 .showImage {
