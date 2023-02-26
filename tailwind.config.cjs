@@ -14,6 +14,9 @@ module.exports = {
 			}
 		}
 	},
+	screens: {
+		touch: { raw: 'hover: none' }
+	},
 	corePlugins: {
 		aspectRatio: false
 	},
