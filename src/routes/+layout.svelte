@@ -6,11 +6,6 @@
 	let open = false;
 
 	let current = 'burger';
-	let currentPageValue = 0;
-
-	currentPage.subscribe((value) => {
-		currentPageValue = value;
-	});
 
 	function menuToggle() {
 		if (open) {
@@ -36,11 +31,11 @@
 	$: $selectedAgeID, reset();
 
 	function reset() {
-		selectedRiegeID.update((n) => (n = 0));
+		$selectedRiegeID = 0;
 	}
 </script>
 
-<title>{titles[currentPageValue].title}</title>
+<title>{titles[$currentPage].title}</title>
 
 <nav class="sticky top-0 z-20">
 	<div class="bg-tvbluelight md:h-3 h-1 opacity-100" />
@@ -49,7 +44,7 @@
 	>
 		<div class="flex h-16 justify-between py-2 opacity-100">
 			<div class="flex flex-shrink-0 items-center">
-				<a href="/" on:click={() => currentPage.update((n) => (n = 0))}>
+				<a href="/" on:click={() => ($currentPage = 0)}>
 					<img
 						class="h-12 lg:hidden md:block hidden"
 						src="./images/logos/turner.png"
@@ -63,29 +58,13 @@
 				</a>
 			</div>
 			<div class="hidden md:ml-6 md:flex md:space-x-8">
-				{#key currentPage}
-					{#each titles as title, i}
-						{#if currentPageValue != i}
-							<a
-								href={title.href}
-								class="inline-flex items-center border-b-2 border-tvbluelight hover:border-gray-400 hover px-1 pt-1 text font-medium"
-								tabindex="-1"
-								on:click={() => currentPage.update((n) => (n = i))}
-								class:currentPage={currentPageValue === i}
-								role="menuitem">{title.name}</a
-							>
-						{:else}
-							<a
-								href={title.href}
-								class="inline-flex items-center border-b-2 border-gray-400 text-gray-400 px-1 pt-1 text font-medium"
-								tabindex="-1"
-								on:click={() => currentPage.update((n) => (n = i))}
-								class:currentPage={currentPageValue === i}
-								role="menuitem">{title.name}</a
-							>
-						{/if}
-					{/each}
-				{/key}
+				{#each titles as title, i}
+					<a
+						href={title.href}
+						class={$currentPage === i ? 'navbarTitleSelected' : 'navbarTitle'}
+						on:click={() => ($currentPage = i)}>{title.name}</a
+					>
+				{/each}
 			</div>
 
 			<div class="-mr-2 flex items-center md:hidden">
@@ -168,9 +147,7 @@
 			<nav class="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
 				{#each titles as title, i}
 					<div class="pb-6">
-						<a href={title.href} class="hover" on:click={() => currentPage.update((n) => (n = i))}
-							>{title.name}</a
-						>
+						<a href={title.href} class="hover" on:click={() => ($currentPage = i)}>{title.name}</a>
 					</div>
 				{/each}
 			</nav>
@@ -198,10 +175,8 @@
 				</a>
 			</div>
 			<div class="mt-10 text-center text-xs leading-5 ">
-				&copy; 2023 <a
-					href="/"
-					class="underline hover"
-					on:click={() => currentPage.update((n) => (n = 0))}>Turnverein Nussbaumen</a
+				&copy; 2023 <a href="/" class="underline hover" on:click={() => ($currentPage = 0)}
+					>Turnverein Nussbaumen</a
 				>.
 			</div>
 		</div>

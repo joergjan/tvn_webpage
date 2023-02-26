@@ -27,39 +27,24 @@
 	>
 		<div class="flex items-center hover">
 			<div class="h3">Unterhaltung</div>
-			{#if !unterhaltung}
-				<svg
-					class="h-10 w-10 ml-1"
-					xmlns="http://www.w3.org/2000/svg"
-					viewBox="0 0 20 20"
-					fill="currentColor"
-					aria-hidden="true"
-				>
-					<path
-						fill-rule="evenodd"
-						d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-						clip-rule="evenodd"
-					/>
-				</svg>
-			{:else}
-				<svg
-					class="h-10 w-10 ml-1 rotate-180"
-					xmlns="http://www.w3.org/2000/svg"
-					viewBox="0 0 20 20"
-					fill="currentColor"
-					aria-hidden="true"
-				>
-					<path
-						fill-rule="evenodd"
-						d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-						clip-rule="evenodd"
-					/>
-				</svg>
-			{/if}
+
+			<svg
+				class={unterhaltung ? 'h-10 w-10 ml-1 rotate-180' : 'h-10 w-10 ml-1'}
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 20 20"
+				fill="currentColor"
+				aria-hidden="true"
+			>
+				<path
+					fill-rule="evenodd"
+					d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+					clip-rule="evenodd"
+				/>
+			</svg>
 		</div>
 	</button>
 	{#if unterhaltung}
-		<div class="mb-10">
+		<div class="mb-10 mt-3">
 			<a href="./files/turnerunterhaltung.pdf" target="_blank" rel="noreferrer">
 				<img
 					class="h-auto rounded-lg shadow-lg hover-scale"
@@ -83,39 +68,24 @@
 	>
 		<div class="flex items-center hover">
 			<div class="h3">Bollä Dunnschtig</div>
-			{#if !bolle}
-				<svg
-					class="h-10 w-10 ml-1"
-					xmlns="http://www.w3.org/2000/svg"
-					viewBox="0 0 20 20"
-					fill="currentColor"
-					aria-hidden="true"
-				>
-					<path
-						fill-rule="evenodd"
-						d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-						clip-rule="evenodd"
-					/>
-				</svg>
-			{:else}
-				<svg
-					class="h-10 w-10 ml-1 rotate-180"
-					xmlns="http://www.w3.org/2000/svg"
-					viewBox="0 0 20 20"
-					fill="currentColor"
-					aria-hidden="true"
-				>
-					<path
-						fill-rule="evenodd"
-						d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-						clip-rule="evenodd"
-					/>
-				</svg>
-			{/if}
+
+			<svg
+				class={bolle ? 'h-10 w-10 ml-1 rotate-180' : 'h-10 w-10 ml-1'}
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 20 20"
+				fill="currentColor"
+				aria-hidden="true"
+			>
+				<path
+					fill-rule="evenodd"
+					d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+					clip-rule="evenodd"
+				/>
+			</svg>
 		</div>
 	</button>
 	{#if bolle}
-		<div class="mb-10">
+		<div class="mb-10 mt-3">
 			<button on:click={() => currentPage.update((n) => (n = bollePage))}>
 				<a href="/bolle">
 					<img
@@ -141,40 +111,25 @@
 	>
 		<div class="flex items-center hover">
 			<div class="h3">Turnfester 2023</div>
-			{#if !turnfest}
-				<svg
-					class="h-10 w-10 ml-1"
-					xmlns="http://www.w3.org/2000/svg"
-					viewBox="0 0 20 20"
-					fill="currentColor"
-					aria-hidden="true"
-				>
-					<path
-						fill-rule="evenodd"
-						d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-						clip-rule="evenodd"
-					/>
-				</svg>
-			{:else}
-				<svg
-					class="h-10 w-10 ml-1 rotate-180"
-					xmlns="http://www.w3.org/2000/svg"
-					viewBox="0 0 20 20"
-					fill="currentColor"
-					aria-hidden="true"
-				>
-					<path
-						fill-rule="evenodd"
-						d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-						clip-rule="evenodd"
-					/>
-				</svg>
-			{/if}
+
+			<svg
+				class={turnfest ? 'h-10 w-10 ml-1 rotate-180' : 'h-10 w-10 ml-1'}
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 20 20"
+				fill="currentColor"
+				aria-hidden="true"
+			>
+				<path
+					fill-rule="evenodd"
+					d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+					clip-rule="evenodd"
+				/>
+			</svg>
 		</div>
 	</button>
 	{#if turnfest}
 		<div class="">
-			<div class="mb-5">
+			<div class="mb-5 mt-3">
 				<a href="https://wohlen2023.ch" target="_blank" rel="noreferrer">
 					<img class="max-h-32 hover-scale" src="./images/aktuelles/wohlen.png" alt="" />
 				</a>

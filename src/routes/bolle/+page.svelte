@@ -100,30 +100,15 @@
 			<div class="flex-auto border-b border-gray-200 px-4 sm:px-0">
 				<div class="-mb-px flex space-x-10" aria-orientation="horizontal">
 					{#each pages as page, i}
-						{#if selected != i}
-							<button
-								id="features-tab-1"
-								class="hover:text-gray-400 border-tvbluelight hover:border-gray-400 hover whitespace-nowrap border-b-2 py-6 text-sm font-medium"
-								aria-controls="features-panel-1"
-								role="tab"
-								type="button"
-								on:click={() => (selected = i)}
-								class:selected={selected === i}
-							>
-								{page.name}
-							</button>
-						{:else}<button
-								id="features-tab-1"
-								class="border-gray-400 text-gray-400 whitespace-nowrap border-b-2 py-6 text-sm font-medium"
-								aria-controls="features-panel-1"
-								role="tab"
-								type="button"
-								on:click={() => (selected = i)}
-								class:selected={selected === i}
-							>
-								{page.name}
-							</button>
-						{/if}
+						<button
+							class={selected != i
+								? 'hover:text-gray-400 border-tvbluelight hover:border-gray-400 hover whitespace-nowrap border-b-2 py-6 text-sm font-medium'
+								: 'border-gray-400 text-gray-400 whitespace-nowrap border-b-2 py-6 text-sm font-medium'}
+							on:click={() => (selected = i)}
+							class:selected={selected === i}
+						>
+							{page.name}
+						</button>
 					{/each}
 				</div>
 			</div>
