@@ -27,19 +27,35 @@
 	>
 		<div class="flex items-center hover">
 			<div class="h2">Unterhaltung</div>
-			<svg
-				class="h-10 w-10 ml-1 mb-3"
-				xmlns="http://www.w3.org/2000/svg"
-				viewBox="0 0 20 20"
-				fill="currentColor"
-				aria-hidden="true"
-			>
-				<path
-					fill-rule="evenodd"
-					d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-					clip-rule="evenodd"
-				/>
-			</svg>
+			{#if !unterhaltung}
+				<svg
+					class="h-10 w-10 ml-1 mb-3"
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 20 20"
+					fill="currentColor"
+					aria-hidden="true"
+				>
+					<path
+						fill-rule="evenodd"
+						d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+						clip-rule="evenodd"
+					/>
+				</svg>
+			{:else}
+				<svg
+					class="h-10 w-10 ml-1 mb-3 rotate-180"
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 20 20"
+					fill="currentColor"
+					aria-hidden="true"
+				>
+					<path
+						fill-rule="evenodd"
+						d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+						clip-rule="evenodd"
+					/>
+				</svg>
+			{/if}
 		</div>
 	</button>
 	{#if unterhaltung}
@@ -67,19 +83,35 @@
 	>
 		<div class="flex items-center hover">
 			<div class="h2">Bollä Dunnschtig</div>
-			<svg
-				class="h-10 w-10 ml-1 mb-3"
-				xmlns="http://www.w3.org/2000/svg"
-				viewBox="0 0 20 20"
-				fill="currentColor"
-				aria-hidden="true"
-			>
-				<path
-					fill-rule="evenodd"
-					d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-					clip-rule="evenodd"
-				/>
-			</svg>
+			{#if !bolle}
+				<svg
+					class="h-10 w-10 ml-1 mb-3"
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 20 20"
+					fill="currentColor"
+					aria-hidden="true"
+				>
+					<path
+						fill-rule="evenodd"
+						d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+						clip-rule="evenodd"
+					/>
+				</svg>
+			{:else}
+				<svg
+					class="h-10 w-10 ml-1 mb-3 rotate-180"
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 20 20"
+					fill="currentColor"
+					aria-hidden="true"
+				>
+					<path
+						fill-rule="evenodd"
+						d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+						clip-rule="evenodd"
+					/>
+				</svg>
+			{/if}
 		</div>
 	</button>
 	{#if bolle}
@@ -109,19 +141,35 @@
 	>
 		<div class="flex items-center hover">
 			<div class="h2">Turnfester 2023</div>
-			<svg
-				class="h-10 w-10 ml-1 mb-3"
-				xmlns="http://www.w3.org/2000/svg"
-				viewBox="0 0 20 20"
-				fill="currentColor"
-				aria-hidden="true"
-			>
-				<path
-					fill-rule="evenodd"
-					d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-					clip-rule="evenodd"
-				/>
-			</svg>
+			{#if turnfest}
+				<svg
+					class="h-10 w-10 ml-1 mb-3"
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 20 20"
+					fill="currentColor"
+					aria-hidden="true"
+				>
+					<path
+						fill-rule="evenodd"
+						d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+						clip-rule="evenodd"
+					/>
+				</svg>
+			{:else}
+				<svg
+					class="h-10 w-10 ml-1 mb-3 rotate-180"
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 20 20"
+					fill="currentColor"
+					aria-hidden="true"
+				>
+					<path
+						fill-rule="evenodd"
+						d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+						clip-rule="evenodd"
+					/>
+				</svg>
+			{/if}
 		</div>
 	</button>
 	{#if turnfest}
