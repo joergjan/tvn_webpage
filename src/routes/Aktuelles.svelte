@@ -1,6 +1,6 @@
 <script>
 	import { currentPage } from '$lib/components/stores';
-	import { titles } from './navbar';
+	import { titles } from '../lib/components/navbar';
 
 	let bollePage = 0;
 
@@ -45,7 +45,11 @@
 	{#if unterhaltung}
 		<div class="mb-10">
 			<a href="./files/turnerunterhaltung.pdf" target="_blank" rel="noreferrer">
-				<img class="h-auto rounded-lg shadow-lg" src="./files/turnerunterhaltung.pdf" alt="" />
+				<img
+					class="h-auto rounded-lg shadow-lg hover-scale"
+					src="./files/turnerunterhaltung.pdf"
+					alt=""
+				/>
 			</a>
 		</div>
 	{/if}
@@ -82,7 +86,11 @@
 		<div class="mb-10">
 			<button on:click={() => currentPage.update((n) => (n = bollePage))}>
 				<a href="/bolle">
-					<img class="w-auto rounded-lg shadow-lg" src="./images/bolle/flyer.jpg" alt="" />
+					<img
+						class="w-auto rounded-lg shadow-lg hover-scale"
+						src="./images/bolle/flyer.jpg"
+						alt=""
+					/>
 				</a>
 			</button>
 		</div>
@@ -120,11 +128,11 @@
 		<div class="">
 			<div class="mb-5">
 				<a href="https://wohlen2023.ch" target="_blank" rel="noreferrer">
-					<img class="max-h-32" src="./images/aktuelles/wohlen.png" alt="" />
+					<img class="max-h-32 hover-scale" src="./images/aktuelles/wohlen.png" alt="" />
 				</a>
 			</div>
 			<a href="https://www.ktf2023.ch" target="_blank" rel="noreferrer">
-				<img class="max-h-42" src="./images/aktuelles/wyland.png" alt="" />
+				<img class="max-h-42 hover-scale" src="./images/aktuelles/wyland.png" alt="" />
 			</a>
 		</div>
 	{/if}

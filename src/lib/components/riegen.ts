@@ -11,6 +11,7 @@ export const Riegen = [
 		badgename: 'Aktive',
 		age: 'ab 16 Jahren',
 		ageID: 1,
+		riegeID: 1,
 		description:
 			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
 
@@ -29,6 +30,7 @@ export const Riegen = [
 		badgename: 'ElKi',
 		age: 'ab 2 Jahren',
 		ageID: 0,
+		riegeID: 2,
 		description:
 			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
 
@@ -47,6 +49,7 @@ export const Riegen = [
 		badgename: 'KiTu',
 		age: 'ab Kindergarten',
 		ageID: 0,
+		riegeID: 3,
 		description:
 			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
 
@@ -65,6 +68,7 @@ export const Riegen = [
 		badgename: 'Jugi Klein',
 		age: 'ab 1. Klasse',
 		ageID: 0,
+		riegeID: 4,
 		description:
 			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
 
@@ -83,6 +87,7 @@ export const Riegen = [
 		badgename: 'Jugi Gross',
 		age: 'ab 4. Klasse',
 		ageID: 0,
+		riegeID: 5,
 		description:
 			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
 
@@ -101,6 +106,7 @@ export const Riegen = [
 		badgename: 'Männerriege',
 		age: 'Beitritt nach eigenem Ermessen',
 		ageID: 1,
+		riegeID: 6,
 		description:
 			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
 
@@ -119,6 +125,7 @@ export const Riegen = [
 		badgename: 'Frauenriege',
 		age: 'Beitritt nach eigenem Ermessen',
 		ageID: 1,
+		riegeID: 7,
 		description:
 			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
 

@@ -1,10 +1,32 @@
 <script>
+	import { currentPage, selectedRiegeID, selectedAgeID } from '$lib/components/stores';
 	import { Riegen } from '../lib/components/riegen';
+
+	import { titles } from '$lib/components/navbar';
+
+	let riegenPage = 0;
+
+	for (let i = 0; i < titles.length; i++) {
+		if (titles[i].short == 'ri') {
+			riegenPage = i;
+		}
+	}
 </script>
 
 <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-x-2 gap-y-2">
 	{#each Riegen.reverse() as riege}
-		<div class="col-box-1 rounded-lg shadow-lg hover:text-gray-400">
+		<button
+			class="col-box-1 rounded-lg shadow-lg hover-scale"
+			on:click={() => {
+				selectedAgeID.update((n) => (n = riege.ageID));
+			}}
+			on:click={() => {
+				currentPage.update((n) => (n = riegenPage));
+			}}
+			on:click={() => {
+				selectedRiegeID.update((n) => (n = riege.riegeID));
+			}}
+		>
 			<a href="/riegen">
 				<div class="m-5 relative">
 					<h4 class="h4">{riege.name}</h4>
@@ -27,7 +49,7 @@
 						</svg>
 					</div>
 				</div>
-			</a>
-		</div>
+			</a></button
+		>
 	{/each}
 </div>

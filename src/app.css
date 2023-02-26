@@ -74,6 +74,10 @@
 	@apply hover:text-gray-400;
 }
 
+.hover-scale {
+	@apply hover:text-gray-400 hover:scale-102;
+}
+
 .link {
 	@apply text-blue-600 hover:text-gray-500 underline font-normal;
 }

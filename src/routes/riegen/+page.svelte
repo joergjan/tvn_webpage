@@ -1,7 +1,18 @@
 <script>
-	import { Riegen } from '../../lib/components/riegen';
+	import { Riegen } from '$lib/components/riegen';
+	import { selectedAgeID, selectedRiegeID } from '$lib/components/stores';
 
 	let ageSelector = 2;
+	let riegeSelector = 0;
+
+	selectedAgeID.subscribe((value) => {
+		ageSelector = value;
+	});
+
+	selectedRiegeID.subscribe((value) => {
+		riegeSelector = value;
+	});
+
 	let active = false;
 
 	let listItems = [
@@ -102,8 +113,9 @@
 								<button
 									class="flex flex-col"
 									on:click={() => {
-										ageSelector = item.selector;
 										setActive();
+										selectedAgeID.update((n) => (n = item.selector));
+										selectedRiegeID.update((n) => (n = 0));
 									}}
 								>
 									<div class="flex justify-between">
@@ -136,8 +148,8 @@
 							<button
 								class="flex flex-col"
 								on:click={() => {
-									ageSelector = item.selector;
 									setActive();
+									selectedAgeID.update((n) => (n = item.selector));
 								}}
 							>
 								<div class="flex justify-between">
@@ -157,49 +169,51 @@
 	{#key ageSelector}
 		{#each Riegen as riege}
 			{#if riege.ageID === ageSelector || ageSelector === 2}
-				<div class="flex flex-col rounded-b-lg shadow-lg">
-					<img
-						class="h-48 w-full rounded-t-lg object-cover"
-						src={riege.imageUrl}
-						alt={riege.name}
-					/>
-					<div class="flex flex-1 flex-col p-6">
-						<div class="flex-1">
-							<div class="text-sm text-tvbluelight">
-								{riege.age}
-							</div>
-							<div class="h4 py-1">
-								{riege.name}
-							</div>
-							<div class="mt-1 text-gray-500">
-								{riege.description}
-							</div>
-						</div>
-						<div class="pt-3 text-sm">
-							<div>{riege.day1}: {riege.time1}</div>
-							{#if riege.twodays}
-								<div>{riege.day2}: {riege.time2}</div>
-							{/if}
-						</div>
-						<div class="mt-3 flex items-center">
-							<div>
-								<div class="sr-only">{riege.leiter.name}</div>
-								<img
-									class="h-10 w-10 rounded-full"
-									src={riege.leiter.imageUrl}
-									alt={riege.leiter.name}
-								/>
-							</div>
-
-							<div class="ml-3">
-								<div class="text-sm text-gray-900">
-									<div>{riege.leiter.name}</div>
+				{#if riegeSelector === 0 || riege.riegeID === riegeSelector}
+					<div class="flex flex-col rounded-b-lg shadow-lg">
+						<img
+							class="h-48 w-full rounded-t-lg object-cover"
+							src={riege.imageUrl}
+							alt={riege.name}
+						/>
+						<div class="flex flex-1 flex-col p-6">
+							<div class="flex-1">
+								<div class="text-sm text-tvbluelight">
+									{riege.age}
 								</div>
-								<div class="flex space-x-1 text-sm text-gray-500" />
+								<div class="h4 py-1">
+									{riege.name}
+								</div>
+								<div class="mt-1 text-gray-500">
+									{riege.description}
+								</div>
+							</div>
+							<div class="pt-3 text-sm">
+								<div>{riege.day1}: {riege.time1}</div>
+								{#if riege.twodays}
+									<div>{riege.day2}: {riege.time2}</div>
+								{/if}
+							</div>
+							<div class="mt-3 flex items-center">
+								<div>
+									<div class="sr-only">{riege.leiter.name}</div>
+									<img
+										class="h-10 w-10 rounded-full"
+										src={riege.leiter.imageUrl}
+										alt={riege.leiter.name}
+									/>
+								</div>
+
+								<div class="ml-3">
+									<div class="text-sm text-gray-900">
+										<div>{riege.leiter.name}</div>
+									</div>
+									<div class="flex space-x-1 text-sm text-gray-500" />
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
+				{/if}
 			{/if}
 		{/each}
 	{/key}

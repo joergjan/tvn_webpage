@@ -8,6 +8,9 @@ module.exports = {
 			colors: {
 				tvbluelight: '#375398',
 				tvyellow: '#E3BE53'
+			},
+			scale: {
+				102: '1.02'
 			}
 		}
 	},

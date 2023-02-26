@@ -1,7 +1,7 @@
 <script>
 	import '../app.css';
-	import { currentPage } from '$lib/components/stores';
-	import { titles } from './navbar';
+	import { currentPage, selectedAgeID, selectedRiegeID } from '$lib/components/stores';
+	import { titles } from '../lib/components/navbar';
 
 	let open = false;
 
@@ -31,6 +31,18 @@
 			cookie = true;
 		}
 		localStorage.setItem('cookies_enabled', '0');
+	}
+
+	$: $currentPage, resetAll();
+	$: $selectedAgeID, reset();
+
+	function reset() {
+		selectedRiegeID.update((n) => (n = 0));
+	}
+
+	function resetAll() {
+		selectedRiegeID.update((n) => (n = 0));
+		selectedAgeID.update((n) => (n = 2));
 	}
 </script>
 
@@ -202,26 +214,17 @@
 	</footer>
 </div>
 
+<!-- Cookie Banner -->
 {#if cookie}
 	<div aria-live="assertive" class="fixed inset-0 flex items-end px-4 py-6 sm:p-8">
 		<div class="flex w-full flex-col items-center space-y-4 ">
-			<!--
-		Notification panel, dynamically insert this into the live region when it needs to be displayed
-  
-		Entering: "transform ease-out duration-300 transition"
-		  From: "translate-y-2 opacity-0 sm:translate-y-0 sm:translate-x-2"
-		  To: "translate-y-0 opacity-100 sm:translate-x-0"
-		Leaving: "transition ease-in duration-100"
-		  From: "opacity-100"
-		  To: "opacity-0"
-	  -->
 			<div
 				class="w-full max-w-sm overflow-hidden rounded-lg shadow-lg ring-1 ring-gray-300 bg-white"
 			>
 				<div class="p-4">
 					<div class="flex items-center">
 						<div class="flex w-0 flex-1 justify-between">
-							<p class="w-0 flex-1 text-sm font-semibold">Wir verwenden keine 🍪</p>
+							<div class="w-0 flex-1 text-sm font-semibold">Wir verwenden keine 🍪</div>
 							<button
 								type="button"
 								class="ml-3 flex-shrink-0 rounded-md font-semibold text-sm text-tvbluelight hover "
