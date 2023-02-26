@@ -15,6 +15,10 @@ module.exports = {
 		}
 	},
 
+	future: {
+		hoverOnlyWhenSupported: true
+	},
+
 	corePlugins: {
 		aspectRatio: false
 	},
