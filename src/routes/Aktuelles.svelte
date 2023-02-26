@@ -25,7 +25,22 @@
 			}
 		}}
 	>
-		<div class="h2">Turnerunterhaltung</div>
+		<div class="flex items-center hover">
+			<div class="h2">Unterhaltung</div>
+			<svg
+				class="h-10 w-10 ml-1 mb-3"
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 20 20"
+				fill="currentColor"
+				aria-hidden="true"
+			>
+				<path
+					fill-rule="evenodd"
+					d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+					clip-rule="evenodd"
+				/>
+			</svg>
+		</div>
 	</button>
 	{#if unterhaltung}
 		<div class="mb-10">
@@ -46,7 +61,22 @@
 			}
 		}}
 	>
-		<div class="h2">Bollä Dunnschtig</div>
+		<div class="flex items-center hover">
+			<div class="h2">Bollä Dunnschtig</div>
+			<svg
+				class="h-10 w-10 ml-1 mb-3"
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 20 20"
+				fill="currentColor"
+				aria-hidden="true"
+			>
+				<path
+					fill-rule="evenodd"
+					d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+					clip-rule="evenodd"
+				/>
+			</svg>
+		</div>
 	</button>
 	{#if bolle}
 		<div class="mb-10">
@@ -69,17 +99,32 @@
 			}
 		}}
 	>
-		<div class="h2">Turnfester 2023</div>
+		<div class="flex items-center hover">
+			<div class="h2">Turnfester 2023</div>
+			<svg
+				class="h-10 w-10 ml-1 mb-3"
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 20 20"
+				fill="currentColor"
+				aria-hidden="true"
+			>
+				<path
+					fill-rule="evenodd"
+					d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+					clip-rule="evenodd"
+				/>
+			</svg>
+		</div>
 	</button>
 	{#if turnfest}
-		<div class="flex">
-			<div class="mr-5">
+		<div class="">
+			<div class="mb-5">
 				<a href="https://wohlen2023.ch" target="_blank" rel="noreferrer">
-					<img class="max-w-[400px]" src="./images/aktuelles/wohlen.png" alt="" />
+					<img class="max-h-32" src="./images/aktuelles/wohlen.png" alt="" />
 				</a>
 			</div>
 			<a href="https://www.ktf2023.ch" target="_blank" rel="noreferrer">
-				<img class="max-h-[400px]" src="./images/aktuelles/wyland.png" alt="" />
+				<img class="max-h-42" src="./images/aktuelles/wyland.png" alt="" />
 			</a>
 		</div>
 	{/if}
