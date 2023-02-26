@@ -24,8 +24,6 @@
 	{/each}
 
 	{#if lightboxActiveValue == 1}
-		<div class="absolute top-0">
-			<Lightbox {photos} {imageShowIndex} />
-		</div>
+		<Lightbox {photos} {imageShowIndex} />
 	{/if}
 {/if}
