@@ -21,6 +21,15 @@
 			open = true;
 		}
 	}
+
+	let cookie = true;
+
+	function closeCookieBanner() {
+		setTimeout(function () {
+			cookie = false;
+		}, 7000);
+	}
+	closeCookieBanner();
 </script>
 
 <title>{titles[currentPageValue].title}</title>
@@ -190,3 +199,42 @@
 		</div>
 	</footer>
 </div>
+
+<!-- Global notification live region, render this permanently at the end of the document -->
+{#if cookie}
+	<div
+		aria-live="assertive"
+		class="pointer-events-none fixed inset-0 flex items-end px-4 py-6 sm:p-6"
+	>
+		<div class="flex w-full flex-col items-center space-y-4 sm:items-end">
+			<!--
+		Notification panel, dynamically insert this into the live region when it needs to be displayed
+  
+		Entering: "transform ease-out duration-300 transition"
+		  From: "translate-y-2 opacity-0 sm:translate-y-0 sm:translate-x-2"
+		  To: "translate-y-0 opacity-100 sm:translate-x-0"
+		Leaving: "transition ease-in duration-100"
+		  From: "opacity-100"
+		  To: "opacity-0"
+	  -->
+			<div
+				class="pointer-events-auto w-full max-w-sm overflow-hidden rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5"
+			>
+				<div class="p-4">
+					<div class="flex items-center">
+						<div class="flex w-0 flex-1 justify-between">
+							<p class="w-0 flex-1 text-sm font-medium text-gray-900">Wir verwenden keine 🍪</p>
+							<button
+								type="button"
+								class="ml-3 flex-shrink-0 rounded-md bg-white text-sm font-medium text-tvbluelight hover "
+								on:click={() => {
+									cookie = false;
+								}}>Okay</button
+							>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{/if}
