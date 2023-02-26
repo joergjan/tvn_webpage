@@ -33,16 +33,11 @@
 		localStorage.setItem('cookies_enabled', '0');
 	}
 
-	$: $currentPage, resetAll();
+	$: $currentPage, reset();
 	$: $selectedAgeID, reset();
 
 	function reset() {
 		selectedRiegeID.update((n) => (n = 0));
-	}
-
-	function resetAll() {
-		selectedRiegeID.update((n) => (n = 0));
-		selectedAgeID.update((n) => (n = 2));
 	}
 </script>
 

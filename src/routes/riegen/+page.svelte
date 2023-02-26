@@ -70,9 +70,9 @@
 					</svg>
 					{#each listItems as item}
 						{#if item.selector === ageSelector}
-							<p class="ml-2.5 text-sm font-medium">
+							<div class="ml-2.5 text-sm font-medium">
 								{item.name}
-							</p>
+							</div>
 						{/if}
 					{/each}
 				</div>
@@ -119,9 +119,9 @@
 									}}
 								>
 									<div class="flex justify-between">
-										<p class="font-medium ml-12">{item.name}</p>
+										<div class="font-medium ml-12">{item.name}</div>
 									</div>
-									<p class="mt-2 ml-12">{item.description}</p>
+									<div class="mt-2 ml-12">{item.description}</div>
 
 									<span class="hover:text-white">
 										<svg
@@ -153,9 +153,9 @@
 								}}
 							>
 								<div class="flex justify-between">
-									<p class="font-medium ml-12">{item.name}</p>
+									<div class="font-medium ml-12">{item.name}</div>
 								</div>
-								<p class="mt-2 ml-12">{item.description}</p>
+								<div class="mt-2 ml-12">{item.description}</div>
 							</button>
 						</li>
 					{/if}

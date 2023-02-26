@@ -26,10 +26,10 @@
 		}}
 	>
 		<div class="flex items-center hover">
-			<div class="h2">Unterhaltung</div>
+			<div class="h3">Unterhaltung</div>
 			{#if !unterhaltung}
 				<svg
-					class="h-10 w-10 ml-1 mb-3"
+					class="h-10 w-10 ml-1"
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 20 20"
 					fill="currentColor"
@@ -43,7 +43,7 @@
 				</svg>
 			{:else}
 				<svg
-					class="h-10 w-10 ml-1 mb-3 rotate-180"
+					class="h-10 w-10 ml-1 rotate-180"
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 20 20"
 					fill="currentColor"
@@ -82,10 +82,10 @@
 		}}
 	>
 		<div class="flex items-center hover">
-			<div class="h2">Bollä Dunnschtig</div>
+			<div class="h3">Bollä Dunnschtig</div>
 			{#if !bolle}
 				<svg
-					class="h-10 w-10 ml-1 mb-3"
+					class="h-10 w-10 ml-1"
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 20 20"
 					fill="currentColor"
@@ -99,7 +99,7 @@
 				</svg>
 			{:else}
 				<svg
-					class="h-10 w-10 ml-1 mb-3 rotate-180"
+					class="h-10 w-10 ml-1 rotate-180"
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 20 20"
 					fill="currentColor"
@@ -140,10 +140,10 @@
 		}}
 	>
 		<div class="flex items-center hover">
-			<div class="h2">Turnfester 2023</div>
-			{#if turnfest}
+			<div class="h3">Turnfester 2023</div>
+			{#if !turnfest}
 				<svg
-					class="h-10 w-10 ml-1 mb-3"
+					class="h-10 w-10 ml-1"
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 20 20"
 					fill="currentColor"
@@ -157,7 +157,7 @@
 				</svg>
 			{:else}
 				<svg
-					class="h-10 w-10 ml-1 mb-3 rotate-180"
+					class="h-10 w-10 ml-1 rotate-180"
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 20 20"
 					fill="currentColor"

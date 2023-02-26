@@ -17,12 +17,12 @@
 </div>
 
 <div class="pt-20">
-	<div class="h1">Aktuelles</div>
+	<div class="h2">Aktuelles</div>
 	<Aktuelles />
 </div>
 
 <div class="pt-20">
-	<div class="h1">Trainingszeiten</div>
+	<div class="h2">Trainingszeiten</div>
 	<Trainingszeiten />
 </div>
 
