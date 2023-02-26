@@ -3,13 +3,8 @@
 
 	export let photos: { href: string; no: number }[] = [];
 	export let imageShowIndex = 0;
-	let lightboxActiveValue = 0;
 
-	lightboxActiveValue;
-
-	$: lightboxActive.subscribe((value) => {
-		lightboxActiveValue = value;
-	});
+	$: $lightboxActive;
 
 	function previousSlide() {
 		if (imageShowIndex != 0) {
@@ -32,22 +27,20 @@
 	<div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
 
 	<div class="fixed inset-0 z-10 overflow-y-auto">
-		<button on:click={() => lightboxActive.update((n) => (n = 0))} class="absolute top-10 right-10"
-			>╳
-		</button>
+		<button on:click={() => ($lightboxActive = 0)} class="absolute top-10 right-10">╳ </button>
 		<div class="max-h-screen overflow-hidden">
 			<div class="">
 				<div class="relative max-w-2xl">
-					<div class="h-2/3">
+					<div>
 						{#each photos as { href, no }}
-							<div class="hidden" class:showImage={no === imageShowIndex}>
+							{#if no === imageShowIndex}
 								<div class="relative">
 									<div class="text-white bg-gray-700 opacity-30 font-sm p-2 absolute top-0">
 										{no + 1} / {photos.length}
 									</div>
 									<img id="image" src={href} alt="" />
 								</div>
-							</div>
+							{/if}
 						{/each}
 					</div>
 					<button class="prevImg" on:click={previousSlide}>&#10094;</button>
@@ -63,8 +56,7 @@
 								on:click={() => {
 									imageShowIndex = no;
 								}}
-								class="opacity-50"
-								class:thumbnailImage={no === imageShowIndex}
+								class={no === imageShowIndex ? 'thumbnailImage' : 'opacity-70'}
 							>
 								<img src={href} class="max-h-[5%]" alt="The Woods" />
 							</button>

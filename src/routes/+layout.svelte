@@ -1,7 +1,7 @@
 <script>
 	import '../app.css';
 	import { currentPage, selectedAgeID, selectedRiegeID } from '$lib/components/stores';
-	import { titles } from '../lib/components/navbar';
+	import { titles } from '$lib/components/navbar';
 
 	let open = false;
 

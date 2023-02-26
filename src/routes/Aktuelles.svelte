@@ -45,13 +45,15 @@
 	</button>
 	{#if unterhaltung}
 		<div class="mb-10 mt-3">
-			<a href="./files/turnerunterhaltung.pdf" target="_blank" rel="noreferrer">
-				<img
-					class="h-auto rounded-lg shadow-lg hover-scale"
-					src="./files/turnerunterhaltung.pdf"
-					alt=""
-				/>
-			</a>
+			<div class="flex">
+				<a href="./files/turnerunterhaltung.pdf" target="_blank" rel="noreferrer">
+					<img
+						class="h-auto rounded-lg shadow-lg hover-scale"
+						src="./files/turnerunterhaltung.pdf"
+						alt=""
+					/>
+				</a>
+			</div>
 		</div>
 	{/if}
 </div>
@@ -86,15 +88,17 @@
 	</button>
 	{#if bolle}
 		<div class="mb-10 mt-3">
-			<button on:click={() => currentPage.update((n) => (n = bollePage))}>
-				<a href="/bolle">
-					<img
-						class="w-auto rounded-lg shadow-lg hover-scale"
-						src="./images/bolle/flyer.jpg"
-						alt=""
-					/>
-				</a>
-			</button>
+			<div class="flex">
+				<button on:click={() => currentPage.update((n) => (n = bollePage))}>
+					<a href="/bolle">
+						<img
+							class="w-auto rounded-lg shadow-lg hover-scale"
+							src="./images/bolle/flyer.jpg"
+							alt=""
+						/>
+					</a>
+				</button>
+			</div>
 		</div>
 	{/if}
 </div>
@@ -130,13 +134,17 @@
 	{#if turnfest}
 		<div class="">
 			<div class="mb-5 mt-3">
-				<a href="https://wohlen2023.ch" target="_blank" rel="noreferrer">
-					<img class="max-h-32 hover-scale" src="./images/aktuelles/wohlen.png" alt="" />
+				<div class="flex">
+					<a href="https://wohlen2023.ch" target="_blank" rel="noreferrer">
+						<img class="max-h-32 hover-scale" src="./images/aktuelles/wohlen.png" alt="" />
+					</a>
+				</div>
+			</div>
+			<div class="flex">
+				<a href="https://www.ktf2023.ch" target="_blank" rel="noreferrer">
+					<img class="max-h-42 hover-scale" src="./images/aktuelles/wyland.png" alt="" />
 				</a>
 			</div>
-			<a href="https://www.ktf2023.ch" target="_blank" rel="noreferrer">
-				<img class="max-h-42 hover-scale" src="./images/aktuelles/wyland.png" alt="" />
-			</a>
 		</div>
 	{/if}
 </div>

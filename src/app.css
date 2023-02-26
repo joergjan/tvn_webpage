@@ -27,10 +27,6 @@
 	@apply opacity-100;
 }
 
-.showImage {
-	@apply flex;
-}
-
 .prevImg {
 	@apply absolute top-[42%] p-5 text-white hover:bg-gray-300 hover:opacity-50 text-lg bg-gray-700 opacity-30 rounded-r-lg;
 }

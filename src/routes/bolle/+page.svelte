@@ -210,7 +210,7 @@
 		{/each}
 		<div class="mt-12">
 			<a href="./images/bolle/flyer.jpg" target="_blank">
-				<img class="rounded-lg shadow-lg" src="./images/bolle/flyer.jpg" alt="" />
+				<img class="rounded-lg shadow-lg hover-scale" src="./images/bolle/flyer.jpg" alt="" />
 			</a>
 		</div>
 	</div>
