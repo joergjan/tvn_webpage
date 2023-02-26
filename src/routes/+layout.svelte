@@ -30,7 +30,6 @@
 		} else {
 			cookie = true;
 		}
-		localStorage.setItem('cookies_enabled', '0');
 	}
 
 	$: $currentPage, reset();
@@ -225,6 +224,9 @@
 								class="ml-3 flex-shrink-0 rounded-md font-semibold text-sm text-tvbluelight hover "
 								on:click={() => {
 									cookie = false;
+									if (typeof window !== 'undefined') {
+										localStorage.setItem('cookies_enabled', '0');
+									}
 								}}
 							>
 								Okay
