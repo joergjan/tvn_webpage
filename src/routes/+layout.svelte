@@ -22,14 +22,16 @@
 		}
 	}
 
-	let cookie = true;
+	let cookie = false;
 
-	function closeCookieBanner() {
-		setTimeout(function () {
+	if (typeof window !== 'undefined') {
+		if (localStorage.getItem('cookies_enabled') === '0') {
 			cookie = false;
-		}, 7000);
+		} else {
+			cookie = true;
+		}
+		localStorage.setItem('cookies_enabled', '0');
 	}
-	closeCookieBanner();
 </script>
 
 <title>{titles[currentPageValue].title}</title>
@@ -200,13 +202,9 @@
 	</footer>
 </div>
 
-<!-- Global notification live region, render this permanently at the end of the document -->
 {#if cookie}
-	<div
-		aria-live="assertive"
-		class="pointer-events-none fixed inset-0 flex items-end px-4 py-6 sm:p-6"
-	>
-		<div class="flex w-full flex-col items-center space-y-4 sm:items-end">
+	<div aria-live="assertive" class="fixed inset-0 flex items-end px-4 py-6 sm:p-8">
+		<div class="flex w-full flex-col items-center space-y-4 ">
 			<!--
 		Notification panel, dynamically insert this into the live region when it needs to be displayed
   
@@ -218,19 +216,21 @@
 		  To: "opacity-0"
 	  -->
 			<div
-				class="pointer-events-auto w-full max-w-sm overflow-hidden rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5"
+				class="w-full max-w-sm overflow-hidden rounded-lg shadow-lg ring-1 ring-gray-300 bg-white"
 			>
 				<div class="p-4">
 					<div class="flex items-center">
 						<div class="flex w-0 flex-1 justify-between">
-							<p class="w-0 flex-1 text-sm font-medium text-gray-900">Wir verwenden keine 🍪</p>
+							<p class="w-0 flex-1 text-sm font-semibold">Wir verwenden keine 🍪</p>
 							<button
 								type="button"
-								class="ml-3 flex-shrink-0 rounded-md bg-white text-sm font-medium text-tvbluelight hover "
+								class="ml-3 flex-shrink-0 rounded-md font-semibold text-sm text-tvbluelight hover "
 								on:click={() => {
 									cookie = false;
-								}}>Okay</button
+								}}
 							>
+								Okay
+							</button>
 						</div>
 					</div>
 				</div>
