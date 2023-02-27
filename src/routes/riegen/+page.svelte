@@ -150,47 +150,57 @@
 		{#if riege.ageID === $selectedAgeID || $selectedAgeID === 2}
 			{#if $selectedRiegeID === 0 || riege.riegeID === $selectedRiegeID}
 				<div class="flex flex-col rounded-b-lg shadow-lg">
-					<img
-						class="h-48 w-full rounded-t-lg object-cover"
-						src={riege.imageUrl}
-						alt={riege.name}
-					/>
-					<div class="flex flex-1 flex-col p-6">
-						<div class="flex-1">
-							<div class="text-sm text-tvbluelight">
-								{riege.age}
-							</div>
-							<div class="h4 py-1">
-								{riege.name}
-							</div>
-							<div class="mt-1 text-gray-500">
-								{riege.description}
-							</div>
-						</div>
-						<div class="pt-3 text-sm">
-							<div>{riege.day1}: {riege.time1}</div>
-							{#if riege.twodays}
-								<div>{riege.day2}: {riege.time2}</div>
-							{/if}
-						</div>
-						<div class="mt-3 flex items-center">
-							<div>
-								<div class="sr-only">{riege.leiter.name}</div>
-								<img
-									class="h-10 w-10 rounded-full"
-									src={riege.leiter.imageUrl}
-									alt={riege.leiter.name}
-								/>
-							</div>
-
-							<div class="ml-3">
-								<div class="text-sm text-gray-900">
-									<div>{riege.leiter.name}</div>
+					<button
+						on:click={() => {
+							$selectedRiegeID = riege.riegeID;
+							$selectedAgeID = riege.ageID;
+						}}
+						on:click={() => {
+							window.scrollTo(0, 20);
+						}}
+					>
+						<img
+							class="h-48 w-full rounded-t-lg object-cover"
+							src={riege.imageUrl}
+							alt={riege.name}
+						/>
+						<div class="flex flex-1 flex-col p-6">
+							<div class="flex-1">
+								<div class="text-sm text-tvbluelight">
+									{riege.age}
 								</div>
-								<div class="flex space-x-1 text-sm text-gray-500" />
+								<div class="h4 py-1">
+									{riege.name}
+								</div>
+								<div class="mt-1 text-gray-500">
+									{riege.description}
+								</div>
+							</div>
+							<div class="pt-3 text-sm">
+								<div>{riege.day1}: {riege.time1}</div>
+								{#if riege.twodays}
+									<div>{riege.day2}: {riege.time2}</div>
+								{/if}
+							</div>
+							<div class="mt-3 flex items-center">
+								<div>
+									<div class="sr-only">{riege.leiter.name}</div>
+									<img
+										class="h-10 w-10 rounded-full"
+										src={riege.leiter.imageUrl}
+										alt={riege.leiter.name}
+									/>
+								</div>
+
+								<div class="ml-3">
+									<div class="text-sm text-gray-900">
+										<div>{riege.leiter.name}</div>
+									</div>
+									<div class="flex space-x-1 text-sm text-gray-500" />
+								</div>
 							</div>
 						</div>
-					</div>
+					</button>
 				</div>
 			{/if}
 		{/if}

@@ -29,10 +29,10 @@
 	}
 
 	$: $currentPage, reset();
-	$: $selectedAgeID, reset();
 
 	function reset() {
 		$selectedRiegeID = 0;
+		$selectedAgeID = 2;
 	}
 </script>
 
@@ -119,11 +119,12 @@
 	{#if open}
 		<div transition:fade class="md:hidden absolute bg-white w-full h-screen">
 			<div class="mt-2 space-y-1">
-				{#each titles as title}
+				{#each titles as title, i}
 					<a
 						href={title.href}
 						class="block px-4 py-2 hover place-content-end hover:bg-gray-100"
-						on:click={menuToggle}>{title.name}</a
+						on:click={menuToggle}
+						on:click={() => ($currentPage = i)}>{title.name}</a
 					>
 				{/each}
 			</div>

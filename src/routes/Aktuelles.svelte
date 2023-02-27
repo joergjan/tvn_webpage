@@ -45,7 +45,7 @@
 		</div>
 	</button>
 	{#if unterhaltung}
-		<div class="mb-10 mt-3">
+		<div class="mb-8 mt-3">
 			<div class="flex">
 				<a href="./files/turnerunterhaltung.pdf" target="_blank" rel="noreferrer">
 					<img
@@ -88,7 +88,7 @@
 		</div>
 	</button>
 	{#if bolle}
-		<div class="mb-10 mt-3">
+		<div class="mb-8 mt-3">
 			<div class="flex">
 				<button on:click={() => currentPage.update((n) => (n = bollePage))}>
 					<a href="/bolle">
@@ -115,7 +115,7 @@
 		}}
 	>
 		<div class="flex items-center hover">
-			<div class="h3">Turnfester 2023</div>
+			<div class="h3">Turnfester</div>
 
 			<svg
 				class={turnfest ? 'h-10 w-10 ml-1 rotate-180' : 'h-10 w-10 ml-1'}
@@ -133,7 +133,7 @@
 		</div>
 	</button>
 	{#if turnfest}
-		<div class="">
+		<div class="mb-8">
 			<div class="mb-5 mt-3">
 				<div class="flex">
 					<a href="https://wohlen2023.ch" target="_blank" rel="noreferrer">
@@ -148,4 +148,15 @@
 			</div>
 		</div>
 	{/if}
+</div>
+
+<div>
+	<button>
+		<a href="/downloads">
+			<div class="flex items-center hover">
+				<div class="h3">Jahresprogramme</div>
+				<div class="ml-3 -rotate-45 font-bold text-lg">&rarr;</div>
+			</div>
+		</a>
+	</button>
 </div>
