@@ -31,7 +31,7 @@
 	}
 </script>
 
-<div class="h1">Riegen</div>
+<h1 class="h1">Riegen</h1>
 
 <div
 	on:mouseleave={() => {

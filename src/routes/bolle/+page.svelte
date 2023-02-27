@@ -86,7 +86,9 @@
 	let active = false;
 </script>
 
-<div class="h1">Bollä Dunnschtig</div>
+<title>TVN | Bollä Dunnsctig</title>
+
+<h1 class="h1">Bollä Dunnschtig</h1>
 
 <div class="bg-white">
 	<div class="max-w-3xl">

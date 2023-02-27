@@ -36,7 +36,13 @@
 	}
 </script>
 
-<title>{titles[$currentPage].title}</title>
+<svelte:head>
+	<title>TV Nussbaumen</title>
+	<meta
+		name="description"
+		content="Hier findest du alle aktuellen und wichtigen Informationen über den Turnverein Nussbaumen"
+	/>
+</svelte:head>
 
 <nav class="sticky top-0 z-20">
 	<div class="bg-tvbluelight md:h-3 h-1 opacity-100" />
@@ -209,31 +215,30 @@
 
 <!-- Cookie Banner -->
 {#if cookie}
-	<div aria-live="assertive" class="fixed inset-0 flex items-end px-4 py-6 sm:p-8">
-		<div class="flex w-full flex-col items-center space-y-4 ">
+	<div class="pointer-events-none fixed inset-0 flex items-end px-4 py-6 sm:p-6">
+		<div class="flex w-full flex-col items-center space-y-4 sm:items-end">
 			<div
-				class="w-full max-w-sm overflow-hidden rounded-lg shadow-lg ring-1 ring-gray-300 bg-white"
+				class="pointer-events-auto w-full max-w-sm overflow-hidden rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5"
 			>
 				<div class="p-4">
 					<div class="flex items-center">
 						<div class="flex w-0 flex-1 justify-between">
-							<div class="w-0 flex-1 text-sm font-semibold">Wir verwenden keine 🍪</div>
+							<p class="w-0 flex-1 text-sm font-medium">Wir verwenden keine 🍪</p>
 							<button
 								type="button"
-								class="ml-3 flex-shrink-0 rounded-md font-semibold text-sm text-tvbluelight hover "
+								class="ml-3 flex-shrink-0 rounded-md bg-white text-sm font-medium text-tvbluelight"
 								on:click={() => {
 									cookie = false;
 									if (typeof window !== 'undefined') {
 										localStorage.setItem('cookies_enabled', '0');
 									}
-								}}
+								}}>Okay</button
 							>
-								Okay
-							</button>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	c
 {/if}

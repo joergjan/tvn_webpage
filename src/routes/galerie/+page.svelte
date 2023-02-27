@@ -3,6 +3,8 @@
 	import Jugi from './Jugi.svelte';
 </script>
 
-<div class="h1">Galerie</div>
+<title>TVN | Galerie</title>
+
+<h1 class="h1">Galerie</h1>
 
 <Aktive />

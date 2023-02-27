@@ -3,7 +3,9 @@
 	import Leiter from './Leiter.svelte';
 </script>
 
-<div class="h1">Kontakt</div>
+<title>TVN | Kontakt</title>
+
+<h1 class="h1">Kontakt</h1>
 
 <div>
 	<div>

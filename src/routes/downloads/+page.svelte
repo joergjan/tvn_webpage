@@ -33,7 +33,9 @@
 	];
 </script>
 
-<div class="h1">Downloads</div>
+<title>TVN | Downloads</title>
+
+<h1 class="h1">Downloads</h1>
 
 <div>
 	<div class="h2">Jahresprogramme</div>
