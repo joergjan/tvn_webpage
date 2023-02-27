@@ -4,6 +4,14 @@
 	import Aktuelles from './Aktuelles.svelte';
 </script>
 
+<svelte:head>
+	<title>TV Nussbaumen</title>
+	<meta
+		name="description"
+		content="Hier findest du alle aktuellen und wichtigen Informationen über den Turnverein Nussbaumen"
+	/>
+</svelte:head>
+
 <div class="h1 md:hidden">Unser Verein</div>
 
 <div class="hidden md:block md:-mt-32 md:-mb-20 lg:-mt-48">

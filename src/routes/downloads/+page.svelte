@@ -33,12 +33,18 @@
 	];
 </script>
 
-<title>TVN | Downloads</title>
+<svelte:head>
+	<title>TVN | Downloads</title>
+	<meta
+		name="description"
+		content="Statuten, Jahresprogramme, Reglemente - alles Wichtige über den TV Nussbaumen zum Download auf einen Blick"
+	/>
+</svelte:head>
 
 <h1 class="h1">Downloads</h1>
 
 <div>
-	<div class="h2">Jahresprogramme</div>
+	<div class="h3">Jahresprogramme</div>
 	<div class="py-4">
 		{#each Jahresprogramme as item}
 			<div class="items-center flex-wrap">
@@ -78,7 +84,7 @@
 <div class="divider-line" />
 
 <div>
-	<div class="h2">Statuten</div>
+	<div class="h3">Statuten</div>
 	<div class="py-4">
 		{#each Statuten as item}
 			<div class="items-center flex-wrap">
@@ -118,7 +124,7 @@
 <div class="divider-line" />
 
 <div>
-	<div class="h2">Reglemente</div>
+	<div class="h3">Reglemente</div>
 	<div class="py-4">
 		{#each Reglemente as item}
 			<div class="items-center flex-wrap">

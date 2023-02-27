@@ -1,5 +1,6 @@
 <script>
 	import { currentPage } from '$lib/components/stores';
+	import { fade } from 'svelte/transition';
 	import { titles } from '../lib/components/navbar';
 
 	let bollePage = 0;
@@ -49,7 +50,7 @@
 				<a href="./files/turnerunterhaltung.pdf" target="_blank" rel="noreferrer">
 					<img
 						class="h-auto rounded-lg shadow-lg hover-scale"
-						src="./files/turnerunterhaltung.pdf"
+						src="./images/aktuelles/turnerunterhaltung.jpg"
 						alt=""
 					/>
 				</a>
@@ -136,7 +137,7 @@
 			<div class="mb-5 mt-3">
 				<div class="flex">
 					<a href="https://wohlen2023.ch" target="_blank" rel="noreferrer">
-						<img class="max-h-32 hover-scale" src="./images/aktuelles/wohlen.png" alt="" />
+						<img class="max-h-32 hover-scale" src="./images/aktuelles/wohlen.jpg" alt="" />
 					</a>
 				</div>
 			</div>

@@ -31,6 +31,14 @@
 	}
 </script>
 
+<svelte:head>
+	<title>TVN | Riegen</title>
+	<meta
+		name="description"
+		content="Eine Übersicht über alle Riegen des TV Nussbaumen. Bestimmt findest du auch eine, welche zu dir passt."
+	/>
+</svelte:head>
+
 <h1 class="h1">Riegen</h1>
 
 <div

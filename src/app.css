@@ -83,7 +83,7 @@
 }
 
 .link {
-	@apply text-blue-600 hover:text-gray-500 underline font-normal;
+	@apply text-blue-700 hover:opacity-70 underline font-normal text-lg;
 }
 
 /* 

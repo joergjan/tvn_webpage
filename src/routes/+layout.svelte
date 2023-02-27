@@ -36,14 +36,6 @@
 	}
 </script>
 
-<svelte:head>
-	<title>TV Nussbaumen</title>
-	<meta
-		name="description"
-		content="Hier findest du alle aktuellen und wichtigen Informationen über den Turnverein Nussbaumen"
-	/>
-</svelte:head>
-
 <nav class="sticky top-0 z-20">
 	<div class="bg-tvbluelight md:h-3 h-1 opacity-100" />
 	<div
