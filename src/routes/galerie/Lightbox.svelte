@@ -23,29 +23,27 @@
 	}
 </script>
 
-<div class="relative z-50 h-screen" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-	<div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+<div class="relative z-50 h-screen">
+	<div class="fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity" />
 
-	<div class="fixed inset-0 z-10 overflow-y-auto">
+	<div class="fixed top-20 z-10 overflow-y-auto">
 		<button on:click={() => ($lightboxActive = 0)} class="absolute top-10 right-10">╳ </button>
 		<div class="max-h-screen overflow-hidden">
-			<div class="">
-				<div class="relative max-w-2xl">
-					<div>
-						{#each photos as { href, no }}
-							{#if no === imageShowIndex}
-								<div class="relative">
-									<div class="text-white bg-gray-700 opacity-30 font-sm p-2 absolute top-0">
-										{no + 1} / {photos.length}
-									</div>
-									<img id="image" src={href} alt="" />
+			<div class="relative max-w-2xl">
+				<div>
+					{#each photos as { href, no }}
+						{#if no === imageShowIndex}
+							<div class="relative">
+								<div class="text-white bg-gray-700 opacity-30 font-sm p-2 absolute top-0">
+									{no + 1} / {photos.length}
 								</div>
-							{/if}
-						{/each}
-					</div>
-					<button class="prevImg" on:click={previousSlide}>&#10094;</button>
-					<button class="nextImg" on:click={nextSlide}>&#10095;</button>
+								<img id="image" src={href} alt="" />
+							</div>
+						{/if}
+					{/each}
 				</div>
+				<button class="prevImg" on:click={previousSlide}>&#10094;</button>
+				<button class="nextImg" on:click={nextSlide}>&#10095;</button>
 			</div>
 
 			<div class="">

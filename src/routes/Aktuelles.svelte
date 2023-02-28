@@ -1,9 +1,15 @@
 <script>
 	import { currentPage } from '$lib/components/stores';
-	import { fade } from 'svelte/transition';
 	import { titles } from '../lib/components/navbar';
 
 	let bollePage = 0;
+	let downloadsPage = 0;
+
+	for (let i = 0; i < titles.length; i++) {
+		if (titles[i].short == 'do') {
+			downloadsPage = i;
+		}
+	}
 
 	for (let i = 0; i < titles.length; i++) {
 		if (titles[i].short == 'bo') {
@@ -90,7 +96,11 @@
 	{#if bolle}
 		<div class="mb-8 mt-3">
 			<div class="flex">
-				<button on:click={() => currentPage.update((n) => (n = bollePage))}>
+				<button
+					on:click={() => {
+						$currentPage = bollePage;
+					}}
+				>
 					<a href="/bolle">
 						<img
 							class="w-auto rounded-lg shadow-lg hover-scale"
@@ -151,7 +161,11 @@
 </div>
 
 <div>
-	<button>
+	<button
+		on:click={() => {
+			$currentPage = downloadsPage;
+		}}
+	>
 		<a href="/downloads">
 			<div class="flex items-center hover">
 				<div class="h3">Jahresprogramme</div>

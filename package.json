@@ -13,6 +13,7 @@
 		"prepare": "svelte-kit sync"
 	},
 	"devDependencies": {
+		"@beyonk/svelte-mapbox": "^9.0.5",
 		"@iconify/svelte": "^3.1.0",
 		"@popperjs/core": "^2.11.6",
 		"@sveltejs/adapter-auto": "^1.0.0",
