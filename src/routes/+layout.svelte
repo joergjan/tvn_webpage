@@ -225,8 +225,10 @@
 									if (typeof window !== 'undefined') {
 										localStorage.setItem('cookies_enabled', '0');
 									}
-								}}>Okay</button
+								}}
 							>
+								Okay
+							</button>
 						</div>
 					</div>
 				</div>
