@@ -39,7 +39,7 @@
 			<div class="lg:col-span-4 lg:col-start-2 h-96 mt-5 lg:mt-0 pb-0">
 				<iframe
 					title="location"
-					class="flex shadow-xl"
+					class="flex shadow-lg rounded-lg"
 					width="100%"
 					height="100%"
 					loading="lazy"

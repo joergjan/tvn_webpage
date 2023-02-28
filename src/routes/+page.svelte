@@ -46,11 +46,11 @@
 		<div class="lg:col-span-4 lg:col-start-2 h-96 mt-5 lg:mt-0 pb-0">
 			<iframe
 				title="location"
-				class="flex shadow-xl"
+				class="flex shadow-lg rounded-lg"
 				width="100%"
 				height="100%"
 				loading="lazy"
-				src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCqL-wkzG0GGKyEOAHyY4kky2zDbKz5u-Y&q=primarschule+nussbaumen+tg"
+				src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCqL-wkzG0GGKyEOAHyY4kky2zDbKz5u-Y&q=alte+dorfstrass+11a+nussbaumen+tg"
 			/>
 		</div>
 	</div>
