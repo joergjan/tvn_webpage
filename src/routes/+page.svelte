@@ -24,16 +24,6 @@
 	<Quotes />
 </div>
 
-<div class="pt-20">
-	<div class="h2">Aktuelles</div>
-	<Aktuelles />
-</div>
-
-<div class="pt-20">
-	<div class="h2">Trainingszeiten</div>
-	<Trainingszeiten />
-</div>
-
 <div class="mt-5">
 	<div class="mt-10 lg:grid lg:grid-cols-5 h-108 lg:h-96">
 		<div class="lg:col-span-1 lg:col-start-1">
