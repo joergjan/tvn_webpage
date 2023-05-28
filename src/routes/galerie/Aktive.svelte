@@ -1,7 +1,7 @@
 <script lang="ts">
 	import axios from 'axios';
 	import Galery from './Galery.svelte';
-
+	
 	let flickrPhotoJsonAktive = [];
 
 	let flickrPhotoLinkAktive: { href: string; no: number }[] = [];

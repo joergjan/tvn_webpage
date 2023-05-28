@@ -6,6 +6,8 @@
 
 	let open = false;
 
+	let pageHref = window.location.href;
+
 	let current = 'burger';
 
 	function menuToggle() {
@@ -29,6 +31,13 @@
 	}
 
 	$: $currentPage, reset();
+
+	for (let i = 0; i < titles.length; i++) {
+		if (pageHref.toString().includes(titles[i].href)) {
+			$currentPage = i;
+			pageHref = pageHref;
+		}
+	}
 
 	function reset() {
 		$selectedRiegeID = 0;
