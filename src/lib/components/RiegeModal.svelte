@@ -2,6 +2,7 @@
 	import { createEventDispatcher } from 'svelte';
 	import { fade, slide } from 'svelte/transition';
 	import { currentPage } from '$lib/components/stores';
+	
 	const dispatch = createEventDispatcher();
 	export let close = false;
 
@@ -28,6 +29,8 @@
 		clearInterval(interval);
 	}
 
+
+
 	const interval = setInterval(() => {
 		if (active === images.length - 1) {
 			active = 0;
@@ -37,7 +40,7 @@
 	}, 5000);
 </script>
 
-<div class="relative z-10" in:fade aria-labelledby="modal-title" role="dialog" aria-modal="true">
+<div class="relative z-10" in:fade aria-labelledby="modal-title" role="dialog" aria-modal="true"  >
 	<div class="fixed inset-0 bg-gray-500 bg-opacity-80 transition-opacity" />
 	<slot />
 	<div class="fixed inset-0 overflow-y-auto">
