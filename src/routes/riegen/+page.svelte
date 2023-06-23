@@ -1,8 +1,11 @@
 <script>
-	import { Riegen } from '$lib/components/riegen';
-	import { selectedAgeID, selectedRiegeID } from '$lib/components/stores';
+	import { riegen } from '$lib/components/riegen';
+	import { selectedAgeID } from '$lib/components/stores';
+	import RiegeModal from '$lib/components/RiegeModal.svelte';
 
 	let active = false;
+	let showRiege = false;
+	let currentRiege = 0;
 
 	let listItems = [
 		{
@@ -29,6 +32,18 @@
 			active = true;
 		}
 	}
+
+	function handleClose() {
+		showModal();
+	}
+
+	function showModal() {
+		if (showRiege) {
+			showRiege = false;
+		} else {
+			showRiege = true;
+		}
+	}
 </script>
 
 <svelte:head>
@@ -52,21 +67,20 @@
 				<div
 					class="inline-flex items-center rounded-l-md bg-tvbluelight py-2 pl-3 pr-4 text-white shadow-sm border-r-[1px] border-white"
 				>
-					{#if $selectedRiegeID === 0}
-						<svg
-							class="h-5 w-5"
-							xmlns="http://www.w3.org/2000/svg"
-							viewBox="0 0 20 20"
-							fill="currentColor"
-							aria-hidden="true"
-						>
-							<path
-								fill-rule="evenodd"
-								d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-								clip-rule="evenodd"
-							/>
-						</svg>
-					{/if}
+					<svg
+						class="h-5 w-5"
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 20 20"
+						fill="currentColor"
+						aria-hidden="true"
+					>
+						<path
+							fill-rule="evenodd"
+							d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+							clip-rule="evenodd"
+						/>
+					</svg>
+
 					{#each listItems as item}
 						{#if item.selector === $selectedAgeID}
 							<div class="ml-2.5 text-sm font-medium">
@@ -111,7 +125,6 @@
 								on:click={() => {
 									setActive();
 									$selectedAgeID = item.selector;
-									$selectedRiegeID = 0;
 								}}
 							>
 								<div class="flex justify-between">
@@ -119,7 +132,7 @@
 								</div>
 								<div class="mt-2 ml-12">{item.description}</div>
 
-								{#if $selectedAgeID === item.selector && $selectedRiegeID === 0}
+								{#if $selectedAgeID === item.selector}
 									<span class="hover:text-white">
 										<svg
 											class="h-5 w-5 absolute top-3 left-2"
@@ -146,63 +159,57 @@
 </div>
 
 <div class="grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-	{#each Riegen as riege}
+	{#each riegen as riege, i}
 		{#if riege.ageID === $selectedAgeID || $selectedAgeID === 2}
-			{#if $selectedRiegeID === 0 || riege.riegeID === $selectedRiegeID}
-				<div class="flex flex-col rounded-b-lg shadow-lg">
-					<button
-						on:click={() => {
-							$selectedRiegeID = riege.riegeID;
-							$selectedAgeID = riege.ageID;
-						}}
-						on:click={() => {
-							window.scrollTo(0, 20);
-						}}
-					>
-						<img
-							class="h-48 w-full rounded-t-lg object-cover"
-							src={riege.imageUrl}
-							alt={riege.name}
-						/>
-						<div class="flex flex-1 flex-col p-6">
-							<div class="flex-1">
-								<div class="text-sm text-tvbluelight">
-									{riege.age}
-								</div>
-								<div class="h4 py-1">
-									{riege.name}
-								</div>
-								<div class="mt-1 text-gray-500">
-									{riege.description}
-								</div>
+			<div class="flex flex-col rounded-b-lg shadow-lg">
+				<button
+					on:click={() => {
+						showModal();
+						currentRiege = i;
+					}}
+				>
+					<img
+						class="h-48 w-full rounded-t-lg object-cover"
+						src={riege.imageUrl}
+						alt={riege.name}
+					/>
+					<div class="flex flex-1 flex-col p-6">
+						<div class="flex-1">
+							<div class="text-sm text-tvbluelight">
+								{riege.age}
 							</div>
-							<div class="pt-3 text-sm">
-								<div>{riege.day1}: {riege.time1}</div>
-								{#if riege.twodays}
-									<div>{riege.day2}: {riege.time2}</div>
-								{/if}
-							</div>
-							<div class="mt-3 flex items-center">
-								<div>
-									<div class="sr-only">{riege.leiter.name}</div>
-									<img
-										class="h-10 w-10 rounded-full"
-										src={riege.leiter.imageUrl}
-										alt={riege.leiter.name}
-									/>
-								</div>
-
-								<div class="ml-3">
-									<div class="text-sm text-gray-900">
-										<div>{riege.leiter.name}</div>
-									</div>
-									<div class="flex space-x-1 text-sm text-gray-500" />
-								</div>
+							<div class="h4 py-1">
+								{riege.name}
 							</div>
 						</div>
-					</button>
-				</div>
-			{/if}
+						<div class="pt-3 text-sm">
+							<div>{riege.day1}: {riege.time1}</div>
+							{#if riege.twodays}
+								<div>{riege.day2}: {riege.time2}</div>
+							{/if}
+						</div>
+					</div>
+				</button>
+			</div>
 		{/if}
 	{/each}
 </div>
+
+{#if showRiege}
+	<RiegeModal
+		on:close={handleClose}
+		name={riegen[currentRiege].name}
+		time1={riegen[currentRiege].time1}
+		time2={riegen[currentRiege].time2}
+		day1={riegen[currentRiege].day1}
+		day2={riegen[currentRiege].day2}
+		twodays={riegen[currentRiege].twodays}
+		age={riegen[currentRiege].age}
+		description={riegen[currentRiege].description}
+		imageUrl={riegen[currentRiege].imageUrl}
+		imageUrl2={riegen[currentRiege].imageUrl2}
+		imageUrl3={riegen[currentRiege].imageUrl3}
+		leiterName={riegen[currentRiege].leiter.name}
+		leiterImageUrl={riegen[currentRiege].leiter.imageUrl}
+	/>
+{/if}

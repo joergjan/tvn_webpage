@@ -45,9 +45,9 @@
 	}
 </script>
 
-<nav class="sticky top-0 z-20">
+<nav class="sticky top-0 z-10">
 	<div class="bg-tvbluelight md:h-3 h-1 " />
-	<div class="bg-white mx-auto max-w-7xl pt-2 pb-2 md:pb-0 px-4 sm:px-6 lg:px-8 z-30 ">
+	<div class="bg-white mx-auto max-w-7xl pt-2 pb-2 md:pb-0 px-4 sm:px-6 lg:px-8 z-20 ">
 		<div class="flex h-16 justify-between py-2 ">
 			<div class="flex flex-shrink-0 items-center">
 				<a href="/" on:click={() => ($currentPage = 0)}>

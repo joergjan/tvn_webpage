@@ -11,6 +11,15 @@ module.exports = {
 			},
 			scale: {
 				102: '1.02'
+			},
+			animation: {
+				wiggle: 'wiggle 1s ease-in-out infinite'
+			},
+			keyframes: {
+				wiggle: {
+					'0%, 100%': { transform: 'rotate(-5deg)' },
+					'50%': { transform: 'rotate(5deg)' }
+				}
 			}
 		}
 	},

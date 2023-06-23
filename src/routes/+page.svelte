@@ -1,7 +1,8 @@
 <script>
-	import Trainingszeiten from './Trainingszeiten.svelte';
-	import Quotes from './Quotes.svelte';
-	import Aktuelles from './Aktuelles.svelte';
+	import Trainingszeiten from '$lib/components/Trainingszeiten.svelte';
+	import Quotes from '$lib/components/Quotes.svelte';
+	import Aktuelles from '$lib/components/Aktuelles.svelte';
+	import IntersectionObserver from '$lib/components/IntersectionObserver.svelte';
 </script>
 
 <svelte:head>
@@ -20,19 +21,25 @@
 	</div>
 </div>
 
-<div class="pt-20">
-	<Quotes />
-</div>
+<IntersectionObserver once={true} let:intersecting>
+	<div class="pt-20">
+		<Quotes />
+	</div>
+</IntersectionObserver>
 
-<div class="pt-20">
-	<div class="h2">Aktuelles</div>
-	<Aktuelles />
-</div>
+<IntersectionObserver once={true} let:intersecting>
+	<div class="pt-20">
+		<div class="h2">Aktuelles</div>
+		<Aktuelles />
+	</div>
+</IntersectionObserver>
 
-<div class="pt-20">
-	<div class="h2">Trainingszeiten</div>
-	<Trainingszeiten />
-</div>
+<IntersectionObserver once={true} let:intersecting>
+	<div class="pt-20">
+		<div class="h2">Trainingszeiten</div>
+		<Trainingszeiten />
+	</div>
+</IntersectionObserver>
 
 <div class="mt-5">
 	<div class="mt-10 lg:grid lg:grid-cols-5 h-108 lg:h-96">
@@ -44,14 +51,16 @@
 		</div>
 
 		<div class="lg:col-span-4 lg:col-start-2 h-96 mt-5 lg:mt-0 pb-0">
-			<iframe
-				title="location"
-				class="flex shadow-lg rounded-lg"
-				width="100%"
-				height="100%"
-				loading="lazy"
-				src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCqL-wkzG0GGKyEOAHyY4kky2zDbKz5u-Y&q=alte+dorfstrass+11a+nussbaumen+tg"
-			/>
+			<IntersectionObserver once={true} let:intersecting>
+				<iframe
+					title="location"
+					class="flex shadow-lg rounded-lg"
+					width="100%"
+					height="100%"
+					loading="lazy"
+					src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCqL-wkzG0GGKyEOAHyY4kky2zDbKz5u-Y&q=alte+dorfstrass+11a+nussbaumen+tg"
+				/>
+			</IntersectionObserver>
 		</div>
 	</div>
 </div>

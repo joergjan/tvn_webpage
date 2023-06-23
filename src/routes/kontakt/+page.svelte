@@ -1,6 +1,7 @@
 <script>
-	import Vorstand from './Vorstand.svelte';
-	import Leiter from './Leiter.svelte';
+	import { Vorstand } from './vorstand';
+	import { Leiter } from './leiter';
+	import Kontakt from '$lib/components/Kontakt.svelte';
 </script>
 
 <title>TVN | Kontakt</title>
@@ -19,7 +20,13 @@
 	<div>
 		<div class="h2">Unser Vorstand</div>
 		<div>Der Vorstand leitet den Verein</div>
-		<Vorstand />
+		<ul class="sm:grid sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3">
+			{#each Vorstand as person}
+				<li>
+					<Kontakt {person}  />
+				</li>
+			{/each}
+		</ul>
 	</div>
 	<div>
 		<div class="h2 pt-10">Unsere Leiter</div>
@@ -27,7 +34,13 @@
 			Die Leiter sind für den täglichen Turnbetrieb zuständig. Mit viel Herzblut organisieren sie
 			Turnstunden, Ausflüge und vieles mehr.
 		</div>
-		<Leiter />
+		<ul class="sm:grid sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3">
+			{#each Leiter as person}
+				<li>
+					<Kontakt {person} vorstand={false}/>
+				</li>
+			{/each}
+		</ul>
 		<div class="mt-10 lg:grid lg:grid-cols-5 h-108 lg:h-96">
 			<div class="lg:col-span-1 lg:col-start-1">
 				<div class="font-semibold">Turnverein Nussbaumen</div>

@@ -8,7 +8,7 @@ export const Vorstand = [
     {
         name: 'Jan Jörg',
         role: 'Oberturner',
-        imageUrl: './images/people/avatar.jpeg',
+        imageUrl: './images/people/jan.jpg',
         mail: 'mailto:jan.joerg.jj@gmail.com'
     },
     {
