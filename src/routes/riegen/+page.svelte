@@ -197,6 +197,7 @@
 
 {#if showRiege}
 	<RiegeModal
+		on:click_outside={showModal}
 		on:close={handleClose}
 		name={riegen[currentRiege].name}
 		time1={riegen[currentRiege].time1}
