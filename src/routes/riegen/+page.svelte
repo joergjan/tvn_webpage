@@ -65,7 +65,7 @@
 		<div class="pb-3 flex items-end">
 			<div class="inline-flex rounded-md shadow-sm">
 				<div
-					class="inline-flex items-center rounded-l-md bg-tvbluelight py-2 pl-3 pr-4 text-white shadow-sm border-r-[1px] border-white"
+					class="inline-flex items-center rounded-l-md bg-tvblue py-2 pl-3 pr-4 text-white shadow-sm border-r-[1px] border-white"
 				>
 					<svg
 						class="h-5 w-5"
@@ -91,7 +91,7 @@
 				</div>
 				<button
 					type="button"
-					class="inline-flex items-center rounded-l-none rounded-r-md bg-tvbluelight p-2 text-sm font-medium text-white hover:opacity-90"
+					class="inline-flex items-center rounded-l-none rounded-r-md bg-tvblue p-2 text-sm font-medium text-white hover:opacity-90"
 					aria-haspopup="listbox"
 					aria-expanded="true"
 					aria-labelledby="listbox-label"
@@ -118,7 +118,7 @@
 				class="absolute left-0 z-10 w-72 origin-top-right divide-y divide-gray-200 overflow-hidden rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5"
 			>
 				{#each listItems as item}
-					<li class="p-4 text-sm hover:bg-tvbluelight hover:text-white">
+					<li class="p-4 text-sm hover:bg-tvblue hover:text-white">
 						<div class="relative">
 							<button
 								class="flex flex-col"
@@ -159,13 +159,13 @@
 </div>
 
 <div class="grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-	{#each riegen as riege, i}
+	{#each [...riegen].reverse() as riege, i}
 		{#if riege.ageID === $selectedAgeID || $selectedAgeID === 2}
-			<div class="flex flex-col rounded-b-lg shadow-lg">
+			<div class="flex flex-col rounded-b-lg shadow-lg hover-scale">
 				<button
 					on:click={() => {
 						showModal();
-						currentRiege = i;
+						currentRiege = riegen.length-1-i;
 					}}
 				>
 					<img

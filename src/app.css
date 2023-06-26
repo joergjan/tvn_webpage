@@ -19,10 +19,11 @@
 //
 */
 
+
+
 .stopScroll {
 	@apply h-full overflow-hidden;
 }
-
 
 /* 
 //
@@ -37,13 +38,12 @@
 }
 
 .navbarTitle {
-	@apply inline-flex items-center border-b-2 border-transparent text-gray-500 hover:border-tvbluelight hover:text-gray-700 px-1 pt-1 font-medium hover:transition-all hover:duration-[600ms];
+	@apply inline-flex items-center border-b-2 border-transparent text-gray-500 hover:border-tvblue hover:text-gray-700 px-1 pt-1 font-medium hover:transition-all hover:duration-[600ms];
 }
 
 .navbarTitleSelected {
-	@apply inline-flex items-center border-b-2 border-tvbluelight text-gray-700 px-1 pt-1 font-medium;
+	@apply inline-flex items-center border-b-2 border-tvblue text-gray-700 px-1 pt-1 font-medium;
 }
-
 
 /* 
 //
@@ -61,7 +61,7 @@
 
 .badge-blue {
 	@apply inline-flex items-center;
-	@apply bg-tvbluelight text-white rounded-2xl hover:opacity-80;
+	@apply bg-tvblue text-white rounded-2xl hover:opacity-80;
 }
 
 .hover {
@@ -69,12 +69,14 @@
 }
 
 .hover-scale {
-	@apply hover:text-gray-400 hover:scale-102;
+	@apply hover:scale-102;
 }
 
 .link {
 	@apply text-blue-700 hover:opacity-70 underline font-normal text-lg;
 }
+
+
 
 /* 
 //

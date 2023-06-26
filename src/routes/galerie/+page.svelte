@@ -1,6 +1,5 @@
 <script>
-	import Aktive from './Aktive.svelte';
-	import Jugi from './Jugi.svelte';
+	import Aktive from '$lib/components/Aktive.svelte';
 </script>
 
 <svelte:head>

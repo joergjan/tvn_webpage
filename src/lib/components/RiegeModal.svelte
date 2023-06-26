@@ -1,8 +1,7 @@
 <script>
 	import { createEventDispatcher } from 'svelte';
-	import { fade, slide } from 'svelte/transition';
+	import { fade } from 'svelte/transition';
 	import { currentPage } from '$lib/components/stores';
-	
 	const dispatch = createEventDispatcher();
 	export let close = false;
 
@@ -29,8 +28,6 @@
 		clearInterval(interval);
 	}
 
-
-
 	const interval = setInterval(() => {
 		if (active === images.length - 1) {
 			active = 0;
@@ -38,9 +35,31 @@
 			active++;
 		}
 	}, 5000);
+
+	function nextPicture() {
+		if (active === images.length - 1) {
+			active = 0;
+		} else {
+			active++;
+		}
+	}
+
+	function previousPicture() {
+		if (active === 0) {
+			active = images.length - 1;
+		} else {
+			active--;
+		}
+	}
 </script>
 
-<div class="relative z-10" in:fade aria-labelledby="modal-title" role="dialog" aria-modal="true"  >
+<div
+	class="relative z-10 "
+	in:fade={{ duration: 300 }}
+	aria-labelledby="modal-title"
+	role="dialog"
+	aria-modal="true"
+>
 	<div class="fixed inset-0 bg-gray-500 bg-opacity-80 transition-opacity" />
 	<slot />
 	<div class="fixed inset-0 overflow-y-auto">
@@ -48,34 +67,89 @@
 			<div
 				class="relative transform overflow-hidden rounded-lg bg-white  text-left shadow-xl transition-all  sm:w-full sm:max-w-3xl"
 			>
-				<div in:slide class="relative">
-					{#each images as image, i}
-						{#if i === active}
-							<img
-								class="sm:max-h-96 sm:h-auto h-48 w-full rounded-t-lg object-cover"
-								src={image}
-								alt={name}
-							/>
-						{/if}
+				<div in:fade class="relative">
+					<div class="w-full h-full">
+						<img
+							class="absolute -z-10 w-2/3 h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-50"
+							src="./images/logos/logo.png"
+							alt="Turnverein Nussbaumen"
+						/>
+					</div>
 
-						<div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex">
-							{#each images as image, i}
+					<div class="sm:block hidden">
+						<div class="absolute top-1/2 left-0 text-2xl transform -translate-y-1/2 z-20">
+							<div class="relative">
+								<div class="block bg-black h-12 w-10 opacity-60 rounded-r-md" />
 								<button
+									class="absolute top-1/2 transform -translate-y-1/2 text-gray-200 hover:text-gray-400 left-0"
 									on:click={() => {
-										active = i;
+										previousPicture();
 									}}
-								>
-									<div
-										class="flex items-center justify-center w-3 h-3 rounded-full bg-gray-500 bg-opacity-30 mx-1"
-									>
-										{#if i === active}
-											<div class="w-full h-full rounded-full bg-white bg-opacity-30" />
-										{/if}
-									</div>
+									>&#x2329;
 								</button>
-							{/each}
+							</div>
 						</div>
-					{/each}
+
+						<div class="absolute top-1/2 right-0 text-2xl transform -translate-y-1/2 z-20">
+							<div class="relative">
+								<div class="block bg-black h-12 w-10 opacity-60 rounded-l-md" />
+								<button
+									class="absolute top-1/2 transform -translate-y-1/2 text-gray-200 hover:text-gray-400 right-0"
+									on:click={() => {
+										nextPicture();
+									}}
+									>&#x232a;
+								</button>
+							</div>
+						</div>
+					</div>
+
+					<div class="sm:hidden flex">
+						<button
+							class="w-1/2 bg-none h-full absolute left-0 text-black"
+							on:click={() => {
+								previousPicture();
+							}}
+						/>
+						<button
+							class="w-1/2 bg-none h-full absolute right-0 text-white"
+							on:click={() => {
+								nextPicture();
+							}}
+						/>
+					</div>
+
+					<div in:fade={{ duration: 1500 }}>
+						{#each images as image, i}
+							<div in:fade={{ duration: 500 }}>
+								{#if i === active}
+									<img
+										class="sm:max-h-96 sm:h-auto h-48 w-full rounded-t-lg object-cover"
+										src={image}
+										alt={name}
+									/>
+								{/if}
+							</div>
+
+							<div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex">
+								{#each images as image, i}
+									<button
+										on:click={() => {
+											active = i;
+										}}
+									>
+										<div
+											class="flex items-center justify-center w-3 h-3 rounded-full bg-gray-500 bg-opacity-30 mx-1"
+										>
+											{#if i === active}
+												<div class="w-full h-full rounded-full bg-white bg-opacity-30" />
+											{/if}
+										</div>
+									</button>
+								{/each}
+							</div>
+						{/each}
+					</div>
 				</div>
 
 				<div class="flex flex-1 flex-col p-6">

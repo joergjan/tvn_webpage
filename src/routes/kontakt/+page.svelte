@@ -7,7 +7,7 @@
 <title>TVN | Kontakt</title>
 
 <svelte:head>
-	<title>TV Nussbaumen</title>
+	<title>TVN | Kontakt</title>
 	<meta
 		name="description"
 		content="Alle Vorstandsmitglieder und Leiter des TV Nussbaumen auf einen Blick"

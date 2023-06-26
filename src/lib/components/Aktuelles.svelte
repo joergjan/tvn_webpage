@@ -33,8 +33,7 @@
 		}}
 	>
 		<div class="flex items-center hover">
-			<div class="h3">Unterhaltung</div>
-
+			<div class="h3">Unterhaltung 2023</div>
 			<svg
 				class={unterhaltung ? 'h-10 w-10 ml-1 rotate-180' : 'h-10 w-10 ml-1'}
 				xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +75,7 @@
 		}}
 	>
 		<div class="flex items-center hover">
-			<div class="h3">Bollä Dunnschtig</div>
+			<div class="h3">Bollä Dunnschtig 2023</div>
 
 			<svg
 				class={bolle ? 'h-10 w-10 ml-1 rotate-180' : 'h-10 w-10 ml-1'}
@@ -125,7 +124,7 @@
 		}}
 	>
 		<div class="flex items-center hover">
-			<div class="h3">Turnfester</div>
+			<div class="h3">Turnfester 2023</div>
 
 			<svg
 				class={turnfest ? 'h-10 w-10 ml-1 rotate-180' : 'h-10 w-10 ml-1'}

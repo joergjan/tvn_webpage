@@ -45,9 +45,9 @@
 	}
 </script>
 
+<div class="bg-tvblue h-3 " />
 <nav class="sticky top-0 z-10">
-	<div class="bg-tvbluelight md:h-3 h-1 " />
-	<div class="bg-white mx-auto max-w-7xl pt-2 pb-2 md:pb-0 px-4 sm:px-6 lg:px-8 z-20 ">
+	<div class="bg-white mx-auto max-w-7xl pt-2 pb-2 md:pb-0 px-4 sm:px-6 lg:px-8 ">
 		<div class="flex h-16 justify-between py-2 ">
 			<div class="flex flex-shrink-0 items-center">
 				<a href="/" on:click={() => ($currentPage = 0)}>
@@ -174,7 +174,7 @@
 		</div>
 	</div>
 	<footer>
-		<div class="bg-tvbluelight h-1 mt-10 mb-8" />
+		<div class="bg-tvblue h-1 mt-10 mb-8" />
 		<div class="mx-auto max-w-7xl overflow-hidden pb-20 pt-0 px-6 lg:px-8">
 			<nav class="-mb-6 columns-2 md:flex md:justify-center md:space-x-12" aria-label="Footer">
 				{#each titles as title, i}
@@ -228,7 +228,7 @@
 							<p class="w-0 flex-1 text-sm font-medium">Wir verwenden keine 🍪</p>
 							<button
 								type="button"
-								class="ml-3 flex-shrink-0 rounded-md bg-white text-sm font-medium text-tvbluelight"
+								class="ml-3 flex-shrink-0 rounded-md bg-white text-sm font-medium text-tvblue"
 								on:click={() => {
 									cookie = false;
 									if (typeof window !== 'undefined') {
