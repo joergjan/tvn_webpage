@@ -39,9 +39,7 @@
 			startRow1: startRow1,
 			endRow1: startRow1 + rows1,
 			startRow2: startRow2,
-			endRow2: startRow2 + rows2,
-			training1Link: riege.training1Link,
-			training2Link: riege.training2Link
+			endRow2: startRow2 + rows2
 		};
 	});
 
@@ -232,29 +230,31 @@
 </div>
 
 <div class="block sm:hidden">
-	<ul class="divide-y divide-gray-100">
+	<ul class="divide-y divide-gray-200">
 		{#each riegen as riege, i}
-			<li class="flex items-center justify-between gap-x-6 py-5">
+			<li class="flex items-center justify-between py-3">
 				<button
-					class="w-full"
+					class="w-full relative"
 					on:click={() => {
 						currentRiege = i;
 						showModal();
 					}}
 				>
-					<div class="min-w-0">
-						<div class="flex items-start gap-x-3">
-							<p class="text-sm font-semibold leading-6 text-gray-900">{riege.name}</p>
+					<div class="">
+						<div class="flex items-start">
+							<p class="font-semibold text-gray-900">{riege.name}</p>
 						</div>
-						<div class="mt-1 flex items-center gap-x-2 text-xs leading-5 text-gray-500">
-							<p class="whitespace-nowrap">
+						<div class="mt-1 flex items-center text-gray-500">
+							<div class="flex whitespace-nowrap">
 								{riege.day1}
-								{riege.time1}
-							</p>
+								<div class="pl-2">
+									{riege.time1}
+								</div>
+							</div>
 						</div>
 
 						{#if riege.twodays}
-							<div class="mt-1 flex items-center gap-x-2 text-xs leading-5 text-gray-500">
+							<div class="mt-1 flex items-center leading-5 text-gray-500">
 								<p class="whitespace-nowrap">
 									{riege.day2}
 									{riege.time2}
@@ -262,6 +262,7 @@
 							</div>
 						{/if}
 					</div>
+					<div class="absolute right-5 top-1/2 transform -translate-y-1/2 -rotate-45 text-xl">&rarr;</div>
 				</button>
 			</li>
 		{/each}

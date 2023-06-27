@@ -16,8 +16,8 @@
 <div class="h1 md:hidden">Unser Verein</div>
 
 <div class="hidden md:block md:-mt-32 md:-mb-20 lg:-mt-48">
-	<div class="justify-center items-center">
-		<img class="" src="./images/logos/turner_webpage.png" alt="turner" />
+	<div class="justify-center items-center z-0">
+		<img src="./images/logos/turner_webpage.png" alt="turner" />
 	</div>
 </div>
 
@@ -35,7 +35,7 @@
 </IntersectionObserver>
 
 <IntersectionObserver once={true} let:intersecting>
-	<div class="pt-20">
+	<div class="pt-12">
 		<div class="h2">Trainingszeiten</div>
 		<Trainingszeiten />
 	</div>

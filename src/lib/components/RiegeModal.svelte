@@ -3,8 +3,9 @@
 	import { fade } from 'svelte/transition';
 	import { currentPage } from '$lib/components/stores';
 	const dispatch = createEventDispatcher();
-	export let close = false;
+	import { createEvent } from 'ics';
 
+	export let close = false;
 	export let name = '';
 	export let time1 = '';
 	export let day1 = '';
@@ -51,6 +52,7 @@
 			active--;
 		}
 	}
+
 </script>
 
 <div
@@ -67,7 +69,7 @@
 			<div
 				class="relative transform overflow-hidden rounded-lg bg-white  text-left shadow-xl transition-all  sm:w-full sm:max-w-3xl"
 			>
-				<div in:fade class="relative">
+				<div class="relative">
 					<div class="w-full h-full">
 						<img
 							class="absolute -z-10 w-2/3 h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-50"
@@ -81,7 +83,7 @@
 							<div class="relative">
 								<div class="block bg-black h-12 w-10 opacity-60 rounded-r-md" />
 								<button
-									class="absolute top-1/2 transform -translate-y-1/2 text-gray-200 hover:text-gray-400 left-0"
+									class="absolute top-1/2 transform -translate-y-1/2 text-gray-200 hover:text-gray-400 left-1"
 									on:click={() => {
 										previousPicture();
 									}}
@@ -94,7 +96,7 @@
 							<div class="relative">
 								<div class="block bg-black h-12 w-10 opacity-60 rounded-l-md" />
 								<button
-									class="absolute top-1/2 transform -translate-y-1/2 text-gray-200 hover:text-gray-400 right-0"
+									class="absolute top-1/2 transform -translate-y-1/2 text-gray-200 hover:text-gray-400 right-1"
 									on:click={() => {
 										nextPicture();
 									}}
@@ -121,7 +123,7 @@
 
 					<div in:fade={{ duration: 1500 }}>
 						{#each images as image, i}
-							<div in:fade={{ duration: 500 }}>
+							<div>
 								{#if i === active}
 									<img
 										class="sm:max-h-96 sm:h-auto h-48 w-full rounded-t-lg object-cover"

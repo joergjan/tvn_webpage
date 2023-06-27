@@ -3,11 +3,12 @@
 	import { currentPage, selectedAgeID, selectedRiegeID } from '$lib/components/stores';
 	import { titles } from '$lib/components/navbar';
 	import { fade } from 'svelte/transition';
+	import BannerBolle from '$lib/components/BannerBolle.svelte';
 
 	let open = false;
 
 	let pageHref = window.location.href;
-
+	let showBanner = true;
 	let current = 'burger';
 
 	function menuToggle() {
@@ -43,9 +44,20 @@
 		$selectedRiegeID = 0;
 		$selectedAgeID = 2;
 	}
+
+	function handleClose() {
+		showBanner = false;
+	}
 </script>
 
-<div class="bg-tvblue h-3 " />
+{#if showBanner}
+	<div style="z-index: 1">
+		<BannerBolle on:close={handleClose} />
+	</div>
+{:else}
+	<div class="bg-tvblue h-3 " />
+{/if}
+
 <nav class="sticky top-0 z-10">
 	<div class="bg-white mx-auto max-w-7xl pt-2 pb-2 md:pb-0 px-4 sm:px-6 lg:px-8 ">
 		<div class="flex h-16 justify-between py-2 ">
