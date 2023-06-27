@@ -52,7 +52,6 @@
 			active--;
 		}
 	}
-
 </script>
 
 <div
@@ -173,25 +172,27 @@
 							<div>{day2}: {time2}</div>
 						{/if}
 					</div>
-					<div class="mt-3 flex items-center">
-						<div>
-							<img class="h-10 w-10 rounded-full" src={leiterImageUrl} alt={leiterName} />
-						</div>
 
-						<div class="ml-3">
-							<button
-								on:click={() => {
-									$currentPage++;
-								}}
-							>
-								<a href="/kontakt">
+					<div class="mt-3">
+						<a href="/kontakt" class="flex items-center">
+							<div>
+								<img class="h-10 w-10 rounded-full" src={leiterImageUrl} alt={leiterName} />
+							</div>
+
+							<div class="ml-3">
+								<button
+									on:click={() => {
+										$currentPage++;
+									}}
+								>
 									<div class="text-sm text-gray-900">
 										<div>{leiterName}</div>
 									</div>
-								</a>
-							</button>
-						</div>
+								</button>
+							</div>
+						</a>
 					</div>
+
 					<div class="absolute top-0 right-0 h-12 w-12 ">
 						<div class=" bg-black h-full w-full opacity-60 rounded-bl-lg" />
 						<button
