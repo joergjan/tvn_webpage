@@ -3,6 +3,7 @@
 	import Quotes from '$lib/components/Quotes.svelte';
 	import Aktuelles from '$lib/components/Aktuelles.svelte';
 	import IntersectionObserver from '$lib/components/IntersectionObserver.svelte';
+	import { currentPage } from '$lib/components/stores';
 </script>
 
 <svelte:head>
@@ -37,6 +38,10 @@
 <IntersectionObserver once={true} let:intersecting>
 	<div class="pt-12">
 		<div class="h2">Trainingszeiten</div>
+		<div>
+			<a href="/downloads" on:click={()=>{$currentPage = 5}}>Infos zu Anlässen gibts im Jahresprogramm oder direkt beim Riegenleiter</a>
+
+		</div>
 		<Trainingszeiten />
 	</div>
 </IntersectionObserver>

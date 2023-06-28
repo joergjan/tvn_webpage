@@ -223,6 +223,9 @@
 					>Turnverein Nussbaumen</a
 				>.
 			</div>
+			<div class="mt-2 text-center text-xs leading-5 ">
+				<a href="mailto:info@tvnussbaumen.ch"> info@tvnussbaumen.ch </a>
+			</div>
 		</div>
 	</footer>
 </div>
@@ -237,7 +240,7 @@
 				<div class="p-4">
 					<div class="flex items-center">
 						<div class="flex w-0 flex-1 justify-between">
-							<p class="w-0 flex-1 text-sm font-medium">Wir verwenden keine 🍪</p>
+							<p class="w-0 flex-1 text-sm font-medium">Wir verwenden nur notwendige 🍪</p>
 							<button
 								type="button"
 								class="ml-3 flex-shrink-0 rounded-md bg-white text-sm font-medium text-tvblue"
