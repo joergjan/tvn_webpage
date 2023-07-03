@@ -1,7 +1,6 @@
 <script>
-	import { Vorstand } from './vorstand';
-	import { Leiter } from './leiter';
 	import Kontakt from '$lib/components/Kontakt.svelte';
+	import { personen } from '$lib/components/personen';
 </script>
 
 <title>TVN | Kontakt</title>
@@ -21,10 +20,12 @@
 		<div class="h2">Unser Vorstand</div>
 		<div>Der Vorstand leitet den Verein</div>
 		<ul class="sm:grid sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3">
-			{#each Vorstand as person}
-				<li>
-					<Kontakt {person}  />
-				</li>
+			{#each personen as person}
+				{#if person.vorstand}
+					<li>
+						<Kontakt {person} />
+					</li>
+				{/if}
 			{/each}
 		</ul>
 	</div>
@@ -35,10 +36,12 @@
 			Turnstunden, Ausflüge und vieles mehr.
 		</div>
 		<ul class="sm:grid sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3">
-			{#each Leiter as person}
-				<li>
-					<Kontakt {person} vorstand={false}/>
-				</li>
+			{#each personen as person}
+				{#if person.leiter}
+					<li>
+						<Kontakt {person} />
+					</li>
+				{/if}
 			{/each}
 		</ul>
 		<div class="mt-10 lg:grid lg:grid-cols-5 h-108 lg:h-96">

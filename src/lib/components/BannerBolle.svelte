@@ -3,13 +3,14 @@
 	import { currentPage, selectedAgeID, selectedRiegeID } from '$lib/components/stores';
 
 	export let close = false;
-	const dispatch = createEventDispatcher();
+	const dispatch = createEventDispatcher()
 
 	function handleClick() {
 		close = true;
 		dispatch('close', close);
 	}
 </script>
+
 
 <div class="absolute top-0 w-full z-10">
 	<div class="flex items-center gap-x-6 bg-tvyellow px-6 py-2.5 sm:px-3.5 sm:before:flex-1">

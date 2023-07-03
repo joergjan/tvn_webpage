@@ -3,8 +3,12 @@
 	import { fade } from 'svelte/transition';
 	import { currentPage } from '$lib/components/stores';
 	const dispatch = createEventDispatcher();
-	import { createEvent } from 'ics';
+	import { personen } from '$lib/components/personen';
 
+	/**
+	 * @type {any[]}
+	 */
+	let leiter = [];
 	export let close = false;
 	export let name = '';
 	export let time1 = '';
@@ -17,11 +21,17 @@
 	export let imageUrl = '';
 	export let imageUrl2 = '';
 	export let imageUrl3 = '';
-	export let leiterName = '';
-	export let leiterImageUrl = '';
+	export let riegeId = 0;
 	let active = 0;
 
 	let images = [imageUrl, imageUrl2, imageUrl3];
+	let imagesLength = 3;
+
+	for (let i = 0; i < images.length; i++) {
+		if (images[i] == '') {
+			imagesLength--;
+		}
+	}
 
 	function handleClick() {
 		close = true;
@@ -30,10 +40,12 @@
 	}
 
 	const interval = setInterval(() => {
-		if (active === images.length - 1) {
-			active = 0;
-		} else {
-			active++;
+		if (imagesLength > 1) {
+			if (active === images.length - 1) {
+				active = 0;
+			} else {
+				active++;
+			}
 		}
 	}, 5000);
 
@@ -50,6 +62,18 @@
 			active = images.length - 1;
 		} else {
 			active--;
+		}
+	}
+
+	for (const person of personen) {
+		if (riegeId == person.riegeId) {
+			leiter.push(person);
+		}
+		if (riegeId == person.riege2Id) {
+			leiter.push(person);
+		}
+		if (riegeId == person.riege3Id) {
+			leiter.push(person);
 		}
 	}
 </script>
@@ -77,78 +101,84 @@
 						/>
 					</div>
 
-					<div class="sm:block hidden">
-						<div class="absolute top-1/2 left-0 text-2xl transform -translate-y-1/2 z-20">
-							<div class="relative">
-								<div class="block bg-black h-12 w-10 opacity-60 rounded-r-md" />
-								<button
-									class="absolute top-1/2 transform -translate-y-1/2 text-gray-200 hover:text-gray-400 left-1"
-									on:click={() => {
-										previousPicture();
-									}}
-									>&#x2329;
-								</button>
+					{#if imagesLength > 1}
+						<div class="sm:block hidden">
+							<div class="absolute top-1/2 left-0 text-2xl transform -translate-y-1/2 z-20">
+								<div class="relative">
+									<div class="block bg-black h-12 w-10 opacity-60 rounded-r-md" />
+									<button
+										class="absolute top-1/2 transform -translate-y-1/2 text-gray-200 hover:text-gray-400 left-1"
+										on:click={() => {
+											previousPicture();
+										}}
+										>&#x2329;
+									</button>
+								</div>
+							</div>
+
+							<div class="absolute top-1/2 right-0 text-2xl transform -translate-y-1/2 z-20">
+								<div class="relative">
+									<div class="block bg-black h-12 w-10 opacity-60 rounded-l-md" />
+									<button
+										class="absolute top-1/2 transform -translate-y-1/2 text-gray-200 hover:text-gray-400 right-1"
+										on:click={() => {
+											nextPicture();
+										}}
+										>&#x232a;
+									</button>
+								</div>
 							</div>
 						</div>
 
-						<div class="absolute top-1/2 right-0 text-2xl transform -translate-y-1/2 z-20">
-							<div class="relative">
-								<div class="block bg-black h-12 w-10 opacity-60 rounded-l-md" />
-								<button
-									class="absolute top-1/2 transform -translate-y-1/2 text-gray-200 hover:text-gray-400 right-1"
-									on:click={() => {
-										nextPicture();
-									}}
-									>&#x232a;
-								</button>
-							</div>
+						<div class="sm:hidden flex">
+							<button
+								class="w-1/2 bg-none h-full absolute left-0 text-black"
+								on:click={() => {
+									previousPicture();
+								}}
+							/>
+							<button
+								class="w-1/2 bg-none h-full absolute right-0 text-white"
+								on:click={() => {
+									nextPicture();
+								}}
+							/>
 						</div>
-					</div>
-
-					<div class="sm:hidden flex">
-						<button
-							class="w-1/2 bg-none h-full absolute left-0 text-black"
-							on:click={() => {
-								previousPicture();
-							}}
-						/>
-						<button
-							class="w-1/2 bg-none h-full absolute right-0 text-white"
-							on:click={() => {
-								nextPicture();
-							}}
-						/>
-					</div>
+					{/if}
 
 					<div in:fade={{ duration: 1500 }}>
 						{#each images as image, i}
-							<div>
-								{#if i === active}
-									<img
-										class="sm:max-h-96 sm:h-auto h-48 w-full rounded-t-lg object-cover"
-										src={image}
-										alt={name}
-									/>
-								{/if}
-							</div>
+							{#if image !== ''}
+								<div>
+									{#if i === active}
+										<img
+											class="sm:max-h-96 sm:h-auto h-48 w-full rounded-t-lg object-cover"
+											src={image}
+											alt={name}
+										/>
+									{/if}
+								</div>
 
-							<div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex">
-								{#each images as image, i}
-									<button
-										on:click={() => {
-											active = i;
-										}}
-									>
-										<div
-											class="flex items-center justify-center w-3 h-3 rounded-full bg-gray-500 bg-opacity-30 mx-1"
-										>
-											{#if i === active}
-												<div class="w-full h-full rounded-full bg-white bg-opacity-30" />
-											{/if}
-										</div>
-									</button>
-								{/each}
-							</div>
+								<div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex">
+									{#if imagesLength > 1}
+										{#each images as image, i}
+											<button
+												on:click={() => {
+													active = i;
+												}}
+											>
+												<div
+													class="flex items-center justify-center w-3 h-3 rounded-full bg-gray-500 bg-opacity-30 mx-1"
+												>
+													{#if i === active}
+														<div class="w-full h-full rounded-full bg-white bg-opacity-30" />
+													{/if}
+												</div>
+											</button>
+										{/each}
+									{/if}
+								</div>
+							{/if}
 						{/each}
 					</div>
 				</div>
@@ -173,25 +203,31 @@
 						{/if}
 					</div>
 
-					<div class="mt-3">
-						<a href="/kontakt" class="flex items-center">
-							<div>
-								<img class="h-10 w-10 rounded-full" src={leiterImageUrl} alt={leiterName} />
-							</div>
+					{#each leiter as leit}
+						<div class="mt-3">
+							<a href="/kontakt" class="flex items-center">
+								<div>
+									<img
+										class="sm:h-12 sm:w-12 h-10 w-10 rounded-full"
+										src={leit.imageUrl}
+										alt={leit.name}
+									/>
+								</div>
 
-							<div class="ml-3">
-								<button
-									on:click={() => {
-										$currentPage++;
-									}}
-								>
-									<div class="text-sm text-gray-900">
-										<div>{leiterName}</div>
-									</div>
-								</button>
-							</div>
-						</a>
-					</div>
+								<div class="ml-3">
+									<button
+										on:click={() => {
+											$currentPage++;
+										}}
+									>
+										<div class="text-sm text-gray-900">
+											<div>{leit.name}</div>
+										</div>
+									</button>
+								</div>
+							</a>
+						</div>
+					{/each}
 
 					<div class="absolute top-0 right-0 h-12 w-12 ">
 						<div class=" bg-black h-full w-full opacity-60 rounded-bl-lg" />

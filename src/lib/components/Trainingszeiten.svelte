@@ -51,8 +51,6 @@
 		return hours * 60 + minutes;
 	}
 
-	console.log(riegenWithStartEndTimes);
-
 	const times = [
 		'09:00',
 		'10:00',
@@ -262,7 +260,9 @@
 							</div>
 						{/if}
 					</div>
-					<div class="absolute right-5 top-1/2 transform -translate-y-1/2 -rotate-45 text-xl">&rarr;</div>
+					<div class="absolute right-5 top-1/2 transform -translate-y-1/2 -rotate-45 text-xl">
+						&rarr;
+					</div>
 				</button>
 			</li>
 		{/each}
@@ -284,7 +284,6 @@
 		imageUrl={riegen[currentRiege].imageUrl}
 		imageUrl2={riegen[currentRiege].imageUrl2}
 		imageUrl3={riegen[currentRiege].imageUrl3}
-		leiterName={riegen[currentRiege].leiter.name}
-		leiterImageUrl={riegen[currentRiege].leiter.imageUrl}
+		riegeId={riegen[currentRiege].riegeID}
 	/>
 {/if}

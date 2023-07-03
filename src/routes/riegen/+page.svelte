@@ -210,7 +210,6 @@
 		imageUrl={riegen[currentRiege].imageUrl}
 		imageUrl2={riegen[currentRiege].imageUrl2}
 		imageUrl3={riegen[currentRiege].imageUrl3}
-		leiterName={riegen[currentRiege].leiter.name}
-		leiterImageUrl={riegen[currentRiege].leiter.imageUrl}
+		riegeId={riegen[currentRiege].riegeID}
 	/>
 {/if}

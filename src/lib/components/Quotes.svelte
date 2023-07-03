@@ -4,21 +4,21 @@
 			quote: 'E bitzeli Spass derf au mal sii!',
 			person: 'Christian Thurnheer',
 			role: '- Präsident Turnverein Nussbaumen',
-			href: '/pictures/people/avatar.jpeg'
+			href: './images/people/christian1_square.jpg'
 		}
 	];
 </script>
 
 {#each quotes as quote}
-	<div class="lg:grid grid-cols-3">
+	<div class="md:grid grid-cols-3">
 		<div class="flex justify-center">
 			<img
-				class="rounded-lg shadow-lg"
-				src="./images/people/avatar.jpeg"
-				alt="Zitat des Präsidenten"
+				class="shadow-md rounded-full"
+				src={quote.href}
+				alt={quote.quote}
 			/>
 		</div>
-		<div class="lg:ml-12 col-span-2 mt-12 flex justify-center lg:justify-start">
+		<div class="md:ml-12 col-s mt-12 flex justify-center md:justify-start">
 			<div>
 				<svg
 					class="h-12 w-12 opacity-25"

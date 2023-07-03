@@ -1,37 +1,65 @@
 <script>
-	export let person = {
-		name: '',
-		role: '',
-		mail: '',
-		imageUrl: ''
-	};
-	export let vorstand = true;
+	import { riegen } from '$lib/components/riegen';
 	import { currentPage, selectedAgeID, selectedRiegeID } from '$lib/components/stores';
+
+	export let person = {
+		riegeId: 0,
+		riege2Id: 0,
+		riege3Id: 0,
+		name: 'Matthias Hebeisen',
+		role: '',
+		imageUrl: './images/people/avatar.jpeg',
+		mail: 'mailto:info@tvnussbaumen.ch',
+		link: '/jugendriegen',
+		vorstand: false,
+		leiter: true
+	};
+
+	/**
+	 * @type {any[]}
+	 */
+	let geleiteteRiegen = [];
+
+	for (const riege of riegen) {
+		if (riege.riegeID == person.riegeId) {
+			geleiteteRiegen.push(riege.name);
+		}
+		if (riege.riegeID == person.riege2Id) {
+			geleiteteRiegen.push(riege.name);
+		}
+		if (riege.riegeID == person.riege3Id) {
+			geleiteteRiegen.push(riege.name);
+		}
+	}
 </script>
 
 <div class="pt-10">
 	<div class="flex justify-center">
 		<img class="rounded-full" src={person.imageUrl} alt={person.name} />
 	</div>
-	<div class="pt-2 pb-1 flex justify-center">{person.name}</div>
+	<div class="pt-3 flex justify-center">{person.name}</div>
 
-	{#if vorstand}
-		<div class="text-sm text-gray-600 font-medium flex justify-center">{person.role}</div>
-	{:else}
-		<div class="flex justify-center">
-			<button
-				on:click={() => {
-					$currentPage = 1;
-				}}
-			>
-				<a href="/riegen" class="text-sm px-3 py-1 badge-blue flex">
-					{person.role}
-				</a>
-			</button>
-		</div>
+	{#if person.vorstand}
+		<div class="text-sm text-gray-600 font-medium flex justify-center pt-1 pb-1">{person.role}</div>
 	{/if}
 
-	<div class="pt-2 flex justify-center">
+	{#if person.leiter}
+		{#each geleiteteRiegen as geleiteteRiege}
+			<div class="flex justify-center">
+				<button
+					on:click={() => {
+						$currentPage = 1;
+					}}
+				>
+					<a href="/riegen" class="text-sm px-3 py-1 badge-blue flex mb-1">
+						{geleiteteRiege}
+					</a>
+				</button>
+			</div>
+		{/each}
+	{/if}
+
+	<div class="flex justify-center">
 		<a href={person.mail}>
 			<button class="px-2 py-1 text-sm button-gray">
 				Mail

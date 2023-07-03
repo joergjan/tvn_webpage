@@ -48,11 +48,20 @@
 	function handleClose() {
 		showBanner = false;
 	}
+
+	/**
+	 * @param {string | number | Date} dateString
+	 */
+	function shouldShowBanner(dateString) {
+		const currentDate = new Date();
+		const bannerDate = new Date(dateString);
+		return currentDate >= bannerDate;
+	}
 </script>
 
-{#if showBanner}
+{#if showBanner && shouldShowBanner('2024-01-01')}
 	<div style="z-index: 1">
-		<BannerBolle on:close={handleClose} />
+		<BannerBolle />
 	</div>
 {:else}
 	<div class="bg-tvblue h-3 " />
