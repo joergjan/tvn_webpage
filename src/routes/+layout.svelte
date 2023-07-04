@@ -4,6 +4,7 @@
 	import { titles } from '$lib/components/navbar';
 	import { fade } from 'svelte/transition';
 	import BannerBolle from '$lib/components/BannerBolle.svelte';
+	import BannerFirefox from '$lib/components/BannerFirefox.svelte';
 
 	let open = false;
 
@@ -19,6 +20,10 @@
 			current = 'cross';
 			open = true;
 		}
+	}
+
+	function isFirefox() {
+		return navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 	}
 
 	let cookie = false;
@@ -58,6 +63,12 @@
 		return currentDate >= bannerDate;
 	}
 </script>
+
+{#if isFirefox()}
+	<div style="z-index: 1">
+		<BannerFirefox />
+	</div>
+{/if}
 
 {#if showBanner && shouldShowBanner('2024-01-01')}
 	<div style="z-index: 1">
