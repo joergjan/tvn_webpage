@@ -3,19 +3,8 @@
 	let sbbto = 'Nussbaumen Schulhaus';
 	let sbbdate = '28.03.2023';
 	let sbbtime = '';
-	let url = '';
 
-	$: sbbtime && console.log(sbbtime);
-
-	const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
-	$: {
-		if (isMobile) {
-			url = `intent://www.sbb.ch/en/buying/pages/fahrplan/fahrplan.xhtml?von=${sbbfrom}&nach=${sbbto}&datum=${sbbdate}&zeit=${sbbtime}&an=true&suche=true#Intent;scheme=https;package=ch.sbb.mobile.android.b2c;end`;
-		} else {
-			url = `https://www.sbb.ch/en/buying/pages/fahrplan/fahrplan.xhtml?von=${sbbfrom}&nach=${sbbto}&datum=${sbbdate}&zeit=${sbbtime}&an=true&suche=true`;
-		}
-	}
+	$: url = `https://www.sbb.ch/en/buying/pages/fahrplan/fahrplan.xhtml?von=${sbbfrom}&nach=${sbbto}&datum=${sbbdate}&zeit=${sbbtime}&an=true&suche=true`;
 </script>
 
 <div class="grid sm:grid-cols-2 grid-rows-2 sm:grid-rows-1">

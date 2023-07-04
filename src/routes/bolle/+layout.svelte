@@ -8,10 +8,10 @@
 	let active = false;
 
 	let titles = [
-		{ name: 'Event', href: '/', selector: 0 },
-		{ name: 'Anreise', href: '/anreise', selector: 2 },
-		{ name: 'Diverses', href: '/diverses', selector: 3 },
-		{ name: 'Sicherheit', href: '/sicherheit', selector: 4 }
+		{ name: 'Allgemein', href: '/', selector: 0 },
+		{ name: 'Anreise', href: '/anreise', selector: 1 },
+		{ name: 'Sicherheit', href: '/sicherheit', selector: 2 },
+		{ name: 'Galerie', href: '/galery', selector: 3 }
 	];
 
 	function setActive() {
@@ -66,7 +66,7 @@
 								&#x232a;
 							</div>
 
-							<div class={"ml-8 text-md " + (bollePage === i ? "text-gray-700" : "")}>
+							<div class={'ml-8 text-md font-medium ' + (bollePage === i ? 'text-gray-700' : '')}>
 								{title.name}
 							</div>
 						</div>
@@ -126,7 +126,8 @@
 						{#each titles as title}
 							{#if bollePage != title.selector}
 								<li class="select-none p-4 text-sm hover:bg-tvbluelight hover:text-white">
-									<a	href={"/bolle"+(title.href)}
+									<a
+										href={'/bolle' + title.href}
 										on:click={() => {
 											bollePage = title.selector;
 											setActive();
@@ -142,6 +143,7 @@
 			</div>
 		</div>
 		<div class="md:col-span-10 md:col-start-3">
+			<h1 class="h1">Bollä Dunnschtig</h1>
 			<slot />
 		</div>
 	</div>

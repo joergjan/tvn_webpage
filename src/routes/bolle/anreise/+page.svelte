@@ -12,12 +12,13 @@
 	/>
 </svelte:head>
 
-<h1 class="h1">Anreise</h1>
+<h2 class="h2">Anreise</h2>
 
-<h3 class="h3">Mit ÖV</h3>
+<h4 class="h4">Mit ÖV</h4>
+<div class="pb-3">Beachte, dass nicht die ganze Nacht Busse fahren.</div>
 <Timetable />
 
-<h3 class="h3 pt-10">Mit dem Auto / Velo</h3>
+<h4 class="h4 pt-10">Mit dem Auto / Velo</h4>
 
 <div>
 	Es hat eine beschränkte Anzahl kostenlose Parkplätze verfügbar. Die Parkplätze befinden sich

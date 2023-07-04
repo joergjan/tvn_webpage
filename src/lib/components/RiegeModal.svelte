@@ -85,7 +85,9 @@
 	role="dialog"
 	aria-modal="true"
 >
-	<div class="fixed inset-0 bg-black backdrop-blur-sm bg-opacity-80 transition-opacity duration-300" />
+	<div
+		class="fixed inset-0 bg-black backdrop-blur-sm bg-opacity-80 transition-opacity duration-300"
+	/>
 	<slot />
 	<div class="fixed inset-0 overflow-y-auto">
 		<div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
@@ -203,31 +205,33 @@
 						{/if}
 					</div>
 
-					{#each leiter as leit}
-						<div class="mt-3">
-							<a href="/kontakt" class="flex items-center">
-								<div>
-									<img
-										class="sm:h-12 sm:w-12 h-10 w-10 rounded-full"
-										src={leit.imageUrl}
-										alt={leit.name}
-									/>
-								</div>
+					<div class="sm:grid sm:grid-cols-3">
+						{#each leiter as leit}
+							<div class="mt-3">
+								<a href="/kontakt" class="flex items-center sm:col-span-1">
+									<div>
+										<img
+											class="sm:h-12 sm:w-12 h-10 w-10 rounded-full"
+											src={leit.imageUrl}
+											alt={leit.name}
+										/>
+									</div>
 
-								<div class="ml-3">
-									<button
-										on:click={() => {
-											$currentPage++;
-										}}
-									>
-										<div class="text-sm text-gray-900">
-											<div>{leit.name}</div>
-										</div>
-									</button>
-								</div>
-							</a>
-						</div>
-					{/each}
+									<div class="ml-3">
+										<button
+											on:click={() => {
+												$currentPage++;
+											}}
+										>
+											<div class="text-sm text-gray-900">
+												<div>{leit.name}</div>
+											</div>
+										</button>
+									</div>
+								</a>
+							</div>
+						{/each}
+					</div>
 
 					<div class="absolute top-0 right-0 h-12 w-12 ">
 						<div class=" bg-black h-full w-full opacity-60 rounded-bl-lg" />

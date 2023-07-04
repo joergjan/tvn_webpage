@@ -7,7 +7,7 @@
 	/>
 </svelte:head>
 
-<h1 class="h1">Sicherheit</h1>
+<h2 class="h2">Sicherheit</h2>
 
 <div>
 	Für die Sicherheit während dem Bollä Dunnschtig sorgt die Turnerfamilie selbst. Zudem bieten wir
