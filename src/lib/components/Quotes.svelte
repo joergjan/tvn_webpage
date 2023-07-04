@@ -18,7 +18,7 @@
 				alt={quote.quote}
 			/>
 		</div>
-		<div class="md:ml-12 col-s mt-12 flex justify-center md:justify-start">
+		<div class="md:ml-12 col-s sm:mt-12 flex justify-center md:justify-start">
 			<div>
 				<svg
 					class="h-12 w-12 opacity-25"
