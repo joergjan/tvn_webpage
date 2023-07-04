@@ -74,12 +74,12 @@
 				<a href="/" on:click={() => ($currentPage = 0)}>
 					<img
 						class="h-12 lg:hidden md:block hidden"
-						src="./images/logos/turner.png"
+						src="../images/logos/turner.png"
 						alt="Turnverein Nussbaumen"
 					/>
 					<img
 						class="h-12 md:hidden lg:block block"
-						src="./images/logos/logo.png"
+						src="../images/logos/logo.png"
 						alt="Turnverein Nussbaumen"
 					/>
 				</a>

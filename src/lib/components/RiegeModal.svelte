@@ -85,7 +85,7 @@
 	role="dialog"
 	aria-modal="true"
 >
-	<div class="fixed inset-0 bg-gray-500 bg-opacity-80 transition-opacity" />
+	<div class="fixed inset-0 bg-black backdrop-blur-sm bg-opacity-80 transition-opacity duration-300" />
 	<slot />
 	<div class="fixed inset-0 overflow-y-auto">
 		<div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">

@@ -26,9 +26,9 @@
 	}
 </script>
 
-<div class="z-20" in:fade>
+<div class="relative z-10" in:fade>
 	<div
-		class="fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-80 z-30 transition-opacity duration-300 {activeIndex >=
+		class="fixed top-0 left-0 w-screen h-screen bg-black backdrop-blur-sm bg-opacity-80 z-30 transition-opacity duration-300 {activeIndex >=
 		0
 			? 'block'
 			: 'hidden'}"

@@ -7,7 +7,6 @@ export const personen = [
 		role: '',
 		imageUrl: './images/people/avatar.webp',
 		mail: 'mailto:christian.thurnheer@bluewin.ch',
-		link: '/jugendriegen',
 		vorstand: false,
 		leiter: true
 	},
@@ -19,7 +18,6 @@ export const personen = [
 		role: '',
 		imageUrl: './images/people/avatar.webp',
 		mail: 'mailto:s.akeret@gmx.ch',
-		link: '/jugendriegen',
 		vorstand: false,
 		leiter: true
 	},
@@ -31,7 +29,6 @@ export const personen = [
 		role: '',
 		imageUrl: './images/people/avatar.webp',
 		mail: 'mailto:iren.akeret.95@hotmail.com',
-		link: '/jugendriegen',
 		vorstand: false,
 		leiter: true
 	},
@@ -43,7 +40,6 @@ export const personen = [
 		role: '',
 		imageUrl: './images/people/avatar.webp',
 		mail: 'mailto:iren.akeret.95@hotmail.com',
-		link: '/jugendriegen',
 		vorstand: false,
 		leiter: true
 	},
@@ -55,7 +51,6 @@ export const personen = [
 		role: '',
 		imageUrl: './images/people/avatar.webp',
 		mail: 'mailto:iren.akeret.95@hotmail.com',
-		link: '/jugendriegen',
 		vorstand: false,
 		leiter: true
 	},
@@ -114,5 +109,17 @@ export const personen = [
 		mail: 'mailto:aktuar@tvnussbaumen.ch',
 		vorstand: true,
 		leiter: false
-	}
+	},
+	{
+		riegeId: 1,
+		riege2Id: 0,
+		riege3Id: 0,
+		name: 'Jasmin Luginbühl',
+		role: '',
+		imageUrl: './images/people/avatar.webp',
+		mail: 'mailto:jasi',
+		link: '/jugendriegen',
+		vorstand: false,
+		leiter: true
+	},
 ];
