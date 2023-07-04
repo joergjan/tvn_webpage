@@ -2,6 +2,8 @@ import { writable } from 'svelte/store';
 
 export let currentPage = writable(0);
 
+export let currentBollePage = writable(0);
+
 export let lightboxActive = writable(0);
 
 export let selectedAgeID = writable(2);

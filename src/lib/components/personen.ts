@@ -118,7 +118,17 @@ export const personen = [
 		role: '',
 		imageUrl: './images/people/avatar.webp',
 		mail: 'mailto:jasi',
-		link: '/jugendriegen',
+		vorstand: false,
+		leiter: true
+	},
+	{
+		riegeId: 4,
+		riege2Id: 3,
+		riege3Id: 0,
+		name: 'Maurus Vetterli',
+		role: '',
+		imageUrl: './images/people/avatar.webp',
+		mail: 'mailto:maurus',
 		vorstand: false,
 		leiter: true
 	},

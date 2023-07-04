@@ -29,8 +29,7 @@ export const riegen = [
 		age: 'ab 2 Jahren',
 		ageID: 0,
 		riegeID: 2,
-		description:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
+		description: 'Wir sind die ganz kleinen!',
 		imageUrl: './images/riegen/alleRiegen.webp',
 		imageUrl2: '',
 		imageUrl3: ''
@@ -46,8 +45,7 @@ export const riegen = [
 		age: 'ab Kindergarten',
 		ageID: 0,
 		riegeID: 3,
-		description:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
+		description: 'Bei uns hat jeder Spass!',
 		imageUrl: './images/riegen/alleRiegen.webp',
 		imageUrl2: '',
 		imageUrl3: ''
@@ -64,8 +62,7 @@ export const riegen = [
 		age: 'ab 1. Klasse',
 		ageID: 0,
 		riegeID: 4,
-		description:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
+		description: 'Für alle, die was erleben wollen!',
 		imageUrl: './images/riegen/alleRiegen.webp',
 		imageUrl2: '',
 		imageUrl3: ''
@@ -81,9 +78,7 @@ export const riegen = [
 		age: 'ab 4. Klasse',
 		ageID: 0,
 		riegeID: 5,
-		description:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
-
+		description: 'Wir sind die Grossen und können es kaum erwarten, bis wir zu den Aktiven kommen!',
 		imageUrl: './images/riegen/alleRiegen.webp',
 		imageUrl2: '',
 		imageUrl3: ''
@@ -100,7 +95,7 @@ export const riegen = [
 		ageID: 1,
 		riegeID: 6,
 		description:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
+			'Geselligkeit, Spiel und Spass. Wir sind eine lustige Truppe, die sich auch gerne mal zu einem Bierchen trifft.',
 		imageUrl: './images/riegen/alleRiegen.webp',
 		imageUrl2: '',
 		imageUrl3: ''
@@ -117,7 +112,7 @@ export const riegen = [
 		ageID: 1,
 		riegeID: 7,
 		description:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
+			'Wir trainieren unsere Kondition, Kraft und Beweglichkeit. Wir sind eine lustige Truppe, die sich auch gerne mal zu einem Bier trifft.',
 		imageUrl: './images/riegen/alleRiegen.webp',
 		imageUrl2: '',
 		imageUrl3: ''

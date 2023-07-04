@@ -1,17 +1,16 @@
 <script>
+	import { currentBollePage } from '$lib/components/stores';
 	let show = false;
 	let password = 'tvn1919';
 	let input = '';
 	let passwordWrong = false;
 	let pageHref = window.location.href;
-	let bollePage = 0;
 	let active = false;
 
 	let titles = [
-		{ name: 'Allgemein', href: '/', selector: 0 },
+		{ name: 'Infos A-Z', href: '/', selector: 0 },
 		{ name: 'Anreise', href: '/anreise', selector: 1 },
-		{ name: 'Sicherheit', href: '/sicherheit', selector: 2 },
-		{ name: 'Galerie', href: '/galery', selector: 3 }
+		{ name: 'Galerie', href: '/galerie', selector: 2 }
 	];
 
 	function setActive() {
@@ -46,7 +45,7 @@
 
 	for (let i = 0; i < titles.length; i++) {
 		if (pageHref.toString().includes(titles[i].href)) {
-			bollePage = i;
+			$currentBollePage = i;
 			pageHref = pageHref;
 		}
 	}
@@ -57,16 +56,19 @@
 		<ul class="hidden md:block pt-7 md:col-span-2 lg:mr-20 mr-10 space-y-10">
 			{#each titles as title, i}
 				<li class="">
-					<a href={'/bolle' + title.href} on:click={() => (bollePage = i)}>
+					<a href={'/bolle' + title.href} on:click={() => ($currentBollePage = i)}>
 						<div class="relative text-gray-500 hover:transition-all hover:text-gray-700">
 							<div
 								class={'absolute left-0 top-1/2 transform -translate-y-1/2 bold text-tvblue text-xl ' +
-									(bollePage === i ? '!block' : 'hidden hover:block hover:transition-all')}
+									($currentBollePage === i ? '!block' : 'hidden hover:block hover:transition-all')}
 							>
 								&#x232a;
 							</div>
 
-							<div class={'ml-8 text-md font-medium ' + (bollePage === i ? 'text-gray-700' : '')}>
+							<div
+								class={'ml-8 text-md font-medium whitespace-nowrap ' +
+									($currentBollePage === i ? 'text-gray-700' : '')}
+							>
 								{title.name}
 							</div>
 						</div>
@@ -88,7 +90,7 @@
 							class="inline-flex items-center rounded-l-md bg-tvbluelight py-2 pl-3 pr-4 text-white shadow-sm border-r-[1px] border-white"
 						>
 							{#each titles as title}
-								{#if title.selector === bollePage}
+								{#if title.selector === $currentBollePage}
 									<p class="mx-2 text-sm font-medium">
 										{title.name}
 									</p>
@@ -124,12 +126,12 @@
 						class="absolute left-0 z-10 w-50 origin-top-right divide-y divide-gray-200 overflow-hidden rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5"
 					>
 						{#each titles as title}
-							{#if bollePage != title.selector}
+							{#if $currentBollePage != title.selector}
 								<li class="select-none p-4 text-sm hover:bg-tvbluelight hover:text-white">
 									<a
 										href={'/bolle' + title.href}
 										on:click={() => {
-											bollePage = title.selector;
+											$currentBollePage = title.selector;
 											setActive();
 										}}
 									>

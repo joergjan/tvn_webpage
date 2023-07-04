@@ -1,7 +1,10 @@
 <script>
 	import { createEventDispatcher } from 'svelte';
 	import { fade } from 'svelte/transition';
-	export let photos = [];
+	/**
+	 * @type {string | any[]}
+	 */
+	 export let photos = [];
 	export let activeIndex = 0;
 
 	const dispatch = createEventDispatcher();
@@ -28,7 +31,7 @@
 
 <div class="relative z-10" in:fade>
 	<div
-		class="fixed top-0 left-0 w-screen h-screen bg-black backdrop-blur-sm bg-opacity-80 z-30 transition-opacity duration-300 {activeIndex >=
+		class="fixed top-0 left-0 w-screen h-screen bg-black backdrop-blur-md bg-opacity-80 z-30 transition-opacity duration-300 {activeIndex >=
 		0
 			? 'block'
 			: 'hidden'}"
@@ -38,18 +41,18 @@
 			<img
 				src={photos[activeIndex]?.href}
 				alt=""
-				class="max-w-full max-h-full rounded-md pb-32 shadow-lg"
+				class="max-w-full lg:max-w-3xl md:max-w-2xl max-h-full md:rounded-md md:pb-0 pb-32 shadow-lg"
 			/>
 			<button
-				class="absolute sm:top-5 sm:right-5 sm:bottom-auto bottom-24 text-3xl m-4 text-white hover:text-gray-400"
+				class="absolute md:top-5 md:right-5 md:bottom-auto sm:bottom-12 bottom-24 text-3xl m-4 text-white hover:text-gray-400"
 				on:click={close}>&#x2715</button
 			>
 			<button
-				class="absolute sm:bottom-1/2 sm:left-0 bottom-24 left-4 m-4 text-white hover:text-gray-400 text-3xl"
+				class="absolute md:bottom-1/2 md:left-0 sm:bottom-12 bottom-24 left-4 m-4 text-white hover:text-gray-400 text-3xl"
 				on:click={prev}>&#x2329;</button
 			>
 			<button
-				class="absolute sm:bottom-1/2 sm:right-0 bottom-24 right-4 m-4 text-white hover:text-gray-400 text-3xl"
+				class="absolute md:bottom-1/2 md:right-0 sm:bottom-12 bottom-24 right-4 m-4 text-white hover:text-gray-400 text-3xl"
 				on:click={next}
 			>
 				&#x232a;
