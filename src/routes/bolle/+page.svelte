@@ -8,13 +8,13 @@
 	<meta
 		name="description"
 		content="Der Bollä Dunnschtig ist das Fest am Gründonnerstag. Jedes Jahr durch den Turnverein
-		Nussbaumen organisiert, bietet er etwas für Gross und Klein!"
+		Nussbaumen organisiert, bietet er etwas für Gross und Klein."
 	/>
 </svelte:head>
 
 <div>
 	Der Bollä Dunnschtig ist das Fest am Gründonnerstag. Jedes Jahr durch den Turnverein Nussbaumen
-	organisiert, bietet er etwas für Gross und Klein.
+	organisiert, bietet er etwas für Gross und Klein!
 </div>
 
 <h2 class="h2 mt-7 -mb-2">Infos A-Z</h2>
