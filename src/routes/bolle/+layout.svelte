@@ -4,10 +4,7 @@
 	let password = 'tvn1919';
 	let input = '';
 	let passwordWrong = false;
-	let pageHref = '';
-	if (typeof window !== 'undefined') {
-		pageHref = window.location.href;
-	}
+	let pageHref = window.location.href;
 
 	let active = false;
 
@@ -28,9 +25,8 @@
 	function checkPassword() {
 		if (input == password) {
 			show = true;
-			if (typeof window !== 'undefined') {
-				localStorage.setItem('bollePassword_correct', '1');
-			}
+
+			localStorage.setItem('bollePassword_correct', '1');
 		} else {
 			passwordWrong = true;
 			setTimeout(() => {
@@ -39,12 +35,10 @@
 		}
 	}
 
-	if (typeof window !== 'undefined') {
-		if (localStorage.getItem('bollePassword_correct') === '1') {
-			show = true;
-		} else {
-			show = false;
-		}
+	if (localStorage.getItem('bollePassword_correct') === '1') {
+		show = true;
+	} else {
+		show = false;
 	}
 
 	for (let i = 0; i < titles.length; i++) {

@@ -7,11 +7,8 @@
 	import BannerFirefox from '$lib/components/BannerFirefox.svelte';
 
 	let open = false;
-	let pageHref = '';
+	let pageHref = window.location.href;
 
-	if (typeof window !== 'undefined') {
-		pageHref = window.location.href;
-	}
 	let showBanner = true;
 	let current = 'burger';
 
@@ -26,19 +23,15 @@
 	}
 
 	function isFirefox() {
-		if (typeof navigator !== 'undefined') {
-			return navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
-		}
+		return navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 	}
 
 	let cookie = false;
 
-	if (typeof window !== 'undefined') {
-		if (localStorage.getItem('cookies_enabled') === '0') {
-			cookie = false;
-		} else {
-			cookie = true;
-		}
+	if (localStorage.getItem('cookies_enabled') === '0') {
+		cookie = false;
+	} else {
+		cookie = true;
 	}
 
 	$: $currentPage, reset();
@@ -271,9 +264,7 @@
 								class="ml-3 flex-shrink-0 rounded-md bg-white text-sm font-medium text-tvblue"
 								on:click={() => {
 									cookie = false;
-									if (typeof window !== 'undefined') {
-										localStorage.setItem('cookies_enabled', '0');
-									}
+									localStorage.setItem('cookies_enabled', '0');
 								}}
 							>
 								Okay
