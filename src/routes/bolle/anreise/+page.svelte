@@ -1,6 +1,6 @@
 <script>
 	import Timetable from '$lib/components/Timetable.svelte';
-	import MapBox from '$lib/components/MapBox.svelte';
+	import MapBoxComponent from '$lib/components/MapBoxComponent.svelte';
 </script>
 
 <svelte:head>
@@ -26,5 +26,5 @@
 </div>
 
 <div class="w-full h-[500px] mt-3">
-	<MapBox coordinates={[8.824630470516837,47.62573706330724]}/>
+	<MapBoxComponent coordinates={[8.824630470516837,47.62573706330724]}/>
 </div>

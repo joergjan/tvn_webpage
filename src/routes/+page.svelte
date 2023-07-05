@@ -4,7 +4,7 @@
 	import Aktuelles from '$lib/components/Aktuelles.svelte';
 	import IntersectionObserver from '$lib/components/IntersectionObserver.svelte';
 	import { currentPage } from '$lib/components/stores';
-	import Mapbox from '$lib/components/Mapbox.svelte';
+	import MapBoxComponent from '$lib/components/MapBoxComponent.svelte';
 </script>
 
 <svelte:head>
@@ -61,7 +61,7 @@
 		</div>
 
 		<div class="lg:col-span-4 lg:col-start-2 h-[500px] mt-5 lg:mt-0">
-			<Mapbox />
+			<MapBoxComponent />
 		</div>
 	</div>
 </div>

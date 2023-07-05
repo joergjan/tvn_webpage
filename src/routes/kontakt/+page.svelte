@@ -1,7 +1,7 @@
 <script>
 	import Kontakt from '$lib/components/Kontakt.svelte';
 	import { personen } from '$lib/components/personen';
-	import MapBox from '$lib/components/MapBox.svelte';
+	import MapBoxComponent from '$lib/components/MapBoxComponent.svelte';
 </script>
 
 <title>TVN | Kontakt</title>
@@ -54,7 +54,7 @@
 			</div>
 
 			<div class="lg:col-span-4 lg:col-start-2 h-[500px] mt-5 lg:mt-0 pb-0">
-				<MapBox coordinates={[8.825587388065486,47.62381098583046]} />
+				<MapBoxComponent coordinates={[8.825587388065486,47.62381098583046]} />
 			</div>
 			
 

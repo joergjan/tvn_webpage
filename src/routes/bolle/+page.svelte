@@ -1,6 +1,6 @@
 <script>
 	import { currentBollePage } from '$lib/components/stores'
-	import MapBox from '$lib/components/MapBox.svelte'
+	import MapBoxComponent from '$lib/components/MapBoxComponent.svelte'
 </script>
 
 <svelte:head>
@@ -81,7 +81,7 @@
 			Du findest uns beim Schulhaus Nussbaumen.
 		</div>
 		<div class="w-full h-[500px] mt-3">
-			<MapBox />
+			<MapBoxComponent />
 		</div>
 	</div>
 </div>
