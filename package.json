@@ -42,6 +42,6 @@
 		"ical-generator": "^5.0.0",
 		"ics": "^3.2.0",
 		"ics-js": "^0.10.2",
-		"mapbox-gl": "^2.13.0"
+		"mapbox-gl": "^2.15.0"
 	}
 }

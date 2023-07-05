@@ -1,6 +1,7 @@
 <script>
 	import Kontakt from '$lib/components/Kontakt.svelte';
 	import { personen } from '$lib/components/personen';
+	import MapBox from '$lib/components/MapBox.svelte';
 </script>
 
 <title>TVN | Kontakt</title>
@@ -44,7 +45,7 @@
 				{/if}
 			{/each}
 		</ul>
-		<div class="mt-10 lg:grid lg:grid-cols-5 h-108 lg:h-96">
+		<div class="mt-10 lg:grid lg:grid-cols-5 max-h-auto">
 			<div class="lg:col-span-1 lg:col-start-1">
 				<div class="font-semibold">Turnverein Nussbaumen</div>
 				<div>c/o Christian Thurnheer</div>
@@ -52,16 +53,13 @@
 				<div>8537 Nussbaumen</div>
 			</div>
 
-			<div class="lg:col-span-4 lg:col-start-2 h-96 mt-5 lg:mt-0 pb-0">
-				<iframe
-					title="location"
-					class="flex shadow-lg rounded-lg"
-					width="100%"
-					height="100%"
-					loading="lazy"
-					src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCqL-wkzG0GGKyEOAHyY4kky2zDbKz5u-Y&q=altwingerten+1+Nussbaumen"
-				/>
+			<div class="lg:col-span-4 lg:col-start-2 h-[500px] mt-5 lg:mt-0 pb-0">
+				<MapBox coordinates={[8.825587388065486,47.62381098583046]} />
 			</div>
+			
+
 		</div>
 	</div>
+
+	
 </div>

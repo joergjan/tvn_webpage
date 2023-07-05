@@ -4,7 +4,11 @@
 	let password = 'tvn1919';
 	let input = '';
 	let passwordWrong = false;
-	let pageHref = window.location.href;
+	let pageHref = '';
+	if (typeof window !== 'undefined') {
+		pageHref = window.location.href;
+	}
+
 	let active = false;
 
 	let titles = [

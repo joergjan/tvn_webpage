@@ -6,11 +6,10 @@
 		riegeId: 0,
 		riege2Id: 0,
 		riege3Id: 0,
-		name: 'Matthias Hebeisen',
+		name: '',
 		role: '',
 		imageUrl: './images/people/avatar.jpeg',
 		mail: 'mailto:info@tvnussbaumen.ch',
-		link: '/jugendriegen',
 		vorstand: false,
 		leiter: true
 	};

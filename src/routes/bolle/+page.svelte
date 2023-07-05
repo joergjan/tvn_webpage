@@ -1,5 +1,6 @@
 <script>
-	import { currentBollePage } from '$lib/components/stores';
+	import { currentBollePage } from '$lib/components/stores'
+	import MapBox from '$lib/components/MapBox.svelte'
 </script>
 
 <svelte:head>
@@ -72,6 +73,15 @@
 		<div>
 			Wir haben Pommes, Schnitzelbrote, Würste und ein Kuchenbuffet im Angebot. Das Mitbringen von
 			Getränken ist nicht erlaubt.
+		</div>
+	</div>
+	<div>
+		<div class="h4 mt-3">Standort</div>
+		<div>
+			Du findest uns beim Schulhaus Nussbaumen.
+		</div>
+		<div class="w-full h-[500px] mt-3">
+			<MapBox />
 		</div>
 	</div>
 </div>

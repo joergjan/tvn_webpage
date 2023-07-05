@@ -6,7 +6,7 @@ export const personen = [
 		name: 'Matthias Hebeisen',
 		role: '',
 		imageUrl: './images/people/avatar.webp',
-		mail: 'mailto:christian.thurnheer@bluewin.ch',
+		mail: 'mailto:tisli',
 		vorstand: false,
 		leiter: true
 	},
@@ -28,7 +28,7 @@ export const personen = [
 		name: 'Carina Notz',
 		role: '',
 		imageUrl: './images/people/avatar.webp',
-		mail: 'mailto:iren.akeret.95@hotmail.com',
+		mail: 'mailto:carina',
 		vorstand: false,
 		leiter: true
 	},
@@ -39,7 +39,7 @@ export const personen = [
 		name: 'Karin Brauchli',
 		role: '',
 		imageUrl: './images/people/avatar.webp',
-		mail: 'mailto:iren.akeret.95@hotmail.com',
+		mail: 'mailto:karin',
 		vorstand: false,
 		leiter: true
 	},
@@ -50,7 +50,7 @@ export const personen = [
 		name: 'Martin Bösch',
 		role: '',
 		imageUrl: './images/people/avatar.webp',
-		mail: 'mailto:iren.akeret.95@hotmail.com',
+		mail: 'mailto:martin',
 		vorstand: false,
 		leiter: true
 	},
@@ -83,8 +83,7 @@ export const personen = [
 		name: 'Jan Jörg',
 		role: 'Oberturner',
 		imageUrl: './images/people/jan2_square.jpg',
-		mail: 'mailto:jan.joerg.jj@gmail.com',
-		link: '/erwachsene',
+		mail: 'mailto:oberturnertvnussbaumen.ch',
 		vorstand: true,
 		leiter: true
 	},

@@ -4,6 +4,7 @@
 	import Aktuelles from '$lib/components/Aktuelles.svelte';
 	import IntersectionObserver from '$lib/components/IntersectionObserver.svelte';
 	import { currentPage } from '$lib/components/stores';
+	import Mapbox from '$lib/components/Mapbox.svelte';
 </script>
 
 <svelte:head>
@@ -39,15 +40,19 @@
 	<div class="pt-12">
 		<div class="h2">Trainingszeiten</div>
 		<div>
-			<a href="/downloads" on:click={()=>{$currentPage = 5}}>Infos zu Anlässen gibts im Jahresprogramm oder direkt beim Riegenleiter</a>
-
+			<a
+				href="/downloads"
+				on:click={() => {
+					$currentPage = 5;
+				}}>Infos zu Anlässen gibts im Jahresprogramm oder direkt beim Riegenleiter</a
+			>
 		</div>
 		<Trainingszeiten />
 	</div>
 </IntersectionObserver>
 
 <div class="mt-5">
-	<div class="mt-10 lg:grid lg:grid-cols-5 h-108 lg:h-96">
+	<div class="mt-10 lg:grid lg:grid-cols-5 max-h-auto">
 		<div class="lg:col-span-1 lg:col-start-1">
 			<div class="font-semibold">Hier trainieren wir:</div>
 			<div>Turnhalle Nussbaumen</div>
@@ -55,17 +60,8 @@
 			<div>8537 Nussbaumen</div>
 		</div>
 
-		<div class="lg:col-span-4 lg:col-start-2 h-96 mt-5 lg:mt-0 pb-0">
-			<IntersectionObserver once={true} let:intersecting>
-				<iframe
-					title="location"
-					class="flex shadow-lg rounded-lg"
-					width="100%"
-					height="100%"
-					loading="lazy"
-					src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCqL-wkzG0GGKyEOAHyY4kky2zDbKz5u-Y&q=alte+dorfstrass+11a+nussbaumen+tg"
-				/>
-			</IntersectionObserver>
+		<div class="lg:col-span-4 lg:col-start-2 h-[500px] mt-5 lg:mt-0">
+			<Mapbox />
 		</div>
 	</div>
 </div>

@@ -7,8 +7,11 @@
 	import BannerFirefox from '$lib/components/BannerFirefox.svelte';
 
 	let open = false;
+	let pageHref = '';
 
-	let pageHref = window.location.href;
+	if (typeof window !== 'undefined') {
+		pageHref = window.location.href;
+	}
 	let showBanner = true;
 	let current = 'burger';
 
@@ -23,7 +26,9 @@
 	}
 
 	function isFirefox() {
-		return navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+		if (typeof navigator !== 'undefined') {
+			return navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+		}
 	}
 
 	let cookie = false;

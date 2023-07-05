@@ -1,6 +1,6 @@
 <script>
 	import Timetable from '$lib/components/Timetable.svelte';
-	import IntersectionObserver from '$lib/components/IntersectionObserver.svelte';
+	import MapBox from '$lib/components/MapBox.svelte';
 </script>
 
 <svelte:head>
@@ -25,15 +25,6 @@
 	direkt beim Schulhaus. Velos können ebenfalls dort parkiert werden.
 </div>
 
-<div class="w-full h-[400px] mt-3">
-	<IntersectionObserver once={true} let:intersecting>
-		<iframe
-			title="location"
-			class="flex shadow-lg rounded-lg"
-			width="100%"
-			height="100%"
-			loading="lazy"
-			src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCqL-wkzG0GGKyEOAHyY4kky2zDbKz5u-Y&q=alte+dorfstrass+11a+nussbaumen+tg"
-		/>
-	</IntersectionObserver>
+<div class="w-full h-[500px] mt-3">
+	<MapBox coordinates={[8.824630470516837,47.62573706330724]}/>
 </div>
