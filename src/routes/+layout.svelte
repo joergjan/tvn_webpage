@@ -82,11 +82,13 @@
 			<div class="flex flex-shrink-0 items-center">
 				<a href="/" on:click={() => ($currentPage = 0)}>
 					<img
+						loading="lazy"
 						class="h-12 lg:hidden md:block hidden"
 						src="../images/logos/turner.png"
 						alt="Turnverein Nussbaumen"
 					/>
 					<img
+						loading="lazy"
 						class="h-12 md:hidden lg:block block"
 						src="../images/logos/logo.png"
 						alt="Turnverein Nussbaumen"

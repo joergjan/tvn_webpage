@@ -54,6 +54,7 @@
 			<div class="flex">
 				<a href="./files/turnerunterhaltung.pdf" target="_blank" rel="noreferrer">
 					<img
+						loading="lazy"
 						class="h-auto rounded-lg shadow-lg hover-scale"
 						src="./images/aktuelles/turnerunterhaltung.jpg"
 						alt=""
@@ -102,6 +103,7 @@
 				>
 					<a href="/bolle">
 						<img
+							loading="lazy"
 							class="w-auto rounded-lg shadow-lg hover-scale"
 							src="./images/bolle/flyer.jpg"
 							alt=""
@@ -146,13 +148,23 @@
 			<div class="mb-5 mt-3">
 				<div class="flex">
 					<a href="https://wohlen2023.ch" target="_blank" rel="noreferrer">
-						<img class="max-h-32 hover-scale" src="./images/aktuelles/wohlen.jpg" alt="" />
+						<img
+							loading="lazy"
+							class="max-h-32 hover-scale"
+							src="./images/aktuelles/wohlen.jpg"
+							alt=""
+						/>
 					</a>
 				</div>
 			</div>
 			<div class="flex">
 				<a href="https://www.ktf2023.ch" target="_blank" rel="noreferrer">
-					<img class="max-h-42 hover-scale" src="./images/aktuelles/wyland.png" alt="" />
+					<img
+						loading="lazy"
+						class="max-h-42 hover-scale"
+						src="./images/aktuelles/wyland.png"
+						alt=""
+					/>
 				</a>
 			</div>
 		</div>

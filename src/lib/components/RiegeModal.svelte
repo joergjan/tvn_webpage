@@ -97,6 +97,7 @@
 				<div class="relative">
 					<div class="w-full h-full">
 						<img
+							loading="lazy"
 							class="absolute -z-10 w-2/3 h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-50"
 							src="./images/logos/logo.png"
 							alt="Turnverein Nussbaumen"
@@ -154,6 +155,7 @@
 								<div>
 									{#if i === active}
 										<img
+											loading="lazy"
 											class="sm:max-h-96 sm:h-auto h-48 w-full rounded-t-lg object-cover"
 											src={image}
 											alt={name}
@@ -211,6 +213,7 @@
 								<a href="/kontakt" class="flex items-center sm:col-span-1">
 									<div>
 										<img
+											loading="lazy"
 											class="sm:h-12 sm:w-12 h-10 w-10 rounded-full"
 											src={leit.imageUrl}
 											alt={leit.name}
