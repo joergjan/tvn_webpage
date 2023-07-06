@@ -34,7 +34,7 @@
 
 <div class="pt-10">
 	<div class="flex justify-center">
-		<img class="rounded-full" src={person.imageUrl} alt={person.name} />
+		<img loading="lazy" class="rounded-full" src={person.imageUrl} alt={person.name} />
 	</div>
 	<div class="pt-3 flex justify-center">{person.name}</div>
 

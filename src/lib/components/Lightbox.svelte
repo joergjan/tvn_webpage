@@ -39,6 +39,7 @@
 	<div class="fixed top-0 left-0 w-screen h-screen z-40">
 		<div class="absolute inset-0 flex items-center justify-center">
 			<img
+			loading="lazy"
 				src={photos[activeIndex]?.href}
 				alt=""
 				class="max-w-full lg:max-w-3xl md:max-w-2xl max-h-full md:rounded-md md:pb-0 pb-32 shadow-lg"

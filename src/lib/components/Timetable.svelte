@@ -1,7 +1,7 @@
 <script>
 	let sbbfrom = '';
 	let sbbto = 'Nussbaumen Schulhaus';
-	let sbbdate = '28.03.2023';
+	let sbbdate = '28.03.2024';
 	let sbbtime = '';
 
 	$: url = `https://www.sbb.ch/en/buying/pages/fahrplan/fahrplan.xhtml?von=${sbbfrom}&nach=${sbbto}&datum=${sbbdate}&zeit=${sbbtime}&an=true&suche=true`;
@@ -52,4 +52,4 @@
 	>
 </div>
 
-<img alt="sbb logo" src="/images/logos/Extension.svg" class="hidden sm:block h-8 my-3 mt-8" />
+<img loading="lazy" alt="sbb logo" src="/images/logos/Extension.svg" class="hidden sm:block h-8 my-3 mt-8" />

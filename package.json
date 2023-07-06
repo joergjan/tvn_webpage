@@ -37,6 +37,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@auth0/auth0-spa-js": "^2.0.8",
 		"add-to-calendar-button": "^2.2.9",
 		"axios": "^1.2.5",
 		"ical-generator": "^5.0.0",

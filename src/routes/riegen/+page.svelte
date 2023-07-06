@@ -172,6 +172,7 @@
 						class="h-48 w-full rounded-t-lg object-cover"
 						src={riege.imageUrl}
 						alt={riege.name}
+						loading="lazy"
 					/>
 					<div class="flex flex-1 flex-col p-6">
 						<div class="flex-1">
