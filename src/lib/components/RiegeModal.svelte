@@ -155,7 +155,7 @@
 										<div class="sm:h-96 h-48 w-full relative">
 											<img
 												loading="lazy"
-												class="absolute top-0 left-0 h-full w-full object-cover"
+												class="absolute top-0 left-0 h-full w-full object-cover transition-opacity duration-500 ease-in-out"
 												src={image}
 												alt={name}
 											/>
