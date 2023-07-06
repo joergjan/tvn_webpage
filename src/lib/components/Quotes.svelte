@@ -12,11 +12,7 @@
 {#each quotes as quote}
 	<div class="md:grid grid-cols-3">
 		<div class="flex justify-center">
-			<img loading="lazy"
-				class="shadow-md rounded-full"
-				src={quote.href}
-				alt={quote.quote}
-			/>
+			<img loading="lazy" class="md:h-96 sm:h-44 shadow-sm rounded-full" src={quote.href} alt={quote.quote} />
 		</div>
 		<div class="md:ml-12 col-s sm:mt-12 flex justify-center md:justify-start">
 			<div>

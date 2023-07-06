@@ -150,7 +150,7 @@
 					<a href="https://wohlen2023.ch" target="_blank" rel="noreferrer">
 						<img
 							loading="lazy"
-							class="max-h-32 hover-scale"
+							class="sm:h-32 h-24 hover-scale"
 							src="./images/aktuelles/wohlen.jpg"
 							alt=""
 						/>
@@ -161,7 +161,7 @@
 				<a href="https://www.ktf2023.ch" target="_blank" rel="noreferrer">
 					<img
 						loading="lazy"
-						class="max-h-42 hover-scale"
+						class="sm:h-42 h-28 hover-scale"
 						src="./images/aktuelles/wyland.png"
 						alt=""
 					/>

@@ -17,22 +17,22 @@
 
 <div class="h1 md:hidden">Unser Verein</div>
 
-<div class="hidden md:block md:-mt-32 md:-mb-20 lg:-mt-48">
-	<div class="justify-center items-center z-0">
-		<img src="./images/logos/turner_webpage.png" alt="turner" loading="lazy" />
+<div class="hidden md:block">
+	<div class="flex justify-center items-center">
+		<img src="./images/logos/turner_webpage.png" class="h-104" alt="turner" loading="lazy" />
 	</div>
 </div>
 
-<div class="pt-20">
+<div class="md:pt-10">
 	<Quotes />
 </div>
 
-<div class="pt-20">
+<div class="pt-10">
 	<div class="h2">Aktuelles</div>
 	<Aktuelles />
 </div>
 
-<div class="pt-12">
+<div class="pt-10">
 	<div class="h2">Trainingszeiten</div>
 	<div>
 		<a

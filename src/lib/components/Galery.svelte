@@ -33,7 +33,7 @@
 	<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
 		{#each photos as { href, no }}
 			<div class="relative">
-				<img loading="lazy" class="w-full h-auto" src={href} alt="" />
+				<img loading="lazy" class="w-72 h-auto" src={href} alt="" />
 				<button
 					class="absolute inset-0 hover:bg-opacity-75 transition duration-300"
 					on:click={() => {
