@@ -1,0 +1,120 @@
+// ageID :: 0 steht für Jugendriegen (u16) // 1 steht für Aktive und höher (ü16)
+
+export const riegen = [
+	{
+		name: 'Aktive',
+		time1: '19:30 - 22:00 Uhr',
+		day1: 'Montag',
+		time2: '20:15 - 22:00 Uhr',
+		day2: 'Freitag',
+		twodays: true,
+		badgename: 'Aktive',
+		age: 'ab 16 Jahren',
+		ageID: 1,
+		riegeID: 1,
+		description:
+			'Wir beschäftigen uns mit allen möglichen Sportarten. Im Sommer sind die Turnfester natürlich unser Highlight, wobei das Sportliche zählt, aber die Geselligkeit auch nicht zu kurz kommt.',
+		imageUrl: './images/riegen/aktive.jpg',
+		imageUrl2: './images/riegen/aktive2.jpg',
+		imageUrl3: './images/riegen/aktive3.jpg'
+	},
+	{
+		name: 'Eltern-Kind ElKi',
+		time1: '09:15 - 10:15 Uhr',
+		day1: 'Donnerstag',
+		time2: '',
+		day2: '',
+		twodays: false,
+		badgename: 'ElKi',
+		age: 'ab 2 Jahren',
+		ageID: 0,
+		riegeID: 2,
+		description: 'Wir sind die ganz kleinen!',
+		imageUrl: './images/riegen/alleRiegen.webp',
+		imageUrl2: '',
+		imageUrl3: ''
+	},
+	{
+		name: 'Kinderturnen KiTu',
+		time1: '16:45 - 17:45 Uhr',
+		day1: 'Mittwoch',
+		time2: '',
+		day2: '',
+		twodays: false,
+		badgename: 'KiTu',
+		age: 'ab Kindergarten',
+		ageID: 0,
+		riegeID: 3,
+		description: 'Bei uns hat jeder Spass!',
+		imageUrl: './images/riegen/alleRiegen.webp',
+		imageUrl2: '',
+		imageUrl3: ''
+	},
+	{
+		name: 'Jugendriege Klein',
+		time1: '18:00 - 19:00 Uhr',
+		day1: 'Mittwoch',
+		time2: '',
+		day2: '',
+
+		twodays: false,
+		badgename: 'Jugi Klein',
+		age: 'ab 1. Klasse',
+		ageID: 0,
+		riegeID: 4,
+		description: 'Für alle, die was erleben wollen!',
+		imageUrl: './images/riegen/alleRiegen.webp',
+		imageUrl2: '',
+		imageUrl3: ''
+	},
+	{
+		name: 'Jugendriege Gross',
+		time1: '19:00 - 20:00 Uhr',
+		day1: 'Mittwoch',
+		time2: '',
+		day2: '',
+		twodays: false,
+		badgename: 'Jugi Gross',
+		age: 'ab 4. Klasse',
+		ageID: 0,
+		riegeID: 5,
+		description: 'Wir sind die Grossen und können es kaum erwarten, bis wir zu den Aktiven kommen!',
+		imageUrl: './images/riegen/alleRiegen.webp',
+		imageUrl2: '',
+		imageUrl3: ''
+	},
+	{
+		name: 'Männerriege',
+		time1: '20:15 - 22:00 Uhr',
+		day1: 'Donnerstag',
+		time2: '',
+		day2: '',
+		twodays: false,
+		badgename: 'Männerriege',
+		age: 'Beitritt nach eigenem Ermessen',
+		ageID: 1,
+		riegeID: 6,
+		description:
+			'Geselligkeit, Spiel und Spass. Wir sind eine lustige Truppe, die sich auch gerne mal zu einem Bierchen trifft.',
+		imageUrl: './images/riegen/alleRiegen.webp',
+		imageUrl2: '',
+		imageUrl3: ''
+	},
+	{
+		name: 'Frauenriege',
+		time1: '20:00 - 21:30 Uhr',
+		day1: 'Mittwoch',
+		time2: '',
+		day2: '',
+		twodays: false,
+		badgename: 'Frauenriege',
+		age: 'Beitritt nach eigenem Ermessen',
+		ageID: 1,
+		riegeID: 7,
+		description:
+			'Wir trainieren unsere Kondition, Kraft und Beweglichkeit. Wir sind eine lustige Truppe, die sich auch gerne mal zu einem Bier trifft.',
+		imageUrl: './images/riegen/alleRiegen.webp',
+		imageUrl2: '',
+		imageUrl3: ''
+	}
+];
