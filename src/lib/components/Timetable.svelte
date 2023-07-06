@@ -1,6 +1,6 @@
 <script>
 	let sbbfrom = '';
-	let sbbto = 'Nussbaumen Schulhaus';
+	let sbbto = 'Nussbaumen+Schulhaus';
 	let sbbdate = '28.03.2024';
 	let sbbtime = '';
 
@@ -22,7 +22,7 @@
 		</div>
 		<div>
 			<div class="mt-2">Nach:</div>
-			<div>{sbbto}</div>
+			<div>Nussbaumen Schulhaus</div>
 		</div>
 	</div>
 	<div class="row-span-1 sm:col-start-2 row-start-2 sm:row-start-1 sm:pb-0 pb-5">

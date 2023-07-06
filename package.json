@@ -37,12 +37,10 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@auth0/auth0-spa-js": "^2.0.8",
-		"add-to-calendar-button": "^2.2.9",
+		"@auth/sveltekit": "^0.3.3",
+		"@vercel/analytics": "^1.0.1",
 		"axios": "^1.2.5",
-		"ical-generator": "^5.0.0",
-		"ics": "^3.2.0",
-		"ics-js": "^0.10.2",
-		"mapbox-gl": "^2.15.0"
+		"mapbox-gl": "^2.15.0",
+		"next-auth": "^4.22.1"
 	}
 }

@@ -8,7 +8,8 @@ export const personen = [
 		imageUrl: './images/people/avatar.webp',
 		mail: 'mailto:tisli',
 		vorstand: false,
-		leiter: true
+		leiter: true,
+		riegenleiter: false
 	},
 	{
 		riegeId: 3,
@@ -19,7 +20,8 @@ export const personen = [
 		imageUrl: './images/people/avatar.webp',
 		mail: 'mailto:s.akeret@gmx.ch',
 		vorstand: false,
-		leiter: true
+		leiter: true,
+		riegenleiter: true
 	},
 	{
 		riegeId: 4,
@@ -30,7 +32,8 @@ export const personen = [
 		imageUrl: './images/people/avatar.webp',
 		mail: 'mailto:carina',
 		vorstand: false,
-		leiter: true
+		leiter: true,
+		riegenleiter: false
 	},
 	{
 		riegeId: 2,
@@ -41,7 +44,8 @@ export const personen = [
 		imageUrl: './images/people/avatar.webp',
 		mail: 'mailto:karin',
 		vorstand: false,
-		leiter: true
+		leiter: true,
+		riegenleiter: false
 	},
 	{
 		riegeId: 5,
@@ -52,7 +56,8 @@ export const personen = [
 		imageUrl: './images/people/avatar.webp',
 		mail: 'mailto:martin',
 		vorstand: false,
-		leiter: true
+		leiter: true,
+		riegenleiter: false
 	},
 	{
 		riegeId: 0,
@@ -63,7 +68,8 @@ export const personen = [
 		imageUrl: './images/people/christian2_square.jpg',
 		mail: 'mailto:praesident@tvnussbaumen.ch',
 		vorstand: true,
-		leiter: false
+		leiter: false,
+		riegenleiter: false
 	},
 	{
 		riegeId: 0,
@@ -74,7 +80,8 @@ export const personen = [
 		imageUrl: './images/people/avatar.webp',
 		mail: 'mailto:vize@tvnussbaumen.ch',
 		vorstand: true,
-		leiter: false
+		leiter: false,
+		riegenleiter: false
 	},
 	{
 		riegeId: 1,
@@ -85,7 +92,8 @@ export const personen = [
 		imageUrl: './images/people/jan2_square.jpg',
 		mail: 'mailto:oberturnertvnussbaumen.ch',
 		vorstand: true,
-		leiter: true
+		leiter: true,
+		riegenleiter: true
 	},
 	{
 		riegeId: 0,
@@ -96,7 +104,8 @@ export const personen = [
 		imageUrl: './images/people/avatar.webp',
 		mail: 'mailto:kassier@tvnussbaumen.ch',
 		vorstand: true,
-		leiter: true
+		leiter: true,
+		riegenleiter: false
 	},
 	{
 		riegeId: 0,
@@ -107,7 +116,8 @@ export const personen = [
 		imageUrl: './images/people/avatar.webp',
 		mail: 'mailto:aktuar@tvnussbaumen.ch',
 		vorstand: true,
-		leiter: false
+		leiter: false,
+		riegenleiter: false
 	},
 	{
 		riegeId: 1,
@@ -118,7 +128,8 @@ export const personen = [
 		imageUrl: './images/people/avatar.webp',
 		mail: 'mailto:jasi',
 		vorstand: false,
-		leiter: true
+		leiter: true,
+		riegenleiter: false
 	},
 	{
 		riegeId: 4,
@@ -129,6 +140,7 @@ export const personen = [
 		imageUrl: './images/people/avatar.webp',
 		mail: 'mailto:maurus',
 		vorstand: false,
-		leiter: true
+		leiter: true,
+		riegenleiter: false
 	},
 ];

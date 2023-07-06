@@ -1,6 +1,6 @@
 <script>
 	import { setContext } from 'svelte';
-	import { mapboxgl, key } from './mapboxgl.js';
+	import { mapboxgl, key } from '../scripts/mapboxgl';
 
 	export let coordinates = [8.826432624745422, 47.62552494795642];
 

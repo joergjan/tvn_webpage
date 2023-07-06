@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Lightbox from './Lightbox.svelte';
-	import { lightboxActive } from '$lib/components/stores';
+	import { lightboxActive } from '$lib/scripts/stores';
 	import { onMount } from 'svelte';
 
 	export let photos: { href: string; no: number }[] = [];

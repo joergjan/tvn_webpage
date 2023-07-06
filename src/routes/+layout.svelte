@@ -1,7 +1,7 @@
 <script>
 	import '../app.css';
-	import { currentPage, selectedAgeID, selectedRiegeID } from '$lib/components/stores';
-	import { titles } from '$lib/components/navbar';
+	import { currentPage, selectedAgeID, selectedRiegeID } from '$lib/scripts/stores';
+	import { titles } from '$lib/scripts/navbar';
 	import { fade } from 'svelte/transition';
 	import BannerBolle from '$lib/components/BannerBolle.svelte';
 	import BannerFirefox from '$lib/components/BannerFirefox.svelte';

@@ -1,6 +1,6 @@
 <script>
-	import { currentPage } from './stores';
-	import { titles } from './navbar';
+	import { currentPage } from '../scripts/stores';
+	import { titles } from '../scripts/navbar';
 
 	let bollePage = 0;
 	let downloadsPage = 0;

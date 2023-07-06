@@ -1,5 +1,5 @@
 <script>
-	import { currentBollePage } from '$lib/components/stores'
+	import { currentBollePage } from '$lib/scripts/stores'
 	import MapBoxComponent from '$lib/components/MapBoxComponent.svelte'
 </script>
 

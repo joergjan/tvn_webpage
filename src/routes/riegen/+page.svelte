@@ -1,6 +1,6 @@
 <script>
-	import { riegen } from '$lib/components/riegen';
-	import { selectedAgeID } from '$lib/components/stores';
+	import { riegen } from '$lib/scripts/riegen';
+	import { selectedAgeID } from '$lib/scripts/stores';
 	import RiegeModal from '$lib/components/RiegeModal.svelte';
 
 	let active = false;

@@ -1,5 +1,5 @@
 <script>
-	import { riegen } from './riegen';
+	import { riegen } from '../scripts/riegen';
 	import { fade } from 'svelte/transition';
 	import RiegeModal from '$lib/components/RiegeModal.svelte';
 

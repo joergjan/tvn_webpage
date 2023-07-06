@@ -1,6 +1,6 @@
 <script>
 	import { createEventDispatcher } from 'svelte';
-	import { currentPage, selectedAgeID, selectedRiegeID } from '$lib/components/stores';
+	import { currentPage, selectedAgeID, selectedRiegeID } from '$lib/scripts/stores';
 
 	export let close = false;
 	const dispatch = createEventDispatcher();

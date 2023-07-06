@@ -1,6 +1,6 @@
 <script>
-	import { riegen } from '$lib/components/riegen';
-	import { currentPage, selectedAgeID, selectedRiegeID } from '$lib/components/stores';
+	import { riegen } from '$lib/scripts/riegen';
+	import { currentPage, selectedAgeID, selectedRiegeID } from '$lib/scripts/stores';
 
 	export let person = {
 		riegeId: 0,

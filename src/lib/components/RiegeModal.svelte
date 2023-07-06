@@ -1,9 +1,9 @@
 <script>
 	import { createEventDispatcher } from 'svelte';
 	import { fade } from 'svelte/transition';
-	import { currentPage } from '$lib/components/stores';
+	import { currentPage } from '$lib/scripts/stores';
 	const dispatch = createEventDispatcher();
-	import { personen } from '$lib/components/personen';
+	import { personen } from '$lib/scripts/personen';
 
 	/**
 	 * @type {any[]}

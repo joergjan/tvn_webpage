@@ -3,7 +3,7 @@
 	import Quotes from '$lib/components/Quotes.svelte';
 	import Aktuelles from '$lib/components/Aktuelles.svelte';
 
-	import { currentPage } from '$lib/components/stores';
+	import { currentPage } from '$lib/scripts/stores';
 	import MapBoxComponent from '$lib/components/MapBoxComponent.svelte';
 </script>
 

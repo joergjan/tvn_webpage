@@ -1,5 +1,5 @@
 <script>
-	import { currentBollePage } from '$lib/components/stores';
+	import { currentBollePage } from '$lib/scripts/stores';
 	let show = false;
 	let password = 'tvn1919';
 	let input = '';

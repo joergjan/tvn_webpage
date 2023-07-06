@@ -1,6 +1,6 @@
 <script>
 	import Kontakt from '$lib/components/Kontakt.svelte';
-	import { personen } from '$lib/components/personen';
+	import { personen } from '$lib/scripts/personen';
 	import MapBoxComponent from '$lib/components/MapBoxComponent.svelte';
 </script>
 
@@ -36,9 +36,21 @@
 			Die Leiter sind für den täglichen Turnbetrieb zuständig. Mit viel Herzblut organisieren sie
 			Turnstunden, Ausflüge und vieles mehr.
 		</div>
+
+		<div class="h3 mt-7 -mb-5">Riegenleiter</div>
 		<ul class="sm:grid sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3">
 			{#each personen as person}
-				{#if person.leiter}
+				{#if person.riegenleiter}
+					<li>
+						<Kontakt {person} />
+					</li>
+				{/if}
+			{/each}
+		</ul>
+		<div class="h3 mt-7 -mb-5">Hilfsleiter</div>
+		<ul class="sm:grid sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3">
+			{#each personen as person}
+				{#if person.leiter && !person.riegenleiter}
 					<li>
 						<Kontakt {person} />
 					</li>
