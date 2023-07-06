@@ -95,18 +95,16 @@
 				class="relative transform overflow-hidden rounded-lg bg-white  text-left shadow-xl transition-all  sm:w-full sm:max-w-3xl"
 			>
 				<div class="relative">
-					<div class="w-full h-full">
-						<img
-							loading="lazy"
-							class="absolute -z-10 w-2/3 h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-50"
-							src="./images/logos/logo.png"
-							alt="Turnverein Nussbaumen"
-						/>
-					</div>
+					<img
+						loading="lazy"
+						class="absolute -z-10 w-2/3 h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-50"
+						src="./images/logos/logo.png"
+						alt="Turnverein Nussbaumen"
+					/>
 
 					{#if imagesLength > 1}
 						<div class="sm:block hidden">
-							<div class="absolute top-1/2 left-0 text-2xl transform -translate-y-1/2 z-20">
+							<div class="absolute top-1/2 left-0 text-2xl transform -translate-y-1/2 z-30">
 								<div class="relative">
 									<div class="block bg-black h-12 w-10 opacity-60 rounded-r-md" />
 									<button
@@ -119,7 +117,7 @@
 								</div>
 							</div>
 
-							<div class="absolute top-1/2 right-0 text-2xl transform -translate-y-1/2 z-20">
+							<div class="absolute top-1/2 right-0 text-2xl transform -translate-y-1/2 z-30">
 								<div class="relative">
 									<div class="block bg-black h-12 w-10 opacity-60 rounded-l-md" />
 									<button
@@ -135,13 +133,13 @@
 
 						<div class="sm:hidden flex">
 							<button
-								class="w-1/2 bg-none h-full absolute left-0 text-black"
+								class="w-1/2 bg-none h-full absolute left-0 text-black z-10"
 								on:click={() => {
 									previousPicture();
 								}}
 							/>
 							<button
-								class="w-1/2 bg-none h-full absolute right-0 text-white"
+								class="w-1/2 bg-none h-full absolute right-0 text-white z-10"
 								on:click={() => {
 									nextPicture();
 								}}
@@ -149,20 +147,19 @@
 						</div>
 					{/if}
 
-					<div in:fade={{ duration: 1500 }}>
+					<div class="relative" in:fade={{ duration: 1500 }}>
 						{#each images as image, i}
 							{#if image !== ''}
 								<div>
 									{#if i === active}
-										<img
-											loading="lazy"
-											class="sm:max-h-96 z-10 sm:h-auto h-48 w-full rounded-t-lg object-cover"
-											src={image}
-											alt={name}
-										/>
-										<div
-											class="-z-10 sm:max-h-96 sm:h-auto h-48 w-full object-cover opacity-0"
-										/>
+										<div class="sm:h-96 h-48 w-full relative">
+											<img
+												loading="lazy"
+												class="absolute top-0 left-0 h-full w-full object-cover"
+												src={image}
+												alt={name}
+											/>
+										</div>
 									{/if}
 								</div>
 
@@ -242,7 +239,7 @@
 					<div class="absolute top-0 right-0 h-12 w-12 ">
 						<div class=" bg-black h-full w-full opacity-60 rounded-bl-lg" />
 						<button
-							class="absolute top-3 right-4 text-gray-200 hover:text-gray-400"
+							class="absolute top-3 right-4 text-gray-200 hover:text-gray-400 z-40"
 							on:click={() => {
 								handleClick();
 							}}>╳</button
