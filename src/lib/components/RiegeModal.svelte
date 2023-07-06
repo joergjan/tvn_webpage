@@ -156,9 +156,12 @@
 									{#if i === active}
 										<img
 											loading="lazy"
-											class="sm:max-h-96 sm:h-auto h-48 w-full rounded-t-lg object-cover"
+											class="sm:max-h-96 z-10 sm:h-auto h-48 w-full rounded-t-lg object-cover"
 											src={image}
 											alt={name}
+										/>
+										<div
+											class="-z-10 sm:max-h-96 sm:h-auto h-48 w-full object-cover opacity-0"
 										/>
 									{/if}
 								</div>
