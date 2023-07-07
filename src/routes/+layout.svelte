@@ -5,6 +5,10 @@
 	import { fade } from 'svelte/transition';
 	import BannerBolle from '$lib/components/BannerBolle.svelte';
 	import BannerFirefox from '$lib/components/BannerFirefox.svelte';
+	import { dev } from '$app/environment';
+	import { inject } from '@vercel/analytics';
+
+	inject({ mode: dev ? 'development' : 'production' });
 
 	let open = false;
 	let pageHref = window.location.href;
