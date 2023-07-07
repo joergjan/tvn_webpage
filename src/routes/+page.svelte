@@ -19,7 +19,7 @@
 
 <div class="hidden md:block">
 	<div class="flex justify-center items-center">
-		<img src="./images/logos/turner_webpage.png" class="h-104" alt="turner" loading="lazy" />
+		<img src="./images/logos/turner_webpage.png" height="300" width="1100" alt="turner" loading="lazy" />
 	</div>
 </div>
 
