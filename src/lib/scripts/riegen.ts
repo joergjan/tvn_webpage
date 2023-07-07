@@ -30,7 +30,7 @@ export const riegen = [
 		ageID: 0,
 		riegeID: 2,
 		description: 'Wir sind die ganz kleinen!',
-		imageUrl: './images/riegen/alleRiegen.webp',
+		imageUrl: './images/riegen/alleRiegen.jpg',
 		imageUrl2: '',
 		imageUrl3: ''
 	},
@@ -46,7 +46,7 @@ export const riegen = [
 		ageID: 0,
 		riegeID: 3,
 		description: 'Bei uns hat jeder Spass!',
-		imageUrl: './images/riegen/alleRiegen.webp',
+		imageUrl: './images/riegen/alleRiegen.jpg',
 		imageUrl2: '',
 		imageUrl3: ''
 	},
@@ -63,7 +63,7 @@ export const riegen = [
 		ageID: 0,
 		riegeID: 4,
 		description: 'Für alle, die was erleben wollen!',
-		imageUrl: './images/riegen/alleRiegen.webp',
+		imageUrl: './images/riegen/alleRiegen.jpg',
 		imageUrl2: '',
 		imageUrl3: ''
 	},
@@ -79,7 +79,7 @@ export const riegen = [
 		ageID: 0,
 		riegeID: 5,
 		description: 'Wir sind die Grossen und können es kaum erwarten, bis wir zu den Aktiven kommen!',
-		imageUrl: './images/riegen/alleRiegen.webp',
+		imageUrl: './images/riegen/alleRiegen.jpg',
 		imageUrl2: '',
 		imageUrl3: ''
 	},
@@ -96,7 +96,7 @@ export const riegen = [
 		riegeID: 6,
 		description:
 			'Geselligkeit, Spiel und Spass. Wir sind eine lustige Truppe, die sich auch gerne mal zu einem Bierchen trifft.',
-		imageUrl: './images/riegen/alleRiegen.webp',
+		imageUrl: './images/riegen/alleRiegen.jpg',
 		imageUrl2: '',
 		imageUrl3: ''
 	},
@@ -113,7 +113,7 @@ export const riegen = [
 		riegeID: 7,
 		description:
 			'Wir trainieren unsere Kondition, Kraft und Beweglichkeit. Wir sind eine lustige Truppe, die sich auch gerne mal zu einem Bier trifft.',
-		imageUrl: './images/riegen/alleRiegen.webp',
+		imageUrl: './images/riegen/alleRiegen.jpg',
 		imageUrl2: '',
 		imageUrl3: ''
 	}
