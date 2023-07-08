@@ -1,7 +1,10 @@
 <script>
 	import { riegen } from '$lib/scripts/riegen';
 	import { currentPage, selectedAgeID, selectedRiegeID } from '$lib/scripts/stores';
+	import RiegeModal from '$lib/components/RiegeModal.svelte';
 
+	let currentRiege = 0;
+	let showRiege = false;
 	export let person = {
 		riegeId: 0,
 		riege2Id: 0,
@@ -30,11 +33,30 @@
 			geleiteteRiegen.push(riege.name);
 		}
 	}
+
+	function showModal() {
+		if (showRiege) {
+			showRiege = false;
+		} else {
+			showRiege = true;
+		}
+	}
+
+	function handleClose() {
+		showModal();
+	}
 </script>
 
 <div class="pt-10">
 	<div class="flex justify-center">
-		<img loading="lazy" class="rounded-full" width="450" height="450" src={person.imageUrl} alt={person.name} />
+		<img
+			loading="lazy"
+			class="rounded-full"
+			width="450"
+			height="450"
+			src={person.imageUrl}
+			alt={person.name}
+		/>
 	</div>
 	<div class="pt-3 flex justify-center">{person.name}</div>
 
@@ -43,16 +65,16 @@
 	{/if}
 
 	{#if person.leiter}
-		{#each geleiteteRiegen as geleiteteRiege}
+		{#each geleiteteRiegen as geleiteteRiege, i}
 			<div class="flex justify-center">
 				<button
 					on:click={() => {
-						$currentPage = 1;
+						currentRiege = riegen.findIndex((riege) => riege.name === geleiteteRiege);
+						showModal();
 					}}
+					class="text-sm px-3 py-1 badge-blue flex mb-1"
 				>
-					<a href="/riegen" class="text-sm px-3 py-1 badge-blue flex mb-1">
-						{geleiteteRiege}
-					</a>
+					{geleiteteRiege}
 				</button>
 			</div>
 		{/each}
@@ -80,3 +102,22 @@
 		</a>
 	</div>
 </div>
+
+{#if showRiege}
+	<RiegeModal
+		on:click_outside={showModal}
+		on:close={handleClose}
+		name={riegen[currentRiege].name}
+		time1={riegen[currentRiege].time1}
+		time2={riegen[currentRiege].time2}
+		day1={riegen[currentRiege].day1}
+		day2={riegen[currentRiege].day2}
+		twodays={riegen[currentRiege].twodays}
+		age={riegen[currentRiege].age}
+		description={riegen[currentRiege].description}
+		imageUrl={riegen[currentRiege].imageUrl}
+		imageUrl2={riegen[currentRiege].imageUrl2}
+		imageUrl3={riegen[currentRiege].imageUrl3}
+		riegeId={riegen[currentRiege].riegeID}
+	/>
+{/if}

@@ -1,4 +1,6 @@
 <script>
+	console.warn = function() {};
+	console.error = function() {};
 	import { setContext } from 'svelte';
 	import { mapboxgl, key } from '../scripts/mapboxgl';
 

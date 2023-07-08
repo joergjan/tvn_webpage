@@ -6,7 +6,7 @@ export const personen = [
 		name: 'Matthias Hebeisen',
 		role: '',
 		imageUrl: './images/people/avatar.webp',
-		mail: 'mailto:tisli',
+		mail: 'mailto:jugend@tvnussbaumen.ch',
 		vorstand: false,
 		leiter: true,
 		riegenleiter: false
@@ -18,7 +18,7 @@ export const personen = [
 		name: 'Sabrina Akeret',
 		role: '',
 		imageUrl: './images/people/avatar.webp',
-		mail: 'mailto:s.akeret@gmx.ch',
+		mail: 'mailto:jugend@tvnussbaumen.ch',
 		vorstand: false,
 		leiter: true,
 		riegenleiter: true
@@ -30,7 +30,7 @@ export const personen = [
 		name: 'Carina Notz',
 		role: '',
 		imageUrl: './images/people/avatar.webp',
-		mail: 'mailto:carina',
+		mail: 'mailto:jugend@tvnussbaumen.ch',
 		vorstand: false,
 		leiter: true,
 		riegenleiter: false
@@ -42,7 +42,7 @@ export const personen = [
 		name: 'Karin Brauchli',
 		role: '',
 		imageUrl: './images/people/avatar.webp',
-		mail: 'mailto:karin',
+		mail: 'mailto:jugend@tvnussbaumen.ch',
 		vorstand: false,
 		leiter: true,
 		riegenleiter: false
@@ -54,7 +54,7 @@ export const personen = [
 		name: 'Martin Bösch',
 		role: '',
 		imageUrl: './images/people/avatar.webp',
-		mail: 'mailto:martin',
+		mail: 'mailto:jugend@tvnussbaumen.ch',
 		vorstand: false,
 		leiter: true,
 		riegenleiter: false
@@ -66,7 +66,7 @@ export const personen = [
 		name: 'Christian Thurnheer',
 		role: 'Präsident',
 		imageUrl: './images/people/christian2_square.jpg',
-		mail: 'mailto:praesident@tvnussbaumen.ch',
+		mail: 'mailto:praesi@tvnussbaumen.ch',
 		vorstand: true,
 		leiter: false,
 		riegenleiter: false
@@ -78,7 +78,7 @@ export const personen = [
 		name: 'Iren Akeret',
 		role: 'Vize-Präsidentin',
 		imageUrl: './images/people/avatar.webp',
-		mail: 'mailto:vize@tvnussbaumen.ch',
+		mail: 'mailto:info@tvnussbaumen.ch',
 		vorstand: true,
 		leiter: false,
 		riegenleiter: false
@@ -114,7 +114,7 @@ export const personen = [
 		name: 'Sabrina Sager',
 		role: 'Aktuarin',
 		imageUrl: './images/people/avatar.webp',
-		mail: 'mailto:aktuar@tvnussbaumen.ch',
+		mail: 'mailto:info@tvnussbaumen.ch',
 		vorstand: true,
 		leiter: false,
 		riegenleiter: false
@@ -126,7 +126,7 @@ export const personen = [
 		name: 'Jasmin Luginbühl',
 		role: '',
 		imageUrl: './images/people/avatar.webp',
-		mail: 'mailto:jasi',
+		mail: 'mailto:info@tvnussbaumen.ch',
 		vorstand: false,
 		leiter: true,
 		riegenleiter: false
@@ -138,7 +138,7 @@ export const personen = [
 		name: 'Maurus Vetterli',
 		role: '',
 		imageUrl: './images/people/avatar.webp',
-		mail: 'mailto:maurus',
+		mail: 'mailto:jugend@tvnussbaumen.ch',
 		vorstand: false,
 		leiter: true,
 		riegenleiter: false
