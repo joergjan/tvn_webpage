@@ -1,13 +1,17 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
+	export let timer: number = 0;
 	export let animation: 'direction-left' | 'unblur' | 'direction-right' | 'fade-in' = 'fade-in';
+
 	let visible = false;
+
+	
 
 	const observer = new IntersectionObserver(
 		([entry], observer) => {
 			if (entry.isIntersecting) {
-				visible = true;
+				makeVisible();
 				observer.unobserve(entry.target);
 			}
 		},
@@ -18,6 +22,12 @@
 		if (ref) {
 			observer.observe(ref);
 		}
+	}
+
+	function makeVisible() {
+		setTimeout(() => {
+			visible = true;
+		}, timer*1000/10);
 	}
 
 	onMount(() => {
@@ -70,7 +80,7 @@
 		}
 	}
 
-    @keyframes blur-unblur {
+	@keyframes blur-unblur {
 		0% {
 			filter: blur(2px);
 		}
@@ -94,6 +104,4 @@
 	.visible.unblur {
 		animation: blur-unblur 1s ease-in-out;
 	}
-
-	
 </style>

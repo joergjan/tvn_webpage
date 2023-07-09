@@ -9,6 +9,10 @@
 	let lightboxActiveValue = 0;
 	let activeIndex = 0;
 
+	function randomTimer() {
+		return Math.floor(Math.random() * 5) ;
+	}
+
 	const handleLightboxClose = () => {
 		lightboxActive.update((n) => (n = 0));
 	};
@@ -34,7 +38,7 @@
 	<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
 		{#each photos as { href, no }}
 			<div class="relative">
-				<IntersectionObserver animation="unblur">
+				<IntersectionObserver animation="unblur" timer={randomTimer()}>
 					<img loading="lazy" class="w-72 h-auto" src={href} alt="" />
 				</IntersectionObserver>
 				<button
