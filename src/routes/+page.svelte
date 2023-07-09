@@ -2,6 +2,7 @@
 	import Trainingszeiten from '$lib/components/Trainingszeiten.svelte';
 	import Quotes from '$lib/components/Quotes.svelte';
 	import Aktuelles from '$lib/components/Aktuelles.svelte';
+	import IntersectionObserver from '$lib/components/IntersectionObserver.svelte';
 
 	import { currentPage } from '$lib/scripts/stores';
 	import MapBoxComponent from '$lib/components/MapBoxComponent.svelte';
@@ -19,7 +20,13 @@
 
 <div class="hidden md:block">
 	<div class="flex justify-center items-center">
-		<img src="./images/logos/turner_webpage.png" height="500" width="1100" alt="turner" loading="lazy" />
+		<img
+			src="./images/logos/turner_webpage.png"
+			height="500"
+			width="1100"
+			alt="turner"
+			loading="lazy"
+		/>
 	</div>
 </div>
 
@@ -45,17 +52,19 @@
 	<Trainingszeiten />
 </div>
 
-<div class="mt-5">
-	<div class="mt-10 lg:grid lg:grid-cols-5 max-h-auto">
-		<div class="lg:col-span-1 lg:col-start-1">
-			<div class="font-semibold">Hier trainieren wir:</div>
-			<div>Turnhalle Nussbaumen</div>
-			<div>Alte Dorfstrasse 11a</div>
-			<div>8537 Nussbaumen</div>
-		</div>
+<IntersectionObserver animation="fade-in">
+	<div class="mt-5">
+		<div class="mt-10 lg:grid lg:grid-cols-5 max-h-auto">
+			<div class="lg:col-span-1 lg:col-start-1">
+				<div class="font-semibold">Hier trainieren wir:</div>
+				<div>Turnhalle Nussbaumen</div>
+				<div>Alte Dorfstrasse 11a</div>
+				<div>8537 Nussbaumen</div>
+			</div>
 
-		<div class="lg:col-span-4 lg:col-start-2 h-[500px] mt-5 lg:mt-0">
-			<MapBoxComponent />
+			<div class="lg:col-span-4 lg:col-start-2 h-[500px] mt-5 lg:mt-0">
+				<MapBoxComponent />
+			</div>
 		</div>
 	</div>
-</div>
+</IntersectionObserver>

@@ -2,6 +2,7 @@
 	import Kontakt from '$lib/components/Kontakt.svelte';
 	import { personen } from '$lib/scripts/personen';
 	import MapBoxComponent from '$lib/components/MapBoxComponent.svelte';
+	import IntersectionObserver from '$lib/components/IntersectionObserver.svelte';
 </script>
 
 <title>TVN | Kontakt</title>
@@ -57,21 +58,19 @@
 				{/if}
 			{/each}
 		</ul>
-		<div class="mt-10 lg:grid lg:grid-cols-5 max-h-auto">
-			<div class="lg:col-span-1 lg:col-start-1">
-				<div class="font-semibold">Turnverein Nussbaumen</div>
-				<div>c/o Christian Thurnheer</div>
-				<div>Altwingerten 1</div>
-				<div>8537 Nussbaumen</div>
-			</div>
+		<IntersectionObserver animation="fade-in">
+			<div class="mt-10 lg:grid lg:grid-cols-5 max-h-auto">
+				<div class="lg:col-span-1 lg:col-start-1">
+					<div class="font-semibold">Turnverein Nussbaumen</div>
+					<div>c/o Christian Thurnheer</div>
+					<div>Altwingerten 1</div>
+					<div>8537 Nussbaumen</div>
+				</div>
 
-			<div class="lg:col-span-4 lg:col-start-2 h-[500px] mt-5 lg:mt-0 pb-0">
-				<MapBoxComponent coordinates={[8.825587388065486,47.62381098583046]} />
+				<div class="lg:col-span-4 lg:col-start-2 h-[500px] mt-5 lg:mt-0 pb-0">
+					<MapBoxComponent coordinates={[8.825587388065486, 47.62381098583046]} />
+				</div>
 			</div>
-			
-
-		</div>
+		</IntersectionObserver>
 	</div>
-
-	
 </div>

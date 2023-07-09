@@ -1,6 +1,7 @@
 <script>
 	import { currentPage } from '../scripts/stores';
 	import { titles } from '../scripts/navbar';
+	import IntersectionObserver from '$lib/components/IntersectionObserver.svelte';
 
 	let bollePage = 0;
 	let downloadsPage = 0;
@@ -22,7 +23,9 @@
 	let turnfest = false;
 </script>
 
+<IntersectionObserver animation="direction-left">
 <div>
+	
 	<button
 		on:click={() => {
 			if (unterhaltung) {
@@ -63,8 +66,11 @@
 			</div>
 		</div>
 	{/if}
+	
 </div>
+</IntersectionObserver>
 
+<IntersectionObserver animation="direction-right">
 <div>
 	<button
 		on:click={() => {
@@ -114,7 +120,9 @@
 		</div>
 	{/if}
 </div>
+</IntersectionObserver>
 
+<IntersectionObserver animation="direction-left">
 <div>
 	<button
 		on:click={() => {
@@ -170,7 +178,9 @@
 		</div>
 	{/if}
 </div>
+</IntersectionObserver>
 
+<IntersectionObserver animation="direction-right">
 <div>
 	<button
 		on:click={() => {
@@ -185,3 +195,4 @@
 		</a>
 	</button>
 </div>
+</IntersectionObserver>

@@ -2,6 +2,7 @@
 	import { riegen } from '$lib/scripts/riegen';
 	import { selectedAgeID } from '$lib/scripts/stores';
 	import RiegeModal from '$lib/components/RiegeModal.svelte';
+	import IntersectionObserver from '$lib/components/IntersectionObserver.svelte';
 
 	let active = false;
 	let showRiege = false;
@@ -161,37 +162,39 @@
 <div class="grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
 	{#each [...riegen].reverse() as riege, i}
 		{#if riege.ageID === $selectedAgeID || $selectedAgeID === 2}
-			<div class="flex flex-col rounded-b-lg shadow-lg hover-scale">
-				<button
-					on:click={() => {
-						showModal();
-						currentRiege = riegen.length-1-i;
-					}}
-				>
-					<img
-						class="h-48 w-full rounded-t-lg object-cover"
-						src={riege.imageUrl}
-						alt={riege.name}
-						loading="lazy"
-					/>
-					<div class="flex flex-1 flex-col p-6">
-						<div class="flex-1">
-							<div class="text-sm text-tvbluelight">
-								{riege.age}
+			<IntersectionObserver animation="fade-in">
+				<div class="flex flex-col rounded-b-lg shadow-lg hover-scale">
+					<button
+						on:click={() => {
+							showModal();
+							currentRiege = riegen.length - 1 - i;
+						}}
+					>
+						<img
+							class="h-48 w-full rounded-t-lg object-cover"
+							src={riege.imageUrl}
+							alt={riege.name}
+							loading="lazy"
+						/>
+						<div class="flex flex-1 flex-col p-6">
+							<div class="flex-1">
+								<div class="text-sm text-tvbluelight">
+									{riege.age}
+								</div>
+								<div class="h4 py-1">
+									{riege.name}
+								</div>
 							</div>
-							<div class="h4 py-1">
-								{riege.name}
+							<div class="pt-3 text-sm">
+								<div>{riege.day1}: {riege.time1}</div>
+								{#if riege.twodays}
+									<div>{riege.day2}: {riege.time2}</div>
+								{/if}
 							</div>
 						</div>
-						<div class="pt-3 text-sm">
-							<div>{riege.day1}: {riege.time1}</div>
-							{#if riege.twodays}
-								<div>{riege.day2}: {riege.time2}</div>
-							{/if}
-						</div>
-					</div>
-				</button>
-			</div>
+					</button>
+				</div>
+			</IntersectionObserver>
 		{/if}
 	{/each}
 </div>
