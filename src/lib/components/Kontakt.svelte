@@ -17,6 +17,10 @@
 		leiter: true
 	};
 
+	function randomTimer() {
+		return Math.floor(Math.random() * 5) ;
+	}
+
 	/**
 	 * @type {any[]}
 	 */
@@ -47,7 +51,7 @@
 	}
 </script>
 
-<IntersectionObserver animation="fade-in">
+<IntersectionObserver animation="fade-in" timer={randomTimer()}>
 	<div class="pt-10">
 		<div class="flex justify-center">
 			<img
