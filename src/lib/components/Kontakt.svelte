@@ -18,7 +18,7 @@
 	};
 
 	function randomTimer() {
-		return Math.floor(Math.random() * 5) ;
+		return Math.floor(Math.random() * 4) ;
 	}
 
 	/**

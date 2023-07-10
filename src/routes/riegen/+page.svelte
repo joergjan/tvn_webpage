@@ -45,6 +45,10 @@
 			showRiege = true;
 		}
 	}
+
+	function randomTimer() {
+		return Math.floor(Math.random() * 4) ;
+	}
 </script>
 
 <svelte:head>
@@ -162,7 +166,7 @@
 <div class="grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
 	{#each [...riegen].reverse() as riege, i}
 		{#if riege.ageID === $selectedAgeID || $selectedAgeID === 2}
-			<IntersectionObserver animation="fade-in">
+			<IntersectionObserver animation="fade-in" timer={randomTimer()}>
 				<div class="flex flex-col rounded-b-lg shadow-lg hover-scale">
 					<button
 						on:click={() => {

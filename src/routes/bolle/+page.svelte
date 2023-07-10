@@ -94,13 +94,16 @@
 			</div>
 		</div>
 	</IntersectionObserver>
-	<IntersectionObserver animation="direction-left">
-		<div>
+
+	<div>
+		<IntersectionObserver animation="direction-left">
 			<div class="h4 mt-3">Standort</div>
 			<div>Du findest uns beim Schulhaus Nussbaumen.</div>
+		</IntersectionObserver>
+		<IntersectionObserver animation="fade-in">
 			<div class="w-full h-[500px] mt-3">
 				<MapBoxComponent />
 			</div>
-		</div>
-	</IntersectionObserver>
+		</IntersectionObserver>
+	</div>
 </div>
