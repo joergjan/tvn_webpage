@@ -1,10 +1,10 @@
 <script>
 	let sbbfrom = '';
 	let sbbto = 'Nussbaumen+Schulhaus';
-	let sbbdate = '28.03.2024';
+	let sbbdate = '';
 	let sbbtime = '';
 
-	$: url = `https://www.sbb.ch/en/buying/pages/fahrplan/fahrplan.xhtml?von=${sbbfrom}&nach=${sbbto}&datum=${sbbdate}&zeit=${sbbtime}&an=true&suche=true`;
+	$: url = `https://www.sbb.ch/de/kaufen/pages/fahrplan/fahrplan.xhtml?von=${sbbfrom}&nach=${sbbto}&datum=${sbbdate}&zeit=${sbbtime}&an=true&suche=true`;
 </script>
 
 <div class="grid sm:grid-cols-2 grid-rows-2 sm:grid-rows-1">
@@ -38,7 +38,13 @@
 		</div>
 		<div class="mt-2">
 			<div>Datum:</div>
-			<div>{sbbdate}</div>
+			<input
+				class={sbbtime == ''
+					? 'px-2 py-1 border border-red-500 rounded-sm'
+					: 'px-2 py-1 border rounded-sm'}
+				type="date"
+				bind:value={sbbtime}
+			/>
 		</div>
 	</div>
 </div>

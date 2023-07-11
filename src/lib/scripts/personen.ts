@@ -54,7 +54,7 @@ export const personen = [
 		name: 'Martin Bösch',
 		role: '',
 		imageUrl: './images/people/avatar.webp',
-		mail: 'mailto:jugend@tvnussbaumen.ch',
+		mail: 'mailto:info@tvnussbaumen.ch',
 		vorstand: false,
 		leiter: true,
 		riegenleiter: true
