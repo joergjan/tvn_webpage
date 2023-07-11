@@ -57,7 +57,7 @@
 	</div>
 	{#if leiter}
 		<div>
-			Möchtest du unser Leiterteam in der grossen Jugi unterstützen? Wir suchen für nach dem Sommer einen Riegenleiter. Melde dich bei
+			Möchtest du unserm Leiterteam in der grossen Jugi unter die Arme greifen? Wir suchen für nach den Sommerferien Unterstützung. Melde dich bei
 			<a href="mailto:jugend@tvnussbaumen.ch"> jugend@tvnussbaumen.ch </a>
 		</div>
 	{/if}
