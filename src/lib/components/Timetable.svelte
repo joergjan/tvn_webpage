@@ -39,11 +39,11 @@
 		<div class="mt-2">
 			<div>Datum:</div>
 			<input
-				class={sbbtime == ''
+				class={sbbdate == ''
 					? 'px-2 py-1 border border-red-500 rounded-sm'
 					: 'px-2 py-1 border rounded-sm'}
 				type="date"
-				bind:value={sbbtime}
+				bind:value={sbbdate}
 			/>
 		</div>
 	</div>
