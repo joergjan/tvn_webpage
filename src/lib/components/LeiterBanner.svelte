@@ -1,31 +1,30 @@
 <script>
 	import { createEventDispatcher } from 'svelte';
-	import { currentPage, selectedAgeID, selectedRiegeID } from '$lib/scripts/stores';
 	import { fade } from 'svelte/transition';
 
-	const dispatch = createEventDispatcher()
+	export let close = false;
+	const dispatch = createEventDispatcher();
 
 	function handleClick() {
+		close = true;
 		dispatch('close', close);
 	}
 </script>
 
-
 <div out:fade class="w-full z-10">
-	<div class="flex items-center gap-x-6 bg-tvyellow px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
+	<div class="flex items-center gap-x-6 bg-tvblue text-white px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
 		<p class="text-sm leading-6 ">
 			<a
-				href="/bolle"
+				href="mailto:jugend@tvnussbaumen.ch"
 				on:click={() => {
-					$currentPage = 4;
 					handleClick();
 				}}
 			>
-				<strong class="font-semibold">Bollä Dunnschtig 2024</strong><svg
+				<strong class="font-semibold">Leiter Gesucht!</strong><svg
 					viewBox="0 0 2 2"
 					class="mx-2 inline h-0.5 w-0.5 fill-current"
 					aria-hidden="true"><circle cx="1" cy="1" r="1" /></svg
-				>Besuche uns am 28. März in Nussbaumen <span aria-hidden="true">&rarr;</span>
+				>Möchtest du unser Leiterteam in der grossen Jugi unterstützen? <span aria-hidden="true">&rarr;</span>
 			</a>
 		</p>
 		<div class="flex flex-1 justify-end">
@@ -46,3 +45,4 @@
 		</div>
 	</div>
 </div>
+

@@ -7,6 +7,7 @@
 	import BannerFirefox from '$lib/components/BannerFirefox.svelte';
 	import { dev } from '$app/environment';
 	import { inject } from '@vercel/analytics';
+	import LeiterBanner from '$lib/components/LeiterBanner.svelte';
 
 	inject({ mode: dev ? 'development' : 'production' });
 
@@ -14,6 +15,8 @@
 	let pageHref = window.location.href;
 
 	let showBanner = true;
+	let showBannerLeiter = true;
+	let showBannerFirefox = true;
 	let current = 'burger';
 
 	function menuToggle() {
@@ -56,27 +59,45 @@
 		showBanner = false;
 	}
 
+	function handleCloseLeiter() {
+		showBannerLeiter = false;
+	}
+
+	function handleCloseFirefox() {
+		showBannerFirefox = false;
+	}
+
 	/**
-	 * @param {string | number | Date} dateString
+	 * @param {string | number | Date} startDate
+	 * @param {string | number | Date} endDate
 	 */
-	function shouldShowBanner(dateString) {
+	function shouldShowBanner(startDate, endDate) {
 		const currentDate = new Date();
-		const bannerDate = new Date(dateString);
-		return currentDate >= bannerDate;
+		const bannerDateEnd = new Date(endDate);
+		const bannerDateStart = new Date(startDate);
+		return currentDate <= bannerDateEnd && currentDate >= bannerDateStart;
 	}
 </script>
 
-{#if isFirefox()}
-	<div style="z-index: 1">
-		<BannerFirefox />
+{#if showBannerLeiter && shouldShowBanner('2023-07-01', '2023-09-30')}
+	<div>
+		<LeiterBanner on:close={handleCloseLeiter} />
 	</div>
 {/if}
 
-{#if showBanner && shouldShowBanner('2024-01-01')}
-	<div style="z-index: 1">
-		<BannerBolle />
+{#if showBannerFirefox && isFirefox()}
+	<div>
+		<BannerFirefox on:close={handleCloseFirefox} />
 	</div>
-{:else}
+{/if}
+
+{#if showBanner && shouldShowBanner('2024-01-01', '2024-03-29')}
+	<div>
+		<BannerBolle on:close={handleClose} />
+	</div>
+{/if}
+
+{#if !showBanner && !showBannerLeiter && !isFirefox()}
 	<div class="bg-tvblue h-3 " />
 {/if}
 

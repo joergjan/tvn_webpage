@@ -2,11 +2,11 @@
 	const Jahresprogramme = [
 		{
 			name: 'Jahresprogramm Aktive',
-			path: './files/?'
+			path: './files/jahr_aktive.pdf'
 		},
 		{
 			name: 'Jahresprogramm Jugendriegen',
-			path: './files/?'
+			path: './files/jahr_jugi.pdf'
 		}
 	];
 
@@ -83,7 +83,7 @@
 
 <div class="divider-line" />
 
-<div>
+<div class="hidden">
 	<div class="h3">Statuten</div>
 	<div class="py-4">
 		{#each Statuten as item}
@@ -123,7 +123,7 @@
 
 <div class="divider-line" />
 
-<div>
+<div class="hidden">
 	<div class="h3">Reglemente</div>
 	<div class="py-4">
 		{#each Reglemente as item}

@@ -9,7 +9,15 @@
 		{ name: 'Infos A-Z', href: '/', selector: 0 },
 		{ name: 'Anreise', href: '/anreise', selector: 1 },
 		{ name: 'Galerie', href: '/galerie', selector: 2 }
+		// { name: 'Kontakt', href: '/kontakt', selector: 3 }
 	];
+
+	for (let i = 0; i < titles.length; i++) {
+		if (pageHref.toString().includes(titles[i].href)) {
+			$currentBollePage = i;
+			pageHref = pageHref;
+		}
+	}
 
 	function setActive() {
 		if (active) {

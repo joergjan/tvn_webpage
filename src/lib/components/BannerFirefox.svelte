@@ -1,6 +1,6 @@
 <script>
 	import { createEventDispatcher } from 'svelte';
-	import { currentPage, selectedAgeID, selectedRiegeID } from '$lib/scripts/stores';
+	import { fade } from 'svelte/transition';
 
 	export let close = false;
 	const dispatch = createEventDispatcher();
@@ -11,7 +11,7 @@
 	}
 </script>
 
-<div class="absolute top-0 w-full z-10">
+<div out:fade class="w-full z-10">
 	<div class="flex items-center gap-x-6 bg-tvyellow px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
 		<p class="text-sm leading-6 ">
 			<strong class="font-semibold">Darstellungsfehler</strong><svg
@@ -39,5 +39,3 @@
 		</div>
 	</div>
 </div>
-
-<div class="flex sm:h-12 h-16 w-full bg-blue" />

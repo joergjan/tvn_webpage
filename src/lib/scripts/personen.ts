@@ -1,6 +1,6 @@
 export const personen = [
 	{
-		riegeId: 0,
+		riegeId: 2,
 		riege2Id: 0,
 		riege3Id: 0,
 		name: 'Matthias Hebeisen',
@@ -9,12 +9,12 @@ export const personen = [
 		mail: 'mailto:jugend@tvnussbaumen.ch',
 		vorstand: false,
 		leiter: true,
-		riegenleiter: false
+		riegenleiter: true
 	},
 	{
 		riegeId: 3,
 		riege2Id: 7,
-		riege3Id: 0,
+		riege3Id: 4,
 		name: 'Sabrina Akeret',
 		role: '',
 		imageUrl: './images/people/avatar.webp',
@@ -25,7 +25,7 @@ export const personen = [
 	},
 	{
 		riegeId: 4,
-		riege2Id: 0,
+		riege2Id: 3,
 		riege3Id: 0,
 		name: 'Carina Notz',
 		role: '',
@@ -36,8 +36,8 @@ export const personen = [
 		riegenleiter: false
 	},
 	{
-		riegeId: 2,
-		riege2Id: 0,
+		riegeId: 0,
+		riege2Id: 2,
 		riege3Id: 0,
 		name: 'Karin Brauchli',
 		role: '',
@@ -48,7 +48,7 @@ export const personen = [
 		riegenleiter: false
 	},
 	{
-		riegeId: 5,
+		riegeId: 6,
 		riege2Id: 0,
 		riege3Id: 0,
 		name: 'Martin Bösch',
@@ -57,7 +57,7 @@ export const personen = [
 		mail: 'mailto:jugend@tvnussbaumen.ch',
 		vorstand: false,
 		leiter: true,
-		riegenleiter: false
+		riegenleiter: true
 	},
 	{
 		riegeId: 0,
@@ -77,7 +77,7 @@ export const personen = [
 		riege3Id: 0,
 		name: 'Iren Akeret',
 		role: 'Vize-Präsidentin',
-		imageUrl: './images/people/avatar.webp',
+		imageUrl: '../images/people/avatar.webp',
 		mail: 'mailto:info@tvnussbaumen.ch',
 		vorstand: true,
 		leiter: false,
@@ -96,7 +96,7 @@ export const personen = [
 		riegenleiter: true
 	},
 	{
-		riegeId: 0,
+		riegeId: 5,
 		riege2Id: 0,
 		riege3Id: 0,
 		name: 'Sandro Akeret',
@@ -105,7 +105,7 @@ export const personen = [
 		mail: 'mailto:kassier@tvnussbaumen.ch',
 		vorstand: true,
 		leiter: true,
-		riegenleiter: false
+		riegenleiter: true
 	},
 	{
 		riegeId: 0,
@@ -132,9 +132,9 @@ export const personen = [
 		riegenleiter: false
 	},
 	{
-		riegeId: 4,
-		riege2Id: 3,
-		riege3Id: 0,
+		riegeId: 0,
+		riege2Id: 5,
+		riege3Id: 4,
 		name: 'Maurus Vetterli',
 		role: '',
 		imageUrl: './images/people/avatar.webp',

@@ -97,11 +97,10 @@
 				<div class="relative">
 					<img
 						loading="lazy"
-						class="absolute -z-10 w-2/3 h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-50"
+						class="absolute -z-10 w-1/2 h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-50"
 						src="./images/logos/logo.png"
 						alt="Turnverein Nussbaumen"
 					/>
-
 					{#if imagesLength > 1}
 						<div class="sm:block hidden">
 							<div class="absolute top-1/2 left-0 text-2xl transform -translate-y-1/2 z-30">
@@ -152,7 +151,7 @@
 							{#if image !== ''}
 								<div>
 									{#if i === active}
-										<div class="sm:h-96 h-48 w-full relative">
+										<div class="sm:h-80 h-48 w-full relative">
 											<img
 												loading="lazy"
 												class="absolute top-0 left-0 h-full w-full object-cover transition-opacity duration-500 ease-in-out"
@@ -214,7 +213,7 @@
 									<div>
 										<img
 											loading="lazy"
-											class="sm:h-12 sm:w-12 h-10 w-10 rounded-full"
+											class="sm:h-10 sm:w-10 h-8 w-8 rounded-full"
 											src={leit.imageUrl}
 											alt={leit.name}
 										/>
