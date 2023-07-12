@@ -16,7 +16,7 @@
 	/>
 </svelte:head>
 
-<div class="h1 md:hidden">Unser Verein</div>
+<h1 class="h1 md:hidden">Unser Verein</h1>
 
 <div class="hidden md:block">
 	<div class="flex justify-center items-center">
@@ -34,7 +34,7 @@
 </div>
 
 <div class="pt-10">
-	<div class="h2">Trainingszeiten</div>
+	<h2 class="h2">Trainingszeiten</h2>
 	<div>
 		<a
 			href="/downloads"

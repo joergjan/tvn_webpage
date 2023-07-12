@@ -1,6 +1,6 @@
 <script>
 	function submitForm() {
-		fetch('/api/sendmail');
+		fetch('src/routes/api/sendmail');
 	}
 </script>
 
