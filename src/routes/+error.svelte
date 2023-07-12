@@ -11,7 +11,7 @@
 
 <title>TV Nussbaumen</title>
 
-<div class="h1 flex place-content-center">Seite nicht gefunden :(</div>
+<h1 class="h1 flex place-content-center">Seite nicht gefunden :(</h1>
 
 <div class="h4 flex place-content-center pt-5">Du wirst weitergeleitet in</div>
 

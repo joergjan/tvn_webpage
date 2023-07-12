@@ -4,7 +4,6 @@
 	let show = false;
 	let password = 'tvn1919';
 	let input = '';
-	let passwordWrong = false;
 
 	function checkPassword() {
 		if (input == password) {
@@ -14,10 +13,6 @@
 			}
 		} else {
 			alert('passwort falsch');
-			passwordWrong = true;
-			setTimeout(() => {
-				passwordWrong = false;
-			}, 5000);
 		}
 	}
 
@@ -58,16 +53,5 @@
 				>
 			</div>
 		</div>
-	</div>
-{/if}
-
-{#if passwordWrong}
-	<div class="absolute w-full h-full top-0 left-0 pt-3">
-		<div
-			class="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white py-5 px-10 rounded-lg z-10 text-xl text-red-500"
-		>
-			Passwort falsch
-		</div>
-		<div class="absolute top-0 left-0 w-full h-full bg-gray-700 opacity-50" />
 	</div>
 {/if}

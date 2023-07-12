@@ -4,7 +4,7 @@
 	/**
 	 * @type {string | any[]}
 	 */
-	 export let photos = [];
+	export let photos = [];
 	export let activeIndex = 0;
 
 	const dispatch = createEventDispatcher();
@@ -27,6 +27,18 @@
 		activeIndex = -1;
 		dispatch('close');
 	}
+
+	window.addEventListener('keyup', (event) => {
+		if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+			prev();
+		}
+		if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+			next();
+		}
+		if (event.key === 'Escape') {
+			close();
+		}
+	});
 </script>
 
 <div class="relative z-10" in:fade>
@@ -39,7 +51,7 @@
 	<div class="fixed top-0 left-0 w-screen h-screen z-40">
 		<div class="absolute inset-0 flex items-center justify-center">
 			<img
-			loading="lazy"
+				loading="lazy"
 				src={photos[activeIndex]?.href}
 				alt=""
 				class="max-w-full lg:max-w-3xl md:max-w-2xl max-h-full md:rounded-md md:pb-0 pb-32 shadow-lg"

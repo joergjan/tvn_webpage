@@ -76,6 +76,18 @@
 			leiter.push(person);
 		}
 	}
+
+	window.addEventListener('keyup', (event) => {
+		if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+			previousPicture();
+		}
+		if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+			nextPicture();
+		}
+		if (event.key === 'Escape') {
+			handleClick();
+		}
+	});
 </script>
 
 <div
@@ -209,7 +221,7 @@
 					<div class="sm:grid sm:grid-cols-3">
 						{#each leiter as leit}
 							<div class="mt-3">
-								<a href={"mailto:"+leit.mail} class="flex items-center sm:col-span-1">
+								<a href={'mailto:' + leit.mail} class="flex items-center sm:col-span-1">
 									<div>
 										<img
 											loading="lazy"
