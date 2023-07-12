@@ -101,7 +101,9 @@
 	<div class="bg-tvblue h-3 " />
 {/if}
 
-<meta name="google-site-verification" content="_fi7LsDSlRU3GP3LhuAijiNhhv_SMhW1jeJI7XbFrvA" />
+<svelte:head>
+	<meta name="google-site-verification" content="_fi7LsDSlRU3GP3LhuAijiNhhv_SMhW1jeJI7XbFrvA" />
+</svelte:head>
 
 <nav class="sticky top-0 z-10">
 	<div class="bg-white mx-auto max-w-7xl pt-2 pb-2 md:pb-0 px-4 sm:px-6 lg:px-8 ">
