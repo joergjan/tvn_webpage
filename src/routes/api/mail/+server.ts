@@ -31,14 +31,3 @@ export async function POST({ request }) {
 	}
 }
 
-export const POST: RequestHandler = async (e: RequestEvent) => {
-
-	e.cookies
-	e.paramse
-	e.request.body
-	e.fetch("SOMEURL")
-
-	
-
-	return json({ name: "dog"})
-}
