@@ -1,7 +1,20 @@
 <script>
 	import { currentBollePage } from '$lib/scripts/stores';
+	import {onMount} from "svelte"
 
-	let pageHref = window.location.href;
+	let pageHref
+
+
+	onMount(()=> {
+		pageHref = window.location.href;
+
+		for (let i = 0; i < titles.length; i++) {
+		if (pageHref.toString().includes(titles[i].href)) {
+			$currentBollePage = i;
+			pageHref = pageHref;
+		}
+	}
+	})
 
 	let active = false;
 
@@ -12,12 +25,7 @@
 		// { name: 'Kontakt', href: '/kontakt', selector: 3 }
 	];
 
-	for (let i = 0; i < titles.length; i++) {
-		if (pageHref.toString().includes(titles[i].href)) {
-			$currentBollePage = i;
-			pageHref = pageHref;
-		}
-	}
+	
 
 	function setActive() {
 		if (active) {

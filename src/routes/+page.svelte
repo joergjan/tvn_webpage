@@ -3,9 +3,14 @@
 	import Quotes from '$lib/components/Quotes.svelte';
 	import Aktuelles from '$lib/components/Aktuelles.svelte';
 	import IntersectionObserver from '$lib/components/IntersectionObserver.svelte';
-
 	import { currentPage } from '$lib/scripts/stores';
-	import MapBoxComponent from '$lib/components/MapBoxComponent.svelte';
+	import { onMount } from 'svelte';
+
+	let mapbox;
+
+	onMount(async () => {
+		mapbox = (await import('$lib/components/MapBoxComponent.svelte')).default;
+	});
 </script>
 
 <svelte:head>
@@ -57,7 +62,7 @@
 			</div>
 
 			<div class="lg:col-span-4 lg:col-start-2 h-[500px] mt-5 lg:mt-0">
-				<MapBoxComponent />
+				<svelte:component this={mapbox} />
 			</div>
 		</div>
 	</div>

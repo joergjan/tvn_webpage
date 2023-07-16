@@ -1,5 +1,6 @@
 <script>
 	import Aktive from '$lib/components/Aktive.svelte';
+	import { onMount } from 'svelte';
 
 	let show = false;
 	let password = 'tvn1919';
@@ -16,13 +17,15 @@
 		}
 	}
 
-	if (typeof window !== 'undefined') {
-		if (localStorage.getItem('boleGalery_correct') === '1') {
-			show = true;
-		} else {
-			show = false;
+	onMount(() => {
+		if (typeof window !== 'undefined') {
+			if (localStorage.getItem('boleGalery_correct') === '1') {
+				show = true;
+			} else {
+				show = false;
+			}
 		}
-	}
+	});
 </script>
 
 <h1 class="h1">Galerie</h1>

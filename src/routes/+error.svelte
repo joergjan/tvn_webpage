@@ -1,12 +1,20 @@
 <script>
+	import { onMount } from 'svelte';
+	let mounted = false;
 	let count = 3;
 	const countdown = setInterval(() => {
 		count--;
 		if (count === 0) {
 			clearInterval(countdown);
-			window.location.href = './';
+			if (mounted) {
+				window.location.href = '/'
+			}
 		}
 	}, 1000);
+
+	onMount(() => {
+		mounted = true;
+	});
 </script>
 
 <title>TV Nussbaumen</title>

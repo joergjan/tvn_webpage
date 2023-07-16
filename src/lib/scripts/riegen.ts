@@ -29,7 +29,7 @@ export const riegen = [
 		age: 'ab 2 Jahren',
 		ageID: 0,
 		riegeID: 2,
-		description: 'Die Jugendriege ist ein wichtiges Standbein unseres Vereins und so liegt es uns sehr am Herzen unseren Nachwuchs optimal zu fördern. Bei uns steht jedoch nicht nur die Leichtathletik oder das Geräteturnen im Vordergrund, sondern auch Spiel und Spass. In der Jugendriege hast du die Möglichkeit die Freude an der Bewegung zu entdecken und auszuleben, aber auch soziale Werte werden dir hier vermittelt...so lernst du dich in einer Gruppe zu integrieren und gemeinsam mit anderen ein Ziel zu erreichen. Bei uns ist also stets was los!',
+		description: 'Die Jugendriege ist ein wichtiges Standbein unseres Vereins und so liegt es uns sehr am Herzen, unseren Nachwuchs optimal zu fördern. Bei uns steht jedoch nicht nur die Leichtathletik oder das Geräteturnen im Vordergrund, sondern auch Spiel und Spass. In der Jugendriege hast du die Möglichkeit, die Freude an der Bewegung zu entdecken und auszuleben, aber auch soziale Werte werden dir hier vermittelt. So lernst du dich in einer Gruppe zu integrieren und gemeinsam mit anderen ein Ziel zu erreichen. Bei uns ist also stets was los!',
 		imageUrl: './images/riegen/alleRiegen.jpg',
 		imageUrl2: '',
 		imageUrl3: ''
@@ -45,7 +45,7 @@ export const riegen = [
 		age: 'ab Kindergarten',
 		ageID: 0,
 		riegeID: 3,
-		description: 'Die Jugendriege ist ein wichtiges Standbein unseres Vereins und so liegt es uns sehr am Herzen unseren Nachwuchs optimal zu fördern. Bei uns steht jedoch nicht nur die Leichtathletik oder das Geräteturnen im Vordergrund, sondern auch Spiel und Spass. In der Jugendriege hast du die Möglichkeit die Freude an der Bewegung zu entdecken und auszuleben, aber auch soziale Werte werden dir hier vermittelt...so lernst du dich in einer Gruppe zu integrieren und gemeinsam mit anderen ein Ziel zu erreichen. Bei uns ist also stets was los!',
+		description: 'Die Jugendriege ist ein wichtiges Standbein unseres Vereins und so liegt es uns sehr am Herzen, unseren Nachwuchs optimal zu fördern. Bei uns steht jedoch nicht nur die Leichtathletik oder das Geräteturnen im Vordergrund, sondern auch Spiel und Spass. In der Jugendriege hast du die Möglichkeit, die Freude an der Bewegung zu entdecken und auszuleben, aber auch soziale Werte werden dir hier vermittelt. So lernst du dich in einer Gruppe zu integrieren und gemeinsam mit anderen ein Ziel zu erreichen. Bei uns ist also stets was los!',
 		imageUrl: './images/riegen/alleRiegen.jpg',
 		imageUrl2: '',
 		imageUrl3: ''
@@ -62,7 +62,7 @@ export const riegen = [
 		age: 'ab 1. Klasse',
 		ageID: 0,
 		riegeID: 4,
-		description: 'Die Jugendriege ist ein wichtiges Standbein unseres Vereins und so liegt es uns sehr am Herzen unseren Nachwuchs optimal zu fördern. Bei uns steht jedoch nicht nur die Leichtathletik oder das Geräteturnen im Vordergrund, sondern auch Spiel und Spass. In der Jugendriege hast du die Möglichkeit die Freude an der Bewegung zu entdecken und auszuleben, aber auch soziale Werte werden dir hier vermittelt...so lernst du dich in einer Gruppe zu integrieren und gemeinsam mit anderen ein Ziel zu erreichen. Bei uns ist also stets was los!',
+		description: 'Die Jugendriege ist ein wichtiges Standbein unseres Vereins und so liegt es uns sehr am Herzen, unseren Nachwuchs optimal zu fördern. Bei uns steht jedoch nicht nur die Leichtathletik oder das Geräteturnen im Vordergrund, sondern auch Spiel und Spass. In der Jugendriege hast du die Möglichkeit, die Freude an der Bewegung zu entdecken und auszuleben, aber auch soziale Werte werden dir hier vermittelt. So lernst du dich in einer Gruppe zu integrieren und gemeinsam mit anderen ein Ziel zu erreichen. Bei uns ist also stets was los!',
 		imageUrl: './images/riegen/alleRiegen.jpg',
 		imageUrl2: '',
 		imageUrl3: ''
@@ -78,7 +78,7 @@ export const riegen = [
 		age: 'ab 4. Klasse',
 		ageID: 0,
 		riegeID: 5,
-		description: 'Die Jugendriege ist ein wichtiges Standbein unseres Vereins und so liegt es uns sehr am Herzen unseren Nachwuchs optimal zu fördern. Bei uns steht jedoch nicht nur die Leichtathletik oder das Geräteturnen im Vordergrund, sondern auch Spiel und Spass. In der Jugendriege hast du die Möglichkeit die Freude an der Bewegung zu entdecken und auszuleben, aber auch soziale Werte werden dir hier vermittelt...so lernst du dich in einer Gruppe zu integrieren und gemeinsam mit anderen ein Ziel zu erreichen. Bei uns ist also stets was los!',
+		description: 'Die Jugendriege ist ein wichtiges Standbein unseres Vereins und so liegt es uns sehr am Herzen, unseren Nachwuchs optimal zu fördern. Bei uns steht jedoch nicht nur die Leichtathletik oder das Geräteturnen im Vordergrund, sondern auch Spiel und Spass. In der Jugendriege hast du die Möglichkeit, die Freude an der Bewegung zu entdecken und auszuleben, aber auch soziale Werte werden dir hier vermittelt. So lernst du dich in einer Gruppe zu integrieren und gemeinsam mit anderen ein Ziel zu erreichen. Bei uns ist also stets was los!',
 		imageUrl: './images/riegen/alleRiegen.jpg',
 		imageUrl2: '',
 		imageUrl3: ''
@@ -112,7 +112,7 @@ export const riegen = [
 		ageID: 1,
 		riegeID: 7,
 		description:
-			'Hast du auch Lust zu turnen? Da es mit mehr Frauen auch mehr Spass macht, turnen wir gemeinsam mit Hüttwilen. Unser Programm gestaltet sich sehr abwechslungsreich und jede Turnerin hat auch die Möglichkeit, sich selbst einzubringen. Unser Programm besteht aus Yoga, Pilates, Aerobic, Leichtathletik, Geräteturnen, Ausdauer, Kraft und Spielen. Unsere Stunden finden in Nussbaumen und Hüttwilen statt. Ist dein Interesse geweckt? Melde dich doch bei uns. Bei uns kannst du jederzeit reinschauen. Wir freuen uns auf dich!',
+			'Hast du auch Lust zu turnen? Da es mit mehr Frauen auch mehr Spass macht, turnen wir gemeinsam mit Hüttwilen. Unser Programm gestaltet sich sehr abwechslungsreich und jede Turnerin hat auch die Möglichkeit,, sich selbst einzubringen. Unser Programm besteht aus Yoga, Pilates, Aerobic, Leichtathletik, Geräteturnen, Ausdauer, Kraft und Spielen. Unsere Stunden finden in Nussbaumen und Hüttwilen statt. Ist dein Interesse geweckt? Melde dich doch bei uns. Bei uns kannst du jederzeit reinschauen. Wir freuen uns auf dich!',
 		imageUrl: './images/riegen/alleRiegen.jpg',
 		imageUrl2: '',
 		imageUrl3: ''

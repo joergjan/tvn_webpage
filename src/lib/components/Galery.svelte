@@ -10,7 +10,7 @@
 	let activeIndex = 0;
 
 	function randomTimer() {
-		return Math.floor(Math.random() * 5) ;
+		return Math.floor(Math.random() * 5);
 	}
 
 	const handleLightboxClose = () => {
@@ -35,11 +35,19 @@
 </script>
 
 {#if photos.length != 0}
-	<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+	<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 grid-rows-auto">
 		{#each photos as { href, no }}
-			<div class="relative">
+			<div class="relative hover:scale-102">
 				<IntersectionObserver animation="unblur" timer={randomTimer()}>
-					<img loading="lazy" class="w-72 h-auto" src={href} alt="" />
+					<div>
+						<img
+							loading="lazy"
+							class="block h-60 w-full rounded-md shadow-sm object-cover object-center"
+							src={href}
+							alt=""
+						/>
+					</div>
+					<div class="opacity-0 pointer-events-none !hover:opacity-100 w-full h-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform text-3xl text-white bold">vergrössern</div>
 				</IntersectionObserver>
 				<button
 					class="absolute inset-0 hover:bg-opacity-75 transition duration-300"

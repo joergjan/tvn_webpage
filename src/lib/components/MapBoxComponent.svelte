@@ -1,12 +1,15 @@
 <script>
-	console.warn = function() {};
-	console.error = function() {};
+	console.warn = function () {};
+	console.error = function () {};
 	import { setContext } from 'svelte';
-	import { mapboxgl, key } from '../scripts/mapboxgl';
-
+	import mapboxgl from 'mapbox-gl';
+	import { PUBLIC_MAPBOX_KEY } from '$env/static/public';
+	
 	export let coordinates = [8.826432624745422, 47.62552494795642];
 
-	setContext(key, {
+	mapboxgl.accessToken = PUBLIC_MAPBOX_KEY;
+
+	setContext(PUBLIC_MAPBOX_KEY, {
 		getMap: () => map
 	});
 

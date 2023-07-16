@@ -6,20 +6,19 @@
 
 	let visible = false;
 
-	
-
-	const observer = new IntersectionObserver(
-		([entry], observer) => {
-			if (entry.isIntersecting) {
-				makeVisible();
-				observer.unobserve(entry.target);
-			}
-		},
-		{ threshold: 0.5, rootMargin: '0px 0px 320px 0px' }
-	);
+	let observer: IntersectionObserver | null = null;
 
 	function observe(ref: Element) {
-		if (ref) {
+		if (ref && IntersectionObserver) {
+			observer = new IntersectionObserver(
+				([entry], observer) => {
+					if (entry.isIntersecting) {
+						makeVisible();
+						observer.unobserve(entry.target);
+					}
+				},
+				{ threshold: 0.5, rootMargin: '0px 0px 320px 0px' }
+			);
 			observer.observe(ref);
 		}
 	}
@@ -27,7 +26,7 @@
 	function makeVisible() {
 		setTimeout(() => {
 			visible = true;
-		}, timer*1000/10);
+		}, (timer * 1000) / 10);
 	}
 
 	onMount(() => {

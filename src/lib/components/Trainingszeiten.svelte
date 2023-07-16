@@ -1,6 +1,5 @@
 <script>
 	import { riegen } from '../scripts/riegen';
-	import { fade } from 'svelte/transition';
 	import RiegeModal from '$lib/components/RiegeModal.svelte';
 	import IntersectionObserver from '$lib/components/IntersectionObserver.svelte';
 
