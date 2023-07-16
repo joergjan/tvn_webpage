@@ -6,10 +6,13 @@
 	import { currentPage } from '$lib/scripts/stores';
 	import { onMount } from 'svelte';
 
-	let mapbox;
+	/**
+	 * @type {typeof import("$lib/components/MapBoxComponent.svelte").default}
+	 */
+	let mapboxgl;
 
 	onMount(async () => {
-		mapbox = (await import('$lib/components/MapBoxComponent.svelte')).default;
+		mapboxgl = (await import('$lib/components/MapBoxComponent.svelte')).default;
 	});
 </script>
 
@@ -62,7 +65,7 @@
 			</div>
 
 			<div class="lg:col-span-4 lg:col-start-2 h-[500px] mt-5 lg:mt-0">
-				<svelte:component this={mapbox} />
+				<svelte:component this={mapboxgl} />
 			</div>
 		</div>
 	</div>
