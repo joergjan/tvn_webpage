@@ -146,6 +146,7 @@
 				<div class="-mr-2 flex items-center md:hidden">
 					<!-- Mobile menu button -->
 					<button
+						name="Navigation"
 						type="button"
 						class=" {current === 'burger' ? 'burgerMenu' : 'hidden'}"
 						aria-controls="mobile-menu"
@@ -171,6 +172,7 @@
 					</button>
 					<button
 						type="button"
+						name="Navigation"
 						class={current === 'cross' ? 'burgerMenu' : 'hidden'}
 						aria-controls="mobile-menu"
 						aria-expanded="false"
@@ -288,7 +290,7 @@
 	</div>
 {:else}
 	<div class="flex w-screen h-screen justify-center items-center">
-		<RingLoader  color="#375398"/>
+		<RingLoader color="#375398" />
 	</div>
 {/if}
 
@@ -305,6 +307,7 @@
 							<p class="w-0 flex-1 text-sm font-medium">Wir verwenden nur notwendige 🍪</p>
 							<button
 								type="button"
+								name="Cookies Button"
 								class="ml-3 flex-shrink-0 rounded-md bg-white text-sm font-medium text-tvblue"
 								on:click={() => {
 									onMount(() => {

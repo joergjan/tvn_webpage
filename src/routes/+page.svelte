@@ -28,7 +28,7 @@
 
 <div class="hidden md:block">
 	<div class="flex justify-center items-center">
-		<img src="./images/logos/turner_webpage.png" height="500" width="1100" alt="turner" />
+		<img src="./images/logos/turner_webpage.png" height="1000" width="2000" alt="turner" />
 	</div>
 </div>
 

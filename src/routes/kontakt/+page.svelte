@@ -5,8 +5,6 @@
 	import IntersectionObserver from '$lib/components/IntersectionObserver.svelte';
 </script>
 
-<title>TVN | Kontakt</title>
-
 <svelte:head>
 	<title>TVN | Kontakt</title>
 	<meta
