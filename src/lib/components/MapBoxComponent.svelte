@@ -3,11 +3,11 @@
 	console.error = function () {};
 	import { setContext } from 'svelte';
 	import mapboxgl from 'mapbox-gl';
-	import { PUBLIC_MAPBOX_KEY } from '$lib/scripts/mapbox';
+	import { MAPBOX_KEY } from '$lib/scripts/mapbox';
 	
 	export let coordinates = [8.826432624745422, 47.62552494795642];
 
-	mapboxgl.accessToken = PUBLIC_MAPBOX_KEY;
+	mapboxgl.accessToken = MAPBOX_KEY;
 
 	setContext(PUBLIC_MAPBOX_KEY, {
 		getMap: () => map
