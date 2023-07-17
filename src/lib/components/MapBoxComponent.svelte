@@ -9,7 +9,7 @@
 
 	mapboxgl.accessToken = MAPBOX_KEY;
 
-	setContext(PUBLIC_MAPBOX_KEY, {
+	setContext(MAPBOX_KEY, {
 		getMap: () => map
 	});
 
