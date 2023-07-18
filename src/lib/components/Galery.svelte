@@ -35,14 +35,14 @@
 </script>
 
 {#if photos.length != 0}
-	<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 grid-rows-auto">
+	<ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 grid-rows-auto">
 		{#each photos as { href, no }}
-			<div class="relative hover:scale-102">
+			<li class="relative hover:scale-102 h-48">
 				<IntersectionObserver animation="unblur" timer={randomTimer()}>
 					<div>
 						<img
 							loading="lazy"
-							class="block h-60 w-full rounded-md shadow-sm object-cover object-center"
+							class="block h-48 w-full rounded-md shadow-md object-cover object-center"
 							src={href}
 							alt=""
 						/>
@@ -59,9 +59,9 @@
 				>
 					<span class="sr-only">View image {no + 1}</span>
 				</button>
-			</div>
+			</li>
 		{/each}
-	</div>
+	</ul>
 
 	{#if lightboxActiveValue == 1}
 		<Lightbox {photos} {activeIndex} on:close={() => lightboxActive.update((n) => (n = 0))} />

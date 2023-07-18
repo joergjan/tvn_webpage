@@ -1,8 +1,17 @@
 <script>
 	import Kontakt from '$lib/components/Kontakt.svelte';
 	import { personen } from '$lib/scripts/personen';
-	import MapBoxComponent from '$lib/components/MapBoxComponent.svelte';
+	import { onMount } from 'svelte';
 	import IntersectionObserver from '$lib/components/IntersectionObserver.svelte';
+
+	/**
+	 * @type {typeof import("$lib/components/MapBoxComponent.svelte").default}
+	 */
+	let mapboxgl;
+
+	onMount(async () => {
+		mapboxgl = (await import('$lib/components/MapBoxComponent.svelte')).default;
+	});
 </script>
 
 <svelte:head>
@@ -19,7 +28,7 @@
 	<div>
 		<div class="h2">Unser Vorstand</div>
 		<div>Der Vorstand leitet den Verein</div>
-		<ul class="sm:grid sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3">
+		<ul class="sm:grid sm:grid-cols-2 md:grid-cols-3 sm:gap-x-6 lg:grid-cols-4">
 			{#each personen as person}
 				{#if person.vorstand}
 					<li>
@@ -37,7 +46,7 @@
 		</div>
 
 		<div class="h3 mt-7 -mb-5">Riegenleiter</div>
-		<ul class="sm:grid sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3">
+		<ul class="sm:grid sm:grid-cols-2 md:grid-cols-3 sm:gap-x-6 lg:grid-cols-4">
 			{#each personen as person}
 				{#if person.riegenleiter}
 					<li>
@@ -47,7 +56,7 @@
 			{/each}
 		</ul>
 		<div class="h3 mt-7 -mb-5">Hilfsleiter</div>
-		<ul class="sm:grid sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3">
+		<ul class="sm:grid sm:grid-cols-2 md:grid-cols-3 sm:gap-x-6 lg:grid-cols-4">
 			{#each personen as person}
 				{#if person.leiter && !person.riegenleiter}
 					<li>
@@ -66,7 +75,7 @@
 				</div>
 
 				<div class="lg:col-span-4 lg:col-start-2 h-[500px] mt-5 lg:mt-0 pb-0">
-					<MapBoxComponent coordinates={[8.825587388065486, 47.62381098583046]} />
+					<svelte:component this={mapboxgl} coordinates={[8.825587388065486, 47.62381098583046]} />
 				</div>
 			</div>
 		</IntersectionObserver>

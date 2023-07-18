@@ -1,7 +1,16 @@
 <script>
 	import Timetable from '$lib/components/Timetable.svelte';
-	import MapBoxComponent from '$lib/components/MapBoxComponent.svelte';
+	import { onMount } from 'svelte';
 	import IntersectionObserver from '$lib/components/IntersectionObserver.svelte';
+
+	/**
+	 * @type {typeof import("$lib/components/MapBoxComponent.svelte").default}
+	 */
+	let mapboxgl;
+
+	onMount(async () => {
+		mapboxgl = (await import('$lib/components/MapBoxComponent.svelte')).default;
+	});
 </script>
 
 <svelte:head>
@@ -28,6 +37,6 @@
 
 <IntersectionObserver animation="fade-in">
 	<div class="w-full h-[500px] mt-3">
-		<MapBoxComponent coordinates={[8.824630470516837, 47.62573706330724]} />
+		<svelte:component this={mapboxgl} coordinates={[8.824630470516837, 47.62573706330724]} />
 	</div>
 </IntersectionObserver>

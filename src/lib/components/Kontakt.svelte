@@ -18,7 +18,7 @@
 	};
 
 	function randomTimer() {
-		return Math.floor(Math.random() * 4) ;
+		return Math.floor(Math.random() * 4);
 	}
 
 	/**
@@ -54,14 +54,7 @@
 <IntersectionObserver animation="fade-in" timer={randomTimer()}>
 	<div class="pt-10">
 		<div class="flex justify-center">
-			<img
-				loading="lazy"
-				class="rounded-full"
-				width="450"
-				height="450"
-				src={person.imageUrl}
-				alt={person.name}
-			/>
+			<img class="rounded-full" width="450" height="450" src={person.imageUrl} alt={person.name} />
 		</div>
 		<div class="pt-3 flex justify-center">{person.name}</div>
 
