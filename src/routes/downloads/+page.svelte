@@ -13,22 +13,22 @@
 	const Statuten = [
 		{
 			name: 'Statuten',
-			path: './files/?'
+			path: './files/jahr_jugi.pdf'
 		}
 	];
 
 	const Reglemente = [
 		{
 			name: 'Organisationsreglement',
-			path: './files/?'
+			path: './files/jahr_jugi.pdf'
 		},
 		{
 			name: 'Reglement Jugendriegen',
-			path: './files/?'
+			path: './files/jahr_jugi.pdf'
 		},
 		{
 			name: 'Entschädigungsreglement',
-			path: './files/?'
+			path: './files/jahr_jugi.pdf'
 		}
 	];
 </script>
