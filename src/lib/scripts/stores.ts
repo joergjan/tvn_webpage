@@ -10,4 +10,6 @@ export let selectedAgeID = writable(2);
 
 export let selectedRiegeID = writable(0);
 
+export let isDomReady = writable(false);
+
 // auth0

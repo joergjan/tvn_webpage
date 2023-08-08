@@ -1,6 +1,6 @@
 <script>
 	import '../app.css';
-	import { currentPage, selectedAgeID, selectedRiegeID } from '$lib/scripts/stores';
+	import { currentPage, selectedAgeID, selectedRiegeID, isDomReady } from '$lib/scripts/stores';
 	import { titles } from '$lib/scripts/navbar';
 	import { fade } from 'svelte/transition';
 	import BannerBolle from '$lib/components/BannerBolle.svelte';
@@ -13,7 +13,6 @@
 
 	inject({ mode: dev ? 'development' : 'production' });
 
-	let isDomReady = false;
 	let open = false;
 	let isFirefox = false;
 
@@ -36,7 +35,7 @@
 	let cookie = false;
 
 	onMount(() => {
-		isDomReady = true;
+		$isDomReady = true;
 
 		pageHref = window.location.href;
 
@@ -148,14 +147,14 @@
 					<button
 						name="Navigation"
 						type="button"
-						class=" {current === 'burger' ? 'burgerMenu' : 'hidden'}"
+						class="block h-10 w-10"
 						aria-controls="mobile-menu"
 						aria-expanded="false"
 						on:click={menuToggle}
 					>
 						<svg
 							id="burger"
-							class="block h-6 w-6"
+							class={current === 'burger' ? 'burgerMenu block h-full w-full' : 'hidden'}
 							xmlns="http://www.w3.org/2000/svg"
 							fill="none"
 							viewBox="0 0 24 24"
@@ -169,18 +168,9 @@
 								d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
 							/>
 						</svg>
-					</button>
-					<button
-						type="button"
-						name="Navigation"
-						class={current === 'cross' ? 'burgerMenu' : 'hidden'}
-						aria-controls="mobile-menu"
-						aria-expanded="false"
-						on:click={menuToggle}
-					>
 						<svg
 							id="cross"
-							class="block h-6 w-6"
+							class={current === 'cross' ? 'burgerMenu block h-full w-full' : 'hidden'}
 							fill="none"
 							viewBox="0 0 24 24"
 							stroke-width="1.5"
@@ -254,7 +244,10 @@
 						</div>
 					{/each}
 				</nav>
-				<div class="mt-10 flex md:justify-center space-x-10">
+				<div class="flex justify-center mt-7 text-xs text-center">
+					<a href="/" class="flex hover underline">login</a>
+				</div>
+				<div class="mt-7 flex md:justify-center space-x-10">
 					<a href="https://www.facebook.com/people/TV-Nussbaumen/100064088556190/" class="hover">
 						<span class="sr-only">Facebook</span>
 						<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -310,10 +303,8 @@
 								name="Cookies Button"
 								class="ml-3 flex-shrink-0 rounded-md bg-white text-sm font-medium text-tvblue"
 								on:click={() => {
-									onMount(() => {
-										cookie = false;
-										localStorage.setItem('cookies_enabled', '0');
-									});
+									cookie = false;
+									localStorage.setItem('cookies_enabled', '0');
 								}}
 							>
 								Okay
