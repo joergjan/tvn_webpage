@@ -20,7 +20,7 @@
 	<title>TV Nussbaumen</title>
 	<meta
 		name="description"
-		content="Hier findest du alle aktuellen und wichtigen Informationen über den Turnverein Nussbaumen"
+		content="Im TV Nussbaumen bieten wir ein vielfältiges Sportangebot für alle Altersgruppen und Fitnesslevels. Von Turnstunden für Kinder, über Jugendliche bis ins Alter haben wir für alle etwas im Angebot. Wir fördern Teamgeist und ein gesundes Miteinander. Neben dem Sport steht die Gemeinschaft im Fokus. Wer Lust auf Spiel, Spaß und eine tolle Zeit hat, ist bei uns genau richtig!"
 	/>
 </svelte:head>
 

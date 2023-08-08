@@ -14,10 +14,10 @@
 </svelte:head>
 
 <IntersectionObserver animation="direction-right">
-	<div>
+	<p>
 		Der Bollä Dunnschtig ist das Fest am Gründonnerstag. Jedes Jahr durch den Turnverein Nussbaumen
 		organisiert, bietet er etwas für Gross und Klein!
-	</div>
+	</p>
 </IntersectionObserver>
 
 <IntersectionObserver animation="direction-left">
@@ -28,27 +28,27 @@
 	<IntersectionObserver animation="direction-right">
 		<div>
 			<div class="h4 mt-3">Altersgrenze</div>
-			<div>
+			<p>
 				Bis 20:00 Uhr sind Erwachsene und Kinder willkommen. Danach ist der Eintritt nur noch ab 16
 				Jahren erlaubt.
-			</div>
+			</p>
 		</div>
 	</IntersectionObserver>
 	<IntersectionObserver animation="direction-left">
 		<div>
 			<div class="h4 mt-3">Alkohol</div>
-			<div>
+			<p>
 				Kindern und Jugendlichen unter 16 Jahren ist der Konsum von Alkohol strengstens untersagt.
 				Jugendlichen unter 18 Jahren ist der Konsum von Spirituosen und Getränken mit Spirituosen
 				(Mischgetränken) strengstens untersagt. Wenn das Alter nicht zweifelsfrei über den
 				gesetzlichen Grenzen liegt, muss ein Ausweis vorgelegt werden.
-			</div>
+			</p>
 		</div>
 	</IntersectionObserver>
 	<IntersectionObserver animation="direction-right">
 		<div>
 			<div class="h4 mt-3">Anreise</div>
-			<div class="flex">
+			<p class="flex">
 				Du kannst mit ÖV, mit dem Auto oder Velo anreisen. Mehr Infos dazu unter
 				<a
 					class="flex hover:text-gray-500 ml-1"
@@ -60,45 +60,45 @@
 					<div class="underline flex">Anreise</div>
 					<div class="-rotate-45 font-bold flex no-underline">&rarr;</div>
 				</a>
-			</div>
+			</p>
 		</div>
 	</IntersectionObserver>
 	<IntersectionObserver animation="direction-left">
 		<div>
 			<div class="h4 mt-3">Bargeldlos bezahlen</div>
-			<div>Bei uns kannst du mit der Karte Bezahlen. TWINT wird NICHT unterstützt.</div>
+			<p>Bei uns kannst du mit der Karte Bezahlen. TWINT wird NICHT unterstützt.</p>
 		</div>
 	</IntersectionObserver>
 	<IntersectionObserver animation="direction-right">
 		<div>
 			<div class="h4 mt-3">Depot</div>
-			<div>
+			<p>
 				Für Flaschen und Becher wird ein Depot von CHF 2.00 erhoben. Das Depot wird bei der Rückgabe
 				in bar zurückerstattet. Getränke und Becher können direkt an der Zentralen Depotstelle bei
 				der Garderobe oder direkt an der Bar zurückgegeben werden.
-			</div>
+			</p>
 		</div>
 	</IntersectionObserver>
 	<IntersectionObserver animation="direction-left">
 		<div>
 			<div class="h4 mt-3">Eintritt</div>
-			<div>bis 20:00 Uhr ist der Eintritt kostenlos.</div>
+			<p>bis 20:00 Uhr ist der Eintritt kostenlos.</p>
 		</div>
 	</IntersectionObserver>
 	<IntersectionObserver animation="direction-right">
 		<div>
 			<div class="h4 mt-3">Essen und Getränke</div>
-			<div>
+			<p>
 				Wir haben Pommes, Schnitzelbrote, Würste und ein Kuchenbuffet im Angebot. Das Mitbringen von
 				Getränken ist nicht erlaubt.
-			</div>
+			</p>
 		</div>
 	</IntersectionObserver>
 
 	<div>
 		<IntersectionObserver animation="direction-left">
 			<div class="h4 mt-3">Standort</div>
-			<div>Du findest uns beim Schulhaus Nussbaumen.</div>
+			<p>Du findest uns beim Schulhaus Nussbaumen.</p>
 		</IntersectionObserver>
 		<IntersectionObserver animation="fade-in">
 			<div class="w-full h-[500px] mt-3">

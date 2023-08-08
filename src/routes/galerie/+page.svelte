@@ -6,7 +6,7 @@
 	<title>TVN | Galerie</title>
 	<meta
 		name="description"
-		content="Eine Fotogalerie über den TV Nussbaumen. Hier findest du Fotos von Turnfestern, Wettkämpfen, Events, Unterhaltungen und vieles mehr."
+		content="Hier findest du Fotos von Turnfestern, Wettkämpfen, Events, Unterhaltungen und vieles mehr."
 	/>
 </svelte:head>
 

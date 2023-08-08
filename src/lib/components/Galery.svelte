@@ -38,7 +38,7 @@
 	<ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 grid-rows-auto">
 		{#each photos as { href, no }}
 			<li class="relative hover:scale-102 h-48">
-				<IntersectionObserver animation="unblur" timer={randomTimer()}>
+				<IntersectionObserver animation="fade-in" timer={randomTimer()}>
 					<div>
 						<img
 							loading="lazy"

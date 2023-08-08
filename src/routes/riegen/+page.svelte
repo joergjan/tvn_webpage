@@ -47,7 +47,7 @@
 	}
 
 	function randomTimer() {
-		return Math.floor(Math.random() * 4) ;
+		return Math.floor(Math.random() * 4);
 	}
 </script>
 
@@ -55,7 +55,7 @@
 	<title>TVN | Riegen</title>
 	<meta
 		name="description"
-		content="Eine Übersicht über alle Riegen des TV Nussbaumen. Bestimmt findest du auch eine, welche zu dir passt."
+		content="Im TV Nussbaumen findest du eine vielfältige Auswahl an Riegen für jeden Geschmack. Egal wie alt du bist oder welches Fitnesslevel du hast, bei uns gibt es bestimmt eine Riege, die zu dir passt! Hier findest du eine Übersicht unserer Riegen."
 	/>
 </svelte:head>
 
@@ -70,7 +70,7 @@
 		<div class="pb-3 flex items-end">
 			<div class="inline-flex rounded-md shadow-sm">
 				<div
-					class="inline-flex items-center rounded-l-md bg-tvblue py-2 pl-3 pr-4 text-white shadow-sm border-r-[1px] border-white"
+					class="inline-flex items-center rounded-l-md bg-tvbluelight py-2 pl-3 pr-4 text-white shadow-sm border-r-[1px] border-white"
 				>
 					<svg
 						class="h-5 w-5"
@@ -94,27 +94,44 @@
 						{/if}
 					{/each}
 				</div>
+
 				<button
 					type="button"
-					class="inline-flex items-center rounded-l-none rounded-r-md bg-tvblue p-2 text-sm font-medium text-white hover:opacity-90"
+					class="inline-flex items-center rounded-l-none rounded-r-md bg-tvbluelight p-2 text-sm font-medium text-white hover:bg-tvblue"
 					aria-haspopup="listbox"
 					aria-expanded="true"
 					aria-labelledby="listbox-label"
 					on:click={() => setActive()}
 				>
-					<svg
-						class="h-5 w-5 text-white"
-						xmlns="http://www.w3.org/2000/svg"
-						viewBox="0 0 20 20"
-						fill="currentColor"
-						aria-hidden="true"
-					>
-						<path
-							fill-rule="evenodd"
-							d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-							clip-rule="evenodd"
-						/>
-					</svg>
+					{#if active}
+						<svg
+							class="h-5 w-5 text-white rotate-180"
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 20 20"
+							fill="currentColor"
+							aria-hidden="true"
+						>
+							<path
+								fill-rule="evenodd"
+								d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+								clip-rule="evenodd"
+							/>
+						</svg>
+					{:else}
+						<svg
+							class="h-5 w-5 text-white"
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 20 20"
+							fill="currentColor"
+							aria-hidden="true"
+						>
+							<path
+								fill-rule="evenodd"
+								d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+								clip-rule="evenodd"
+							/>
+						</svg>
+					{/if}
 				</button>
 			</div>
 		</div>

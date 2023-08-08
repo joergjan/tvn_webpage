@@ -4,7 +4,7 @@
 	let sbbdate = new Date();
 	let sbbtime = '';
 
-	$: url = `https://www.sbb.ch/de/kaufen/pages/fahrplan/fahrplan.xhtml?von=${sbbfrom}&nach=${sbbto}&datum=${sbbdate.getTime()}&zeit=${sbbtime}&an=true&suche=true`;
+	$: url = `https://www.sbb.ch/de/kaufen/pages/fahrplan/fahrplan.xhtml?von=${sbbfrom}&nach=${sbbto}&datum=${sbbdate}&zeit=${sbbtime}&an=true&suche=true`;
 </script>
 
 <div class="grid sm:grid-cols-2 grid-rows-2 sm:grid-rows-1">
@@ -51,7 +51,7 @@
 
 <div class="sm:mt-5">
 	<a
-		class="bg-tvblue hover:bg-tvbluelight text-white rounded-md py-2 px-3"
+		class="bg-tvbluelight hover:bg-tvblue text-white rounded-md py-2 px-3"
 		target="_blank"
 		rel="noreferrer"
 		href={url}>Verbindung suchen</a
