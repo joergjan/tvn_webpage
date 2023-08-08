@@ -59,7 +59,7 @@
 
 .badge-blue {
 	@apply inline-flex items-center;
-	@apply bg-tvblue text-white rounded-2xl hover:opacity-80;
+	@apply bg-tvbluelight text-white rounded-2xl hover:bg-tvblue;
 }
 
 .hover {
@@ -71,7 +71,7 @@
 }
 
 .link {
-	@apply text-blue-700 hover:opacity-70 underline font-normal text-lg;
+	@apply text-tvbluelight hover:text-tvblue underline font-normal text-lg;
 }
 
 /* 
