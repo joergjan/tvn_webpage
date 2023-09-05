@@ -30,16 +30,18 @@
 		lightboxActive = false;
 	}
 
-	window.addEventListener('keyup', (event) => {
-		if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
-			prev();
-		}
-		if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
-			next();
-		}
-		if (event.key === 'Escape') {
-			close();
-		}
+	onMount(() => {
+		window.addEventListener('keyup', (event) => {
+			if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+				prev();
+			}
+			if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+				next();
+			}
+			if (event.key === 'Escape') {
+				close();
+			}
+		});
 	});
 
 	const dispatch = createEventDispatcher();
