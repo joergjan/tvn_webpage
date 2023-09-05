@@ -1,5 +1,5 @@
 <script>
-	import Aktive from '$lib/components/Aktive.svelte';
+	import Bolle from '$lib/components/Bolle.svelte';
 	import { onMount } from 'svelte';
 
 	let show = false;
@@ -30,7 +30,7 @@
 
 <h1 class="h1">Galerie</h1>
 {#if show}
-	<Aktive />
+	<Bolle />
 {:else}
 	<div class="flex items-center justify-center">
 		<div class="">

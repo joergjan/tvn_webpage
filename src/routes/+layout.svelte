@@ -4,7 +4,6 @@
 	import { titles } from '$lib/scripts/navbar';
 	import { fade } from 'svelte/transition';
 	import BannerBolle from '$lib/components/BannerBolle.svelte';
-	import BannerFirefox from '$lib/components/BannerFirefox.svelte';
 	import { dev } from '$app/environment';
 	import { inject } from '@vercel/analytics';
 	import LeiterBanner from '$lib/components/LeiterBanner.svelte';
@@ -14,11 +13,9 @@
 	inject({ mode: dev ? 'development' : 'production' });
 
 	let open = false;
-	let isFirefox = false;
 
 	let showBanner = true;
 	let showBannerLeiter = true;
-	let showBannerFirefox = true;
 	let current = 'burger';
 	let pageHref;
 
@@ -51,10 +48,6 @@
 				pageHref = pageHref;
 			}
 		}
-
-		if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
-			isFirefox = true;
-		}
 	});
 
 	$: $currentPage, reset();
@@ -70,10 +63,6 @@
 
 	function handleCloseLeiter() {
 		showBannerLeiter = false;
-	}
-
-	function handleCloseFirefox() {
-		showBannerFirefox = false;
 	}
 
 	/**
@@ -94,19 +83,13 @@
 	</div>
 {/if}
 
-{#if showBannerFirefox && isFirefox}
-	<div>
-		<BannerFirefox on:close={handleCloseFirefox} />
-	</div>
-{/if}
-
 {#if showBanner && shouldShowBanner('2024-01-01', '2024-03-29')}
 	<div>
 		<BannerBolle on:close={handleClose} />
 	</div>
 {/if}
 
-{#if !showBanner && !showBannerLeiter && !isFirefox}
+{#if !showBanner && !showBannerLeiter}
 	<div class="bg-tvblue h-3 " />
 {/if}
 
