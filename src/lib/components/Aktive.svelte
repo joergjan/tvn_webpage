@@ -1,39 +1,27 @@
-<script lang="ts">
-	import axios from 'axios';
+<script>
 	import Galery from './Galery.svelte';
-	
-	let flickrPhotoJsonAktive = [];
 
-	let flickrPhotoLinkAktive: { href: string; no: number }[] = [];
+	const imageModules = import.meta.glob('$lib/galery/aktive/*');
 
-	function getPhotosAktive() {
-		axios
-			.get(
-				'https://api.flickr.com/services/rest?method=flickr.groups.pools.getPhotos&api_key=ebf8b5a8addf16333494732b8eef8e19&group_id=14819815@N20&format=json&nojsoncallback=true'
-			)
-			.then((response) => {
-				flickrPhotoJsonAktive = response.data.photos.photo;
+	/**
+	 * @type {any[]}
+	 */
+	let images = [];
 
-				console.log(response);
-				for (var i = 0; i < flickrPhotoJsonAktive.length; i++) {
-					flickrPhotoLinkAktive[i] = {
-						href:
-							'https://live.staticflickr.com/' +
-							flickrPhotoJsonAktive[i].server +
-							'/' +
-							flickrPhotoJsonAktive[i].id +
-							'_' +
-							flickrPhotoJsonAktive[i].secret +
-							'_b.jpg',
-						no: i
-					};
-				}
-			});
-	}
-
-	$: getPhotosAktive();
+	Promise.all(
+		Object.values(imageModules).map((modulePath) =>
+			// @ts-ignore
+			modulePath().then(({ default: imageUrl }) => imageUrl)
+		)
+	).then((imageUrls) => {
+		images = imageUrls.map((imageUrl, index) => ({
+			// @ts-ignore
+			src: imageUrl.replace(/^.*\/images/, 'images'),
+			no: index
+		}));
+	});
 </script>
 
-<div class="h2">Erwachsene</div>
+<div class="h2 pt-5">Aktive</div>
 
-<Galery photos={flickrPhotoLinkAktive} />
+<Galery photos={images} />

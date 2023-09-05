@@ -1,5 +1,6 @@
 <script>
 	import Aktive from '$lib/components/Aktive.svelte';
+	import Jugi from '$lib/components/Jugi.svelte';
 </script>
 
 <svelte:head>
@@ -13,3 +14,5 @@
 <h1 class="h1">Galerie</h1>
 
 <Aktive />
+
+<Jugi />
