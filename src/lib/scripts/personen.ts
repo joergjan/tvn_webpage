@@ -45,7 +45,7 @@ export const personen = [
 		mail: 'mailto:jugend@tvnussbaumen.ch',
 		vorstand: false,
 		leiter: true,
-		riegenleiter: false
+		riegenleiter: true
 	},
 	{
 		riegeId: 6,
@@ -142,5 +142,5 @@ export const personen = [
 		vorstand: false,
 		leiter: true,
 		riegenleiter: false
-	},
+	}
 ];

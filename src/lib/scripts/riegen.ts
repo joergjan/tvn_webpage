@@ -29,14 +29,15 @@ export const riegen = [
 		age: 'ab 2 Jahren',
 		ageID: 0,
 		riegeID: 2,
-		description: 'Die Jugendriege ist ein wichtiges Standbein unseres Vereins und so liegt es uns sehr am Herzen, unseren Nachwuchs optimal zu fördern. Bei uns steht jedoch nicht nur die Leichtathletik oder das Geräteturnen im Vordergrund, sondern auch Spiel und Spass. In der Jugendriege hast du die Möglichkeit, die Freude an der Bewegung zu entdecken und auszuleben, aber auch soziale Werte werden dir hier vermittelt. So lernst du dich in einer Gruppe zu integrieren und gemeinsam mit anderen ein Ziel zu erreichen. Bei uns ist also stets was los!',
+		description:
+			'Die Jugendriege ist ein wichtiges Standbein unseres Vereins und so liegt es uns sehr am Herzen, unseren Nachwuchs optimal zu fördern. Bei uns steht jedoch nicht nur die Leichtathletik oder das Geräteturnen im Vordergrund, sondern auch Spiel und Spass. In der Jugendriege hast du die Möglichkeit, die Freude an der Bewegung zu entdecken und auszuleben, aber auch soziale Werte werden dir hier vermittelt. So lernst du dich in einer Gruppe zu integrieren und gemeinsam mit anderen ein Ziel zu erreichen. Bei uns ist also stets was los!',
 		imageUrl: './images/riegen/alleRiegen.jpg',
 		imageUrl2: '',
 		imageUrl3: ''
 	},
 	{
 		name: 'Kinderturnen KiTu',
-		time1: '16:45 - 17:45 Uhr',
+		time1: '16:45 - 17:55 Uhr',
 		day1: 'Donnerstag',
 		time2: '',
 		day2: '',
@@ -45,7 +46,8 @@ export const riegen = [
 		age: 'ab Kindergarten',
 		ageID: 0,
 		riegeID: 3,
-		description: 'Die Jugendriege ist ein wichtiges Standbein unseres Vereins und so liegt es uns sehr am Herzen, unseren Nachwuchs optimal zu fördern. Bei uns steht jedoch nicht nur die Leichtathletik oder das Geräteturnen im Vordergrund, sondern auch Spiel und Spass. In der Jugendriege hast du die Möglichkeit, die Freude an der Bewegung zu entdecken und auszuleben, aber auch soziale Werte werden dir hier vermittelt. So lernst du dich in einer Gruppe zu integrieren und gemeinsam mit anderen ein Ziel zu erreichen. Bei uns ist also stets was los!',
+		description:
+			'Die Jugendriege ist ein wichtiges Standbein unseres Vereins und so liegt es uns sehr am Herzen, unseren Nachwuchs optimal zu fördern. Bei uns steht jedoch nicht nur die Leichtathletik oder das Geräteturnen im Vordergrund, sondern auch Spiel und Spass. In der Jugendriege hast du die Möglichkeit, die Freude an der Bewegung zu entdecken und auszuleben, aber auch soziale Werte werden dir hier vermittelt. So lernst du dich in einer Gruppe zu integrieren und gemeinsam mit anderen ein Ziel zu erreichen. Bei uns ist also stets was los!',
 		imageUrl: './images/riegen/alleRiegen.jpg',
 		imageUrl2: '',
 		imageUrl3: ''
@@ -62,7 +64,8 @@ export const riegen = [
 		age: 'ab 1. Klasse',
 		ageID: 0,
 		riegeID: 4,
-		description: 'Die Jugendriege ist ein wichtiges Standbein unseres Vereins und so liegt es uns sehr am Herzen, unseren Nachwuchs optimal zu fördern. Bei uns steht jedoch nicht nur die Leichtathletik oder das Geräteturnen im Vordergrund, sondern auch Spiel und Spass. In der Jugendriege hast du die Möglichkeit, die Freude an der Bewegung zu entdecken und auszuleben, aber auch soziale Werte werden dir hier vermittelt. So lernst du dich in einer Gruppe zu integrieren und gemeinsam mit anderen ein Ziel zu erreichen. Bei uns ist also stets was los!',
+		description:
+			'Die Jugendriege ist ein wichtiges Standbein unseres Vereins und so liegt es uns sehr am Herzen, unseren Nachwuchs optimal zu fördern. Bei uns steht jedoch nicht nur die Leichtathletik oder das Geräteturnen im Vordergrund, sondern auch Spiel und Spass. In der Jugendriege hast du die Möglichkeit, die Freude an der Bewegung zu entdecken und auszuleben, aber auch soziale Werte werden dir hier vermittelt. So lernst du dich in einer Gruppe zu integrieren und gemeinsam mit anderen ein Ziel zu erreichen. Bei uns ist also stets was los!',
 		imageUrl: './images/riegen/alleRiegen.jpg',
 		imageUrl2: '',
 		imageUrl3: ''
@@ -78,7 +81,8 @@ export const riegen = [
 		age: 'ab 4. Klasse',
 		ageID: 0,
 		riegeID: 5,
-		description: 'Die Jugendriege ist ein wichtiges Standbein unseres Vereins und so liegt es uns sehr am Herzen, unseren Nachwuchs optimal zu fördern. Bei uns steht jedoch nicht nur die Leichtathletik oder das Geräteturnen im Vordergrund, sondern auch Spiel und Spass. In der Jugendriege hast du die Möglichkeit, die Freude an der Bewegung zu entdecken und auszuleben, aber auch soziale Werte werden dir hier vermittelt. So lernst du dich in einer Gruppe zu integrieren und gemeinsam mit anderen ein Ziel zu erreichen. Bei uns ist also stets was los!',
+		description:
+			'Die Jugendriege ist ein wichtiges Standbein unseres Vereins und so liegt es uns sehr am Herzen, unseren Nachwuchs optimal zu fördern. Bei uns steht jedoch nicht nur die Leichtathletik oder das Geräteturnen im Vordergrund, sondern auch Spiel und Spass. In der Jugendriege hast du die Möglichkeit, die Freude an der Bewegung zu entdecken und auszuleben, aber auch soziale Werte werden dir hier vermittelt. So lernst du dich in einer Gruppe zu integrieren und gemeinsam mit anderen ein Ziel zu erreichen. Bei uns ist also stets was los!',
 		imageUrl: './images/riegen/alleRiegen.jpg',
 		imageUrl2: '',
 		imageUrl3: ''
@@ -102,7 +106,7 @@ export const riegen = [
 	},
 	{
 		name: 'Frauenriege',
-		time1: '19:30 - 21:30 Uhr',
+		time1: '19:30 - 21:00 Uhr',
 		day1: 'Mittwoch',
 		time2: '',
 		day2: '',

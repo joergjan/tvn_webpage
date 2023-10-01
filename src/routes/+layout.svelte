@@ -227,9 +227,13 @@
 						</div>
 					{/each}
 				</nav>
+				<!--
+					
 				<div class="flex justify-center mt-7 text-xs text-center">
 					<a href="/" class="flex hover underline">login</a>
 				</div>
+
+				-->
 				<div class="mt-7 flex md:justify-center space-x-10">
 					<a href="https://www.facebook.com/people/TV-Nussbaumen/100064088556190/" class="hover">
 						<span class="sr-only">Facebook</span>

@@ -44,8 +44,6 @@
 		});
 	});
 
-	const dispatch = createEventDispatcher();
-
 	function prev() {
 		activeIndex--;
 		if (activeIndex < 0) {

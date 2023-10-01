@@ -28,7 +28,7 @@
 	});
 </script>
 
-<h1 class="h1">Galerie</h1>
+<h1 class="h2">Galerie</h1>
 {#if show}
 	<Bolle />
 {:else}

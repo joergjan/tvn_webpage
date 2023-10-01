@@ -1,7 +1,7 @@
 <script>
 	import Galery from './Galery.svelte';
 
-	const imageModules = import.meta.glob('$lib/galery/aktive/*');
+	const imageModules = import.meta.glob('$lib/galery/bolle/*');
 
 	/**
 	 * @type {any[]}
@@ -22,6 +22,8 @@
 	});
 </script>
 
-<div class="h2 pt-5">Aktive</div>
-
-<Galery photos={images} />
+{#if images.length > 0}
+	<Galery photos={images} />
+{:else}
+	<div>noch keine Bilder verfügbar</div>
+{/if}
