@@ -1,0 +1,64 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.sqllite"
+}
+
+model Riege {
+  id          Int             @id @default(autoincrement())
+  name        String
+  day1        String
+  time1       String
+  day2        String
+  time2       String
+  twodays     Boolean
+  badgename   String
+  age         String
+  ageId       Int
+  description String
+  images      RiegeOnImage[]
+  persons     PersonOnRiege[]
+}
+
+model RiegeOnImage {
+  riege      Riege    @relation(fields: [riegeId], references: [id])
+  riegeId    Int // relation scalar field (used in the `@relation` attribute above)
+  image      Image    @relation(fields: [imageId], references: [id])
+  imageId    Int // relation scalar field (used in the `@relation` attribute above)
+  assignedAt DateTime @default(now())
+  assignedBy String
+
+  @@id([riegeId, imageId])
+}
+
+model Image {
+  id     Int            @id @default(autoincrement())
+  url    String
+  riegen RiegeOnImage[]
+}
+
+model Person {
+  id        Int             @id @default(autoincrement())
+  createdAt DateTime        @default(now())
+  firstName String
+  lastName  String
+  email     String          @unique
+  riegen    PersonOnRiege[]
+}
+
+model PersonOnRiege {
+  riege      Riege    @relation(fields: [riegeId], references: [id])
+  riegeId    Int // relation scalar field (used in the `@relation` attribute above)
+  person     Person   @relation(fields: [personId], references: [id])
+  personId   Int // relation scalar field (used in the `@relation` attribute above)
+  assignedAt DateTime @default(now())
+  assignedBy String
+
+  @@id([riegeId, personId])
+}
