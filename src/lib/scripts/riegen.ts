@@ -37,7 +37,7 @@ export const riegen = [
 	},
 	{
 		name: 'Kinderturnen KiTu',
-		time1: '16:45 - 18:00 Uhr',
+		time1: '16:45 - 17:55 Uhr',
 		day1: 'Donnerstag',
 		time2: '',
 		day2: '',

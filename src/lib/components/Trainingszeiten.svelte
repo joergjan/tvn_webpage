@@ -16,12 +16,12 @@
 		const time2 = riege.time2
 			? riege.time2.replace(/\s/g, '').replace('Uhr', '').split('-')
 			: ['', ''];
-		const rows1 = Math.abs((timeToMinutes(time1[0]) - timeToMinutes(time1[1])) / 15);
-		const rows2 = Math.abs((timeToMinutes(time2[0]) - timeToMinutes(time2[1])) / 15);
-		let startRow1 = Math.abs((timeToMinutes(time1[0]) - timeToMinutes('08:15')) / 15);
-		let startRow2 = Math.abs((timeToMinutes(time2[0]) - timeToMinutes('08:15')) / 15);
-		startRow1 = startRow1 > 30 ? startRow1 - 16 : startRow1;
-		startRow2 = startRow2 > 30 ? startRow2 - 16 : startRow2;
+		const rows1 = Math.abs((timeToMinutes(time1[0]) - timeToMinutes(time1[1])) / 5);
+		const rows2 = Math.abs((timeToMinutes(time2[0]) - timeToMinutes(time2[1])) / 5);
+		let startRow1 = Math.abs((timeToMinutes(time1[0]) - timeToMinutes('08:15')) / 5);
+		let startRow2 = Math.abs((timeToMinutes(time2[0]) - timeToMinutes('08:15')) / 5);
+		startRow1 = startRow1 > 30 ? startRow1 - 52 : startRow1 - 4;
+		startRow2 = startRow2 > 30 ? startRow2 - 52 : startRow2 - 4;
 		const dayIndex1 = daysDDDD.indexOf(riege.day1) + 1;
 		const dayIndex2 = daysDDDD.indexOf(riege.day2) + 1;
 
@@ -186,7 +186,7 @@
 						<!-- Events -->
 						<ol
 							class="col-start-1  row-start-1 grid grid-cols-1 sm:grid-cols-5 sm:pr-8"
-							style="grid-template-rows: 1rem repeat(39, minmax(0, 1fr)) auto"
+							style="grid-template-rows: 1rem repeat(117, minmax(0, 1fr)) auto"
 						>
 							{#each riegenWithStartEndTimes as riege, i}
 								<li
