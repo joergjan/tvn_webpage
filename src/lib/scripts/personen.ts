@@ -78,7 +78,7 @@ export const personen = [
 		name: 'Iren Akeret',
 		role: 'Vize-Präsidentin',
 		imageUrl: '../images/people/avatar.webp',
-		mail: 'mailto:info@tvnussbaumen.ch',
+		mail: 'mailto:vize@tvnussbaumen.ch',
 		vorstand: true,
 		leiter: false,
 		riegenleiter: false
@@ -114,7 +114,7 @@ export const personen = [
 		name: 'Sabrina Sager',
 		role: 'Aktuarin',
 		imageUrl: './images/people/avatar.webp',
-		mail: 'mailto:info@tvnussbaumen.ch',
+		mail: 'mailto:sabrina.sager@tvnussbaumen.ch',
 		vorstand: true,
 		leiter: false,
 		riegenleiter: false
