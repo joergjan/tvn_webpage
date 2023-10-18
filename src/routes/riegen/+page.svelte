@@ -143,16 +143,16 @@
 					<li class="p-4 text-sm hover:bg-tvblue hover:text-white">
 						<div class="relative">
 							<button
-								class="flex flex-col"
+								class=""
 								on:click={() => {
 									setActive();
 									$selectedAgeID = item.selector;
 								}}
 							>
-								<div class="flex justify-between">
+								<div class="text-left">
 									<div class="font-medium ml-12">{item.name}</div>
 								</div>
-								<div class="mt-2 ml-12">{item.description}</div>
+								<div class="text-left mt-2 ml-12">{item.description}</div>
 
 								{#if $selectedAgeID === item.selector}
 									<span class="hover:text-white">
