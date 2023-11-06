@@ -3,7 +3,7 @@
 export const riegen = [
 	{
 		name: 'Aktive',
-		time1: '19:30 - 22:00 Uhr',
+		time1: '20:15 - 22:00 Uhr',
 		day1: 'Montag',
 		time2: '20:15 - 22:00 Uhr',
 		day2: 'Freitag',
