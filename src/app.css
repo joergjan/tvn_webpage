@@ -106,3 +106,8 @@
 .bold {
 	@apply font-bold uppercase;
 }
+
+input,
+textarea {
+	@apply border-2 rounded-md py-1 px-2 border-gray-200 w-full shadow-sm;
+}

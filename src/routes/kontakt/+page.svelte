@@ -3,15 +3,82 @@
 	import { personen } from '$lib/scripts/personen';
 	import { onMount } from 'svelte';
 	import IntersectionObserver from '$lib/components/IntersectionObserver.svelte';
+	import { fade, slide } from 'svelte/transition';
 
 	/**
 	 * @type {typeof import("$lib/components/MapBoxComponent.svelte").default}
 	 */
 	let mapboxgl;
 
+	let email = '';
+	let emailValid = false;
+	let leaveMessage = false;
+	let messageAlreadySent = false;
+	let error = false;
+	let surname = '';
+	let firstname = '';
+	let message = '';
+	let messageSent = false;
+
+	$: fieldsFilled = emailValid && message != '' && surname != '' && firstname != '';
+
 	onMount(async () => {
 		mapboxgl = (await import('$lib/components/MapBoxComponent.svelte')).default;
+		messageAlreadySent = sessionStorage.getItem('sendMail') == '1';
 	});
+
+	function adjustHeight(event) {
+		event.target.style.height = 'auto';
+		event.target.style.height = event.target.scrollHeight + 15 + 'px';
+	}
+
+	$: {
+		let emailRegex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
+		if (!emailRegex.test(email)) {
+			emailValid = false;
+		} else {
+			emailValid = true;
+		}
+	}
+
+	function toggleLeaveMessage() {
+		if (leaveMessage) {
+			leaveMessage = false;
+		} else {
+			leaveMessage = true;
+		}
+	}
+
+	async function handleSubmit() {
+		const formData = new FormData();
+		formData.append('email', email);
+		formData.append('surname', surname);
+		formData.append('firstname', firstname);
+		formData.append('message', message);
+
+		const response = await fetch('?/sendMail', {
+			method: 'POST',
+			body: formData
+		});
+
+		console.log(response);
+		let statusCode = response.status;
+		console.log(statusCode);
+
+		if (statusCode == 200) {
+			console.log('Form submitted successfully');
+			sessionStorage.setItem('sendMail', '1');
+			messageAlreadySent = true;
+			leaveMessage = false;
+			messageSent = true;
+			// Handle successful form submission
+		} else {
+			console.log('Form submission failed');
+			error = true;
+			messageSent = true;
+			// Handle failed form submission
+		}
+	}
 </script>
 
 <svelte:head>
@@ -23,6 +90,91 @@
 </svelte:head>
 
 <h1 class="h1">Kontakt</h1>
+
+{#if !messageAlreadySent && !leaveMessage}
+	<button
+		class="bg-tvbluelight hover:bg-tvblue text-white px-3 py-2 rounded-md mb-5"
+		on:click={toggleLeaveMessage}
+	>
+		Nachricht hinterlassen
+	</button>
+{/if}
+
+{#if (messageSent && !error) || messageAlreadySent}
+	<div class="bg-tvbluelight text-white px-3 py-2 rounded-md mb-5">
+		Danke für deine Nachricht. Wir werden uns so schnell wie möglich bei dir melden.
+	</div>
+{:else if messageSent && error}
+	<div class="bg-red-500 text-white px-3 py-2 rounded-md mb-5">
+		Es ist ein Fehler aufgetreten. Bitte versuche es später noch einmal.
+	</div>
+{/if}
+
+{#if leaveMessage}
+	<div class="flex mb-10" transition:slide>
+		<div class="">
+			<form action="?/sendMail" method="POST" on:submit|preventDefault={handleSubmit}>
+				<div class="">
+					<div class="flex space-x-5">
+						<div class="my-2">
+							<label for="name">Vorname</label>
+							<input
+								class={firstname == '' ? 'bg-red-50 bg-opacity-90 ' : ''}
+								type="text"
+								name="name"
+								bind:value={firstname}
+							/>
+						</div>
+						<div class="my-2">
+							<label for="name">Nachname</label>
+							<input
+								type="text"
+								name="name"
+								bind:value={surname}
+								class={surname == '' ? 'bg-red-50 bg-opacity-90 ' : ''}
+							/>
+						</div>
+					</div>
+					<div class="my-2">
+						<label for="email">Email</label>
+						<input
+							type="email"
+							class={!emailValid ? 'bg-red-50 bg-opacity-90 ' : ''}
+							placeholder="max.muster@tvnussbaumen.ch"
+							bind:value={email}
+							name="mail"
+						/>
+						{#if !emailValid}
+							<p class="text-sm mt-1 text-red-500">Gib eine Gültige E-Mail Adresse ein.</p>
+						{/if}
+					</div>
+
+					<div class="my-2">
+						<label for="message">Text</label>
+						<textarea
+							class={message == '' ? 'bg-red-50 bg-opacity-90 ' : ''}
+							name="message"
+							on:input={adjustHeight}
+							bind:value={message}
+						/>
+					</div>
+
+					<div class="my-2">
+						<button
+							disabled={!fieldsFilled}
+							type="submit"
+							class={fieldsFilled
+								? 'bg-tvbluelight hover:bg-tvblue text-white px-3 py-2 rounded-md'
+								: 'bg-gray-500 px-3 py-2 rounded-md text-white'}
+						>
+							absenden
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+{/if}
 
 <div>
 	<div>
