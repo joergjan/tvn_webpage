@@ -111,7 +111,7 @@
 {/if}
 
 {#if leaveMessage}
-	<div class="flex mb-10" transition:slide>
+	<div class="flex mb-10" in:slide>
 		<div class="">
 			<form action="?/sendMail" method="POST" on:submit|preventDefault={handleSubmit}>
 				<div class="">
