@@ -2,6 +2,7 @@
 	import { currentPage } from '../scripts/stores';
 	import { titles } from '../scripts/navbar';
 	import IntersectionObserver from '$lib/components/IntersectionObserver.svelte';
+	import { slide } from 'svelte/transition';
 
 	let bollePage = 0;
 	let downloadsPage = 0;
@@ -56,11 +57,60 @@
 		</button>
 	</div>
 	{#if leiter}
-		<div>
-			Möchtest du unserem Leiterteam in der grossen Jugi unter die Arme greifen? Wir suchen für nach den Sommerferien Unterstützung. Melde dich bei
+		<div in:slide>
+			Möchtest du unserem Leiterteam in der grossen Jugi unter die Arme greifen? Wir suchen für nach
+			den Sommerferien Unterstützung. Melde dich bei
 			<a href="mailto:jugend@tvnussbaumen.ch"> jugend@tvnussbaumen.ch </a>
 		</div>
 	{/if}
+</IntersectionObserver>
+
+<IntersectionObserver animation="direction-left">
+	<div>
+		<button
+			on:click={() => {
+				if (turnfest) {
+					turnfest = false;
+				} else {
+					turnfest = true;
+				}
+			}}
+		>
+			<div class="flex items-center hover">
+				<div class="h3">Turnfester 2024</div>
+
+				<svg
+					class={turnfest ? 'h-10 w-10 ml-1 rotate-180' : 'h-10 w-10 ml-1'}
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 20 20"
+					fill="currentColor"
+					aria-hidden="true"
+				>
+					<path
+						fill-rule="evenodd"
+						d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+						clip-rule="evenodd"
+					/>
+				</svg>
+			</div>
+		</button>
+		{#if turnfest}
+			<div class="mb-8" in:slide>
+				<div class="mb-5 mt-3">
+					<div class="flex">
+						<a href="https://tkt2024.ch" target="_blank" rel="noreferrer">
+							<img src="./images/aktuelles/arbon.svg" class="h-20 hover-scale" alt="" />
+						</a>
+					</div>
+				</div>
+				<div class="flex">
+					<a href="https://stf2024.ch" target="_blank" rel="noreferrer">
+						<img src="./images/aktuelles/kallnach.svg" class="h-20 hover-scale" alt="" />
+					</a>
+				</div>
+			</div>
+		{/if}
+	</div>
 </IntersectionObserver>
 
 <h2 class="h2 pt-10">Vergangenes</h2>
@@ -156,64 +206,6 @@
 							/>
 						</a>
 					</button>
-				</div>
-			</div>
-		{/if}
-	</div>
-</IntersectionObserver>
-
-<IntersectionObserver animation="direction-left">
-	<div>
-		<button
-			on:click={() => {
-				if (turnfest) {
-					turnfest = false;
-				} else {
-					turnfest = true;
-				}
-			}}
-		>
-			<div class="flex items-center hover">
-				<div class="h3">Turnfester</div>
-
-				<svg
-					class={turnfest ? 'h-10 w-10 ml-1 rotate-180' : 'h-10 w-10 ml-1'}
-					xmlns="http://www.w3.org/2000/svg"
-					viewBox="0 0 20 20"
-					fill="currentColor"
-					aria-hidden="true"
-				>
-					<path
-						fill-rule="evenodd"
-						d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-						clip-rule="evenodd"
-					/>
-				</svg>
-			</div>
-		</button>
-		{#if turnfest}
-			<div class="mb-8">
-				<div class="mb-5 mt-3">
-					<div class="flex">
-						<a href="https://wohlen2023.ch" target="_blank" rel="noreferrer">
-							<img
-								loading="lazy"
-								class="sm:h-32 h-24 hover-scale"
-								src="./images/aktuelles/wohlen.jpg"
-								alt=""
-							/>
-						</a>
-					</div>
-				</div>
-				<div class="flex">
-					<a href="https://www.ktf2023.ch" target="_blank" rel="noreferrer">
-						<img
-							loading="lazy"
-							class="sm:h-42 h-28 hover-scale"
-							src="./images/aktuelles/wyland.png"
-							alt=""
-						/>
-					</a>
 				</div>
 			</div>
 		{/if}
