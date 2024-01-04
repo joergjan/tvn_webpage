@@ -1,15 +1,14 @@
 <script>
 	import { createEventDispatcher } from 'svelte';
-	import { currentPage, selectedAgeID, selectedRiegeID } from '$lib/scripts/stores';
+	import { currentPage } from '$lib/scripts/stores';
 	import { fade } from 'svelte/transition';
 
-	const dispatch = createEventDispatcher()
+	const dispatch = createEventDispatcher();
 
 	function handleClick() {
 		dispatch('close', close);
 	}
 </script>
-
 
 <div out:fade class="w-full z-10">
 	<div class="flex items-center gap-x-6 bg-tvyellow px-6 py-2.5 sm:px-3.5 sm:before:flex-1">

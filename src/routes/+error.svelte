@@ -7,7 +7,7 @@
 		if (count === 0) {
 			clearInterval(countdown);
 			if (mounted) {
-				window.location.href = '/'
+				window.location.href = '/';
 			}
 		}
 	}, 1000);
@@ -26,5 +26,5 @@
 <div class="h2 flex place-content-center pt-5">{count}</div>
 
 <div class="flex justify-center">
-	<img loading="lazy" class="h-96" src="../images/gif/runnerColor.gif" alt="athlete running gif" />
+	<img loading="lazy" class="h-96" src="/images/gif/runnerColor.gif" alt="athlete running gif" />
 </div>

@@ -4,10 +4,11 @@
 	import { createEventDispatcher } from 'svelte';
 	import { fade } from 'svelte/transition';
 
-	export let photos: { src: string; no: number }[] = [];
+	export let photos: { id: number; url: string }[] = [];
 	let lightboxActive = false;
 	let activeIndex = 0;
 	let showMore = false;
+	console.log(photos);
 
 	function randomTimer() {
 		return Math.floor(Math.random() * 5);
@@ -24,6 +25,8 @@
 			});
 		}
 	}
+
+	$: activeIndex && console.log(activeIndex);
 
 	function close() {
 		activeIndex = -1;
@@ -61,14 +64,14 @@
 
 {#if photos.length != 0}
 	<ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 grid-rows-auto">
-		{#each photos.slice(0, showMore ? photos.length : 4) as { src, no }}
+		{#each photos.slice(0, showMore ? photos.length : 4) as { url }, i}
 			<li class="relative hover:scale-102 h-48">
 				<IntersectionObserver animation="fade-in" timer={randomTimer()}>
 					<div>
 						<img
 							loading="lazy"
 							class="block h-48 w-full rounded-md shadow-md object-cover object-center"
-							{src}
+							src={url + '?auto=compress&lossless=false&q=30'}
 							alt=""
 						/>
 					</div>
@@ -81,11 +84,11 @@
 				<button
 					class="absolute inset-0 hover:bg-opacity-75 transition duration-300"
 					on:click={() => {
-						activeIndex = no;
+						activeIndex = i;
 						lightboxActive = true;
 					}}
 				>
-					<span class="sr-only">View image {no + 1}</span>
+					<span class="sr-only">View image {i + 1}</span>
 				</button>
 			</li>
 		{/each}
@@ -131,7 +134,7 @@
 			<div class="absolute inset-0 flex items-center justify-center">
 				<img
 					loading="lazy"
-					src={photos[activeIndex]?.src}
+					src={photos[activeIndex]?.url + '?auto=compress'}
 					alt=""
 					class="max-w-full lg:max-w-3xl md:max-w-2xl max-h-[90%] md:max-h-full rounded-sm md:rounded-md md:pb-0 pb-32 shadow-lg"
 				/>

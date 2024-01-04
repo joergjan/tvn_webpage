@@ -27,7 +27,7 @@
 <div>
 	<IntersectionObserver animation="direction-right">
 		<div>
-			<div class="h4 mt-3">Altersgrenze</div>
+			<h4 class="h4 mt-3">Altersgrenze</h4>
 			<p>
 				Bis 20:00 Uhr sind Erwachsene und Kinder willkommen. Danach ist der Eintritt nur noch ab 16
 				Jahren erlaubt.
@@ -36,7 +36,7 @@
 	</IntersectionObserver>
 	<IntersectionObserver animation="direction-left">
 		<div>
-			<div class="h4 mt-3">Alkohol</div>
+			<h4 class="h4 mt-3">Alkohol</h4>
 			<p>
 				Kindern und Jugendlichen unter 16 Jahren ist der Konsum von Alkohol strengstens untersagt.
 				Jugendlichen unter 18 Jahren ist der Konsum von Spirituosen und Getränken mit Spirituosen
@@ -47,7 +47,7 @@
 	</IntersectionObserver>
 	<IntersectionObserver animation="direction-right">
 		<div>
-			<div class="h4 mt-3">Anreise</div>
+			<h4 class="h4 mt-3">Anreise</h4>
 			<p class="flex">
 				Du kannst mit ÖV, mit dem Auto oder Velo anreisen. Mehr Infos dazu unter
 				<a
@@ -65,13 +65,13 @@
 	</IntersectionObserver>
 	<IntersectionObserver animation="direction-left">
 		<div>
-			<div class="h4 mt-3">Bargeldlos bezahlen</div>
+			<h4 class="h4 mt-3">Bargeldlos bezahlen</h4>
 			<p>Bei uns kannst du mit der Karte Bezahlen. TWINT wird NICHT unterstützt.</p>
 		</div>
 	</IntersectionObserver>
 	<IntersectionObserver animation="direction-right">
 		<div>
-			<div class="h4 mt-3">Depot</div>
+			<h4 class="h4 mt-3">Depot</h4>
 			<p>
 				Für Flaschen und Becher wird ein Depot von CHF 2.00 erhoben. Das Depot wird bei der Rückgabe
 				in bar zurückerstattet. Getränke und Becher können direkt an der Zentralen Depotstelle bei
@@ -81,13 +81,13 @@
 	</IntersectionObserver>
 	<IntersectionObserver animation="direction-left">
 		<div>
-			<div class="h4 mt-3">Eintritt</div>
+			<h4 class="h4 mt-3">Eintritt</h4>
 			<p>bis 20:00 Uhr ist der Eintritt kostenlos.</p>
 		</div>
 	</IntersectionObserver>
 	<IntersectionObserver animation="direction-right">
 		<div>
-			<div class="h4 mt-3">Essen und Getränke</div>
+			<h4 class="h4 mt-3">Essen und Getränke</h4>
 			<p>
 				Wir haben Pommes, Schnitzelbrote, Würste und ein Kuchenbuffet im Angebot. Das Mitbringen von
 				Getränken ist nicht erlaubt.
@@ -97,7 +97,7 @@
 
 	<div>
 		<IntersectionObserver animation="direction-left">
-			<div class="h4 mt-3">Standort</div>
+			<h4 class="h4 mt-3">Standort</h4>
 			<p>Du findest uns beim Schulhaus Nussbaumen.</p>
 		</IntersectionObserver>
 		<IntersectionObserver animation="fade-in">

@@ -4,7 +4,6 @@
 	import { setContext } from 'svelte';
 	import mapboxgl from 'mapbox-gl';
 	import { MAPBOX_KEY } from '$lib/scripts/mapbox';
-	import { RingLoader } from 'svelte-loading-spinners';
 
 	export let coordinates = [8.826432624745422, 47.62552494795642];
 
@@ -24,7 +23,7 @@
 	/**
 	 * @param {HTMLDivElement} container
 	 */
-	function initMap(container) {
+	async function initMap(container) {
 		map = new mapboxgl.Map({
 			container: 'container',
 			style: 'mapbox://styles/joergjan/cljq4p91t00yv01o43zziaq0r',
@@ -48,9 +47,3 @@
 </head>
 
 <div class="h-full rounded-md shadow-md" id="container" use:initMap />
-
-{#if isLoading}
-	<div class="flex w-screen h-screen justify-center items-center">
-		<RingLoader color="#375398" />
-	</div>
-{/if}

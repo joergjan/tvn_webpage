@@ -5,7 +5,8 @@
 @layer base {
 	html {
 		@apply text-gray-800;
-		font-family: 'Montserrat';
+		font-family: 'Montserrat', sans-serif;
+		@apply font-normal;
 	}
 }
 /* 
@@ -79,35 +80,35 @@
 //
 */
 
-.h1 {
+h1 {
 	@apply pb-5 md:pt-5 text-4xl tracking-wide;
 }
 
-.h2 {
+h2 {
 	@apply text-3xl pb-3;
 }
 
-.h3 {
+h3 {
 	@apply text-2xl;
 }
 
-.h4 {
+h4 {
 	@apply text-xl;
 }
 
-.h5 {
+h5 {
 	@apply text-lg;
 }
 
-.h1,
-.h2,
-.h3,
-.h4,
-.bold {
+h1,
+h2,
+h3,
+h4 {
 	@apply font-bold uppercase;
 }
 
+select,
 input,
 textarea {
-	@apply border-2 rounded-md py-1 px-2 border-gray-200 w-full shadow-sm;
+	@apply border-2 rounded-md py-1 px-2 border-gray-200 shadow-sm;
 }

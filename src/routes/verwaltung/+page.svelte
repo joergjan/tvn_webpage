@@ -1,0 +1,29 @@
+<script lang="ts">
+	import type { PageData } from './$types';
+	import { currentPage } from '$lib/scripts/stores';
+
+	export let data: PageData;
+</script>
+
+<h1>Hallo {data.username}!</h1>
+
+<div>
+	<button
+		class="bg-tvblue hover:bg-tvbluelight text-white group px-3 py-2 rounded-md"
+		on:click={() => {
+			$currentPage = 4;
+		}}
+	>
+		<a href="/verwaltung/beitraege/create">
+			<p class="flex group-hover:scale-105">Neuen Beitrag erstellen</p></a
+		>
+	</button>
+	<button class="bg-tvblue hover:bg-tvbluelight text-white group px-3 py-2 rounded-md">
+		<a href="/verwaltung/person/create"
+			><p class="flex group-hover:scale-105">Person hinzufügen</p></a
+		>
+	</button>
+	<button class="bg-tvblue hover:bg-tvbluelight text-white group px-3 py-2 rounded-md">
+		<a href="/verwaltung/riege"><p class="flex group-hover:scale-105">Riegen bearbeiten</p></a>
+	</button>
+</div>

@@ -25,7 +25,7 @@
 	let turnfest = false;
 </script>
 
-<h2 class="h2 pt-10">Aktuelles</h2>
+<h2 class="pt-10">Aktuelles</h2>
 
 <IntersectionObserver animation="direction-right">
 	<div>
@@ -39,7 +39,7 @@
 			}}
 		>
 			<div class="flex items-center hover">
-				<div class="h3">Leiter Gesucht</div>
+				<h3>Leiter Gesucht</h3>
 				<svg
 					class={leiter ? 'h-10 w-10 ml-1 rotate-180' : 'h-10 w-10 ml-1'}
 					xmlns="http://www.w3.org/2000/svg"
@@ -58,8 +58,8 @@
 	</div>
 	{#if leiter}
 		<div in:slide>
-			Möchtest du unserem Leiterteam in der grossen Jugi unter die Arme greifen? Wir suchen für nach
-			den Sommerferien Unterstützung. Melde dich bei
+			Möchtest du unserem Leiterteam der Jugendriegen unter die Arme greifen? Wir suchen
+			Unterstützung. Melde dich bei
 			<a href="mailto:jugend@tvnussbaumen.ch"> jugend@tvnussbaumen.ch </a>
 		</div>
 	{/if}
@@ -77,7 +77,7 @@
 			}}
 		>
 			<div class="flex items-center hover">
-				<div class="h3">Turnfester 2024</div>
+				<h3>Turnfester 2024</h3>
 
 				<svg
 					class={turnfest ? 'h-10 w-10 ml-1 rotate-180' : 'h-10 w-10 ml-1'}
@@ -127,7 +127,7 @@
 			}}
 		>
 			<div class="flex items-center hover">
-				<div class="h3">Unterhaltung</div>
+				<h3>Unterhaltung</h3>
 				<svg
 					class={unterhaltung ? 'h-10 w-10 ml-1 rotate-180' : 'h-10 w-10 ml-1'}
 					xmlns="http://www.w3.org/2000/svg"
@@ -172,7 +172,7 @@
 			}}
 		>
 			<div class="flex items-center hover">
-				<div class="h3">Bollä Dunnschtig</div>
+				<h3>Bollä Dunnschtig</h3>
 
 				<svg
 					class={bolle ? 'h-10 w-10 ml-1 rotate-180' : 'h-10 w-10 ml-1'}
@@ -221,7 +221,7 @@
 		>
 			<a href="/downloads">
 				<div class="flex items-center hover">
-					<div class="h3">Jahresprogramme</div>
+					<h3>Jahresprogramme</h3>
 					<div class="ml-3 -rotate-45 font-bold text-lg">&rarr;</div>
 				</div>
 			</a>

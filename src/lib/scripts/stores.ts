@@ -6,10 +6,10 @@ export let currentBollePage = writable(0);
 
 export let lightboxActive = writable(0);
 
-export let selectedAgeID = writable(2);
+export let riegen = writable([]);
 
-export let selectedRiegeID = writable(0);
+export let posts = writable([]);
 
-export let isDomReady = writable(false);
+export let leiter = writable([]);
 
-// auth0
+export let vorstand = writable([]);

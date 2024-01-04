@@ -1,9 +1,9 @@
 <script>
 	import Kontakt from '$lib/components/Kontakt.svelte';
-	import { personen } from '$lib/scripts/personen';
 	import { onMount } from 'svelte';
 	import IntersectionObserver from '$lib/components/IntersectionObserver.svelte';
 	import { fade, slide } from 'svelte/transition';
+	import { leiter, vorstand } from '$lib/scripts/stores';
 
 	/**
 	 * @type {typeof import("$lib/components/MapBoxComponent.svelte").default}
@@ -25,14 +25,36 @@
 	onMount(async () => {
 		mapboxgl = (await import('$lib/components/MapBoxComponent.svelte')).default;
 		messageAlreadySent = sessionStorage.getItem('sendMail') == '1';
+
+		if ($vorstand.length == 0) {
+			try {
+				const response = await fetch('/api/v1/main/getVorstand');
+				const data = await response.json();
+
+				$vorstand = data.vorstand;
+			} catch (error) {
+				console.error('Error:', error);
+			}
+		}
+
+		if ($leiter.length == 0) {
+			try {
+				const response = await fetch('/api/v1/main/getLeiter');
+				const data = await response.json();
+
+				$leiter = data.leiter;
+			} catch (error) {
+				console.error('Error:', error);
+			}
+		}
 	});
 
-	function adjustHeight(event) {
+	async function adjustHeight(event) {
 		event.target.style.height = 'auto';
 		event.target.style.height = event.target.scrollHeight + 15 + 'px';
 	}
 
-	$: {
+	async function checkEmail() {
 		let emailRegex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
 		if (!emailRegex.test(email)) {
 			emailValid = false;
@@ -41,7 +63,7 @@
 		}
 	}
 
-	function toggleLeaveMessage() {
+	async function toggleLeaveMessage() {
 		if (leaveMessage) {
 			leaveMessage = false;
 		} else {
@@ -89,7 +111,7 @@
 	/>
 </svelte:head>
 
-<h1 class="h1">Kontakt</h1>
+<h1>Kontakt</h1>
 
 {#if !messageAlreadySent && !leaveMessage}
 	<button
@@ -142,6 +164,7 @@
 							class={!emailValid ? 'bg-red-50 bg-opacity-90 ' : ''}
 							placeholder="max.muster@tvnussbaumen.ch"
 							bind:value={email}
+							on:input={checkEmail}
 							name="mail"
 						/>
 						{#if !emailValid}
@@ -178,45 +201,35 @@
 
 <div>
 	<div>
-		<div class="h2">Unser Vorstand</div>
+		<h2>Unser Vorstand</h2>
 		<div>Der Vorstand leitet den Verein</div>
 		<ul class="sm:grid sm:grid-cols-2 md:grid-cols-3 sm:gap-x-6 lg:grid-cols-4">
-			{#each personen as person}
-				{#if person.vorstand}
+			{#each $vorstand as person}
+				<IntersectionObserver animation="fade-in">
 					<li>
 						<Kontakt {person} />
 					</li>
-				{/if}
+				</IntersectionObserver>
 			{/each}
 		</ul>
 	</div>
 	<div>
-		<div class="h2 pt-10">Unsere Leiter</div>
+		<h2 class="pt-10">Unsere Leiter</h2>
 		<div>
 			Die Leiter sind für den täglichen Turnbetrieb zuständig. Mit viel Herzblut organisieren sie
 			Turnstunden, Ausflüge und vieles mehr.
 		</div>
 
-		<div class="h3 mt-7 -mb-5">Riegenleiter</div>
 		<ul class="sm:grid sm:grid-cols-2 md:grid-cols-3 sm:gap-x-6 lg:grid-cols-4">
-			{#each personen as person}
-				{#if person.riegenleiter}
+			{#each $leiter as person}
+				<IntersectionObserver animation="fade-in">
 					<li>
 						<Kontakt {person} />
 					</li>
-				{/if}
+				</IntersectionObserver>
 			{/each}
 		</ul>
-		<div class="h3 mt-7 -mb-5">Hilfsleiter</div>
-		<ul class="sm:grid sm:grid-cols-2 md:grid-cols-3 sm:gap-x-6 lg:grid-cols-4">
-			{#each personen as person}
-				{#if person.leiter && !person.riegenleiter}
-					<li>
-						<Kontakt {person} />
-					</li>
-				{/if}
-			{/each}
-		</ul>
+
 		<IntersectionObserver animation="fade-in">
 			<div class="mt-10 lg:grid lg:grid-cols-5 max-h-auto">
 				<div class="lg:col-span-1 lg:col-start-1">
@@ -233,3 +246,10 @@
 		</IntersectionObserver>
 	</div>
 </div>
+
+<style>
+	input,
+	textarea {
+		@apply w-full;
+	}
+</style>

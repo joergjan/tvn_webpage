@@ -3,35 +3,21 @@
 	import { fade } from 'svelte/transition';
 	import { currentPage } from '$lib/scripts/stores';
 	const dispatch = createEventDispatcher();
-	import { personen } from '$lib/scripts/personen';
 
 	/**
 	 * @type {any[]}
 	 */
-	let leiter = [];
+	export let personen = [];
 	export let close = false;
 	export let name = '';
-	export let time1 = '';
-	export let day1 = '';
-	export let time2 = '';
-	export let day2 = '';
-	export let twodays = false;
+	export let trainingszeiten = [];
 	export let age = '';
 	export let description = '';
-	export let imageUrl = '';
-	export let imageUrl2 = '';
-	export let imageUrl3 = '';
+	export let images = [];
 	export let riegeId = 0;
 	let active = 0;
 
-	let images = [imageUrl, imageUrl2, imageUrl3];
-	let imagesLength = 3;
-
-	for (let i = 0; i < images.length; i++) {
-		if (images[i] == '') {
-			imagesLength--;
-		}
-	}
+	console.log(personen);
 
 	function handleClick() {
 		close = true;
@@ -40,7 +26,7 @@
 	}
 
 	const interval = setInterval(() => {
-		if (imagesLength > 1) {
+		if (images.length > 1) {
 			if (active === images.length - 1) {
 				active = 0;
 			} else {
@@ -65,18 +51,6 @@
 		}
 	}
 
-	for (const person of personen) {
-		if (riegeId == person.riegeId) {
-			leiter.push(person);
-		}
-		if (riegeId == person.riege2Id) {
-			leiter.push(person);
-		}
-		if (riegeId == person.riege3Id) {
-			leiter.push(person);
-		}
-	}
-
 	window.addEventListener('keyup', (event) => {
 		if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
 			previousPicture();
@@ -88,6 +62,18 @@
 			handleClick();
 		}
 	});
+
+	function getHours(isoTime) {
+		let date = new Date(isoTime);
+		let hours = date.getUTCHours();
+		return hours.toString().padStart(2, '0');
+	}
+
+	function getMinutes(isoTime) {
+		let date = new Date(isoTime);
+		let minutes = date.getUTCMinutes();
+		return minutes.toString().padStart(2, '0');
+	}
 </script>
 
 <div
@@ -108,12 +94,11 @@
 			>
 				<div class="relative">
 					<img
-						loading="lazy"
 						class="absolute -z-10 w-1/2 h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-50"
-						src="./images/logos/logo.png"
+						src="/images/logos/logo.png"
 						alt="Turnverein Nussbaumen"
 					/>
-					{#if imagesLength > 1}
+					{#if images.length > 1}
 						<div class="sm:block hidden">
 							<div class="absolute top-1/2 left-0 text-2xl transform -translate-y-1/2 z-30">
 								<div class="relative">
@@ -158,16 +143,16 @@
 						</div>
 					{/if}
 
-					<div class="relative" in:fade={{ duration: 1500 }}>
-						{#each images as image, i}
-							{#if image !== ''}
+					<div class="relative" in:fade={{ duration: 1000 }}>
+						{#if images.length > 0}
+							{#each images as image, i}
 								<div>
 									{#if i === active}
 										<div class="sm:h-80 h-48 w-full relative">
 											<img
 												loading="lazy"
 												class="absolute top-0 left-0 h-full w-full object-cover transition-opacity duration-500 ease-in-out"
-												src={image}
+												src={image.url + '?auto=compress&lossless=false&q=50&fm=webp'}
 												alt={name}
 											/>
 										</div>
@@ -175,7 +160,7 @@
 								</div>
 
 								<div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex">
-									{#if imagesLength > 1}
+									{#if images.length > 1}
 										{#each images as image, i}
 											<button
 												on:click={() => {
@@ -193,8 +178,17 @@
 										{/each}
 									{/if}
 								</div>
-							{/if}
-						{/each}
+							{/each}
+						{:else}
+							<div class="sm:h-80 h-48 w-full relative">
+								<img
+									loading="lazy"
+									class="absolute top-0 left-0 h-full w-full object-cover transition-opacity duration-500 ease-in-out"
+									src="/images/riegen/alleRiegen.jpg"
+									alt="alle Riegen"
+								/>
+							</div>
+						{/if}
 					</div>
 				</div>
 
@@ -203,31 +197,38 @@
 						<div class="text-sm text-tvbluelight">
 							{age}
 						</div>
-						<div class="h4 py-1">
+						<h4 class="py-1">
 							{name}
-						</div>
+						</h4>
 						<div class="mt-1 text-gray-500">
 							{description}
 						</div>
 					</div>
-					<div class="pt-3 bold text-sm text-gray-800">Trainingszeiten</div>
+					<div class="pt-3 font-medium text-sm text-gray-800">Trainingszeiten</div>
 					<div class="pt-1 text-sm">
-						<div>{day1}: {time1}</div>
-						{#if twodays}
-							<div>{day2}: {time2}</div>
-						{/if}
+						{#each trainingszeiten as trainingszeit}
+							<div>
+								{trainingszeit.weekday.name}: {getHours(trainingszeit.from)}:{getMinutes(
+									trainingszeit.from
+								)} - {getHours(trainingszeit.to)}:{getMinutes(trainingszeit.to)} Uhr
+							</div>
+						{/each}
 					</div>
 
 					<div class="sm:grid sm:grid-cols-3">
-						{#each leiter as leit}
-							<div class="mt-3">
-								<a href={'mailto:' + leit.mail} class="flex items-center sm:col-span-1">
+						{#each personen as leit}
+							<div class="mt-3 flex">
+								<a
+									href={'mailto:' + leit.person.email}
+									class="flex items-center sm:col-span-1 hover:scale-105"
+								>
 									<div>
 										<img
 											loading="lazy"
 											class="sm:h-10 sm:w-10 h-8 w-8 rounded-full"
-											src={leit.imageUrl}
-											alt={leit.name}
+											src={leit.person.avatar.url +
+												'?h=150&w=150&&crop=faces&lossless=false&auto=compress&fit=crop&fm=webp'}
+											alt={leit.person.firstName}
 										/>
 									</div>
 
@@ -238,7 +239,7 @@
 											}}
 										>
 											<div class="text-sm text-gray-900">
-												<div>{leit.name}</div>
+												<div>{leit.person.firstName} {leit.person.name}</div>
 											</div>
 										</button>
 									</div>

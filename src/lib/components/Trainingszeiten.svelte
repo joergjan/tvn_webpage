@@ -1,55 +1,105 @@
 <script>
-	import { riegen } from '../scripts/riegen';
 	import RiegeModal from '$lib/components/RiegeModal.svelte';
 	import IntersectionObserver from '$lib/components/IntersectionObserver.svelte';
+	import { onMount } from 'svelte';
+	import { each } from 'svelte/internal';
 
 	const days = ['Mo', 'Di', 'Mi', 'Do', 'Fr'];
 	const daysDDDD = ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag'];
 
-	let showRiege = false;
-	let currentRiege = 0;
+	let riegen = [];
+	let riegenWithStartEndTimes = [];
 
-	const riegenWithStartEndTimes = riegen.map((riege) => {
-		const time1 = riege.time1
-			? riege.time1.replace(/\s/g, '').replace('Uhr', '').split('-')
-			: ['', ''];
-		const time2 = riege.time2
-			? riege.time2.replace(/\s/g, '').replace('Uhr', '').split('-')
-			: ['', ''];
-		const rows1 = Math.abs((timeToMinutes(time1[0]) - timeToMinutes(time1[1])) / 5);
-		const rows2 = Math.abs((timeToMinutes(time2[0]) - timeToMinutes(time2[1])) / 5);
-		let startRow1 = Math.abs((timeToMinutes(time1[0]) - timeToMinutes('08:15')) / 5);
-		let startRow2 = Math.abs((timeToMinutes(time2[0]) - timeToMinutes('08:15')) / 5);
-		startRow1 = startRow1 > 30 ? startRow1 - 52 : startRow1 - 4;
-		startRow2 = startRow2 > 30 ? startRow2 - 52 : startRow2 - 4;
-		const dayIndex1 = daysDDDD.indexOf(riege.day1) + 1;
-		const dayIndex2 = daysDDDD.indexOf(riege.day2) + 1;
+	onMount(async () => {
+		try {
+			const response = await fetch('/api/v1/main/getRiegen');
+			const data = await response.json();
+
+			riegen = data.riegen;
+		} catch (error) {
+			console.error('Error:', error);
+		}
+
+		riegenWithStartEndTimes = riegen.map((riege) => getRiegeTimes(riege));
+	});
+
+	function getRiegeTimes(riege) {
+		// Assuming riege.trainingszeiten is sorted by weekday
+		const day1 = riege.trainingszeiten[0].weekday.name;
+		const day2 = riege.trainingszeiten[1] ? riege.trainingszeiten[1].weekday.name : null;
+		const dayIndex1 = riege.trainingszeiten[0].weekday.id;
+		const dayIndex2 = riege.trainingszeiten[1] ? riege.trainingszeiten[1].weekday.id : null;
+		const fromTime1 = parseLocalTime(riege.trainingszeiten[0].from);
+		const toTime1 = parseLocalTime(riege.trainingszeiten[0].to);
+		const fromTime2 = riege.trainingszeiten[1]
+			? parseLocalTime(riege.trainingszeiten[1].from)
+			: null;
+		const toTime2 = riege.trainingszeiten[1] ? parseLocalTime(riege.trainingszeiten[1].to) : null;
+		const twodays = riege.trainingszeiten.length > 1;
+		const rows1 = calculateRows(riege.trainingszeiten[0].from, riege.trainingszeiten[0].to);
+		const rows2 = riege.trainingszeiten[1]
+			? calculateRows(riege.trainingszeiten[1].from, riege.trainingszeiten[1].to)
+			: null;
+		const startRow1 = calculateStartRow(riege.trainingszeiten[0].from);
+		const startRow2 = riege.trainingszeiten[1]
+			? calculateStartRow(riege.trainingszeiten[1].from)
+			: null;
 
 		return {
 			name: riege.name,
-			day1: riege.day1,
-			day2: riege.day2,
+			day1: day1,
+			day2: day2,
 			dayIndex1: dayIndex1,
 			dayIndex2: dayIndex2,
-			time1: riege.time1,
-			time2: riege.time2,
-			twodays: riege.twodays,
+			fromTime1: fromTime1,
+			fromTime2: fromTime2,
+			toTime1: toTime1,
+			toTime2: toTime2,
+			twodays: twodays,
 			rows1: rows1,
 			rows2: rows2,
 			startRow1: startRow1,
 			endRow1: startRow1 + rows1,
 			startRow2: startRow2,
-			endRow2: startRow2 + rows2
+			endRow2: startRow2 ? startRow2 + rows2 : null
 		};
-	});
-
-	/**
-	 * @param {string} time
-	 */
-	function timeToMinutes(time) {
-		const [hours, minutes] = time.split(':').map(Number);
-		return hours * 60 + minutes;
 	}
+
+	function parseLocalTime(isoString) {
+		const date = new Date(isoString);
+		const localDate = new Date();
+		localDate.setHours(date.getUTCHours());
+		localDate.setMinutes(date.getUTCMinutes());
+		return localDate;
+	}
+
+	function calculateRows(from, to) {
+		// Convert from and to from ISO 8601 strings to Date objects
+		const fromDate = new Date(from);
+		const toDate = new Date(to);
+
+		// Calculate the difference in minutes between from and to
+		const diffMinutes = (toDate.getTime() - fromDate.getTime()) / 60000;
+
+		// Assuming each row represents a 5-minute interval
+		return diffMinutes / 5;
+	}
+
+	function calculateStartRow(from) {
+		// Convert from from an ISO 8601 string to a Date object
+		const fromDate = new Date(from);
+
+		// Calculate the difference in minutes between from and '09:15'
+		let startRow = (fromDate.getHours() * 60 + fromDate.getMinutes() - (9 * 60 + 15)) / 5;
+
+		// Adjust the start row based on whether it's greater than 30
+		startRow = startRow > 30 ? startRow - 52 : startRow - 4;
+
+		return startRow;
+	}
+
+	let showRiege = false;
+	let currentRiege = 0;
 
 	const times = [
 		'09:00',
@@ -92,6 +142,13 @@
 
 	function handleClose() {
 		showModal();
+	}
+
+	function formatTime(isoString) {
+		const date = new Date(isoString);
+		const hours = String(date.getHours()).padStart(2, '0');
+		const minutes = String(date.getMinutes()).padStart(2, '0');
+		return `${hours}:${minutes}`;
 	}
 </script>
 
@@ -198,11 +255,11 @@
 											currentRiege = i;
 											showModal();
 										}}
-										class="group absolute inset-1 flex flex-col overflow-y-auto rounded-lg bg-tvbluelight text-white hover:bg-tvblue p-2 text-xs shadow-md"
+										class="group absolute inset-1 flex flex-col overflow-y-auto rounded-lg bg-tvbluelight text-white hover:bg-tvblue p-2 shadow-md"
 									>
-										<p class="order-1 font-semibold ">{riege.name}</p>
-										<p class="">
-											{riege.time1}
+										<p class="order-1 font-semibold text-sm">{riege.name}</p>
+										<p class="text-xs">
+											{formatTime(riege.toTime1)} - {formatTime(riege.fromTime1)}
 										</p>
 									</button>
 								</li>
@@ -220,7 +277,7 @@
 										>
 											<p class="order-1 font-semibold ">{riege.name}</p>
 											<p class=" ">
-												{riege.time2}
+												{formatTime(riege.toTime2)} - {formatTime(riege.fromTime2)}
 											</p>
 										</button>
 									</li>
@@ -235,7 +292,7 @@
 
 	<div class="block sm:hidden">
 		<ul class="divide-y divide-gray-200">
-			{#each riegen as riege, i}
+			{#each riegenWithStartEndTimes as riege, i}
 				<li class="flex items-center justify-between py-3">
 					<button
 						class="w-full relative"
@@ -252,17 +309,19 @@
 								<div class="flex whitespace-nowrap">
 									{riege.day1}
 									<div class="pl-2">
-										{riege.time1}
+										{formatTime(riege.toTime1)} - {formatTime(riege.fromTime1)}
 									</div>
 								</div>
 							</div>
 
 							{#if riege.twodays}
-								<div class="mt-1 flex items-center leading-5 text-gray-500">
-									<p class="whitespace-nowrap">
+								<div class="mt-1 flex items-center text-gray-500">
+									<div class="flex whitespace-nowrap">
 										{riege.day2}
-										{riege.time2}
-									</p>
+										<div class="pl-2">
+											{formatTime(riege.toTime2)} - {formatTime(riege.fromTime2)}
+										</div>
+									</div>
 								</div>
 							{/if}
 						</div>
@@ -281,16 +340,11 @@
 		on:click_outside={showModal}
 		on:close={handleClose}
 		name={riegen[currentRiege].name}
-		time1={riegen[currentRiege].time1}
-		time2={riegen[currentRiege].time2}
-		day1={riegen[currentRiege].day1}
-		day2={riegen[currentRiege].day2}
-		twodays={riegen[currentRiege].twodays}
+		trainingszeiten={riegen[currentRiege].trainingszeiten}
 		age={riegen[currentRiege].age}
 		description={riegen[currentRiege].description}
-		imageUrl={riegen[currentRiege].imageUrl}
-		imageUrl2={riegen[currentRiege].imageUrl2}
-		imageUrl3={riegen[currentRiege].imageUrl3}
 		riegeId={riegen[currentRiege].riegeID}
+		personen={riegen[currentRiege].person}
+		images={riegen[currentRiege].image}
 	/>
 {/if}

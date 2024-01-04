@@ -44,7 +44,7 @@
 <h1 class="h1">Downloads</h1>
 
 <div>
-	<div class="h3">Jahresprogramme</div>
+	<h3>Jahresprogramme</h3>
 	<div class="py-4">
 		{#each Jahresprogramme as item}
 			<div class="items-center flex-wrap">
@@ -83,8 +83,8 @@
 
 <div class="divider-line" />
 
-<div class="hidden">
-	<div class="h3">Statuten</div>
+<div>
+	<h3>Statuten</h3>
 	<div class="py-4">
 		{#each Statuten as item}
 			<div class="items-center flex-wrap">
@@ -120,11 +120,9 @@
 		{/each}
 	</div>
 </div>
-
 <div class="divider-line" />
-
-<div class="hidden">
-	<div class="h3">Reglemente</div>
+<div>
+	<h3>Reglemente</h3>
 	<div class="py-4">
 		{#each Reglemente as item}
 			<div class="items-center flex-wrap">
