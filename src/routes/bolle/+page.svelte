@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>TVN | Bollä Dunnschtig</title>e>
+	<title>TVN | Bollä Dunnschtig</title>
 	<meta
 		name="description"
 		content="Der Bollä Dunnschtig ist das Fest am Gründonnerstag. Jedes Jahr durch den Turnverein

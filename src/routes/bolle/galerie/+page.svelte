@@ -1,5 +1,4 @@
 <script>
-	import Bolle from '$lib/components/Bolle.svelte';
 	import { onMount } from 'svelte';
 
 	let show = false;
@@ -28,9 +27,9 @@
 	});
 </script>
 
-<h1 class="h2">Galerie</h1>
+<h2>Galerie</h2>
 {#if show}
-	<Bolle />
+	<p>noch keine Fotos verfügbar</p>
 {:else}
 	<div class="flex items-center justify-center">
 		<div class="">

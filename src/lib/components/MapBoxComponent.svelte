@@ -29,7 +29,7 @@
 			style: 'mapbox://styles/joergjan/cljq4p91t00yv01o43zziaq0r',
 			center: coordinates,
 			zoom: 17,
-			pitch: 75 // pitch in degrees
+			pitch: 55 // pitch in degrees
 		});
 
 		const marker = new mapboxgl.Marker({ color: '#375398' }).setLngLat(coordinates).addTo(map);

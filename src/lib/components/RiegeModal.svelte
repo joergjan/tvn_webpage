@@ -14,7 +14,6 @@
 	export let age = '';
 	export let description = '';
 	export let images = [];
-	export let riegeId = 0;
 	let active = 0;
 
 	console.log(personen);

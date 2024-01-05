@@ -1,11 +1,21 @@
-<script>
+<script lang="ts">
 	let sbbfrom = '';
 	let sbbto = 'Nussbaumen+Schulhaus';
-	let sbbdate = new Date();
+	let sbbdate: Date;
+	let sbbdateInput: string = '';
 	let sbbtime = '';
+	let formattedDate = '';
+	let change: boolean = false;
 
-	$: url = `https://www.sbb.ch/de/kaufen/pages/fahrplan/fahrplan.xhtml?von=${sbbfrom}&nach=${sbbto}&datum=${sbbdate}&zeit=${sbbtime}&an=true&suche=true`;
+	$: sbbdate = new Date(sbbdateInput);
+	$: formattedDate = `${sbbdate.getDate().toString().padStart(2, '0')}.${(sbbdate.getMonth() + 1)
+		.toString()
+		.padStart(2, '0')}.${sbbdate.getFullYear()}`;
+	$: change = sbbdateInput !== '';
+	$: url = `https://www.sbb.ch/de/kaufen/pages/fahrplan/fahrplan.xhtml?von=${sbbfrom}&nach=${sbbto}&datum=${formattedDate}&zeit=${sbbtime}&an=true&suche=true`;
 </script>
+
+<img alt="SBB" src="/images/logos/sbb.svg" class="hidden sm:block h-8 my-3 mt-8" />
 
 <div class="grid sm:grid-cols-2 grid-rows-2 sm:grid-rows-1">
 	<div class="row-span-1 col-start-1 row-start-1">
@@ -39,11 +49,11 @@
 		<div class="mt-2">
 			<div>Datum:</div>
 			<input
-				class={sbbdate != new Date() || sbbdate != new Date("2024-03-28")
+				class={!change
 					? 'px-2 py-1 border border-red-500 rounded-sm'
 					: 'px-2 py-1 border rounded-sm'}
 				type="date"
-				bind:value={sbbdate}
+				bind:value={sbbdateInput}
 			/>
 		</div>
 	</div>
@@ -57,10 +67,3 @@
 		href={url}>Verbindung suchen</a
 	>
 </div>
-
-<img
-	loading="lazy"
-	alt="sbb logo"
-	src="/images/logos/Extension.svg"
-	class="hidden sm:block h-8 my-3 mt-8"
-/>

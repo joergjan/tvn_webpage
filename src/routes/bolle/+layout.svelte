@@ -1,20 +1,19 @@
 <script>
 	import { currentBollePage } from '$lib/scripts/stores';
-	import {onMount} from "svelte"
+	import { onMount } from 'svelte';
 
-	let pageHref
+	let pageHref;
 
-
-	onMount(()=> {
+	onMount(() => {
 		pageHref = window.location.href;
 
 		for (let i = 0; i < titles.length; i++) {
-		if (pageHref.toString().includes(titles[i].href)) {
-			$currentBollePage = i;
-			pageHref = pageHref;
+			if (pageHref.toString().includes(titles[i].href)) {
+				$currentBollePage = i;
+				pageHref = pageHref;
+			}
 		}
-	}
-	})
+	});
 
 	let active = false;
 
@@ -22,10 +21,7 @@
 		{ name: 'Infos A-Z', href: '/', selector: 0 },
 		{ name: 'Anreise', href: '/anreise', selector: 1 },
 		{ name: 'Galerie', href: '/galerie', selector: 2 }
-		// { name: 'Kontakt', href: '/kontakt', selector: 3 }
 	];
-
-	
 
 	function setActive() {
 		if (active) {
@@ -44,7 +40,7 @@
 					<div class="relative text-gray-500 hover:transition-all hover:text-gray-700">
 						<div
 							class={'absolute left-0 top-1/2 transform -translate-y-1/2 bold text-tvblue text-xl ' +
-								($currentBollePage === i ? '!block' : 'hidden hover:block hover:transition-all')}
+								($currentBollePage === i ? 'block' : 'hidden hover:block hover:transition-all')}
 						>
 							&#x232a;
 						</div>
@@ -61,7 +57,7 @@
 		{/each}
 	</ul>
 
-	<div
+	<button
 		on:mouseleave={() => {
 			active = false;
 		}}
@@ -127,7 +123,7 @@
 				</ul>
 			{/if}
 		</div>
-	</div>
+	</button>
 	<div class="md:col-span-10 md:col-start-3">
 		<h1 class="h1">Bollä Dunnschtig</h1>
 		<slot />

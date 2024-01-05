@@ -14,7 +14,7 @@
 </script>
 
 <svelte:head>
-	<title>Bollä | Anreise</title>e>
+	<title>Bollä | Anreise</title>
 	<meta
 		name="description"
 		content="Der Bollä Dunnschtig ist das Fest am Gründonnerstag. Jedes Jahr durch den Turnverein

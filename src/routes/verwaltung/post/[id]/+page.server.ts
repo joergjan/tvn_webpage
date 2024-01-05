@@ -151,7 +151,7 @@ export const actions: Actions = {
 	}
 };
 
-function purgeImage(imgixUrl) {
+function purgeImage(imgixUrl: string) {
 	const API_ENDPOINT = 'https://api.imgix.com/api/v1/purge';
 
 	const headers = {
