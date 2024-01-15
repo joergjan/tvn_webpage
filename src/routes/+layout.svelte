@@ -249,6 +249,12 @@
 			<div class="mt-2 text-center text-xs leading-5">
 				<a href="mailto:info@tvnussbaumen.ch"> info@tvnussbaumen.ch </a>
 			</div>
+
+			<div class="mt-3 text-center flex justify-center text-xs leading-5">
+				<a href="https://github.com/joergjan/tvn_webpage.git" class="group" target="_blank">
+					<img src="/images/logos/github.png" class="h-5 group-hover:opacity-70" alt="" />
+				</a>
+			</div>
 		</div>
 	</footer>
 </div>
