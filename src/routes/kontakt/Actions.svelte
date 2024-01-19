@@ -5,11 +5,9 @@
 
 	let getLeiter: HTMLFormElement;
 	let getVorstand: HTMLFormElement;
-	let getRoles: HTMLFormElement;
 	let getRiegen: HTMLFormElement;
 	let leiterJson: string;
 	let vorstandJson: string;
-	let rolesJson: string;
 	let riegenJson: string;
 
 	onMount(async () => {
@@ -21,11 +19,6 @@
 		if ($vorstand.length <= 0) {
 			vorstandJson = await submitForm(getVorstand);
 			$vorstand = JSON.parse(vorstandJson[1]).vorstand;
-		}
-
-		if ($roles.length <= 0) {
-			rolesJson = await submitForm(getRoles);
-			$roles = JSON.parse(rolesJson[1]).roles;
 		}
 
 		if ($riegen.length <= 0) {
@@ -68,12 +61,5 @@
 	use:enhance
 	method="POST"
 	bind:this={getVorstand}
-	on:submit|preventDefault={() => {}}
-></form>
-<form
-	action="?/getRoles"
-	use:enhance
-	method="POST"
-	bind:this={getRoles}
 	on:submit|preventDefault={() => {}}
 ></form>

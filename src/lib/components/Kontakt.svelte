@@ -1,13 +1,12 @@
 <script lang="ts">
 	import IntersectionObserver from '$lib/components/IntersectionObserver.svelte';
 	import { createEventDispatcher } from 'svelte';
-	import { roles } from '$lib/scripts/stores';
 
 	const dispatch = createEventDispatcher();
 
-	let currentRiege = 0;
-
 	export let person: Person;
+
+	console.log(person);
 
 	function handleClick(riegeId) {
 		dispatch('open', riegeId);
@@ -18,28 +17,34 @@
 	<IntersectionObserver animation="fade-in">
 		<div class="pt-10">
 			<div class="flex justify-center">
-				<img
-					class="rounded-full"
-					width="450"
-					height="450"
-					src={person.avatar.url +
-						'?h=450&w=450&&crop=faces&lossless=false&auto=compress&fit=crop&fm=webp&q=30'}
-					alt={person.name}
-				/>
+				{#if person?.image?.url}
+					<img
+						class="rounded-full"
+						width="450"
+						height="450"
+						src={person.image.url +
+							'?h=450&w=450&&crop=faces&lossless=false&auto=compress&fit=crop&fm=webp&q=30'}
+						alt={person.name}
+					/>
+				{:else}
+					<img
+						class="rounded-full"
+						width="450"
+						height="450"
+						src="/images/people/avatar.webp"
+						alt={person.name}
+					/>
+				{/if}
 			</div>
 			<div class="pt-3 flex justify-center font-medium">
 				{person.firstName}
 				{person.name}
 			</div>
 
-			{#if person.roleId != 0}
-				{#each $roles as role}
-					{#if person.roleId == role.id}
-						<div class="text-sm text-gray-600 font-medium flex justify-center pt-1 pb-1">
-							{role.name}
-						</div>
-					{/if}
-				{/each}
+			{#if person?.role?.name}
+				<div class="text-sm text-gray-600 font-medium flex justify-center pt-1 pb-1">
+					{person.role.name}
+				</div>
 			{/if}
 
 			{#each person.riegen as riege}

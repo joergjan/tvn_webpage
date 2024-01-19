@@ -10,32 +10,31 @@ declare global {
 		name: string;
 		description: string;
 		age: string;
-		person: [];
-		trainingszeiten: Trainingszeit[];
-		image: Image[];
+		image?: Image[];
+		person?: PersonRiege[];
+		trainingszeiten?: Trainingszeit[];
 	};
 
 	type Role = {
 		id: number;
 		name: string;
+		personId?: number | null;
 	};
 
 	type Person = {
 		id: number;
 		firstName: string;
 		name: string;
-		isVorstand: boolean;
+		isVorstand: boolean | null;
 		email: string;
-		roleId: number;
-		avatar?: Avatar;
-		riegen: [];
+		role?: Role | null;
+		image?: Image | null;
+		riegen?: PersonRiege[];
 	};
 
 	type Trainingszeit = {
 		id: number;
-		riege: Riege;
 		riegeId: number;
-		weekday: Weekday;
 		weekdayId: number;
 		from: Date;
 		to: Date;
@@ -44,35 +43,36 @@ declare global {
 	type Weekday = {
 		id: number;
 		name: string;
-		trainingszeiten: Trainingszeit[];
+		trainingszeiten?: Trainingszeit[];
 	};
 
-	type ImageFolder = {
+	type Galery = {
 		id: number;
 		name: string;
-		image: Image[];
+		image?: Image[];
+	};
+
+	type PersonRiege = {
+		personId: number;
+		riegeId: number;
 	};
 
 	type Image = {
 		id: number;
 		url: string;
 		date: Date;
-		riege: Riege;
-		riegeId: number;
-		imageFolder: ImageFolder;
-		imageFolderId: number;
-	};
-
-	type Avatar = {
-		id: number;
-		url: string;
-		date: Date;
-		person: Person;
-		personId: number;
+		galeryId?: number;
+		riegeId?: number;
+		postId?: number;
+		personId?: number;
 	};
 
 	type Post = {
 		id: number;
+		title: string;
+		text: string;
+		date: Date;
+		image: Image[];
 	};
 }
 

@@ -2,7 +2,7 @@
 	import Galery from '$lib/components/Galery.svelte';
 	import LoadAnimation from '$lib/components/LoadAnimation.svelte';
 
-	import { imageFolder } from '$lib/scripts/stores';
+	import { galeries } from '$lib/scripts/stores';
 
 	import Actions from './Actions.svelte';
 </script>
@@ -20,8 +20,8 @@
 <h1 class="h1">Galerie</h1>
 
 <div class="relative min-h-80">
-	{#if $imageFolder.length > 0}
-		{#each $imageFolder as folder}
+	{#if $galeries.length > 0}
+		{#each $galeries as folder}
 			<div class="mb-7">
 				<h3 class="mb-2">
 					{folder.name}

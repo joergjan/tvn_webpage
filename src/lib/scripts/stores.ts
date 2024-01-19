@@ -14,6 +14,6 @@ export let leiter = writable([]);
 
 export let vorstand = writable([]);
 
-export let imageFolder = writable([]);
+export let galeries = writable([]);
 
 export let roles = writable([]);

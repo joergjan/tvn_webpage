@@ -1,16 +1,17 @@
-import type { Actions } from '../de/$types';
+import type { Actions } from '../$types';
 import { PRIVATE_API_KEY } from '$env/static/private';
+import { link } from '$lib/scripts/api';
 
 export const actions: Actions = {
-	getImageFolder: async () => {
-		const imageFolder = await fetch('https://cms.tvnussbaumen.ch/api/v1/main/galery/getImages', {
+	getGaleries: async () => {
+		const galeries = await fetch(link + '/api/v1/main/galery/getImages', {
 			headers: {
 				'TVN-API-KEY': PRIVATE_API_KEY
 			}
 		});
 
 		return {
-			imageFolder: JSON.stringify(await imageFolder.json())
+			galeries: JSON.stringify(await galeries.json())
 		};
 	}
 };

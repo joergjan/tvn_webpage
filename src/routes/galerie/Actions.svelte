@@ -1,16 +1,16 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { enhance } from '$app/forms';
-	import { imageFolder } from '$lib/scripts/stores';
+	import { galeries } from '$lib/scripts/stores';
 
-	let getImageFolder: HTMLFormElement;
+	let getGaleries: HTMLFormElement;
 
-	let imageFolderJson: string;
+	let galeryJson: string;
 
 	onMount(async () => {
-		if ($imageFolder.length <= 0) {
-			imageFolderJson = await submitForm(getImageFolder);
-			$imageFolder = JSON.parse(imageFolderJson[1]).imageFolder;
+		if ($galeries.length <= 0) {
+			galeryJson = await submitForm(getGaleries);
+			$galeries = JSON.parse(galeryJson[1]).galeries;
 		}
 	});
 
@@ -25,14 +25,16 @@
 
 		const data = JSON.parse(result.data);
 
+		console.log(data);
+
 		return data;
 	}
 </script>
 
 <form
-	action="?/getImageFolder"
+	action="?/getGaleries"
 	use:enhance
 	method="POST"
-	bind:this={getImageFolder}
+	bind:this={getGaleries}
 	on:submit|preventDefault={() => {}}
 ></form>

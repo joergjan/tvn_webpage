@@ -219,13 +219,22 @@
 									class="flex items-center sm:col-span-1 hover:scale-105"
 								>
 									<div>
-										<img
-											loading="lazy"
-											class="sm:h-10 sm:w-10 h-8 w-8 rounded-full"
-											src={leit.person.avatar.url +
-												'?h=150&w=150&&crop=faces&lossless=false&auto=compress&fit=crop&fm=webp'}
-											alt={leit.person.firstName}
-										/>
+										{#if leit?.person?.image}
+											<img
+												loading="lazy"
+												class="sm:h-10 sm:w-10 h-8 w-8 rounded-full"
+												src={leit.person.image.url +
+													'?h=150&w=150&&crop=faces&lossless=false&auto=compress&fit=crop&fm=webp'}
+												alt={leit.person.firstName}
+											/>
+										{:else}
+											<img
+												loading="lazy"
+												class="sm:h-10 sm:w-10 h-8 w-8 rounded-full"
+												src="/images/people/avatar.webp"
+												alt="avatar"
+											/>
+										{/if}
 									</div>
 
 									<div class="ml-3">

@@ -2,6 +2,7 @@ import sgMail from '@sendgrid/mail';
 import { PRIVATE_SENDGRID_API_KEY, PRIVATE_API_KEY } from '$env/static/private';
 import type { Actions } from '@sveltejs/kit';
 import { fail } from '@sveltejs/kit';
+import { link } from '$lib/scripts/api';
 
 sgMail.setApiKey(PRIVATE_SENDGRID_API_KEY);
 
@@ -36,7 +37,7 @@ export const actions: Actions = {
 		return { succes: false };
 	},
 	getRiegen: async () => {
-		const riegen = await fetch('https://cms.tvnussbaumen.ch/api/v1/main/getRiegen', {
+		const riegen = await fetch(link + '/api/v1/main/getRiegen', {
 			headers: {
 				'TVN-API-KEY': PRIVATE_API_KEY
 			}
@@ -48,7 +49,7 @@ export const actions: Actions = {
 	},
 
 	getLeiter: async () => {
-		const leiter = await fetch('https://cms.tvnussbaumen.ch/api/v1/main/getLeiter', {
+		const leiter = await fetch(link + '/api/v1/main/getLeiter', {
 			headers: {
 				'TVN-API-KEY': PRIVATE_API_KEY
 			}
@@ -59,7 +60,7 @@ export const actions: Actions = {
 		};
 	},
 	getVorstand: async () => {
-		const vorstand = await fetch('https://cms.tvnussbaumen.ch/api/v1/main/getVorstand', {
+		const vorstand = await fetch(link + '/api/v1/main/getVorstand', {
 			headers: {
 				'TVN-API-KEY': PRIVATE_API_KEY
 			}
@@ -70,7 +71,7 @@ export const actions: Actions = {
 		};
 	},
 	getRoles: async () => {
-		const roles = await fetch('https://cms.tvnussbaumen.ch/api/v1/main/getRoles', {
+		const roles = await fetch(link + '/api/v1/main/getRoles', {
 			headers: { 'TVN-API-KEY': PRIVATE_API_KEY }
 		});
 
@@ -79,7 +80,7 @@ export const actions: Actions = {
 		};
 	},
 	getImageFolder: async () => {
-		const imageFolder = await fetch('https://cms.tvnussbaumen.ch/api/v1/main/galery/getImages', {
+		const imageFolder = await fetch(link + '/api/v1/main/galery/getImages', {
 			headers: {
 				'TVN-API-KEY': PRIVATE_API_KEY
 			}
@@ -90,7 +91,7 @@ export const actions: Actions = {
 		};
 	},
 	getPosts: async () => {
-		const posts = await fetch('https://cms.tvnussbaumen.ch/api/v1/main/getPosts', {
+		const posts = await fetch(link + '/api/v1/main/getPosts', {
 			headers: {
 				'TVN-API-KEY': PRIVATE_API_KEY
 			}
