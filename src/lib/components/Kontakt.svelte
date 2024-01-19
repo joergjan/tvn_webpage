@@ -6,8 +6,6 @@
 
 	export let person: Person;
 
-	console.log(person);
-
 	function handleClick(riegeId) {
 		dispatch('open', riegeId);
 	}
