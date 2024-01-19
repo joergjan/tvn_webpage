@@ -1,4 +1,4 @@
-import type { Actions } from '../de/$types';
+import type { Actions } from '../$types';
 import { PRIVATE_API_KEY } from '$env/static/private';
 import { link } from '$lib/scripts/api';
 
