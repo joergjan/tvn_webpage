@@ -104,3 +104,7 @@ input,
 textarea {
 	@apply border-2 rounded-md py-1 px-2 border-gray-200 shadow-sm;
 }
+
+mark {
+	@apply bg-tvblue text-white;
+}

@@ -73,6 +73,12 @@
 				pageHref = pageHref;
 			}
 		}
+
+		window.addEventListener('keydown', function (event) {
+			if (event.key === 'Escape') {
+				showSearchBar = false;
+			}
+		});
 	});
 
 	$: if (
@@ -323,7 +329,26 @@
 				</div>
 			{/if}
 			{#if searchResults?.riegen?.length > 0 /*|| searchResults.posts.length > 0 */ || searchResults?.leiter?.length > 0 || searchResults?.vorstand?.length > 0}
-				<div class="text-center text-white my-3 overflow-hidden">
+				<div class="text-center text-white my-3 overflow-hidden relative">
+					<button
+						class="absolute top-3 right-3"
+						on:click={() => {
+							searchTerm = '';
+							showSearchBar = false;
+						}}
+					>
+						<svg
+							class="fill-white"
+							xmlns="http://www.w3.org/2000/svg"
+							height="24"
+							viewBox="0 -960 960 960"
+							width="24"
+						>
+							<path
+								d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+							/>
+						</svg>
+					</button>
 					<div
 						class="bg-black bg-opacity-80 p-5 rounded-md justify-center items-center grid grid-cols-1 divide-y-2 divide-gray-500 gap-4"
 					>
@@ -342,9 +367,9 @@
 											<p>{@html riege.description}</p>
 											<div class="flex divide-x-2 divide-gray-500 justify-center">
 												{#each riege.trainingszeiten as trainingszeit}
-													<div class="flex px-2 gap-2">
-														<p>{@html trainingszeit.weekday.name}</p>
-														<p>
+													<div class="md:flex px-2 gap-2">
+														<p class="flex justify-center">{@html trainingszeit.weekday.name}</p>
+														<p class="flex">
 															{formatTime(trainingszeit.from)} - {formatTime(trainingszeit.to)}
 														</p>
 													</div>
@@ -356,30 +381,30 @@
 							</ul>
 						{/if}
 						{#if searchResults.leiter.length > 0}
-							<ul class="grid grid-cols-1 gap-2">
+							<ul class="grid grid-cols-1 gap-2 pt-3">
 								<p>Leiter</p>
 								{#each searchResults.leiter as person}
-									<li class="flex justify-center">
+									<li class="md:flex justify-center">
 										<p class="flex">
 											{@html person.firstName}&nbsp;
 											{@html person.name}
 										</p>
-										<a class="ml-3" href={'mailto:' + person.email}>{@html person.email}</a>
+										<a class="md:ml-3 flex" href={'mailto:' + person.email}>{@html person.email}</a>
 									</li>
 								{/each}
 							</ul>
 						{/if}
 						{#if searchResults.vorstand.length > 0}
-							<ul class="grid grid-cols-1 gap-2">
+							<ul class="grid grid-cols-1 gap-2 pt-3">
 								<p>Vorstand</p>
 								{#each searchResults.vorstand as person}
-									<li class="flex justify-center">
+									<li class="md:flex justify-center">
 										<p class="flex">
 											{@html person.firstName}&nbsp;
 											{@html person.name}
 										</p>
-										<p class="ml-3">{@html person.role}</p>
-										<p class="ml-3">{@html person.email}</p>
+										<p class="md:ml-3 flex">{@html person.role}</p>
+										<p class="md:ml-3 flex">{@html person.email}</p>
 									</li>
 								{/each}
 							</ul>
