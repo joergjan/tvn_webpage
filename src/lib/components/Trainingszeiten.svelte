@@ -144,14 +144,12 @@
 
 <IntersectionObserver animation="fade-in">
 	<div class="hidden sm:flex h-full flex-col">
-		<div class="isolate flex flex-auto flex-col overflow-auto bg-white">
+		<div class="isolate flex flex-auto flex-col overflow-auto">
 			<div
 				style="width: 165%"
 				class="flex max-w-full flex-none flex-col sm:max-w-none md:max-w-full"
 			>
-				<div
-					class="sticky top-0 z-30 flex-none bg-white shadow ring-1 ring-black ring-opacity-5 sm:pr-8"
-				>
+				<div class="sticky top-0 z-30 flex-none shadow ring-1 ring-black ring-opacity-5 sm:pr-8">
 					<div class="grid grid-cols-5 text-sm leading-6 text-gray-500 sm:hidden">
 						{#each calDays as calDay, i}
 							<button type="button" class="flex flex-col items-center pb-3 pt-2"
@@ -187,7 +185,7 @@
 					</div>
 				</div>
 				<div class="flex flex-auto">
-					<div class="sticky left-0 z-10 w-14 flex-none bg-white ring-1 ring-gray-100" />
+					<div class="sticky left-0 z-10 w-14 flex-none ring-1 ring-gray-100" />
 					<div class="grid flex-auto grid-cols-1 grid-rows-1">
 						<!-- Horizontal lines -->
 						<div

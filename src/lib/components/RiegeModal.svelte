@@ -15,6 +15,7 @@
 	export let description = '';
 	export let images = [];
 	let active = 0;
+	console.log(images);
 
 	function handleClick() {
 		close = true;
@@ -148,7 +149,7 @@
 											<img
 												loading="lazy"
 												class="absolute top-0 left-0 h-full w-full object-cover transition-opacity duration-500 ease-in-out"
-												src={image.url + '?auto=compress&lossless=false&q=50&fm=webp'}
+												src={image.url}
 												alt={name}
 											/>
 										</div>

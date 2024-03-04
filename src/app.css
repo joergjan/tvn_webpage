@@ -33,14 +33,6 @@
 	@apply active:rotate-45 inline-flex items-center justify-center rounded-md p-2 active:text-gray-300;
 }
 
-.navbarTitle {
-	@apply inline-flex items-center border-b-2 border-transparent text-gray-500 hover:border-tvblue hover:text-gray-700 px-1 pt-1 font-medium hover:transition-all hover:duration-[600ms];
-}
-
-.navbarTitleSelected {
-	@apply inline-flex items-center border-b-2 border-tvblue text-gray-700 px-1 pt-1 font-medium;
-}
-
 /* 
 //
 //

@@ -17,3 +17,5 @@ export let vorstand = writable([]);
 export let galeries = writable([]);
 
 export let roles = writable([]);
+
+export let darkMode = writable();
