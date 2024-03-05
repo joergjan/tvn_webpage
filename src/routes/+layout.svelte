@@ -464,9 +464,12 @@
 				<a href="mailto:info@tvnussbaumen.ch"> info@tvnussbaumen.ch </a>
 			</div>
 
-			<div class="mt-3 text-center flex justify-center text-xs leading-5">
+			<div class="mt-3 text-center flex justify-center text-xs leading-5 gap-4">
 				<a href="https://github.com/joergjan/tvn_webpage.git" class="group" target="_blank">
-					<img src="/images/logos/github.png" class="h-5 group-hover:opacity-70" alt="" />
+					<img src="/images/logos/github.png" class="h-5 group-hover:opacity-70" alt="github" />
+				</a>
+				<a href="https://twint.tvnussbaumen.ch" target="_blank" class="group">
+					<img src="/images/logos/twint.png" class="h-5 group-hover:opacity-70" alt="TWINT" />
 				</a>
 			</div>
 		</div>

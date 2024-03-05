@@ -126,6 +126,8 @@
 	</button>
 	<div class="md:col-span-10 md:col-start-3">
 		<h1 class="h1">Bollä Dunnschtig</h1>
+		<p class="mb-6 -mt-4 text-lg font-semibold">28. März 2024</p>
+
 		<slot />
 	</div>
 </div>
