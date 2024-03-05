@@ -41,6 +41,7 @@
 			</p>
 		</div>
 	</IntersectionObserver>
+
 	<IntersectionObserver animation="direction-left">
 		<div>
 			<h4 class="h4 mt-3">Alkohol</h4>
@@ -80,7 +81,7 @@
 	</IntersectionObserver>
 	<IntersectionObserver animation="direction-left">
 		<div>
-			<h4 class="h4 mt-3">bezahlen</h4>
+			<h4 class="h4 mt-3">Bezahlen</h4>
 			<p>Bei uns kannst du bar, mit Karte oder mit TWINT bezahlen.</p>
 		</div>
 	</IntersectionObserver>
@@ -110,15 +111,35 @@
 		</div>
 	</IntersectionObserver>
 
-	<div>
-		<IntersectionObserver animation="direction-left">
-			<h4 class="h4 mt-3">Standort</h4>
-			<p>Du findest uns beim Schulhaus Nussbaumen.</p>
-		</IntersectionObserver>
-		<IntersectionObserver animation="fade-in">
-			<div class="w-full h-[500px] mt-3">
-				<MapBoxComponent />
+	<IntersectionObserver animation="direction-left">
+		<div>
+			<h4 class="h4 mt-3">Programm</h4>
+			<div class="grid grid-cols-1 divide-y-2">
+				<div class="grid grid-cols-2 py-2">
+					<p class="flex items-center">ab 18:00 Uhr</p>
+					<p class="flex items-center">Eröffnung Festwirtschaft, Feierabendbier, Kinderdisco</p>
+				</div>
+				<div class="grid grid-cols-2 py-2">
+					<p class="flex items-center">ab 19:00 Uhr</p>
+					<p class="flex items-center">
+						Örgelimusik "Ländlertrio Seelhofer-Bertschinger" in der Oldiestube
+					</p>
+				</div>
+				<div class="grid grid-cols-2 py-2">
+					<p class="flex items-center">ab 22:00 Uhr</p>
+					<p class="flex items-center">DJ Austi</p>
+				</div>
 			</div>
-		</IntersectionObserver>
-	</div>
+		</div>
+	</IntersectionObserver>
+
+	<IntersectionObserver animation="direction-right">
+		<h4 class="h4 mt-3">Standort</h4>
+		<p>Du findest uns beim Schulhaus Nussbaumen.</p>
+	</IntersectionObserver>
+	<IntersectionObserver animation="fade-in">
+		<div class="w-full h-[500px] mt-3">
+			<MapBoxComponent />
+		</div>
+	</IntersectionObserver>
 </div>
