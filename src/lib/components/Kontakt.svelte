@@ -22,7 +22,7 @@
 						height="450"
 						src={person.image.url +
 							'?h=450&w=450&&crop=faces&lossless=false&auto=compress&fit=crop&fm=webp&q=30'}
-						alt={person.name}
+						alt={person.firstName + ' ' + person.name}
 					/>
 				{:else}
 					<img
@@ -30,7 +30,7 @@
 						width="450"
 						height="450"
 						src="/images/people/avatar.webp"
-						alt={person.name}
+						alt={person.firstName + ' ' + person.name}
 					/>
 				{/if}
 			</div>

@@ -6,7 +6,7 @@ declare global {
 	}
 
 	type Riege = {
-		id: number;
+		id?: number;
 		name: string;
 		description: string;
 		age: string;
@@ -16,19 +16,19 @@ declare global {
 	};
 
 	type Role = {
-		id: number;
+		id?: number;
 		name: string;
 		personId?: number | null;
 	};
 
 	type Person = {
-		id: number;
+		id?: number;
 		firstName: string;
 		name: string;
-		isVorstand: boolean | null;
+		isVorstand?: boolean | null;
 		email: string;
-		role?: Role | null;
-		image?: Image | null;
+		role?: Role;
+		image?: Image;
 		riegen?: PersonRiege[];
 	};
 
@@ -68,11 +68,11 @@ declare global {
 	};
 
 	type Post = {
-		id: number;
+		id?: number;
 		title: string;
 		text: string;
-		date: Date;
-		image: Image[];
+		date?: Date;
+		image?: Image[];
 	};
 }
 

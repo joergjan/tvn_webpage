@@ -1,18 +1,50 @@
 <script lang="ts">
 	import '../app.css';
-	import { currentPage } from '$lib/scripts/stores';
+	import { currentPage, darkMode } from '$lib/scripts/stores';
 	import { titles } from '$lib/scripts/navbar';
 	import { fade } from 'svelte/transition';
 	import BannerBolle from '$lib/components/BannerBolle.svelte';
 	import LeiterBanner from '$lib/components/LeiterBanner.svelte';
 	import { onMount } from 'svelte';
+	import { createIndex, searchIndex } from '$lib/scripts/search';
+	import { riegen, leiter, vorstand, posts } from '$lib/scripts/stores';
+	import RiegeModal from '$lib/components/RiegeModal.svelte';
 
+	let search: 'loading' | 'ready' = 'loading';
+	let searchTerm = '';
+	let searchResults: { riegen: Riege[] /*; posts: Post[]*/; leiter: Person[]; vorstand: Person[] };
 	let open = false;
+	$: dark = $darkMode;
 
 	let showBanner = true;
 	let showBannerLeiter = true;
 	let current = 'burger';
 	let pageHref;
+	let showRiege = false;
+	let currentRiege = 0;
+	let selectedRiege: Riege;
+	let showSearchBar = false;
+
+	function showModal() {
+		if (showRiege) {
+			showRiege = false;
+		} else {
+			selectedRiege = $riegen.find((riege) => riege.id === currentRiege);
+			showRiege = true;
+		}
+	}
+
+	function toggleSearchBar() {
+		if (showSearchBar) {
+			showSearchBar = false;
+		} else {
+			showSearchBar = true;
+		}
+	}
+
+	function handleCloseRiegeModal() {
+		showModal();
+	}
 
 	function menuToggle() {
 		if (open) {
@@ -41,7 +73,27 @@
 				pageHref = pageHref;
 			}
 		}
+
+		window.addEventListener('keydown', function (event) {
+			if (event.key === 'Escape') {
+				showSearchBar = false;
+			}
+		});
 	});
+
+	$: if (
+		$riegen.length != 0 &&
+		/*$posts.length != 0 &&*/
+		$leiter.length != 0 &&
+		$vorstand.length != 0
+	) {
+		createIndex($riegen, /* $posts,*/ $leiter, $vorstand);
+		search = 'ready';
+	}
+
+	$: if (search == 'ready') {
+		searchResults = searchIndex(searchTerm);
+	}
 
 	function handleClose() {
 		showBanner = false;
@@ -49,6 +101,13 @@
 
 	function handleCloseLeiter() {
 		showBannerLeiter = false;
+	}
+
+	function formatTime(isoString) {
+		const date = new Date(isoString);
+		const hours = String(date.getHours()).padStart(2, '0');
+		const minutes = String(date.getMinutes()).padStart(2, '0');
+		return `${hours}:${minutes}`;
 	}
 
 	/**
@@ -60,6 +119,14 @@
 		const bannerDateEnd = new Date(endDate);
 		const bannerDateStart = new Date(startDate);
 		return currentDate <= bannerDateEnd && currentDate >= bannerDateStart;
+	}
+
+	function changeDarkMode() {
+		if ($darkMode) {
+			$darkMode = false;
+		} else {
+			$darkMode = true;
+		}
 	}
 </script>
 
@@ -79,8 +146,17 @@
 	<div class="bg-tvblue h-3" />
 {/if}
 
-<nav class="sticky top-0 z-10">
-	<div class="bg-white mx-auto max-w-7xl pt-2 pb-2 md:pb-0 px-4 sm:px-6 lg:px-8">
+{#if dark}
+	<style>
+		html {
+			@apply bg-gray-800;
+			@apply text-gray-200;
+		}
+	</style>
+{/if}
+
+<nav class="sticky top-0 z-10" class:dark>
+	<div class="bg-white dark:bg-gray-800 mx-auto max-w-7xl pt-2 pb-2 md:pb-0 px-4 sm:px-6 lg:px-8">
 		<div class="flex h-16 justify-between py-2">
 			<div class="flex flex-shrink-0 items-center">
 				<a href="/" on:click={() => ($currentPage = 0)}>
@@ -99,19 +175,61 @@
 				</a>
 			</div>
 			<div class="hidden md:ml-6 md:flex md:space-x-8">
-				{#key $currentPage}
-					{#each titles as title, i}
-						<a
-							href={title.href}
-							class={$currentPage === i ? 'navbarTitleSelected' : 'navbarTitle'}
-							on:click={() => ($currentPage = i)}>{title.name}</a
+				{#each titles as title, i}
+					<a
+						href={title.href}
+						class={$currentPage === i
+							? 'inline-flex items-center border-b-2 dark:border-tvbluelight border-tvblue dark:text-white text-gray-700 px-1 pt-1 font-medium'
+							: 'inline-flex items-center border-b-2 border-transparent dark:text-gray-400 text-gray-500 hover:border-tvblue dark:hover:border-tvbluelight hover:text-gray-700 dark:hover:text-white px-1 pt-1 font-medium hover:transition-all hover:duration-[600ms]'}
+						on:click={() => ($currentPage = i)}>{title.name}</a
+					>
+				{/each}
+
+				<!-- 
+				<button on:click={changeDarkMode}>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="dark:fill-white fill-black"
+						height="24"
+						viewBox="0 -960 960 960"
+						width="24"
+					>
+						<path
+							d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Zm0-80q88 0 158-48.5T740-375q-20 5-40 8t-40 3q-123 0-209.5-86.5T364-660q0-20 3-40t8-40q-78 32-126.5 102T200-480q0 116 82 198t198 82Zm-10-270Z"
+						/>
+					</svg>
+				</button>
+				-->
+
+				{#if search == 'ready'}
+					<button
+						on:click={() => {
+							toggleSearchBar();
+						}}
+					>
+						<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"
+							><path
+								d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"
+							/></svg
 						>
-					{/each}
-				{/key}
+					</button>
+				{/if}
 			</div>
 
-			<div class="-mr-2 flex items-center md:hidden">
-				<!-- Mobile menu button -->
+			<div class="-mr-2 flex items-center md:hidden gap-4">
+				{#if search == 'ready'}
+					<button
+						on:click={() => {
+							toggleSearchBar();
+						}}
+					>
+						<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"
+							><path
+								d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"
+							/></svg
+						>
+					</button>
+				{/if}
 				<button
 					name="Navigation"
 					type="button"
@@ -154,7 +272,7 @@
 
 	<!-- Mobile menu, show/hide based on menu state. -->
 	{#if open}
-		<div transition:fade class="md:hidden absolute bg-white w-full h-screen">
+		<div transition:fade class="md:hidden absolute bg-white dark:bg-gray-800 w-full h-screen">
 			<div class="mt-2 space-y-1">
 				{#each titles as title, i}
 					<a
@@ -191,13 +309,109 @@
 		</div>
 	{/if}
 
-	<div class="bg-white h-2 md:block hidden" />
-	<div class="bg-gradient-to-b from-white h-3 md:opacity-[98%]" />
+	<div class="bg-white dark:bg-gray-800 h-2 md:block hidden" />
+	<div class="bg-gradient-to-b from-white dark:from-gray-800 h-3 md:opacity-[98%]" />
 </nav>
 
-<div class="relative">
-	<div class="bg-white">
+<div class="relative" class:dark>
+	<div class="bg-white dark:bg-gray-800">
 		<div class="py-5 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+			{#if showSearchBar}
+				<div class="w-full flex justify-center mb-3">
+					<input
+						bind:value={searchTerm}
+						type="search"
+						class="w-full"
+						placeHolder="suche"
+						autocomplete="off"
+						spellcheck="false"
+					/>
+				</div>
+			{/if}
+			{#if searchResults?.riegen?.length > 0 /*|| searchResults.posts.length > 0 */ || searchResults?.leiter?.length > 0 || searchResults?.vorstand?.length > 0}
+				<div class="text-center text-white my-3 overflow-hidden relative">
+					<button
+						class="absolute top-3 right-3"
+						on:click={() => {
+							searchTerm = '';
+							showSearchBar = false;
+						}}
+					>
+						<svg
+							class="fill-white"
+							xmlns="http://www.w3.org/2000/svg"
+							height="24"
+							viewBox="0 -960 960 960"
+							width="24"
+						>
+							<path
+								d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+							/>
+						</svg>
+					</button>
+					<div
+						class="bg-black bg-opacity-80 p-5 rounded-md justify-center items-center grid grid-cols-1 divide-y-2 divide-gray-500 gap-4"
+					>
+						{#if searchResults.riegen.length > 0}
+							<ul class="grid grid-cols-1 gap-2">
+								<p>Riegen</p>
+								{#each searchResults.riegen as riege}
+									<li>
+										<button
+											on:click={() => {
+												currentRiege = Number(riege.id);
+												showModal();
+											}}
+										>
+											<p>{@html riege.name}</p>
+											<p>{@html riege.description}</p>
+											<div class="flex divide-x-2 divide-gray-500 justify-center">
+												{#each riege.trainingszeiten as trainingszeit}
+													<div class="md:flex px-2 gap-2">
+														<p class="flex justify-center">{@html trainingszeit.weekday.name}</p>
+														<p class="flex">
+															{formatTime(trainingszeit.from)} - {formatTime(trainingszeit.to)}
+														</p>
+													</div>
+												{/each}
+											</div>
+										</button>
+									</li>
+								{/each}
+							</ul>
+						{/if}
+						{#if searchResults.leiter.length > 0}
+							<ul class="grid grid-cols-1 gap-2 pt-3">
+								<p>Leiter</p>
+								{#each searchResults.leiter as person}
+									<li class="md:flex justify-center">
+										<p class="flex">
+											{@html person.firstName}&nbsp;
+											{@html person.name}
+										</p>
+										<a class="md:ml-3 flex" href={'mailto:' + person.email}>{@html person.email}</a>
+									</li>
+								{/each}
+							</ul>
+						{/if}
+						{#if searchResults.vorstand.length > 0}
+							<ul class="grid grid-cols-1 gap-2 pt-3">
+								<p>Vorstand</p>
+								{#each searchResults.vorstand as person}
+									<li class="md:flex justify-center">
+										<p class="flex">
+											{@html person.firstName}&nbsp;
+											{@html person.name}
+										</p>
+										<p class="md:ml-3 flex">{@html person.role}</p>
+										<p class="md:ml-3 flex">{@html person.email}</p>
+									</li>
+								{/each}
+							</ul>
+						{/if}
+					</div>
+				</div>
+			{/if}
 			<slot />
 		</div>
 	</div>
@@ -250,9 +464,12 @@
 				<a href="mailto:info@tvnussbaumen.ch"> info@tvnussbaumen.ch </a>
 			</div>
 
-			<div class="mt-3 text-center flex justify-center text-xs leading-5">
+			<div class="mt-3 text-center flex justify-center text-xs leading-5 gap-4">
 				<a href="https://github.com/joergjan/tvn_webpage.git" class="group" target="_blank">
-					<img src="/images/logos/github.png" class="h-5 group-hover:opacity-70" alt="" />
+					<img src="/images/logos/github.png" class="h-5 group-hover:opacity-70" alt="github" />
+				</a>
+				<a href="https://twint.tvnussbaumen.ch" target="_blank" class="group">
+					<img src="/images/logos/twint.png" class="h-5 group-hover:opacity-70" alt="TWINT" />
 				</a>
 			</div>
 		</div>
@@ -261,10 +478,10 @@
 
 <!-- Cookie Banner -->
 {#if cookie}
-	<div class="pointer-events-none fixed inset-0 flex items-end px-4 py-6 sm:p-6">
+	<div class:dark class="pointer-events-none fixed inset-0 flex items-end px-4 py-6 sm:p-6">
 		<div class="flex w-full flex-col items-center space-y-4 sm:items-end">
 			<div
-				class="pointer-events-auto w-full max-w-sm overflow-hidden rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5"
+				class="pointer-events-auto w-full max-w-sm overflow-hidden rounded-lg bg-white dark:bg-gray-800 shadow-lg ring-1 ring-black ring-opacity-5"
 			>
 				<div class="p-4">
 					<div class="flex items-center">
@@ -273,7 +490,7 @@
 							<button
 								type="button"
 								name="Cookies Button"
-								class="ml-3 flex-shrink-0 rounded-md bg-white text-sm font-medium text-tvblue"
+								class="ml-3 flex-shrink-0 rounded-md bg-white dark:bg-gray-800 text-sm font-medium text-tvblue"
 								on:click={() => {
 									cookie = false;
 									localStorage.setItem('cookies_enabled', '0');
@@ -287,4 +504,17 @@
 			</div>
 		</div>
 	</div>
+{/if}
+
+{#if showRiege}
+	<RiegeModal
+		on:click_outside={showModal}
+		on:close={handleCloseRiegeModal}
+		name={selectedRiege.name}
+		trainingszeiten={selectedRiege.trainingszeiten}
+		age={selectedRiege.age}
+		description={selectedRiege.description}
+		personen={selectedRiege.person}
+		images={selectedRiege.image}
+	/>
 {/if}

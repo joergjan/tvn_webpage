@@ -7,6 +7,7 @@
 		@apply text-gray-800;
 		font-family: 'Montserrat', sans-serif;
 		@apply font-normal;
+		@apply selection:bg-tvblue selection:text-white;
 	}
 }
 /* 
@@ -31,14 +32,6 @@
 
 .burgerMenu {
 	@apply active:rotate-45 inline-flex items-center justify-center rounded-md p-2 active:text-gray-300;
-}
-
-.navbarTitle {
-	@apply inline-flex items-center border-b-2 border-transparent text-gray-500 hover:border-tvblue hover:text-gray-700 px-1 pt-1 font-medium hover:transition-all hover:duration-[600ms];
-}
-
-.navbarTitleSelected {
-	@apply inline-flex items-center border-b-2 border-tvblue text-gray-700 px-1 pt-1 font-medium;
 }
 
 /* 
@@ -111,4 +104,8 @@ select,
 input,
 textarea {
 	@apply border-2 rounded-md py-1 px-2 border-gray-200 shadow-sm;
+}
+
+mark {
+	@apply bg-tvblue text-white;
 }
