@@ -68,7 +68,7 @@
 							<img
 								loading="lazy"
 								class="w-auto max-h-96 rounded-lg shadow-lg hover-scale"
-								src="./images/bolle/flyer24.jpeg"
+								src="./images/bolle/flyer24.png"
 								alt=""
 							/>
 						</a>

@@ -13,11 +13,13 @@
 	/>
 </svelte:head>
 
-<img
-	src="/images/bolle/flyer24.jpeg"
-	class="-mt-3 rounded-md shadow-lg max-h-96"
-	alt="Bollä Dunnschtig Flyer"
-/>
+<a href="/files/flyer24.pdf" target="_blank">
+	<img
+		src="/images/bolle/flyer24.png"
+		class="-mt-3 rounded-md shadow-lg max-h-96"
+		alt="Bollä Dunnschtig Flyer"
+	/>
+</a>
 <div class="mb-6"></div>
 
 <IntersectionObserver animation="direction-right">
