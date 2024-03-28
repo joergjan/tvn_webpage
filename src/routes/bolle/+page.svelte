@@ -94,8 +94,8 @@
 			<h4 class="h4 mt-3">Depot</h4>
 			<p>
 				Für Flaschen wird ein Depot von CHF 2.00 erhoben. Das Depot wird bei der Rückgabe in bar
-				zurückerstattet. Getränke und Becher können direkt an der Zentralen Depotstelle bei der
-				Garderobe oder direkt an der Bar zurückgegeben werden.
+				zurückerstattet. Flaschen können direkt an der Zentralen Depotstelle bei der Garderobe oder
+				direkt an der Bar zurückgegeben werden.
 			</p>
 		</div>
 	</IntersectionObserver>
