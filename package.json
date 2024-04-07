@@ -32,9 +32,11 @@
 		"@lucia-auth/adapter-prisma": "^3.0.2",
 		"@sendgrid/mail": "^8.1.0",
 		"@sveltejs/adapter-auto": "^3.1.0",
+		"@sveltejs/vite-plugin-svelte": "^3.0.2",
 		"@vercel/analytics": "^1.1.1",
 		"flexsearch": "^0.7.43",
 		"mapbox-gl": "^2.15.0",
-		"svelte-gestures": "^1.5.2"
+		"svelte-gestures": "^1.5.2",
+		"svelte-lightbox-gallery": "^0.5.0"
 	}
 }

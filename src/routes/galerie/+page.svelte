@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Galery from '$lib/components/Galery.svelte';
 	import LoadAnimation from '$lib/components/LoadAnimation.svelte';
+	import Gallery from 'svelte-lightbox-gallery';
 
 	import { galeries } from '$lib/scripts/stores';
 
@@ -26,7 +26,7 @@
 				<h3 class="mb-2">
 					{folder.name}
 				</h3>
-				<Galery photos={folder.image} />
+				<Gallery photos={folder.image.map((img) => img.url)} />
 			</div>
 		{/each}
 	{:else}
