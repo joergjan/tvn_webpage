@@ -37,6 +37,6 @@
 		"flexsearch": "^0.7.43",
 		"mapbox-gl": "^2.15.0",
 		"svelte-gestures": "^1.5.2",
-		"svelte-lightbox-gallery": "^0.5.0"
+		"svelte-lightbox-gallery": "^1.0.3"
 	}
 }
