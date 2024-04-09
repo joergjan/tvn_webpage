@@ -1,44 +1,28 @@
-<div class="flex justify-center">
-	<span class="loader"></span>
+<script lang="ts">
+	export let dark: boolean; // dark mode
+</script>
+
+<div class="flex items-center justify-center h-full">
+	<span class="loader" style="border-top: 3px solid {dark ? '#FFFFFF' : '#000'};"></span>
 </div>
 
 <style>
 	.loader {
-		width: 32px;
-		height: 32px;
-		transform: translateY(100%);
+		width: 48px;
+		height: 48px;
 		border-radius: 50%;
-		background: #375398;
-		position: relative;
-	}
-	.loader:before,
-	.loader:after {
-		content: '';
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		border-radius: 50%;
-		background: #375398;
-		left: 50%;
-		transform: translateX(-50%);
-		top: -200%;
-	}
-	.loader:after {
-		animation: moveX 0.5s infinite linear alternate;
+		display: inline-block;
+		border-right: 3px solid transparent;
+		box-sizing: border-box;
+		animation: rotation 1s linear infinite;
 	}
 
-	@keyframes moveX {
+	@keyframes rotation {
 		0% {
-			top: 0%;
-			transform: translateX(-50%) scale(1.5);
-		}
-		50% {
-			top: -75%;
-			transform: translateX(-50%) scale(0.5);
+			transform: rotate(0deg);
 		}
 		100% {
-			top: -200%;
-			transform: translateX(-50%) scale(1.5);
+			transform: rotate(360deg);
 		}
 	}
 </style>
