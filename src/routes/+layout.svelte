@@ -295,7 +295,7 @@
 					</svg>
 				</a>
 
-				<a href="https://www.instagram.com/ussbaumen/" class="hover">
+				<a href="https://www.instagram.com/tvnussbaumen/" class="hover">
 					<span class="sr-only">Instagram</span>
 					<svg class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 						<path
