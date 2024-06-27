@@ -233,7 +233,7 @@
 							class="col-start-1 row-start-1 grid grid-cols-1 sm:grid-cols-5 sm:pr-8 relative"
 							style="grid-template-rows: 1rem repeat(117, minmax(0, 1fr)) auto"
 						>
-							{#if $riegen.length > 0}
+							{#if riegenWithStartEndTimes.length > 0}
 								{#each riegenWithStartEndTimes as riege, i}
 									<li
 										class="relative flex col-start-{riege.dayIndex1} hover:scale-102"
@@ -286,7 +286,7 @@
 
 	<div class="block sm:hidden">
 		<ul class="divide-y divide-gray-200 relative min-h-80">
-			{#if $riegen.length > 0}
+			{#if riegenWithStartEndTimes.length > 0}
 				{#each riegenWithStartEndTimes as riege, i}
 					<li class="flex items-center justify-between py-3">
 						<button
@@ -344,6 +344,6 @@
 		age={$riegen[currentRiege].age}
 		description={$riegen[currentRiege].description}
 		personen={$riegen[currentRiege].person}
-		images={$riegen[currentRiege].image}
+		images={$riegen[currentRiege].imageRiege}
 	/>
 {/if}

@@ -58,8 +58,8 @@
 					>
 						<img
 							class="h-48 w-full rounded-t-lg object-cover"
-							src={riege.image.length > 0
-								? riege.image[0].url + '?auto=compress&lossless=false&q=30&fm=webp'
+							src={riege.imageRiege.length > 0
+								? riege.imageRiege[0].image.url + '?auto=compress&lossless=false&q=30&fm=webp'
 								: '/images/riegen/alleRiegen.jpg'}
 							alt={riege.name}
 						/>
@@ -103,6 +103,6 @@
 		age={$riegen[currentRiege].age}
 		description={$riegen[currentRiege].description}
 		personen={$riegen[currentRiege].person}
-		images={$riegen[currentRiege].image}
+		images={$riegen[currentRiege].imageRiege}
 	/>
 {/if}

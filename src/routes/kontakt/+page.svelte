@@ -271,7 +271,7 @@
 		age={selectedRiege.age}
 		description={selectedRiege.description}
 		personen={selectedRiege.person}
-		images={selectedRiege.image}
+		images={selectedRiege.imageRiege}
 	/>
 {/if}
 
