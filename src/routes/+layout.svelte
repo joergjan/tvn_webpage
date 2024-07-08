@@ -1,5 +1,6 @@
 <script lang="ts">
 	import '../app.css';
+	import '../fonts.css';
 	import { currentPage, darkMode } from '$lib/scripts/stores';
 	import { titles } from '$lib/scripts/navbar';
 	import { fade } from 'svelte/transition';

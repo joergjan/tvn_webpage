@@ -45,7 +45,6 @@
 	<Aktuelles />
 </div>
 
-<!-- Trainingszeiten
 <div class="pt-10">
 	<h2 class="h2">Trainingszeiten</h2>
 	<div>
@@ -59,7 +58,6 @@
 
 	<Trainingszeiten />
 </div>
- -->
 
 <IntersectionObserver animation="fade-in">
 	<div class="mt-5">
