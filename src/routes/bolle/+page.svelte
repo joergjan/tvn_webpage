@@ -13,6 +13,7 @@
 	/>
 </svelte:head>
 
+<!--
 <div class="flex">
 	<a href="/files/flyer24.pdf" class="flex" target="_blank">
 		<img
@@ -23,6 +24,7 @@
 	</a>
 </div>
 <div class="mb-6"></div>
+ -->
 
 <IntersectionObserver animation="direction-right">
 	<p>

@@ -304,7 +304,7 @@
 									<div class="flex whitespace-nowrap">
 										{riege.day1}
 										<div class="pl-2">
-											{formatTime(riege.toTime1)} - {formatTime(riege.fromTime1)}
+											{formatTime(riege.fromTime1)} - {formatTime(riege.toTime1)}
 										</div>
 									</div>
 								</div>
@@ -314,7 +314,7 @@
 										<div class="flex whitespace-nowrap">
 											{riege.day2}
 											<div class="pl-2">
-												{formatTime(riege.toTime2)} - {formatTime(riege.fromTime2)}
+												{formatTime(riege.fromTime2)} - {formatTime(riege.toTime2)}
 											</div>
 										</div>
 									</div>
@@ -328,7 +328,7 @@
 				{/each}
 			{:else}
 				<div class="absolute top-1/2 transform -translate-y-1/2 right-0 left-0">
-					<LoadAnimation />
+					<LoadAnimation dark={false} />
 				</div>
 			{/if}
 		</ul>
