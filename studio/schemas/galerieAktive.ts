@@ -1,8 +1,8 @@
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'video',
-  title: 'Videos',
+  name: 'galerieAktive',
+  title: 'Galerie Aktive',
   type: 'document',
   fields: [
     defineField({
@@ -11,19 +11,19 @@ export default defineType({
       type: 'string',
     }),
     defineField({
-      name: 'video',
-      title: 'Video',
-      type: 'file',
+      name: 'mainImage',
+      title: 'Main image',
+      type: 'image',
       options: {
-        accept: 'video/mp4',
+        hotspot: true,
       },
     }),
   ],
   preview: {
     select: {
-      author: 'author.name',
-      media: 'video',
       title: 'title',
+      author: 'author.name',
+      media: 'mainImage',
     },
     prepare(selection) {
       const {author} = selection

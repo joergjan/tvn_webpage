@@ -1,22 +1,22 @@
 import blockContent from './blockContent'
 
 import blogPost from './blogPost'
-import image from './image'
-import appearance from './appearance'
-import home from './home'
-import video from './video'
+import galerieAktive from './galerieAktive'
+import galerieJugi from './galerieJugi'
 import about from './about'
-import contact from './contact'
-import youtube from './youtube'
+import kontaktVorstand from './kontaktVorstand'
+import kontaktLeiter from './kontaktLeiter'
+import events from './events'
+import riege from './riege'
 
 export const schemaTypes = [
   blogPost,
   blockContent,
-  image,
-  appearance,
-  home,
-  video,
+  galerieJugi,
+  galerieAktive,
   about,
-  contact,
-  youtube,
+  kontaktVorstand,
+  kontaktLeiter,
+  events,
+  riege,
 ]

@@ -1,11 +1,15 @@
-import { imagesQuery } from '$lib/sanity/queries';
+import { galerieAktive, galerieJugi } from '$lib/sanity/queries';
 import type { PageServerLoad } from './$types';
 import { client } from '$lib/sanity/client';
 
 export const load: PageServerLoad = async (event) => {
-	const images = await client.fetch(imagesQuery);
+	const [galerieAktive, galerieJugi] = await Promise.all([
+		client.fetch(galerieAktive),
+		client.fetch(galerieJugi)
+	]);
 
 	return {
-		images
+		galerieAktive,
+		galerieJugi
 	};
 };

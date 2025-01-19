@@ -1,10 +1,9 @@
 <script lang="ts">
 	import '../app.css';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { onMount } from 'svelte';
 	import { navItems } from '$lib/navbar';
-	import Note from '$lib/components/Note.svelte';
-	import Logo from '$lib/components/Logo.svelte';
+
 	import { dev } from '$app/environment';
 	import { injectAnalytics } from '@vercel/analytics/sveltekit';
 
@@ -23,51 +22,28 @@
 </script>
 
 <svelte:head>
-	<title>Charity Singers</title>
+	<title>TV Nussbaumen</title>
 </svelte:head>
 
 <nav>
 	<div class="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
 		<div class="flex h-16 items-center justify-between">
-			<div class="group flex shrink-0 md:pt-2">
+			<div class="">
 				<a href="/">
-					{#key $page.url.pathname}
-						<Logo
-							className="${$page.url.pathname === '/' || isMobile
-								? ' fill-red-500 '
-								: 'transition-all hover:transition-all fill-white hover:duration-[400ms] group-hover:fill-red-500'}"
-							strokeStyle="${$page.url.pathname === '/' || isMobile
-								? ' stroke-red-500 fill-none '
-								: ' transition-all group-hover:stroke-red-500 fill-none hover:transition-all stroke-white hover:duration-[400ms]'}"
-						/>
-					{/key}
+					<img class="h-24" src="tvn_logo.png" alt="" />
 				</a>
 			</div>
 			<div class="ml-auto hidden justify-items-end md:flex">
 				<ul class="flex space-x-10">
 					{#each navItems as { name, href }, i}
 						<li
-							class="${$page.url.pathname === href
+							class="${page.url.pathname === href
 								? ' text-red-500 '
 								: ' hover:text-red-500 hover:transition-all hover:duration-[400ms]'} inline-flex items-center px-1 pt-1"
 						>
 							<button class="group relative">
-								<a
-									id={$page.url.pathname === href ? '' : 'menuItem'}
-									{href}
-									class="rounded-md px-3 py-2 text-sm font-medium"
-								>
+								<a {href} class="rounded-md px-3 py-2 text-sm font-medium">
 									{name}
-
-									<div
-										class={$page.url.pathname === href
-											? 'absolute -right-5 -top-4 scale-125'
-											: 'absolute -right-5 -top-4 rotate-[10deg] transition duration-300 group-hover:rotate-[0deg] group-hover:scale-125'}
-									>
-										<div id="Note">
-											<Note className="h-14" fill="url(#gradient)" />
-										</div>
-									</div>
 								</a>
 							</button>
 						</li>
@@ -150,25 +126,12 @@
 			{/each}
 		</nav>
 
-		<p class="mt-10 text-center text-sm/6 text-gray-400">&copy; 2024 Charity Singers</p>
+		<p class="mt-10 text-center text-sm/6 text-gray-400">
+			&copy; {new Date().getFullYear()} TV Nussbaumen
+		</p>
 
 		<p class="mt-10 text-center text-sm/6 text-gray-400 hover:text-gray-300">
-			<a href="https://studio.charity-singers.ch" target="_blank" class="underline"> Login </a>
+			<a href="https://studio.tvnussbaumen.ch" target="_blank" class="underline"> Login </a>
 		</p>
 	</div>
 </footer>
-
-<style>
-	#menuItem #Note {
-		opacity: 0;
-		transition: opacity 0.3s ease;
-	}
-
-	#menuItem:hover #Note {
-		opacity: 1;
-	}
-
-	svg {
-		transition: transform 0.3s ease;
-	}
-</style>

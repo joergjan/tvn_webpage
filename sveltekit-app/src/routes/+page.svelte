@@ -1,13 +1,14 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import AppearancesTable from '$lib/components/AppearancesTable.svelte';
+	import EventsTable from '$lib/components/EventsTable.svelte';
 	import Image from '$lib/components/Image.svelte';
 	import Blog from '$lib/components/Blog.svelte';
 	import About from '$lib/components/About.svelte';
 	import { homeDescription } from '$lib/components/SEO';
+	import { Skeleton } from '$lib/components/ui/skeleton';
 
 	export let data: PageData;
-	$: ({ blogPosts, about, appearances, homeImage } = data);
+	$: ({ events, blogPosts } = data);
 </script>
 
 <svelte:head>
@@ -15,15 +16,27 @@
 </svelte:head>
 
 <div class="space-y-10">
-	<div class=" flex items-center justify-center rounded-lg object-fill">
-		<Image image={homeImage[0]} imageClass={''} />
-	</div>
-
-	<About {about} />
-
 	<br />
 
-	<AppearancesTable {appearances} />
+	{#if events.length > 0}
+		<EventsTable {events} />
+	{:else}
+		<div class="flex items-center space-x-4">
+			<Skeleton class="h-12 w-12 rounded-full" />
+			<div class="space-y-2">
+				<Skeleton class="h-4 w-[250px]" />
+				<Skeleton class="h-4 w-[200px]" />
+			</div>
+		</div>
+	{/if}
+
+	<div class="flex items-center space-x-4">
+		<Skeleton class="h-12 w-12 rounded-full" />
+		<div class="space-y-2">
+			<Skeleton class="h-4 w-[250px]" />
+			<Skeleton class="h-4 w-[200px]" />
+		</div>
+	</div>
 
 	<Blog {blogPosts} />
 </div>

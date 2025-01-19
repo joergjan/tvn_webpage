@@ -6,11 +6,15 @@
 
 	export let data: PageData;
 
-	$: ({ images } = data);
+	$: ({ galerieAktive, galerieJugi } = data);
 </script>
 
 <svelte:head>
 	<meta name="description" content={contactDescription} />
 </svelte:head>
 
-<Gallery photos={images} />
+<h1>Aktive</h1>
+<Gallery photos={galerieAktive} />
+
+<h1>Jugi</h1>
+<Gallery photos={galerieJugi} />

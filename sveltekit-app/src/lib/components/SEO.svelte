@@ -3,6 +3,6 @@
 </script>
 
 <svelte:head>
-	<title>Charity Singers</title>
+	<title>TV Nussbaumen</title>
 	<meta name="description" content={metaDescription} />
 </svelte:head>

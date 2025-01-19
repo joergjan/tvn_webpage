@@ -1,14 +1,26 @@
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'photo',
-  title: 'Bild für Gallerie',
+  name: 'kontaktLeiter',
+  title: 'Leiter',
   type: 'document',
   fields: [
     defineField({
-      name: 'title',
-      title: 'Title',
+      name: 'fullname',
+      title: 'Name',
       type: 'string',
+    }),
+
+    defineField({
+      name: 'mail',
+      title: 'Email',
+      type: 'string',
+    }),
+    defineField({
+      name: 'riege',
+      title: 'Riegen',
+      type: 'array',
+      of: [{type: 'riege'}],
     }),
     defineField({
       name: 'mainImage',
@@ -21,9 +33,9 @@ export default defineType({
   ],
   preview: {
     select: {
-      title: 'title',
+      date: 'date',
       author: 'author.name',
-      media: 'mainImage',
+      title: 'fullname',
     },
     prepare(selection) {
       const {author} = selection

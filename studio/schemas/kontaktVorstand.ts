@@ -1,17 +1,12 @@
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'contact',
-  title: 'Kontaktperson',
+  name: 'kontaktVorstand',
+  title: 'Vorstand',
   type: 'document',
   fields: [
     defineField({
-      name: 'firstname',
-      title: 'Vorname',
-      type: 'string',
-    }),
-    defineField({
-      name: 'lastname',
+      name: 'fullname',
       title: 'Nachname',
       type: 'string',
     }),
@@ -21,26 +16,24 @@ export default defineType({
       type: 'string',
     }),
     defineField({
-      name: 'street',
-      title: 'Strasse & Hausnummer',
+      name: 'role',
+      title: 'Vorstandsfunktion',
       type: 'string',
     }),
     defineField({
-      name: 'postcode',
-      title: 'PLZ',
-      type: 'number',
-    }),
-    defineField({
-      name: 'place',
-      title: 'Ort',
-      type: 'string',
+      name: 'mainImage',
+      title: 'Main image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
     }),
   ],
   preview: {
     select: {
       date: 'date',
       author: 'author.name',
-      title: 'mail',
+      title: 'fullname',
     },
     prepare(selection) {
       const {author} = selection

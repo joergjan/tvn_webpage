@@ -1,10 +1,5 @@
 export const navItems = [
 	{
-		name: 'Auftritte',
-		href: '/appearances'
-	},
-
-	{
 		name: 'Galerie',
 		href: '/gallery'
 	},

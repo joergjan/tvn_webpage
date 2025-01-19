@@ -1,14 +1,29 @@
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'home',
-  title: 'Bild für Startseite',
+  name: 'event',
+  title: 'Anlässe',
   type: 'document',
   fields: [
     defineField({
       name: 'title',
       title: 'Title',
       type: 'string',
+    }),
+    defineField({
+      name: 'description',
+      title: 'Beschreibung',
+      type: 'text',
+    }),
+    defineField({
+      name: 'dateFrom',
+      title: 'Datum von',
+      type: 'date',
+    }),
+    defineField({
+      name: 'dateTo',
+      title: 'Datum bis',
+      type: 'date',
     }),
     defineField({
       name: 'mainImage',
@@ -21,9 +36,9 @@ export default defineType({
   ],
   preview: {
     select: {
+      title: 'title',
       author: 'author.name',
       media: 'mainImage',
-      title: 'title',
     },
     prepare(selection) {
       const {author} = selection

@@ -9,8 +9,8 @@ const projectId = process.env.SANITY_STUDIO_PROJECT_ID!
 const dataset = process.env.SANITY_STUDIO_DATASET!
 
 export default defineConfig({
-  name: 'charity-singers',
-  title: 'Charity Singers',
+  name: 'tvn_webpage',
+  title: 'TV Nussbaumen',
   projectId,
   dataset,
   plugins: [
