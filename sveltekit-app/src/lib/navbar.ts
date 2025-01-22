@@ -1,18 +1,9 @@
 export const navItems = [
-	{
-		name: 'Galerie',
-		href: '/gallery'
-	},
-	{
-		name: 'Videos',
-		href: '/media'
-	},
-	{
-		name: 'Blog',
-		href: '/blog'
-	},
-	{
-		name: 'Kontakt',
-		href: '/contact'
-	}
+	{ name: 'Unser Verein', href: '/' },
+	{ name: 'Riegen', href: '/riegen' },
+	{ name: 'Galerie', href: '/gallery' },
+	{ name: 'Bollä Dunnschtig', href: '/bolle' },
+	{ name: 'Blog', href: '/blog' },
+	{ name: 'Kontakt', href: '/contact' },
+	{ name: 'Downloads', href: '/downloads' }
 ];

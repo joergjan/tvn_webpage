@@ -24,9 +24,14 @@ export default defineType({
       },
     }),
     defineField({
+      name: 'description',
+      title: 'description',
+      type: 'text',
+    }),
+    defineField({
       name: 'body',
       title: 'Text',
-      type: 'text',
+      type: 'blockContent',
     }),
   ],
   preview: {

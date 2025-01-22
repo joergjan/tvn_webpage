@@ -16,11 +16,26 @@ export default defineType({
       title: 'Email',
       type: 'string',
     }),
+
     defineField({
       name: 'riege',
       title: 'Riegen',
       type: 'array',
-      of: [{type: 'riege'}],
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'riege'}],
+
+          options: {
+            filter: ({document}) => {
+              return {
+                filter: 'product._ref == $id',
+                params: {id: document._id},
+              }
+            },
+          },
+        },
+      ],
     }),
     defineField({
       name: 'mainImage',

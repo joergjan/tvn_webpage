@@ -17,12 +17,12 @@
 		"svelte-gestures": "^5.0.6"
 	},
 	"devDependencies": {
-		"@portabletext/svelte": "^2.1.11",
+		"@portabletext/svelte": "npm:@eirikk/portabletext-2-svelte-5@0.1.0-alpha.2",
 		"@portabletext/types": "^2.0.13",
 		"@sanity/types": "^3.52.4",
 		"@sveltejs/adapter-auto": "^3.2.2",
 		"@sveltejs/kit": "^2.9.0",
-		"@sveltejs/vite-plugin-svelte": "^3.1.1",
+		"@sveltejs/vite-plugin-svelte": "^4.0.0",
 		"@typescript-eslint/eslint-plugin": "^6.21.0",
 		"@typescript-eslint/parser": "^6.21.0",
 		"autoprefixer": "^10.4.20",
@@ -37,7 +37,7 @@
 		"prettier": "^3.3.3",
 		"prettier-plugin-svelte": "^3.2.6",
 		"prettier-plugin-tailwindcss": "^0.6.5",
-		"svelte": "^4.2.18",
+		"svelte": "^5.18.0",
 		"svelte-sonner": "^0.3.28",
 		"tailwind-merge": "^2.6.0",
 		"tailwind-variants": "^0.3.0",

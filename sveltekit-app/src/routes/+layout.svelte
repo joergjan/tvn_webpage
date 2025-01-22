@@ -3,9 +3,9 @@
 	import { page } from '$app/state';
 	import { onMount } from 'svelte';
 	import { navItems } from '$lib/navbar';
-
 	import { dev } from '$app/environment';
 	import { injectAnalytics } from '@vercel/analytics/sveltekit';
+	import BreadCrumb from '$lib/components/BreadCrumb.svelte';
 
 	injectAnalytics({ mode: dev ? 'development' : 'production' });
 
@@ -34,7 +34,7 @@
 				</a>
 			</div>
 			<div class="ml-auto hidden justify-items-end md:flex">
-				<ul class="flex space-x-10">
+				<ul class="-mr-2.5 flex space-x-5">
 					{#each navItems as { name, href }, i}
 						<li
 							class="${page.url.pathname === href
@@ -114,6 +114,9 @@
 </nav>
 
 <main class="mx-auto mt-10 max-w-7xl overflow-hidden px-6 lg:mt-14 lg:px-8">
+	<div>
+		<BreadCrumb />
+	</div>
 	<slot />
 </main>
 
