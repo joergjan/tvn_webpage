@@ -30,7 +30,7 @@
 		<div class="flex h-16 items-center justify-between">
 			<div class="">
 				<a href="/">
-					<img class="h-24" src="tvn_logo.png" alt="" />
+					<img class="h-24" src="/tvn_logo.png" alt="" />
 				</a>
 			</div>
 			<div class="ml-auto hidden justify-items-end md:flex">

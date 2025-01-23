@@ -1,5 +1,5 @@
 import type { LoaderLocals } from '@sanity/svelte-loader';
-import { Anlass, BlogPost } from '$lib/sanity/queries';
+import { Anlass, BlogPost, Riege, Vorstand, Leiter } from '$lib/sanity/queries';
 
 // See https://kit.svelte.dev/docs/types#app
 // for information about these interfaces
@@ -9,6 +9,9 @@ declare global {
 	}
 	type Anlass = Anlass;
 	type BlogPost = BlogPost;
+	type Riege = Riege;
+	type Vorstand = Vorstand;
+	type Leiter = Leiter;
 }
 
 export {};

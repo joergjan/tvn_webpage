@@ -5,7 +5,6 @@ import type { PageServerLoad } from './$types';
 export const load: PageServerLoad = async (even) => {
 	const [events, blogPosts] = await Promise.all([
 		client.fetch(eventsQuery),
-
 		client.fetch(recentBlogPostsQuery)
 	]);
 

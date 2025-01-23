@@ -11,9 +11,34 @@ export const blogPostQuery = groq`*[_type == "blogpost" && slug.current === $slu
 export const aboutQuery = groq`*[_type == "about"][0]`;
 
 export const kontaktVorstand = groq`*[_type == "kontaktVorstand"]`;
-export const kontaktLeiter = groq`*[_type == "kontaktLeiter"]`;
+
+export const kontaktLeiter = groq`
+	*[_type == "kontaktLeiter"]{
+		...,
+		"riege":  *[_type=="riege" && references(^._id)]{
+			...
+		},
+  	}`;
+
 export const galerieJugi = groq`*[_type == "galerieJugi"] | order(date desc)`;
 export const galerieAktive = groq`*[_type == "galerieAktive"] | order(date desc)`;
+
+export const riegeQuery = groq`
+  *[_type == "riege"]{
+    ...,
+    "kontaktLeiter": *[_type == "kontaktLeiter" && references(^._id)]{
+      ...
+    }
+  }
+`;
+
+export interface Leiter {
+	_type: 'kontaktLeiter';
+}
+
+export interface Vorstand {
+	_type: 'kontaktVorstand';
+}
 
 export interface Anlass {
 	_type: 'event';
@@ -34,34 +59,7 @@ export interface BlogPost {
 	body: string;
 }
 
-export interface Video {
-	_type: 'video';
+export interface Riege {
+	_type: 'riege';
 	_createdAt: string;
-	title: string;
-	video: File;
-}
-
-export interface About {
-	_type: 'about';
-	_createdAt: string;
-	title: string;
-	body: string;
-}
-
-export interface Contact {
-	_type: 'contact';
-	_createdAt: string;
-	street: string;
-	postcode: number;
-	place: string;
-	mail: string;
-	firstname: string;
-	lastname: string;
-}
-
-export interface Youtube {
-	_type: 'youtube';
-	_createdAt: string;
-	title: string;
-	link: string;
 }

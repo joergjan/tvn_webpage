@@ -25,15 +25,6 @@ export default defineType({
         {
           type: 'reference',
           to: [{type: 'riege'}],
-
-          options: {
-            filter: ({document}) => {
-              return {
-                filter: 'product._ref == $id',
-                params: {id: document._id},
-              }
-            },
-          },
         },
       ],
     }),
