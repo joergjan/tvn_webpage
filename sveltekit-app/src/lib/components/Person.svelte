@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let person: Leiter | Vorstand;
+	export let person: Person;
 	import RiegeBadge from '$lib/components/riege/RiegeBadge.svelte';
 </script>
 

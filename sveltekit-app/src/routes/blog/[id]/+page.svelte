@@ -1,10 +1,7 @@
 <script lang="ts">
-	import type { PageData } from './$types';
-	import { blogDescription } from '$lib/components/SEO';
 	import { urlFor } from '$lib/sanity/image';
 	import { PortableText } from '@portabletext/svelte';
 	import { breadCrumbTitle } from '$lib/stores';
-	import { onMount } from 'svelte';
 
 	let { data } = $props();
 	let blogPost = data.blogPost;
@@ -13,10 +10,6 @@
 		$breadCrumbTitle = blogPost.title;
 	});
 </script>
-
-<svelte:head>
-	<meta name="description" content={blogDescription} />
-</svelte:head>
 
 <div>
 	<h1>{blogPost.title}</h1>

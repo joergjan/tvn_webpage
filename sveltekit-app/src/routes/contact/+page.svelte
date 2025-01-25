@@ -1,15 +1,10 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import Person from '$lib/components/Person.svelte';
-	import { riegenDescription } from '$lib/components/SEO';
 
 	export let data: PageData;
 	$: ({ leiter, vorstand } = data);
 </script>
-
-<svelte:head>
-	<meta name="description" content={riegenDescription} />
-</svelte:head>
 
 <h1>Vorstand</h1>
 

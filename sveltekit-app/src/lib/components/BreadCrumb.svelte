@@ -3,7 +3,6 @@
 	import { navItems } from '$lib/navbar';
 	import { page } from '$app/state';
 	import { untrack } from 'svelte';
-	import { writable } from 'svelte/store';
 	import { breadCrumbTitle } from '$lib/stores';
 
 	let breadcrumbItems = $state([{ label: 'Home', href: '/' }]);

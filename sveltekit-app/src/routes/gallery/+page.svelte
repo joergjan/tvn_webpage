@@ -1,20 +1,15 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import { contactDescription } from '$lib/components/SEO';
 
 	import Gallery from '$lib/components/Gallery.svelte';
 
 	export let data: PageData;
 
-	$: ({ galerieAktive, galerieJugi } = data);
+	$: ({ aktive, jugi } = data);
 </script>
 
-<svelte:head>
-	<meta name="description" content={contactDescription} />
-</svelte:head>
-
 <h1>Aktive</h1>
-<Gallery photos={galerieAktive} />
+<Gallery photos={aktive} />
 
 <h1>Jugi</h1>
-<Gallery photos={galerieJugi} />
+<Gallery photos={jugi} />

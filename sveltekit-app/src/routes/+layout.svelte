@@ -6,6 +6,7 @@
 	import { dev } from '$app/environment';
 	import { injectAnalytics } from '@vercel/analytics/sveltekit';
 	import BreadCrumb from '$lib/components/BreadCrumb.svelte';
+	import SEO from '$lib/components/SEO.svelte';
 
 	injectAnalytics({ mode: dev ? 'development' : 'production' });
 
@@ -21,9 +22,7 @@
 	});
 </script>
 
-<svelte:head>
-	<title>TV Nussbaumen</title>
-</svelte:head>
+<SEO />
 
 <nav>
 	<div class="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
