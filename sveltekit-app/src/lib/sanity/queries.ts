@@ -15,12 +15,16 @@ export const aboutQuery = groq`*[_type == "about"][0]`;
 export const kontaktVorstand = groq`*[_type == "kontaktVorstand"]`;
 
 export const kontaktLeiter = groq`
-	*[_type == "kontaktLeiter"]{
-		...,
-		"riege":  *[_type=="riege" && references(^._id)]{
-			...
-		},
-  	}`;
+  *[_type == "kontaktLeiter"]{
+    ...,
+    "riege": riege[]->{
+      _id,
+      name,
+      age,
+      body,
+      image
+    }
+  }`;
 
 export const galerieJugi = groq`*[_type == "galerieJugi"] | order(date desc)`;
 export const galerieAktive = groq`*[_type == "galerieAktive"] | order(date desc)`;
@@ -28,19 +32,20 @@ export const galerieAktive = groq`*[_type == "galerieAktive"] | order(date desc)
 export const riegenQuery = groq`
   *[_type == "riege"]{
     ...,
-    "kontaktLeiter": *[_type == "kontaktLeiter" && references(^._id)]{
-      ...
-    }
+   "kontaktLeiter": *[_type == 'kontaktLeiter' && references(^._id)]{
+	...
+  }
   }
 `;
 export const riegeQuery = (id: string) => {
 	return groq`
-	*[_type == "riege" && _id == "${id}"]{
-	  ...,
-	  "kontaktLeiter": *[_type == "kontaktLeiter" && references(^._id)]{
-		...
-	  }
-	}
+	*[_type == 'riege' && _id == "${id}"]{
+ ...,
+  "kontaktLeiter": *[_type == 'kontaktLeiter' && references(^._id)]{
+	...
+  }
+}
+
   `;
 };
 
@@ -78,4 +83,5 @@ export interface BlogPost {
 export interface Riege {
 	_type: 'riege';
 	_createdAt: string;
+	kontaktLeiter: Person[];
 }

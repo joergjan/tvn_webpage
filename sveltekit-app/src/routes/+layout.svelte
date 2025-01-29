@@ -7,20 +7,20 @@
 	import { injectAnalytics } from '@vercel/analytics/sveltekit';
 	import BreadCrumb from '$lib/components/BreadCrumb.svelte';
 	import SEO from '$lib/components/SEO.svelte';
+	import {} from 'mode-watcher';
+	import Sun from 'lucide-svelte/icons/sun';
+	import Moon from 'lucide-svelte/icons/moon';
+
+	import { toggleMode, userPrefersMode, ModeWatcher, mode } from 'mode-watcher';
+	import { Button } from '$lib/components/ui/button/index.js';
+	let { children } = $props();
 
 	injectAnalytics({ mode: dev ? 'development' : 'production' });
 
-	let menu: boolean = false;
-	let isMobile: boolean = false;
-
-	function toggleMenu() {
-		menu = !menu;
-	}
-
-	onMount(() => {
-		isMobile = window.innerWidth <= 768;
-	});
+	let menu: boolean = $state(false);
 </script>
+
+<ModeWatcher />
 
 <SEO />
 
@@ -29,7 +29,11 @@
 		<div class="flex h-16 items-center justify-between">
 			<div class="">
 				<a href="/">
-					<img class="h-24" src="/tvn_logo.png" alt="" />
+					<img
+						class="h-14"
+						src={$mode === 'light' ? '/tvn_logo_black.png' : '/tvn_logo_white.png'}
+						alt=""
+					/>
 				</a>
 			</div>
 			<div class="ml-auto hidden justify-items-end md:flex">
@@ -37,8 +41,8 @@
 					{#each navItems as { name, href }, i}
 						<li
 							class="${page.url.pathname === href
-								? ' text-red-500 '
-								: ' hover:text-red-500 hover:transition-all hover:duration-[400ms]'} inline-flex items-center px-1 pt-1"
+								? ' text-blue-500 '
+								: ' hover:text-blue-500 hover:transition-all hover:duration-[400ms]'} inline-flex items-center px-1 pt-1"
 						>
 							<button class="group relative">
 								<a {href} class="rounded-md px-3 py-2 text-sm font-medium">
@@ -59,7 +63,9 @@
 							class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 transition-all duration-300 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
 							aria-controls="mobile-menu"
 							aria-expanded="false"
-							on:click={toggleMenu}
+							onclick={() => {
+								menu = !menu;
+							}}
 						>
 							<span class="absolute -inset-0.5"></span>
 							<span class="sr-only">Open main menu</span>
@@ -93,7 +99,9 @@
 					<a
 						href="/"
 						class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
-						on:click={toggleMenu}
+						onclick={() => {
+							menu = !menu;
+						}}
 					>
 						Home
 					</a>
@@ -101,7 +109,9 @@
 						<a
 							{href}
 							class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
-							on:click={toggleMenu}
+							onclick={() => {
+								menu = !menu;
+							}}
 						>
 							{name}
 						</a>
@@ -116,7 +126,7 @@
 	<div>
 		<BreadCrumb />
 	</div>
-	<slot />
+	{@render children?.()}
 </main>
 
 <footer>
@@ -127,6 +137,18 @@
 				<a {href} class="text-gray-400 hover:text-white">{name}</a>
 			{/each}
 		</nav>
+
+		<div class="mt-10 flex justify-center">
+			<Button onclick={toggleMode} variant="outline" size="icon">
+				<Sun
+					class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
+				/>
+				<Moon
+					class="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
+				/>
+				<span class="sr-only">Toggle theme</span>
+			</Button>
+		</div>
 
 		<p class="mt-10 text-center text-sm/6 text-gray-400">
 			&copy; {new Date().getFullYear()} TV Nussbaumen

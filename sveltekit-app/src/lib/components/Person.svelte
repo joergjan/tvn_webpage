@@ -1,6 +1,6 @@
 <script lang="ts">
 	export let person: Person;
-	import RiegeBadge from '$lib/components/riege/RiegeBadge.svelte';
+	import { Button } from '$lib/components/ui/button';
 </script>
 
 <img
@@ -17,7 +17,9 @@
 
 {#if person.riege}
 	{#each person.riege as riege}
-		<RiegeBadge {riege} />
+		<Button href={'/riegen/' + riege._id}>
+			{riege.name}
+		</Button>
 	{/each}
 {/if}
 <ul role="list" class="mt-6 flex justify-center gap-x-6">

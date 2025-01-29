@@ -10,7 +10,7 @@
 
 <div class="">
 	{#if riegen.length}
-		{#each riegen as { name, mainImage, description, age, _id }}
+		{#each riegen as { name, mainImage, description, age, _id, kontaktLeiter }}
 			{#if browser}
 				<div class="mx-auto my-3 max-w-2xl rounded-lg bg-white bg-opacity-5 p-3 lg:max-w-4xl">
 					<a href={'/riegen/' + _id}>
@@ -41,6 +41,25 @@
 										</p>
 									</div>
 								</div>
+								{#each kontaktLeiter as { fullname, mail, mainImage }}
+									<div>
+										<p>{mail}</p>
+										<p>{fullname}</p>
+										{#if mainImage}
+											<div
+												class="relative aspect-video sm:aspect-[2/1] lg:aspect-square lg:w-64 lg:shrink-0"
+											>
+												<img
+													src={mainImage ? urlFor(mainImage).url() : '/favicon.png'}
+													alt={fullname}
+													class="${mainImage
+														? ''
+														: ' bg-gray-800 '} absolute inset-0 size-full rounded-lg bg-gray-50 object-cover"
+												/>
+											</div>
+										{/if}
+									</div>
+								{/each}
 							</article>
 						</div>
 					</a>
@@ -52,11 +71,11 @@
 							<div
 								class=" relative aspect-video sm:aspect-[2/1] lg:aspect-square lg:w-64 lg:shrink-0"
 							>
-								<Skeleton class="h-full w-full rounded-full bg-gray-300" />
+								<Skeleton class="h-full w-full rounded-full " />
 							</div>
 							<div class="space-y-5">
-								<Skeleton class="h-[55px] w-[200px] rounded-full bg-gray-300" />
-								<Skeleton class="h-[100px] w-[550px] rounded-full bg-gray-300" />
+								<Skeleton class="h-[55px] w-[200px] rounded-full" />
+								<Skeleton class="h-[100px] w-[550px] rounded-full" />
 							</div>
 						</article>
 					</div>

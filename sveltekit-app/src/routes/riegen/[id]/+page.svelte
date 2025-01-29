@@ -5,6 +5,8 @@
 	let { data } = $props();
 	let riege = data.riege;
 
+	console.log(riege);
+
 	$effect(() => {
 		$breadCrumbTitle = riege.name;
 	});
@@ -22,6 +24,11 @@
 				: ' bg-gray-800 '} absolute inset-0 size-full rounded-lg bg-gray-50 object-cover"
 		/>
 	</div>
+
+	{#each riege.kontaktLeiter as leiter}
+		<p>{leiter.fullname}</p>
+		<a href="mailto:{leiter.mail}">{leiter.mail}</a>
+	{/each}
 
 	<p class="font-semibold">{riege.body}</p>
 </div>

@@ -4,6 +4,7 @@
 	import RiegeContent from '$lib/components/riege/RiegeContent.svelte';
 
 	export let riege: Riege;
+	console.log(riege);
 </script>
 
 <Dialog.Root>
