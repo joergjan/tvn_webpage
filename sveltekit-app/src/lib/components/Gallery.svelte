@@ -1,14 +1,11 @@
 <script lang="ts">
 	import 'lightgallery/css/lightgallery.css';
-	import 'lightgallery/css/lg-zoom.css';
 	import 'lightgallery/css/lg-thumbnail.css';
 	import { onMount } from 'svelte';
 	import lightGallery from 'lightgallery';
 	import lgThumbnail from 'lightgallery/plugins/thumbnail';
-	import lgZoom from 'lightgallery/plugins/zoom';
 	import { browser } from '$app/environment';
 	import { Skeleton } from '$lib/components/ui/skeleton';
-	import { AspectRatio } from '$lib/components/ui/aspect-ratio';
 
 	import { urlFor } from '$lib/sanity/image';
 	import { PUBLIC_LIGHTGALLERY_KEY } from '$env/static/public';
@@ -20,12 +17,8 @@
 	onMount(() => {
 		if (gallery) {
 			lightGallery(gallery, {
-				plugins: [lgZoom, lgThumbnail],
-
+				plugins: [lgThumbnail],
 				licenseKey: PUBLIC_LIGHTGALLERY_KEY,
-
-				// increasing speed to see the easing correctly
-				// Just for the demo purpose
 				speed: 100
 			});
 		}
@@ -36,10 +29,7 @@
 	<div bind:this={gallery} class="grid grid-cols-4 gap-2">
 		{#each photos as { mainImage, title }}
 			{#if browser}
-				<a
-					href={urlFor(mainImage).url()}
-					data-lg-size={urlFor(mainImage).width + '-' + urlFor(mainImage).height}
-				>
+				<a href={urlFor(mainImage).url()}>
 					<img
 						class="aspect-square rounded-lg object-cover"
 						alt={title}
