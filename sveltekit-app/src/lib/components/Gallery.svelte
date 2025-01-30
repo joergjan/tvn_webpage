@@ -26,12 +26,12 @@
 </script>
 
 <div>
-	<div bind:this={gallery} class="grid grid-cols-4 gap-2">
+	<div bind:this={gallery} class="grid grid-cols-4 gap-2 py-3">
 		{#each photos as { mainImage, title }}
 			{#if browser}
 				<a href={urlFor(mainImage).url()}>
 					<img
-						class="aspect-square rounded-lg object-cover"
+						class="aspect-square rounded-lg object-cover transition-all duration-300 hover:scale-[1.02]"
 						alt={title}
 						src={urlFor(mainImage).url()}
 					/>
