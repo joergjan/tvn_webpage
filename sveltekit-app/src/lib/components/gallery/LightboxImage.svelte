@@ -31,7 +31,7 @@
 			alt=""
 			class="max-h-[90%] max-w-full rounded-sm pb-32 md:max-h-full md:max-w-2xl md:rounded-md md:pb-0 lg:max-w-3xl"
 		/>
-		<p class="flex items-center justify-center pt-2 font-medium">{title}</p>
+		<p class="flex items-center justify-center pt-2 font-medium text-white">{title}</p>
 	</div>
 {/if}
 

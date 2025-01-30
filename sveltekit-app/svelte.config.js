@@ -15,7 +15,12 @@ const config = {
 		alias: {
 			"@/*": "./path/to/lib/*",
 		  },
-	}
+	},
+	compilerOptions: {
+		compatibility: {
+		  componentApi: 4,
+		},
+	  },
 };
 
-export default config;
+export default config 

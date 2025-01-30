@@ -2,13 +2,13 @@
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
 	import { fade } from 'svelte/transition';
-	import { swipe } from 'svelte-gestures';
+	import { pan, type PanCustomEvent, type GestureCustomEvent } from 'svelte-gestures';
 	import { urlFor } from '$lib/sanity/image';
 
 	import GaleryImage from './gallery/GalleryImage.svelte';
 	import LightboxImage from './gallery/LightboxImage.svelte';
 
-	export let photos: Image = []; // array of image urls for gallery
+	export let photos: Gallery[] = []; // array of images
 	export let amount: number = 0; // amount of images to show in gallery before showing "show more" button
 	export let dark: boolean = true; // dark mode
 	export let buttonColor: string = 'bg-gray-500 hover:bg-gray-600'; // color of the "show more" button
@@ -16,6 +16,9 @@
 	let lightboxActive = false; // lightbox is opened / closed
 	let activeIndex = 0; // index of the currently shown image in the lightbox
 	let showMore = false; // checks if button to show more images is clicked
+	let x: number;
+	let y: number;
+	let target: EventTarget;
 
 	onMount(() => {
 		window.addEventListener('keyup', (event) => {
@@ -84,12 +87,18 @@
 	}
 
 	// add swipe gesture to lightbox for mobile devices
-	function handler(event: { detail: { direction: string } }) {
-		if (event.detail.direction === 'left') {
-			next();
-		} else if (event.detail.direction === 'right') {
-			prev();
-		}
+	function handler(event: PanCustomEvent) {
+		x = event.detail.x;
+		y = event.detail.y;
+		target = event.detail.target;
+	}
+
+	function panDown(gestureEvent: GestureCustomEvent) {
+		const { event, pointersCount, target, x, y } = gestureEvent.detail;
+	}
+
+	function panMove(gestureEvent: GestureCustomEvent) {
+		console.log(gestureEvent.detail);
 	}
 </script>
 
@@ -99,7 +108,7 @@
 			<li class="relative h-auto transition-all duration-300 hover:scale-[1.03] hover:shadow-lg">
 				<button
 					class="absolute inset-0 bottom-0 left-0 right-0 top-0 h-full w-full transition duration-300 hover:bg-opacity-75"
-					on:click={() => {
+					onclick={() => {
 						activeIndex = no;
 						lightboxActive = true;
 					}}
@@ -122,7 +131,7 @@
 			<div class="flex justify-center">
 				<button
 					class="group my-4 {buttonColor} flex items-center rounded-md px-3 py-2 text-white"
-					on:click={() => {
+					onclick={() => {
 						showMore = true;
 					}}
 				>
@@ -157,13 +166,15 @@
 				 {dark ? 'bg-black' : 'bg-gray-800'}"
 		/>
 		<div
-			use:swipe={{ timeframe: 300, minSwipeDistance: 60, touchAction: 'pan-y' }}
-			on:swipe={handler}
+			use:pan
+			onpan={handler}
+			onpandown={panDown}
+			onpanmove={panMove}
 			class="fixed left-0 top-0 z-40 h-screen w-screen"
 		>
 			<button
 				class="fixed bottom-0 left-0 right-0 top-0 z-30 h-full w-full"
-				on:click={() => {
+				onclick={() => {
 					close();
 				}}
 			></button>
@@ -177,7 +188,12 @@
 				<div
 					class="absolute bottom-24 z-50 text-3xl text-white hover:text-gray-400 md:bottom-12 lg:bottom-auto lg:right-3 lg:top-3"
 				>
-					<button class="group flex h-24 w-24 items-center justify-center" on:click={close}>
+					<button
+						class="group flex h-24 w-24 items-center justify-center"
+						onclick={() => {
+							close;
+						}}
+					>
 						&#x2715
 					</button>
 				</div>
@@ -185,7 +201,12 @@
 				<div
 					class="absolute bottom-24 left-4 z-50 flex h-24 w-24 items-center justify-center md:bottom-12 lg:bottom-1/2"
 				>
-					<button class="group flex h-full w-full items-center justify-center" on:click={prev}>
+					<button
+						class="group flex h-full w-full items-center justify-center"
+						onclick={() => {
+							prev();
+						}}
+					>
 						<svg
 							class="fill-white group-hover:fill-gray-400"
 							xmlns="http://www.w3.org/2000/svg"
@@ -201,7 +222,12 @@
 				<div
 					class="absolute bottom-24 right-4 z-50 flex h-24 w-24 items-center justify-center md:bottom-12 lg:bottom-1/2"
 				>
-					<button class="group flex h-full w-full items-center justify-center" on:click={prev}>
+					<button
+						class="group flex h-full w-full items-center justify-center"
+						onclick={() => {
+							next();
+						}}
+					>
 						<svg
 							class="fill-white group-hover:fill-gray-400"
 							xmlns="http://www.w3.org/2000/svg"
