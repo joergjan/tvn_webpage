@@ -1,4 +1,6 @@
 <script lang="ts">
+	import 'lightgallery/css/lightgallery.css';
+	import 'lightgallery/css/lg-thumbnail.css';
 	import '../app.css';
 	import { page } from '$app/state';
 	import { navItems } from '$lib/navbar';

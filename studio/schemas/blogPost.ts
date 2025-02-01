@@ -7,23 +7,24 @@ export default defineType({
   fields: [
     defineField({
       name: 'title',
-      title: 'Title',
+      title: 'Titel',
       type: 'string',
+      validation: (rule) => rule.max(50).error('Maximal 50 Zeichen erlaubt'),
     }),
     defineField({
       name: 'date',
       title: 'Datum',
       type: 'date',
     }),
-
     defineField({
       name: 'description',
-      title: 'description',
+      title: 'Kurzbeschreibung',
       type: 'text',
+      validation: (rule) => rule.max(350).error('Maximal 350 Zeichen erlaubt'),
     }),
     defineField({
       name: 'body',
-      title: 'Text',
+      title: 'Bericht / Text',
       type: 'blockContent',
     }),
     defineField({
@@ -31,6 +32,7 @@ export default defineType({
       title: 'Fotos',
       type: 'array',
       of: [{type: 'image', options: {hotspot: true}}],
+      validation: (rule) => rule.max(8).error('Maximal 8 Fotos erlaubt'),
     }),
   ],
   preview: {

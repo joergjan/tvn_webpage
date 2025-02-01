@@ -7,7 +7,7 @@ export default defineType({
   fields: [
     defineField({
       name: 'fullname',
-      title: 'Nachname',
+      title: 'Vorname und Nachname',
       type: 'string',
     }),
     defineField({
@@ -19,10 +19,24 @@ export default defineType({
       name: 'role',
       title: 'Vorstandsfunktion',
       type: 'string',
+      options: {
+        list: [
+          'Präsident',
+          'Präsidentin',
+          'Vizepräsident',
+          'Vizepräsidentin',
+          'Kassier',
+          'Kassierin',
+          'Aktuar',
+          'Aktuarin',
+          'Oberturner',
+          'Oberturnerin',
+        ],
+      },
     }),
     defineField({
       name: 'mainImage',
-      title: 'Main image',
+      title: 'Profilbild',
       type: 'image',
       options: {
         hotspot: true,

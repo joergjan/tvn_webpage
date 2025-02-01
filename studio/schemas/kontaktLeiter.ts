@@ -7,7 +7,7 @@ export default defineType({
   fields: [
     defineField({
       name: 'fullname',
-      title: 'Name',
+      title: 'Vornmae und Nachname',
       type: 'string',
     }),
 
@@ -19,7 +19,7 @@ export default defineType({
 
     defineField({
       name: 'riege',
-      title: 'Riegen',
+      title: 'Leitet folgende Riegen:',
       type: 'array',
       of: [
         {
@@ -30,7 +30,7 @@ export default defineType({
     }),
     defineField({
       name: 'mainImage',
-      title: 'Main image',
+      title: 'Profilbild',
       type: 'image',
       options: {
         hotspot: true,

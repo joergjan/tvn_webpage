@@ -32,6 +32,7 @@
 						</div>
 					{/if}
 				</div>
+
 				<div class="max-w-xl">
 					<div class="mt-8 flex items-center gap-x-4 text-xs">
 						<p>{age}</p>
@@ -41,32 +42,34 @@
 							{name}
 						</h3>
 					</div>
-					<div class="relative mt-8 flex items-center gap-x-4">
+					<div class="relative mt-8 items-center">
 						{#each kontaktLeiter as { fullname, mail, mainImage }}
-							<div class="aspect-square h-10">
-								{#if browser}
-									{#if mainImage}
-										<img
-											src={urlFor(mainImage).url()}
-											alt={fullname}
-											class="rounded-full object-cover"
-										/>
+							<div class="flex gap-x-4 pb-2">
+								<div class="aspect-square h-10">
+									{#if browser}
+										{#if mainImage}
+											<img
+												src={urlFor(mainImage).url()}
+												alt={fullname}
+												class="rounded-full object-cover"
+											/>
+										{:else}
+											<Avatar />
+										{/if}
 									{:else}
-										<Avatar />
+										<div class="aspect-square h-full w-full">
+											<Skeleton class="h-full w-full rounded-full" />
+										</div>
 									{/if}
-								{:else}
-									<div class="aspect-square h-full w-full">
-										<Skeleton class="h-full w-full rounded-full" />
-									</div>
-								{/if}
-							</div>
+								</div>
 
-							<div class="text-sm/6">
-								<p class="font-semibold">
-									<span class="absolute inset-0"></span>
-									{fullname}
-								</p>
-								<p class="">{mail}</p>
+								<div class="text-sm/6">
+									<p class="font-semibold">
+										<span class="absolute inset-0"></span>
+										{fullname}
+									</p>
+									<p class="">{mail}</p>
+								</div>
 							</div>
 						{/each}
 					</div>

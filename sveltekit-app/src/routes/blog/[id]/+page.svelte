@@ -1,6 +1,4 @@
 <script lang="ts">
-	import 'lightgallery/css/lightgallery.css';
-	import 'lightgallery/css/lg-thumbnail.css';
 	import { urlFor } from '$lib/sanity/image';
 	import { PortableText } from '@portabletext/svelte';
 	import { breadCrumbTitle } from '$lib/stores';
@@ -53,39 +51,41 @@
 				class="-mx-8 grid grid-cols-2 gap-4 sm:-mx-16 sm:grid-cols-4 lg:mx-0 lg:grid-cols-2 lg:gap-4 xl:gap-8"
 			>
 				{#each blogPost.image as image, i}
-					{#if i % 2 === 0}
-						{#if browser}
+					{#if i === 0}
+						<div></div>
+					{:else if i % 2 === 0}
+						{#if browser && image}
 							<a
 								href={urlFor(image).url()}
-								class="aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10"
+								class="-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 transition-all duration-300 hover:scale-[1.02] lg:-mt-40"
 							>
 								<img
 									alt={blogPost.title}
-									src={image ? urlFor(image).url() : '/favicon.png'}
+									src={urlFor(image).url()}
 									class="block size-full object-cover"
 								/>
 							</a>
 						{:else}
 							<div
-								class="aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10"
+								class="-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 transition-all duration-300 hover:scale-[1.02] lg:-mt-40"
 							>
 								<Skeleton class="h-full w-full rounded-lg " />
 							</div>
 						{/if}
-					{:else if browser}
+					{:else if browser && image}
 						<a
 							href={urlFor(image).url()}
-							class="-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 lg:-mt-40"
+							class="aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 transition-all duration-300 hover:scale-[1.02]"
 						>
 							<img
 								alt={blogPost.title}
-								src={image ? urlFor(image).url() : '/favicon.png'}
+								src={urlFor(image).url()}
 								class="block size-full object-cover"
 							/>
 						</a>
 					{:else}
 						<div
-							class="-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 lg:-mt-40"
+							class="aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10"
 						>
 							<Skeleton class="h-full w-full rounded-lg " />
 						</div>

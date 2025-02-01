@@ -8,6 +8,7 @@ import kontaktVorstand from './kontaktVorstand'
 import kontaktLeiter from './kontaktLeiter'
 import events from './events'
 import riege from './riege'
+import training from './training'
 
 export const schemaTypes = [
   blogPost,
@@ -19,4 +20,5 @@ export const schemaTypes = [
   kontaktLeiter,
   events,
   riege,
+  training,
 ]

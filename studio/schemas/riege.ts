@@ -1,4 +1,5 @@
 import {defineField, defineType} from 'sanity'
+import training from './training'
 
 export default defineType({
   name: 'riege',
@@ -25,6 +26,16 @@ export default defineType({
       title: 'Bilder',
       type: 'array',
       of: [{type: 'image'}],
+      validation: (rule) =>
+        rule
+          .max(4)
+          .error('Maximal 4 Fotos erlaubt. Verwende die Galerie, um weitere Fotos hinzuzufügen.'),
+    }),
+    defineField({
+      name: 'training',
+      title: 'Trainingszeiten',
+      type: 'array',
+      of: [{type: 'training'}],
     }),
   ],
   preview: {

@@ -1,6 +1,4 @@
 <script lang="ts">
-	import 'lightgallery/css/lightgallery.css';
-	import 'lightgallery/css/lg-thumbnail.css';
 	import { onMount } from 'svelte';
 	import lightGallery from 'lightgallery';
 	import lgThumbnail from 'lightgallery/plugins/thumbnail';
