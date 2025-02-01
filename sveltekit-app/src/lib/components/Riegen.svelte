@@ -4,83 +4,74 @@
 	import { Button } from '$lib/components/ui/button';
 	import { Skeleton } from '$lib/components/ui/skeleton';
 	import { browser } from '$app/environment';
+	import Avatar from '$lib/components/Avatar.svelte';
 
 	export let riegen: Riege[];
 </script>
 
-<div class="">
-	{#if riegen.length}
-		{#each riegen as { name, mainImage, description, age, _id, kontaktLeiter }}
-			{#if browser}
-				<div class="mx-auto my-3 max-w-2xl rounded-lg bg-white bg-opacity-5 p-3 lg:max-w-4xl">
-					<a href={'/riegen/' + _id}>
-						<div class="space-y-20 lg:space-y-20">
-							<article class="relative isolate flex flex-col gap-8 lg:flex-row">
-								<div
-									class=" relative aspect-video sm:aspect-[2/1] lg:aspect-square lg:w-64 lg:shrink-0"
-								>
-									<img
-										src={mainImage ? urlFor(mainImage).url() : '/favicon.png'}
-										alt={name}
-										class="${mainImage
-											? ''
-											: ' bg-gray-800 '} absolute inset-0 size-full rounded-lg bg-gray-50 object-cover"
-									/>
-								</div>
-								<div>
-									<div class="flex items-center gap-x-4 text-xs">
-										<p>{age}</p>
-									</div>
-									<div class="group relative max-w-xl">
-										<h3 class="mt-3 text-lg/6 font-semibold">
-											<span class="absolute inset-0"></span>
-											{name}
-										</h3>
-										<p class="mt-5 text-sm/6">
-											{description}
-										</p>
-									</div>
-								</div>
-								{#each kontaktLeiter as { fullname, mail, mainImage }}
-									<div>
-										<p>{mail}</p>
-										<p>{fullname}</p>
-										{#if mainImage}
-											<div
-												class="relative aspect-video sm:aspect-[2/1] lg:aspect-square lg:w-64 lg:shrink-0"
-											>
-												<img
-													src={mainImage ? urlFor(mainImage).url() : '/favicon.png'}
-													alt={fullname}
-													class="${mainImage
-														? ''
-														: ' bg-gray-800 '} absolute inset-0 size-full rounded-lg bg-gray-50 object-cover"
-												/>
-											</div>
-										{/if}
-									</div>
-								{/each}
-							</article>
+{#if riegen.length}
+	<div
+		class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3"
+	>
+		{#each riegen as { name, image, description, age, _id, kontaktLeiter }}
+			<a class="flex flex-col items-start justify-between" href={'/riegen/' + _id}>
+				<div class="relative w-full">
+					{#if browser}
+						{#if image[0]}
+							<img
+								src={urlFor(image[0]).url()}
+								alt={name}
+								class="aspect-video w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+							/>
+						{:else}
+							<Avatar />
+						{/if}
+					{:else}
+						<div class="aspect-video h-full w-full sm:aspect-[2/1] lg:aspect-[3/2]">
+							<Skeleton class="h-full w-full rounded-2xl" />
 						</div>
-					</a>
+					{/if}
 				</div>
-			{:else}
-				<div class="mx-auto my-3 max-w-2xl rounded-lg bg-white bg-opacity-5 p-3 lg:max-w-4xl">
-					<div class="space-y-20 lg:space-y-20">
-						<article class="relative isolate flex flex-col gap-8 lg:flex-row">
-							<div
-								class=" relative aspect-video sm:aspect-[2/1] lg:aspect-square lg:w-64 lg:shrink-0"
-							>
-								<Skeleton class="h-full w-full rounded-full " />
+				<div class="max-w-xl">
+					<div class="mt-8 flex items-center gap-x-4 text-xs">
+						<p>{age}</p>
+					</div>
+					<div class="group relative">
+						<h3 class="group-hover: mt-3 text-lg/6 font-semibold">
+							{name}
+						</h3>
+					</div>
+					<div class="relative mt-8 flex items-center gap-x-4">
+						{#each kontaktLeiter as { fullname, mail, mainImage }}
+							<div class="aspect-square h-10">
+								{#if browser}
+									{#if mainImage}
+										<img
+											src={urlFor(mainImage).url()}
+											alt={fullname}
+											class="rounded-full object-cover"
+										/>
+									{:else}
+										<Avatar />
+									{/if}
+								{:else}
+									<div class="aspect-square h-full w-full">
+										<Skeleton class="h-full w-full rounded-full" />
+									</div>
+								{/if}
 							</div>
-							<div class="space-y-5">
-								<Skeleton class="h-[55px] w-[200px] rounded-full" />
-								<Skeleton class="h-[100px] w-[550px] rounded-full" />
+
+							<div class="text-sm/6">
+								<p class="font-semibold">
+									<span class="absolute inset-0"></span>
+									{fullname}
+								</p>
+								<p class="">{mail}</p>
 							</div>
-						</article>
+						{/each}
 					</div>
 				</div>
-			{/if}
+			</a>
 		{/each}
-	{/if}
-</div>
+	</div>
+{/if}

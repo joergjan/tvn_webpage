@@ -1,13 +1,21 @@
 <script lang="ts">
 	export let person: Person;
 	import { Button } from '$lib/components/ui/button';
+	import Avatar from '$lib/components/Avatar.svelte';
 </script>
 
-<img
-	class="mx-auto size-56 rounded-full"
-	src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
-	alt={person.fullname}
-/>
+<div class="aspect-square h-64">
+	{#if person.mainImage}
+		<img
+			class="mx-auto size-56 rounded-full"
+			src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
+			alt={person.fullname}
+		/>
+	{:else}
+		<Avatar />
+	{/if}
+</div>
+
 <h3 class="mt-6 text-center text-base/7 font-semibold tracking-tight">
 	{person.fullname}
 </h3>

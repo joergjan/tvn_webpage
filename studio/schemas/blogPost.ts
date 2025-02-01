@@ -15,14 +15,7 @@ export default defineType({
       title: 'Datum',
       type: 'date',
     }),
-    defineField({
-      name: 'mainImage',
-      title: 'Main image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-    }),
+
     defineField({
       name: 'description',
       title: 'description',
@@ -33,12 +26,18 @@ export default defineType({
       title: 'Text',
       type: 'blockContent',
     }),
+    defineField({
+      name: 'image',
+      title: 'Fotos',
+      type: 'array',
+      of: [{type: 'image', options: {hotspot: true}}],
+    }),
   ],
   preview: {
     select: {
       title: 'title',
       author: 'author.name',
-      media: 'mainImage',
+      media: 'images[0]',
       body: 'body',
     },
     prepare(selection) {

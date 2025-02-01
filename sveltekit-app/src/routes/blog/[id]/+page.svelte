@@ -1,30 +1,97 @@
 <script lang="ts">
+	import 'lightgallery/css/lightgallery.css';
+	import 'lightgallery/css/lg-thumbnail.css';
 	import { urlFor } from '$lib/sanity/image';
 	import { PortableText } from '@portabletext/svelte';
 	import { breadCrumbTitle } from '$lib/stores';
+	import { onMount } from 'svelte';
+	import { formatDate } from '$lib/utils';
+	import { PUBLIC_LIGHTGALLERY_KEY } from '$env/static/public';
+	import { Skeleton } from '$lib/components/ui/skeleton';
+	import { browser } from '$app/environment';
+	import lightGallery from 'lightgallery';
+	import lgThumbnail from 'lightgallery/plugins/thumbnail';
 
+	let gallery: HTMLElement;
 	let { data } = $props();
 	let blogPost = data.blogPost;
 
 	$effect(() => {
 		$breadCrumbTitle = blogPost.title;
 	});
+
+	onMount(() => {
+		if (gallery) {
+			lightGallery(gallery, {
+				plugins: [lgThumbnail],
+				licenseKey: PUBLIC_LIGHTGALLERY_KEY,
+				speed: 100
+			});
+		}
+	});
 </script>
 
-<div>
-	<h1>{blogPost.title}</h1>
-
-	<div class="relative h-56 w-full">
-		<img
-			src={blogPost.mainImage ? urlFor(blogPost.mainImage).url() : '/favicon.png'}
-			alt={blogPost.title}
-			class="${blogPost.mainImage
-				? ''
-				: ' bg-gray-800 '} absolute inset-0 size-full rounded-lg bg-gray-50 object-cover"
-		/>
+<div class="overflow-hidden py-8 sm:py-20">
+	<div class="max-w-4xl">
+		<p class="text-tvbluelight text-base/7 font-semibold">{formatDate(blogPost.date)}</p>
+		<h1 class="mt-2 text-pretty text-4xl font-semibold tracking-tight sm:text-5xl">
+			{blogPost.title}
+		</h1>
+		<p class="mt-6 text-balance text-xl/8">
+			{blogPost.description}
+		</p>
 	</div>
-
-	<p class="font-semibold">{blogPost.description}</p>
-
-	<PortableText components={{}} value={blogPost.body} />
+	<section class="mt-8 grid grid-cols-1 lg:grid-cols-2 lg:gap-x-8 lg:gap-y-16">
+		<div class="lg:pr-8">
+			<div class="mt-6 text-base/7">
+				<PortableText components={{}} value={blogPost.body} />
+			</div>
+		</div>
+		<div class="pt-16 lg:row-span-2 lg:-mr-16 xl:mr-auto">
+			<div
+				bind:this={gallery}
+				class="-mx-8 grid grid-cols-2 gap-4 sm:-mx-16 sm:grid-cols-4 lg:mx-0 lg:grid-cols-2 lg:gap-4 xl:gap-8"
+			>
+				{#each blogPost.image as image, i}
+					{#if i % 2 === 0}
+						{#if browser}
+							<a
+								href={urlFor(image).url()}
+								class="aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10"
+							>
+								<img
+									alt={blogPost.title}
+									src={image ? urlFor(image).url() : '/favicon.png'}
+									class="block size-full object-cover"
+								/>
+							</a>
+						{:else}
+							<div
+								class="aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10"
+							>
+								<Skeleton class="h-full w-full rounded-lg " />
+							</div>
+						{/if}
+					{:else if browser}
+						<a
+							href={urlFor(image).url()}
+							class="-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 lg:-mt-40"
+						>
+							<img
+								alt={blogPost.title}
+								src={image ? urlFor(image).url() : '/favicon.png'}
+								class="block size-full object-cover"
+							/>
+						</a>
+					{:else}
+						<div
+							class="-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 lg:-mt-40"
+						>
+							<Skeleton class="h-full w-full rounded-lg " />
+						</div>
+					{/if}
+				{/each}
+			</div>
+		</div>
+	</section>
 </div>

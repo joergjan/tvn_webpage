@@ -39,9 +39,12 @@
 				<ul class="-mr-2.5 flex space-x-5">
 					{#each navItems as { name, href }, i}
 						<li
-							class="${page.url.pathname === href
-								? ' text-blue-500 '
-								: ' hover:text-blue-500 hover:transition-all hover:duration-[400ms]'} inline-flex items-center px-1 pt-1"
+							class="${(page.url.pathname.includes(href) &&
+								page.url.pathname !== '/' &&
+								href !== '/') ||
+							(page.url.pathname === '/' && page.url.pathname === href)
+								? ' text-tvbluelight '
+								: ' hover:text-tvbluelight hover:transition-all hover:duration-[400ms]'} inline-flex items-center px-1 pt-1"
 						>
 							<button class="group relative">
 								<a {href} class="rounded-md px-3 py-2 text-sm font-medium">

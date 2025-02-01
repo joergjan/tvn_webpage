@@ -37,14 +37,8 @@
 					/>
 				</a>
 			{:else}
-				<div class="mx-auto my-3 max-w-2xl rounded-lg bg-white bg-opacity-5 p-3 lg:max-w-4xl">
-					<div class="space-y-20 lg:space-y-20">
-						<article class="relative isolate flex flex-col gap-8 lg:flex-row">
-							<div class="relative aspect-[1/1] h-full w-full">
-								<Skeleton class="h-full w-full rounded-lg " />
-							</div>
-						</article>
-					</div>
+				<div class="aspect-square h-full w-full">
+					<Skeleton class="h-full w-full rounded-lg" />
 				</div>
 			{/if}
 		{/each}

@@ -5,8 +5,6 @@
 	let { data } = $props();
 	let riege = data.riege;
 
-	console.log(riege);
-
 	$effect(() => {
 		$breadCrumbTitle = riege.name;
 	});
