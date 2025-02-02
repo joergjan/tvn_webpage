@@ -126,7 +126,7 @@
 	</div>
 </nav>
 
-<main class="mx-auto mt-10 max-w-7xl overflow-hidden px-6 lg:mt-14 lg:px-8">
+<main class="mx-auto mt-10 max-w-7xl px-6 lg:mt-14 lg:px-8">
 	<div>
 		<BreadCrumb />
 	</div>
@@ -142,7 +142,7 @@
 			{/each}
 		</nav>
 
-		<div class="mt-10 flex justify-center">
+		<div class="mt-16 flex justify-center">
 			<Button onclick={toggleMode} variant="outline" size="icon">
 				<Sun
 					class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"

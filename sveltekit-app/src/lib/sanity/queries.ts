@@ -2,7 +2,7 @@ import type { PortableTextBlock } from '@portabletext/types';
 import type { ImageAsset, Slug } from '@sanity/types';
 import groq from 'groq';
 
-export const eventsQuery = groq`*[_type == "event" && dateFrom > now()]  | order(date asc)`;
+export const eventsQuery = groq`*[_type == "event" && dateFrom > now()]  | order(dateFrom asc)`;
 
 export const blogPostsQuery = groq`*[_type == "blogPost"] | order(date desc)`;
 export const recentBlogPostsQuery = groq`*[_type == "blogPost"] | order(date desc) [0..1]`;
@@ -26,6 +26,8 @@ export const kontaktLeiter = groq`
     }
   }`;
 
+export const downloadsQuery = groq`*[_type == "download"]`;
+
 export const galerieJugi = groq`*[_type == "galerieJugi"] | order(date desc)`;
 export const galerieAktive = groq`*[_type == "galerieAktive"] | order(date desc)`;
 
@@ -34,7 +36,8 @@ export const riegenQuery = groq`
     ...,
    "kontaktLeiter": *[_type == 'kontaktLeiter' && references(^._id)]{
 	...
-  }
+  },
+ training,
   }
 `;
 export const riegeQuery = (id: string) => {
@@ -43,10 +46,9 @@ export const riegeQuery = (id: string) => {
  ...,
   "kontaktLeiter": *[_type == 'kontaktLeiter' && references(^._id)]{
 	...
-  }
-}
-
-  `;
+  },
+  training
+ }`;
 };
 
 export interface Person {

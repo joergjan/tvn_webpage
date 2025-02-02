@@ -10,16 +10,19 @@ export default defineType({
       name: 'name',
       title: 'Name',
       type: 'string',
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'age',
       title: 'Alter',
       type: 'string',
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'body',
       title: 'Beschreibung',
       type: 'text',
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'image',
@@ -36,12 +39,14 @@ export default defineType({
       title: 'Trainingszeiten',
       type: 'array',
       of: [{type: 'training'}],
+      validation: (rule) => rule.required(),
     }),
   ],
   preview: {
     select: {
       title: 'name',
       author: 'author.name',
+      media: 'image',
     },
     prepare(selection) {
       const {author} = selection

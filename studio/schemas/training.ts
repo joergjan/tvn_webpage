@@ -12,6 +12,7 @@ export default defineType({
       options: {
         list: ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag'],
       },
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'start',
@@ -20,6 +21,7 @@ export default defineType({
       options: {
         list: ALLOWED_TIMES(),
       },
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'end',
@@ -28,6 +30,7 @@ export default defineType({
       options: {
         list: ALLOWED_TIMES(),
       },
+      validation: (rule) => rule.required(),
     }),
   ],
   preview: {

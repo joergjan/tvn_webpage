@@ -1,8 +1,8 @@
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'galerieAktive',
-  title: 'Galerie Aktive',
+  name: 'download',
+  title: 'Downloads',
   type: 'document',
   fields: [
     defineField({
@@ -12,12 +12,9 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'mainImage',
-      title: 'Foto',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
+      name: 'file',
+      title: 'Datei',
+      type: 'file',
       validation: (rule) => rule.required(),
     }),
   ],

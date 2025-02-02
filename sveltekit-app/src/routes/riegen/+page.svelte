@@ -6,4 +6,5 @@
 	$: ({ riegen } = data);
 </script>
 
+<h1>Riegen</h1>
 <Riegen {riegen} />

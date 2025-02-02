@@ -9,23 +9,25 @@ export default defineType({
       name: 'title',
       title: 'Titel',
       type: 'string',
-      validation: (rule) => rule.max(50).error('Maximal 50 Zeichen erlaubt'),
+      validation: (rule) => rule.required().max(50).error('Maximal 50 Zeichen erlaubt'),
     }),
     defineField({
       name: 'date',
       title: 'Datum',
       type: 'date',
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'description',
       title: 'Kurzbeschreibung',
       type: 'text',
-      validation: (rule) => rule.max(350).error('Maximal 350 Zeichen erlaubt'),
+      validation: (rule) => rule.max(350).required().error('Maximal 350 Zeichen erlaubt'),
     }),
     defineField({
       name: 'body',
       title: 'Bericht / Text',
       type: 'blockContent',
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'image',

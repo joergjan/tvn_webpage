@@ -29,7 +29,7 @@
 	});
 </script>
 
-<div class="overflow-hidden py-8 sm:py-20">
+<div class="py-8 sm:py-20">
 	<div class="max-w-4xl">
 		<p class="text-tvbluelight text-base/7 font-semibold">{formatDate(blogPost.date)}</p>
 		<h1 class="mt-2 text-pretty text-4xl font-semibold tracking-tight sm:text-5xl">
@@ -45,19 +45,17 @@
 				<PortableText components={{}} value={blogPost.body} />
 			</div>
 		</div>
-		<div class="pt-16 lg:row-span-2 lg:-mr-16 xl:mr-auto">
+		<div class="pt-16 lg:row-span-2 lg:-mr-16 lg:mt-[-12rem]">
 			<div
 				bind:this={gallery}
 				class="-mx-8 grid grid-cols-2 gap-4 sm:-mx-16 sm:grid-cols-4 lg:mx-0 lg:grid-cols-2 lg:gap-4 xl:gap-8"
 			>
 				{#each blogPost.image as image, i}
-					{#if i === 0}
-						<div></div>
-					{:else if i % 2 === 0}
+					{#if i % 2 === 0}
 						{#if browser && image}
 							<a
 								href={urlFor(image).url()}
-								class="-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 transition-all duration-300 hover:scale-[1.02] lg:-mt-40"
+								class="lg:col-start-2 lg:row-start-{i} aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 transition-all duration-300 hover:scale-[1.02]"
 							>
 								<img
 									alt={blogPost.title}
@@ -67,15 +65,15 @@
 							</a>
 						{:else}
 							<div
-								class="-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 transition-all duration-300 hover:scale-[1.02] lg:-mt-40"
+								class="lg:col-start-2 lg:row-start-{i} aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 transition-all"
 							>
-								<Skeleton class="h-full w-full rounded-lg " />
+								<Skeleton class="size-full h-full w-full rounded-lg " />
 							</div>
 						{/if}
 					{:else if browser && image}
 						<a
 							href={urlFor(image).url()}
-							class="aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 transition-all duration-300 hover:scale-[1.02]"
+							class="-mt-12 lg:col-start-1 lg:row-start-{i} aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 transition-all duration-300 hover:scale-[1.02] lg:-mt-40"
 						>
 							<img
 								alt={blogPost.title}
@@ -85,7 +83,7 @@
 						</a>
 					{:else}
 						<div
-							class="aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10"
+							class="-mt-12 lg:col-start-1 lg:row-start-{i} aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 transition-all duration-300 hover:scale-[1.02] lg:-mt-40"
 						>
 							<Skeleton class="h-full w-full rounded-lg " />
 						</div>

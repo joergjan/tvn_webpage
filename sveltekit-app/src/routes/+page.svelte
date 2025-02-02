@@ -10,7 +10,9 @@
 <div class="space-y-10">
 	<br />
 
+	<h2>Anstehende Anlässe</h2>
 	<EventsTable {events} />
 
+	<h3>Aus dem Blog</h3>
 	<Blog {blogPosts} />
 </div>

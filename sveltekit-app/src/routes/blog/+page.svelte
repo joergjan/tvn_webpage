@@ -6,4 +6,6 @@
 	$: ({ blogPosts } = data);
 </script>
 
+<h1>Blog</h1>
+
 <Blog {blogPosts} />

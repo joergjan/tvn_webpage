@@ -9,6 +9,7 @@ export default defineType({
       name: 'title',
       title: 'Name',
       type: 'string',
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'mainImage',
@@ -17,6 +18,7 @@ export default defineType({
       options: {
         hotspot: true,
       },
+      validation: (rule) => rule.required(),
     }),
   ],
   preview: {
