@@ -10,7 +10,10 @@
 	});
 </script>
 
-<h1>Downloads</h1>
+<h1>Diese Seite befindet sich in Überarbeitung</h1>
+
+<!-- 
+
 {#each downloads as { title, url }}
 	<div>
 		<a href={url} download>
@@ -18,3 +21,4 @@
 		</a>
 	</div>
 {/each}
+-->

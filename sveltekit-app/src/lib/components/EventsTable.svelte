@@ -35,7 +35,7 @@
 							<p>{description}</p>
 							<div class="flex">
 								{#if href}
-									<a class="mt-2 flex items-center underline" {href}>
+									<a class="mt-2 inline-flex items-center underline" {href}>
 										Weitere Infos <SquareArrowOutUpRight class="h-4" />
 									</a>
 								{/if}

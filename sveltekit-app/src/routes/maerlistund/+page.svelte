@@ -6,6 +6,7 @@
 	import { mode } from 'mode-watcher';
 	import { browser } from '$app/environment';
 	import Skeleton from '$lib/components/ui/skeleton/skeleton.svelte';
+	import { SquareArrowOutUpRight } from 'lucide-svelte';
 
 	const opts = {
 		errorCorrectionLevel: 'L',
@@ -45,11 +46,12 @@
 			<h3>Tickets</h3>
 			<p>
 				Tickets sind an der Abendkasse oder über <a
-					class="underline"
+					class="inline-flex items-center underline"
 					target="_blank"
 					href="https://eventfrog.ch/de/p/gruppen/turnunterhaltung-7182422694880573270.html"
 				>
 					Eventfrog
+					<SquareArrowOutUpRight class="h-4" />
 				</a> erhältlich
 			</p>
 			<br />
