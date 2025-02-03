@@ -2,18 +2,19 @@
 	import 'lightgallery/css/lightgallery.css';
 	import 'lightgallery/css/lg-thumbnail.css';
 	import '../app.css';
+	import '../fonts.css';
 	import { page } from '$app/state';
 	import { navItems } from '$lib/navbar';
 	import { dev } from '$app/environment';
 	import { injectAnalytics } from '@vercel/analytics/sveltekit';
 	import BreadCrumb from '$lib/components/BreadCrumb.svelte';
 	import SEO from '$lib/components/SEO.svelte';
-	import {} from 'mode-watcher';
 	import Sun from 'lucide-svelte/icons/sun';
 	import Moon from 'lucide-svelte/icons/moon';
-
-	import { toggleMode, userPrefersMode, ModeWatcher, mode } from 'mode-watcher';
+	import { toggleMode, ModeWatcher, mode } from 'mode-watcher';
 	import { Button } from '$lib/components/ui/button/index.js';
+	import Divider from '$lib/components/Divider.svelte';
+
 	let { children } = $props();
 
 	injectAnalytics({ mode: dev ? 'development' : 'production' });
@@ -26,19 +27,19 @@
 <SEO />
 
 <nav>
-	<div class="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
+	<div class="mx-auto max-w-7xl px-4 lg:px-8">
 		<div class="flex h-16 items-center justify-between">
-			<div class="">
+			<div class="flex items-center">
 				<a href="/">
-					<img
-						class="h-14"
-						src={$mode === 'light' ? '/tvn_logo_black.png' : '/tvn_logo_white.png'}
-						alt=""
-					/>
+					{#if $mode === 'light'}
+						<img class="-mt-2 h-10 lg:mt-0 lg:h-12" src="/tvn_logo_black.png" alt="" />
+					{:else}
+						<img class="-mt-2 h-10 lg:mt-0 lg:h-12" src="/tvn_logo_white.png" alt="" />
+					{/if}
 				</a>
 			</div>
-			<div class="ml-auto hidden justify-items-end md:flex">
-				<ul class="-mr-2.5 flex space-x-5">
+			<div class="ml-auto hidden h-12 justify-items-end lg:flex">
+				<ul class="-mr-2.5 flex items-center space-x-5">
 					{#each navItems as { name, href }, i}
 						<li
 							class="${(page.url.pathname.includes(href) &&
@@ -58,9 +59,9 @@
 				</ul>
 			</div>
 
-			<div class="block md:ml-6 md:hidden">
+			<div class="block lg:ml-6 lg:hidden">
 				<div class="flex items-center">
-					<div class="-mr-2 flex md:hidden">
+					<div class="-mr-2 flex lg:hidden">
 						<!-- Mobile menu button -->
 						<button
 							type="button"
@@ -98,17 +99,8 @@
 			</div>
 		</div>
 		{#if menu}
-			<div class="md:hidden" id="mobile-menu">
+			<div class="lg:hidden" id="mobile-menu">
 				<div class="space-y-1 px-2 pb-3 pt-2">
-					<a
-						href="/"
-						class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
-						onclick={() => {
-							menu = !menu;
-						}}
-					>
-						Home
-					</a>
 					{#each navItems as { name, href }}
 						<a
 							{href}
@@ -128,15 +120,20 @@
 
 <main class="mx-auto mt-10 max-w-7xl px-6 lg:mt-14 lg:px-8">
 	<div>
-		<BreadCrumb />
+		{#if !menu}
+			<BreadCrumb />
+		{/if}
+	</div>
+	<div class="-my-5 lg:my-0">
+		<Divider />
 	</div>
 	{@render children?.()}
 </main>
 
 <footer>
-	<div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 md:py-24 lg:px-8">
+	<div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 lg:px-8 lg:py-24">
+		<Divider />
 		<nav class="-mb-6 flex flex-wrap justify-center gap-x-12 gap-y-3 text-sm/6" aria-label="Footer">
-			<a href="/" class="text-gray-400 hover:text-white">Home</a>
 			{#each navItems as { name, href }}
 				<a {href} class="text-gray-400 hover:text-white">{name}</a>
 			{/each}

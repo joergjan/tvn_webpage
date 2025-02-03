@@ -7,12 +7,13 @@
 	$: ({ events, blogPosts } = data);
 </script>
 
-<div class="space-y-10">
-	<br />
-
-	<h2>Anstehende Anlässe</h2>
-	<EventsTable {events} />
-
-	<h3>Aus dem Blog</h3>
-	<Blog {blogPosts} />
+<div class="grid gap-20">
+	<section>
+		<h1>Anstehende Anlässe</h1>
+		<EventsTable {events} />
+	</section>
+	<section>
+		<h1>Aus dem Blog</h1>
+		<Blog {blogPosts} max={3} />
+	</section>
 </div>

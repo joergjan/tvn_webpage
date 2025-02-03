@@ -29,68 +29,48 @@
 	});
 </script>
 
-<div class=" py-24 sm:py-32">
-	<div class="grid grid-cols-1 items-start gap-x-8 gap-y-16 sm:gap-y-24 lg:grid-cols-2">
-		<div>
-			<div class="text-base/7 lg:max-w-lg">
-				<p class="text-tvbluelight text-base/7 font-semibold">{riege.age}</p>
-				<h1 class="mt-2 text-pretty text-4xl font-semibold tracking-tight sm:text-5xl">
-					{riege.name}
-				</h1>
-				<div class="max-w-xl">
-					<p class="mt-6">
-						{riege.body}
-					</p>
-				</div>
+<div class="grid grid-cols-1 items-start gap-x-8 gap-y-16 sm:gap-y-24 lg:grid-cols-2">
+	<div>
+		<div class="text-base/7 lg:max-w-lg">
+			<h4>{riege.age}</h4>
+			<h1>
+				{riege.name}
+			</h1>
+			<div class="max-w-xl">
+				<p class="mt-6">
+					{riege.body}
+				</p>
 			</div>
-
-			<div class="mt-10 gap-8 border-t pt-10">
-				<h3 class="mb- -mt-0">Trainingszeiten</h3>
-				{#each riege.training as { start, end, day }}
-					<div class="flex items-center gap-x-4">
-						<p class="w-20">{day}</p>
-						<p>{start} - {end} Uhr</p>
-					</div>
-				{/each}
-			</div>
-
-			<dl class="mt-10 gap-8 border-t pt-10">
-				<h3 class="mb- -mt-0">Leiter</h3>
-				{#each riege.kontaktLeiter as { fullname, mail, mainImage }}
-					<PersonBadge {fullname} {mail} {mainImage} />
-				{/each}
-			</dl>
 		</div>
 
-		<div class="pt-16 lg:row-span-2 lg:-mr-16">
-			<div
-				bind:this={gallery}
-				class="-mx-8 grid grid-cols-2 gap-4 sm:-mx-16 sm:grid-cols-4 lg:mx-0 lg:grid-cols-2 lg:gap-4 xl:gap-8"
-			>
-				{#each riege.image as image, i}
-					{#if i % 2 === 0}
-						{#if browser && image}
-							<a
-								href={urlFor(image).url()}
-								class="-mt-12 lg:col-start-1 lg:row-start-{i} aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 transition-all duration-300 hover:scale-[1.02] lg:-mt-40"
-							>
-								<img
-									alt={riege.name}
-									src={urlFor(image).url()}
-									class="block size-full object-cover"
-								/>
-							</a>
-						{:else}
-							<div
-								class="lg:col-start-2 lg:row-start-{i} aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 transition-all"
-							>
-								<Skeleton class="size-full h-full w-full rounded-lg " />
-							</div>
-						{/if}
-					{:else if browser && image}
+		<div class="mt-10 gap-8 border-t pt-10">
+			<h3 class="mb- -mt-0">Trainingszeiten</h3>
+			{#each riege.training as { start, end, day }}
+				<div class="flex items-center gap-x-4">
+					<p>{day}s, {start} - {end} Uhr</p>
+				</div>
+			{/each}
+		</div>
+
+		<dl class="mt-10 gap-8 border-t pt-10">
+			<h3 class="mb- -mt-0">Leiter</h3>
+			{#each riege.kontaktLeiter as { fullname, mail, mainImage }}
+				<PersonBadge {fullname} {mail} {mainImage} />
+			{/each}
+		</dl>
+	</div>
+
+	<div class="pt-16 lg:row-span-2 lg:-mr-16 lg:pt-48">
+		<div
+			bind:this={gallery}
+			class="-mx-8 grid grid-cols-2 gap-4 sm:-mx-16 sm:grid-cols-4 lg:mx-0 lg:grid-cols-2 lg:gap-4 xl:gap-8"
+		>
+			{#each riege.image as image, i}
+				{#if i % 2 === 0}
+					{#if browser && image}
 						<a
 							href={urlFor(image).url()}
-							class="lg:col-start-2 lg:row-start-{i} aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 transition-all duration-300 hover:scale-[1.02]"
+							class="-mt-12 lg:col-start-1 lg:row-start-{i} aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 transition-all duration-300 hover:scale-[1.02] lg:-mt-40"
 						>
 							<img
 								alt={riege.name}
@@ -100,13 +80,26 @@
 						</a>
 					{:else}
 						<div
-							class="-mt-12 lg:col-start-1 lg:row-start-{i} aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 transition-all duration-300 hover:scale-[1.02] lg:-mt-40"
+							class="lg:col-start-2 lg:row-start-{i} aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 transition-all"
 						>
-							<Skeleton class="h-full w-full rounded-lg " />
+							<Skeleton class="size-full h-full w-full rounded-lg " />
 						</div>
 					{/if}
-				{/each}
-			</div>
+				{:else if browser && image}
+					<a
+						href={urlFor(image).url()}
+						class="lg:col-start-2 lg:row-start-{i} aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 transition-all duration-300 hover:scale-[1.02]"
+					>
+						<img alt={riege.name} src={urlFor(image).url()} class="block size-full object-cover" />
+					</a>
+				{:else}
+					<div
+						class="-mt-12 lg:col-start-1 lg:row-start-{i} aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 transition-all duration-300 hover:scale-[1.02] lg:-mt-40"
+					>
+						<Skeleton class="h-full w-full rounded-lg " />
+					</div>
+				{/if}
+			{/each}
 		</div>
 	</div>
 </div>

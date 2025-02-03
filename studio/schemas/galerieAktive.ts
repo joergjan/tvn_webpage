@@ -9,7 +9,7 @@ export default defineType({
       name: 'title',
       title: 'Name',
       type: 'string',
-      validation: (rule) => rule.required(),
+      validation: (rule) => rule.max(40).required(),
     }),
     defineField({
       name: 'mainImage',

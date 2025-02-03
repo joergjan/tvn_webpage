@@ -18,7 +18,7 @@ const config: Config = {
 		},
 		extend: {
 			colors: {
-				tvbluelight: '#4569bf',
+				tvbluelight: '#6a83d1',
 				tvblue: '#375398',
 				tvyellow: '#E3BE53',
 				border: 'hsl(var(--border) / <alpha-value>)',

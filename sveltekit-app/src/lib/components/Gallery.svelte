@@ -23,11 +23,14 @@
 	});
 </script>
 
-<div>
-	<div bind:this={gallery} class="grid grid-cols-4 gap-2 py-3">
+<div class="mt-10">
+	<div
+		bind:this={gallery}
+		class="grid grid-cols-2 gap-2 sm:gap-3 md:grid-cols-3 md:gap-4 lg:grid-cols-4 lg:gap-5"
+	>
 		{#each photos as { mainImage, title }}
 			{#if browser}
-				<a href={urlFor(mainImage).url()}>
+				<a href={urlFor(mainImage).url()} class="group">
 					<img
 						class="aspect-square rounded-lg object-cover transition-all duration-300 hover:scale-[1.02]"
 						alt={title}

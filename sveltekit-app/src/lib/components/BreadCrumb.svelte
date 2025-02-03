@@ -10,7 +10,7 @@
 	const pathname = $derived(page.url.pathname);
 
 	$effect(() => {
-		breadcrumbItems = [{ label: 'Home', href: '/' }];
+		breadcrumbItems = [{ label: 'TV', href: '/' }];
 		let title = $breadCrumbTitle;
 
 		let currentPath = '';

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import Person from '$lib/components/Person.svelte';
+	import Divider from '$lib/components/Divider.svelte';
 
 	export let data: PageData;
 	$: ({ leiter, vorstand } = data);
@@ -20,6 +21,7 @@
 		</li>
 	{/each}
 </ul>
+<Divider />
 
 <h1>Leiter</h1>
 <ul

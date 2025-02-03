@@ -4,6 +4,10 @@
 
 @layer base {
 
+	html {
+		font-family: "Montserrat", sans-serif;
+		@apply selection:bg-tvbluelight selection:text-white
+	}
 	:root {
 		--background: 0 0% 100%;
 		--foreground: 20 14.3% 4.1%;
@@ -79,12 +83,15 @@
 		@apply bg-background text-foreground;
 	}
 	h1 {
-		@apply font-bold text-3xl mb-6 mt-7
+		@apply mt-2 text-pretty text-4xl font-semibold tracking-tight sm:text-5xl
 	}
 	h2 {
 		@apply	font-bold text-xl mb-4 mt-6
 	}
 	h3 {
 		@apply font-bold text-lg mb-2 mt-5
+	}
+	h4 {
+		@apply text-tvbluelight text-base/7 font-semibold
 	}
 }
