@@ -38,6 +38,6 @@
     "singleQuote": true
   },
   "engines": {
-    "node": ">= 20.00"
+    "node": "22.x"
   }
 }
