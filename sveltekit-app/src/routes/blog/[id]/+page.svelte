@@ -51,7 +51,7 @@
 		>
 			{#each blogPost.image as image, i}
 				{#if i % 2 === 0}
-					{#if browser && image}
+					{#if browser && image && lgThumbnail}
 						<a
 							href={urlFor(image).url()}
 							class="lg:col-start-2 lg:row-start-{i} aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 transition-all duration-300 hover:scale-[1.02]"
