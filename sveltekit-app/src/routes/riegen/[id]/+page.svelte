@@ -1,4 +1,6 @@
 <script lang="ts">
+	import 'lightgallery/css/lightgallery.css';
+	import 'lightgallery/css/lg-thumbnail.css';
 	import { urlFor } from '$lib/sanity/image';
 	import { breadCrumbTitle } from '$lib/stores';
 	import { PUBLIC_LIGHTGALLERY_KEY } from '$env/static/public';

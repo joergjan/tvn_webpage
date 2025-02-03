@@ -1,4 +1,6 @@
 <script lang="ts">
+	import 'lightgallery/css/lightgallery.css';
+	import 'lightgallery/css/lg-thumbnail.css';
 	import { urlFor } from '$lib/sanity/image';
 	import { PortableText } from '@portabletext/svelte';
 	import { breadCrumbTitle } from '$lib/stores';
