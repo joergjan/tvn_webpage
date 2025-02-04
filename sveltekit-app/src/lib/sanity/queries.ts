@@ -26,7 +26,7 @@ export const kontaktLeiter = groq`
     }
   }`;
 
-export const downloadsQuery = groq`*[_type == "download"]{title, "url": asset->url}`;
+export const downloadsQuery = groq`*[_type == 'download' && date > now()]`;
 
 export const galerieJugi = groq`*[_type == "galerieJugi"] | order(date desc)`;
 export const galerieAktive = groq`*[_type == "galerieAktive"] | order(date desc)`;

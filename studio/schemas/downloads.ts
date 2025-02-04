@@ -15,7 +15,15 @@ export default defineType({
       name: 'file',
       title: 'Datei',
       type: 'file',
+      options: {
+        accept: 'application/pdf',
+      },
       validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'date',
+      title: 'Soll aufgeschalten sein bis',
+      type: 'datetime',
     }),
   ],
   preview: {
