@@ -10,6 +10,9 @@ import events from './events'
 import riege from './riege'
 import training from './training'
 import downloads from './downloads'
+import bolleFaq from './bolleFaq'
+import bolleProgramm from './bolleProgramm'
+import bolle from './bolle'
 
 export const schemaTypes = [
   blogPost,
@@ -23,4 +26,7 @@ export const schemaTypes = [
   riege,
   training,
   downloads,
+  bolleFaq,
+  bolleProgramm,
+  bolle,
 ]

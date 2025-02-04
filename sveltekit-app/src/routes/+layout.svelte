@@ -26,18 +26,18 @@
 <SEO />
 
 <nav>
-	<div class="mx-auto max-w-7xl px-4 lg:px-8">
+	<div class="mx-auto max-w-7xl px-4 xl:px-8">
 		<div class="flex h-16 items-center justify-between">
 			<div class="flex items-center">
 				<a href="/">
 					{#if $mode === 'light'}
-						<img class="-mt-2 h-10 lg:mt-0 lg:h-12" src="/tvn_logo_black.png" alt="" />
+						<img class="-mt-2 h-10 lg:h-12 xl:mt-0" src="/tvn_logo_black.png" alt="" />
 					{:else}
-						<img class="-mt-2 h-10 lg:mt-0 lg:h-12" src="/tvn_logo_white.png" alt="" />
+						<img class="-mt-2 h-10 lg:h-12 xl:mt-0" src="/tvn_logo_white.png" alt="" />
 					{/if}
 				</a>
 			</div>
-			<div class="ml-auto hidden h-12 justify-items-end lg:flex">
+			<div class="ml-auto hidden h-12 justify-items-end xl:flex">
 				<ul class="-mr-2.5 flex items-center space-x-5">
 					{#each navItems as { name, href }, i}
 						<li
@@ -58,9 +58,9 @@
 				</ul>
 			</div>
 
-			<div class="group block lg:ml-6 lg:hidden">
+			<div class="group block xl:ml-6 xl:hidden">
 				<div class="flex items-center">
-					<div class="-mr-2 flex lg:hidden">
+					<div class="-mr-2 flex xl:hidden">
 						<!-- Mobile menu button -->
 						<button
 							type="button"
@@ -100,7 +100,7 @@
 			</div>
 		</div>
 		{#if menu}
-			<div class="lg:hidden" id="mobile-menu" transition:slide>
+			<div class="xl:hidden" id="mobile-menu" transition:slide>
 				<div class="space-y-1 px-2 pb-3 pt-2">
 					{#each navItems as { name, href }}
 						<a
@@ -119,7 +119,7 @@
 	</div>
 </nav>
 
-<main class="mx-auto mt-10 max-w-7xl px-6 lg:mt-14 lg:px-8">
+<main class="mx-auto mt-10 max-w-7xl px-6 xl:mt-14 xl:px-8">
 	<div>
 		{#if !menu}
 			<div in:slide>
@@ -127,7 +127,7 @@
 			</div>
 		{/if}
 	</div>
-	<div class="-my-5 lg:my-0">
+	<div class="-my-5 xl:my-0">
 		<Divider />
 	</div>
 	<PageTransition key={data.url} duration={150}>
@@ -136,7 +136,7 @@
 </main>
 
 <footer>
-	<div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 lg:px-8 lg:py-24">
+	<div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 xl:px-8 xl:py-24">
 		<Divider />
 		<nav class="-mb-6 flex flex-wrap justify-center gap-x-12 gap-y-3 text-sm/6" aria-label="Footer">
 			{#each navItems as { name, href }}

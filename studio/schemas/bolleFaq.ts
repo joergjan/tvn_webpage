@@ -1,35 +1,27 @@
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'download',
-  title: 'Downloads',
+  name: 'bolleFaq',
+  title: 'Bollä Dunnschtig FAQ',
   type: 'document',
   fields: [
     defineField({
       name: 'title',
-      title: 'Name',
+      title: 'Frage',
       type: 'string',
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'file',
-      title: 'Datei',
-      type: 'file',
-      options: {
-        accept: 'application/pdf',
-      },
+      name: 'answer',
+      title: 'Antwort',
+      type: 'text',
       validation: (rule) => rule.required(),
-    }),
-    defineField({
-      name: 'date',
-      title: 'wird aufgeschalten bis am',
-      type: 'datetime',
     }),
   ],
   preview: {
     select: {
-      title: 'title',
       author: 'author.name',
+      title: 'title',
       media: 'mainImage',
     },
     prepare(selection) {

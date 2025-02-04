@@ -26,6 +26,10 @@ export const kontaktLeiter = groq`
     }
   }`;
 
+export const bolleQuery = groq`*[_type == 'bolle'] | order(date desc)`;
+export const bolleProgrammQuery = groq`*[_type == 'bolleProgramm']`;
+export const bolleFaqQuery = groq`*[_type == 'bolleFaq']`;
+
 export const downloadsQuery = groq`*[_type == 'download' && date > now()]`;
 
 export const galerieJugi = groq`*[_type == "galerieJugi"] | order(date desc)`;

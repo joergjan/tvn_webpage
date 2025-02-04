@@ -1,35 +1,31 @@
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'download',
-  title: 'Downloads',
+  name: 'bolleProgramm',
+  title: 'Bollä Dunnschtig Programm',
   type: 'document',
   fields: [
     defineField({
       name: 'title',
-      title: 'Name',
+      title: 'Programm',
       type: 'string',
       validation: (rule) => rule.required(),
     }),
+
     defineField({
-      name: 'file',
-      title: 'Datei',
-      type: 'file',
+      name: 'time',
+      title: 'Zeit ab',
+      type: 'string',
       options: {
-        accept: 'application/pdf',
+        list: ALLOWED_TIMES(),
       },
       validation: (rule) => rule.required(),
-    }),
-    defineField({
-      name: 'date',
-      title: 'wird aufgeschalten bis am',
-      type: 'datetime',
     }),
   ],
   preview: {
     select: {
-      title: 'title',
       author: 'author.name',
+      title: 'title',
       media: 'mainImage',
     },
     prepare(selection) {
@@ -38,3 +34,13 @@ export default defineType({
     },
   },
 })
+
+export function ALLOWED_TIMES() {
+  const times = []
+  for (let h = 16; h < 24; h++) {
+    for (let m = 0; m < 60; m += 15) {
+      times.push(`${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}`)
+    }
+  }
+  return times
+}
