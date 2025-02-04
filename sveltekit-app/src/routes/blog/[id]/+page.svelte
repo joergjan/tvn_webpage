@@ -10,7 +10,6 @@
 	import { Skeleton } from '$lib/components/ui/skeleton';
 	import { browser } from '$app/environment';
 	import lightGallery from 'lightgallery';
-	import lgThumbnail from 'lightgallery/plugins/thumbnail';
 
 	let gallery: HTMLElement;
 	let { data } = $props();
@@ -23,7 +22,6 @@
 	onMount(() => {
 		if (gallery) {
 			lightGallery(gallery, {
-				plugins: [lgThumbnail],
 				licenseKey: PUBLIC_LIGHTGALLERY_KEY,
 				speed: 100
 			});
@@ -53,7 +51,7 @@
 		>
 			{#each blogPost.image as image, i}
 				{#if i % 2 === 0}
-					{#if browser && image && lgThumbnail}
+					{#if browser && image}
 						<a
 							href={urlFor(image).url()}
 							class="lg:col-start-2 lg:row-start-{i} aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 transition-all duration-300 hover:scale-[1.02]"
@@ -68,7 +66,7 @@
 						<div
 							class="lg:col-start-2 lg:row-start-{i} aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 transition-all"
 						>
-							<Skeleton class="size-full h-full w-full rounded-lg " />
+							<Skeleton class="size-full h-full w-full rounded-xl " />
 						</div>
 					{/if}
 				{:else if browser && image}
@@ -86,7 +84,7 @@
 					<div
 						class="-mt-12 lg:col-start-1 lg:row-start-{i} aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 transition-all duration-300 hover:scale-[1.02] lg:-mt-40"
 					>
-						<Skeleton class="h-full w-full rounded-lg " />
+						<Skeleton class="h-full w-full rounded-xl " />
 					</div>
 				{/if}
 			{/each}
