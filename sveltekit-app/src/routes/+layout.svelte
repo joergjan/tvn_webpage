@@ -13,6 +13,7 @@
 	import { Button } from '$lib/components/ui/button/index.js';
 	import Divider from '$lib/components/Divider.svelte';
 	import PageTransition from '$lib/components/transition.svelte';
+	import { slide } from 'svelte/transition';
 
 	injectAnalytics({ mode: dev ? 'development' : 'production' });
 
@@ -57,13 +58,13 @@
 				</ul>
 			</div>
 
-			<div class="block lg:ml-6 lg:hidden">
+			<div class="group block lg:ml-6 lg:hidden">
 				<div class="flex items-center">
 					<div class="-mr-2 flex lg:hidden">
 						<!-- Mobile menu button -->
 						<button
 							type="button"
-							class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 transition-all duration-300 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+							class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white group-hover:bg-gray-300 group-hover:text-white hover:dark:bg-gray-700"
 							aria-controls="mobile-menu"
 							aria-expanded="false"
 							onclick={() => {
@@ -74,7 +75,9 @@
 							<span class="sr-only">Open main menu</span>
 
 							<svg
-								class=" size-6 fill-white transition-all duration-300 ${menu ? 'rotate-45 ' : ''}"
+								class="size-6 fill-black transition-all duration-150 dark:fill-white ${menu
+									? 'rotate-45 '
+									: ''}"
 								viewBox="0 0 24 24"
 								stroke-width="1.5"
 								stroke="currentColor"
@@ -97,12 +100,12 @@
 			</div>
 		</div>
 		{#if menu}
-			<div class="lg:hidden" id="mobile-menu">
+			<div class="lg:hidden" id="mobile-menu" transition:slide>
 				<div class="space-y-1 px-2 pb-3 pt-2">
 					{#each navItems as { name, href }}
 						<a
 							{href}
-							class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
+							class="block rounded-md bg-gray-200 px-3 py-2 text-base font-medium hover:opacity-80 dark:bg-gray-900 dark:text-white"
 							onclick={() => {
 								menu = !menu;
 							}}
@@ -119,7 +122,9 @@
 <main class="mx-auto mt-10 max-w-7xl px-6 lg:mt-14 lg:px-8">
 	<div>
 		{#if !menu}
-			<BreadCrumb />
+			<div in:slide>
+				<BreadCrumb />
+			</div>
 		{/if}
 	</div>
 	<div class="-my-5 lg:my-0">
