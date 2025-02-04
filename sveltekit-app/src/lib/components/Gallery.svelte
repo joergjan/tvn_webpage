@@ -3,7 +3,6 @@
 	import 'lightgallery/css/lg-thumbnail.css';
 	import { onMount } from 'svelte';
 	import lightGallery from 'lightgallery';
-	import lgThumbnail from 'lightgallery/plugins/thumbnail';
 	import { browser } from '$app/environment';
 	import { Skeleton } from '$lib/components/ui/skeleton';
 	import { urlFor } from '$lib/sanity/image';
@@ -16,7 +15,6 @@
 	onMount(() => {
 		if (gallery) {
 			lightGallery(gallery, {
-				plugins: [lgThumbnail],
 				licenseKey: PUBLIC_LIGHTGALLERY_KEY,
 				speed: 100
 			});
@@ -30,7 +28,7 @@
 		class="grid grid-cols-2 gap-2 sm:gap-3 md:grid-cols-3 md:gap-4 lg:grid-cols-4 lg:gap-5"
 	>
 		{#each photos as { mainImage, title }}
-			{#if browser && lgThumbnail}
+			{#if browser}
 				<a href={urlFor(mainImage).url()} class="group">
 					<img
 						class="aspect-square rounded-lg object-cover transition-all duration-300 hover:scale-[1.02]"

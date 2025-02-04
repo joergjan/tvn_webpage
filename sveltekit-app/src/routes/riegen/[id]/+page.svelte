@@ -5,7 +5,6 @@
 	import { breadCrumbTitle } from '$lib/stores';
 	import { PUBLIC_LIGHTGALLERY_KEY } from '$env/static/public';
 	import lightGallery from 'lightgallery';
-	import lgThumbnail from 'lightgallery/plugins/thumbnail';
 	import { onMount } from 'svelte';
 	import PersonBadge from '$lib/components/PersonBadge.svelte';
 	import { browser } from '$app/environment';
@@ -23,7 +22,6 @@
 	onMount(() => {
 		if (gallery) {
 			lightGallery(gallery, {
-				plugins: [lgThumbnail],
 				licenseKey: PUBLIC_LIGHTGALLERY_KEY,
 				speed: 100
 			});
@@ -69,7 +67,7 @@
 		>
 			{#each riege.image as image, i}
 				{#if i % 2 === 0}
-					{#if browser && image && lgThumbnail}
+					{#if browser && image}
 						<a
 							href={urlFor(image).url()}
 							class="-mt-12 lg:col-start-1 lg:row-start-{i} aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 transition-all duration-300 hover:scale-[1.02] lg:-mt-40"
