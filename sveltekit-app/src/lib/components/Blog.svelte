@@ -28,11 +28,11 @@
 								<img
 									src={image[0] ? urlFor(image[0]).url() : '/favicon.png'}
 									alt={title}
-									class="absolute inset-0 size-full rounded-lg object-cover"
+									class="absolute inset-0 size-full rounded-xl object-cover"
 								/>
 							{:else}
 								<div class="aspect-square h-full w-full">
-									<Skeleton class="h-full w-full rounded-lg" />
+									<Skeleton class="h-full w-full rounded-xl" />
 								</div>
 							{/if}
 						</div>

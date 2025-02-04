@@ -82,7 +82,7 @@
 						<div
 							class="lg:col-start-2 lg:row-start-{i} aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 transition-all"
 						>
-							<Skeleton class="size-full h-full w-full rounded-lg " />
+							<Skeleton class="size-full h-full w-full rounded-xl " />
 						</div>
 					{/if}
 				{:else if browser && image}
@@ -96,7 +96,7 @@
 					<div
 						class="-mt-12 lg:col-start-1 lg:row-start-{i} aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 transition-all duration-300 hover:scale-[1.02] lg:-mt-40"
 					>
-						<Skeleton class="h-full w-full rounded-lg " />
+						<Skeleton class="h-full w-full rounded-xl " />
 					</div>
 				{/if}
 			{/each}

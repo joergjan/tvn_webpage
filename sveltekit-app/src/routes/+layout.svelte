@@ -12,11 +12,11 @@
 	import { toggleMode, ModeWatcher, mode } from 'mode-watcher';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import Divider from '$lib/components/Divider.svelte';
-
-	let { children } = $props();
+	import PageTransition from '$lib/components/transition.svelte';
 
 	injectAnalytics({ mode: dev ? 'development' : 'production' });
 
+	let { children, data } = $props();
 	let menu: boolean = $state(false);
 </script>
 
@@ -125,7 +125,9 @@
 	<div class="-my-5 lg:my-0">
 		<Divider />
 	</div>
-	{@render children?.()}
+	<PageTransition key={data.url} duration={150}>
+		{@render children?.()}
+	</PageTransition>
 </main>
 
 <footer>

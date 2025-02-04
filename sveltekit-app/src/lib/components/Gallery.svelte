@@ -31,14 +31,14 @@
 			{#if browser}
 				<a href={urlFor(mainImage).url()} class="group">
 					<img
-						class="aspect-square rounded-lg object-cover transition-all duration-300 hover:scale-[1.02]"
+						class="aspect-square rounded-xl object-cover transition-all duration-300 hover:scale-[1.02]"
 						alt={title}
 						src={urlFor(mainImage).url()}
 					/>
 				</a>
 			{:else}
 				<div class="aspect-square h-full w-full">
-					<Skeleton class="h-full w-full rounded-lg" />
+					<Skeleton class="h-full w-full rounded-xl" />
 				</div>
 			{/if}
 		{/each}

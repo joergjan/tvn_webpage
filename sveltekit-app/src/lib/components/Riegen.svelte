@@ -22,11 +22,11 @@
 							<img
 								src={urlFor(image[0]).url()}
 								alt={name}
-								class="aspect-video w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+								class="aspect-video w-full rounded-xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
 							/>
 						{:else}
 							<div class="aspect-video h-full w-full sm:aspect-[2/1] lg:aspect-[3/2]">
-								<Skeleton class="h-full w-full rounded-2xl" />
+								<Skeleton class="h-full w-full rounded-xl" />
 							</div>
 						{/if}
 					</div>
