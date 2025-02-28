@@ -44,22 +44,25 @@
 		<Divider />
 		<div>
 			<h3>Tickets</h3>
+			<p>Tickets sind nur noch an der Abendkasse erhältlich.</p>
 			<p>
-				Tickets sind an der Abendkasse oder über <a
+				Das Kontingent auf <a
 					class="inline-flex items-center underline"
 					target="_blank"
 					href="https://eventfrog.ch/de/p/gruppen/turnunterhaltung-7182422694880573270.html"
 				>
 					Eventfrog
 					<SquareArrowOutUpRight class="h-4" />
-				</a> erhältlich
+				</a> ist ausverkauft.
 			</p>
 			<br />
+			<!--
 			{#await qrPageUrlDataUrl}
 				<Skeleton class="aspect-square h-32 w-32" />
 			{:then dataUrl}
 				<img class="qrcode h-32" src={dataUrl} alt="QR Code mit Link zu Eventfrog" />
 			{/await}
+			-->
 		</div>
 		<Divider />
 		<div>
