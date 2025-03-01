@@ -44,9 +44,9 @@
 		<Divider />
 		<div>
 			<h3>Tickets</h3>
-			<p>Tickets sind nur noch an der Abendkasse erhältlich.</p>
+			<p>Pro Abend werden an der Abendkasse 150 Tickets verfügbar sein.</p>
 			<p>
-				Das Kontingent auf <a
+				Das Kontingent an E-Tickets auf <a
 					class="inline-flex items-center underline"
 					target="_blank"
 					href="https://eventfrog.ch/de/p/gruppen/turnunterhaltung-7182422694880573270.html"
@@ -55,8 +55,8 @@
 					<SquareArrowOutUpRight class="h-4" />
 				</a> ist ausverkauft.
 			</p>
-			<br />
 			<!--
+			<br />
 			{#await qrPageUrlDataUrl}
 				<Skeleton class="aspect-square h-32 w-32" />
 			{:then dataUrl}
