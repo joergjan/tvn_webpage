@@ -1,18 +1,18 @@
 <script lang="ts">
-	import { ExternalLink } from 'lucide-svelte';
 	import { formatDate } from '$lib/utils';
-	import { urlFor } from '$lib/sanity/image';
 	import * as Accordion from '$lib/components/ui/accordion';
 	import { Skeleton } from '$lib/components/ui/skeleton';
 	import { SquareArrowOutUpRight } from 'lucide-svelte';
 
 	export let events: Anlass[] = [];
+
+	console.log(events);
 </script>
 
 <div class="mt-10">
 	<Accordion.Root>
 		{#if events}
-			{#each events as { title, image, dateFrom, dateTo, description, href }, i}
+			{#each events as { title, dateFrom, dateTo, description, href }, i}
 				<Accordion.Item value="value-${i}">
 					<Accordion.Trigger class="group">
 						<div class="md:flex">
