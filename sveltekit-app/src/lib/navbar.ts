@@ -1,6 +1,5 @@
 export const navItems = [
 	{ name: 'TV', href: '/', description: '' },
-	{ name: 'Unterhaltung', href: '/maerlistund', description: '' },
 	{ name: 'Riegen', href: '/riegen', description: '' },
 	{ name: 'Galerie', href: '/gallery', description: '' },
 	{ name: 'Bollä Dunnschtig', href: '/bolle', description: '' },
