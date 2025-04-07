@@ -16,7 +16,7 @@
 				<Accordion.Item value="value-${i}">
 					<Accordion.Trigger class="group">
 						<div class="md:flex">
-							<div class="w-36 text-left">
+							<div class="text-left md:w-[10rem]">
 								{#if dateFrom == dateTo}
 									{formatDate(dateFrom)}
 								{:else}
@@ -27,7 +27,7 @@
 									</div>
 								{/if}
 							</div>
-							<p class="md:group-hover:underline">{title}</p>
+							<p class="text-left md:group-hover:underline">{title}</p>
 						</div>
 					</Accordion.Trigger>
 					<Accordion.Content>
