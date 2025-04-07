@@ -4,14 +4,19 @@
 	import Blog from '$lib/components/Blog.svelte';
 
 	export let data: PageData;
-	$: ({ events, blogPosts } = data);
+	$: ({ events, pastEvents, blogPosts } = data);
 </script>
 
 <div class="grid gap-20">
 	<section>
-		<h1>Anstehende Anlässe</h1>
+		<h1>Anlässe</h1>
 		<EventsTable {events} />
+		<br />
+		<div class="opacity-50">
+			<EventsTable events={pastEvents} />
+		</div>
 	</section>
+
 	<section>
 		<h1>Aus dem Blog</h1>
 		<Blog {blogPosts} max={3} />

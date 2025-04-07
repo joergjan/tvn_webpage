@@ -1,10 +1,7 @@
 <script lang="ts">
-	import { formatDate } from '$lib/utils';
 	import { urlFor } from '$lib/sanity/image';
-	import { Button } from '$lib/components/ui/button';
 	import { Skeleton } from '$lib/components/ui/skeleton';
 	import { browser } from '$app/environment';
-	import PersonBadge from '$lib/components/PersonBadge.svelte';
 	import Divider from './Divider.svelte';
 
 	export let riegen: Riege[];
@@ -15,7 +12,7 @@
 		<div
 			class="grid grid-cols-1 gap-2 gap-y-10 sm:gap-3 md:grid-cols-2 md:gap-5 md:gap-y-10 lg:grid-cols-3"
 		>
-			{#each riegen as { name, image, description, age, _id, kontaktLeiter }, i}
+			{#each riegen as { name, image, age, _id }, i}
 				<div>
 					<a class="flex flex-col items-start justify-between" href={'/riegen/' + _id}>
 						<div class="relative w-full">

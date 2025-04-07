@@ -2,7 +2,8 @@ import type { PortableTextBlock } from '@portabletext/types';
 import type { ImageAsset, Slug } from '@sanity/types';
 import groq from 'groq';
 
-export const eventsQuery = groq`*[_type == "event" && dateFrom > now()]  | order(dateFrom asc)`;
+export const eventsQuery = groq`*[_type == "event" && dateFrom >= now()]  | order(dateFrom asc)`;
+export const pastEventsQuery = groq`*[_type == "event" && dateTo < now()]  | order(dateFrom desc) [0..5]`;
 
 export const blogPostsQuery = groq`*[_type == "blogPost"] | order(date desc)`;
 export const recentBlogPostsQuery = groq`*[_type == "blogPost"] | order(date desc) [0..1]`;
