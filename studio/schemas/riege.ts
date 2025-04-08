@@ -1,5 +1,4 @@
 import {defineField, defineType} from 'sanity'
-import training from './training'
 
 export default defineType({
   name: 'riege',
@@ -16,6 +15,13 @@ export default defineType({
       name: 'age',
       title: 'Alter',
       type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'isJugendriege',
+      title: 'ist Jugendriege',
+      type: 'boolean',
+      initialValue: false,
       validation: (rule) => rule.required(),
     }),
     defineField({

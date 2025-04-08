@@ -45,6 +45,7 @@ export const riegenQuery = groq`
  training,
   }
 `;
+
 export const riegeQuery = (id: string) => {
 	return groq`
 	*[_type == 'riege' && _id == "${id}"]{
