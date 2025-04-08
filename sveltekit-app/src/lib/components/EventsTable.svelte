@@ -5,8 +5,6 @@
 	import { SquareArrowOutUpRight } from 'lucide-svelte';
 
 	export let events: Anlass[] = [];
-
-	console.log(events);
 </script>
 
 <div class="mt-10">

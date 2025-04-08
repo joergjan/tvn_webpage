@@ -39,12 +39,13 @@ export const galerieAktive = groq`*[_type == "galerieAktive"] | order(date desc)
 export const riegenQuery = groq`
   *[_type == "riege"]{
     ...,
-   "kontaktLeiter": *[_type == 'kontaktLeiter' && references(^._id)]{
+   "kontaktLeiter": *[_type == 'kontaktLeiter' && references(^._id)] | order(fullname asc){
 	...
   },
  training,
   }
 `;
+
 export const riegeQuery = (id: string) => {
 	return groq`
 	*[_type == 'riege' && _id == "${id}"]{

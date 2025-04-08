@@ -55,7 +55,11 @@
 		<dl class="mt-10 gap-8 border-t pt-10">
 			<h3 class="mb- -mt-0">Leiter</h3>
 			{#each riege.kontaktLeiter as { fullname, mail, mainImage }}
-				<PersonBadge {fullname} {mail} {mainImage} />
+				<PersonBadge
+					{fullname}
+					mail={riege.isJugendriege ? 'jugend@tvnussbaumen.ch' : mail}
+					{mainImage}
+				/>
 			{/each}
 		</dl>
 	</div>
