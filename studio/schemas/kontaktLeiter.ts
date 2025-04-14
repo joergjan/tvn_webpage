@@ -29,7 +29,21 @@ export default defineType({
     }),
     defineField({
       name: 'riege',
-      title: 'Leitet folgende Riegen:',
+      title: 'leitet folgende Riegen',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'riege'}],
+        },
+      ],
+
+      validation: (rule) =>
+        rule.required().max(3).error('Es können maximal 3 Riegen ausgewählt werden.'),
+    }),
+    defineField({
+      name: 'riegeHelper',
+      title: 'ist Hilfsleiter in folgenden Riegen:',
       type: 'array',
       of: [
         {

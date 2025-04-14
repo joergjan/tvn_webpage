@@ -16,7 +16,7 @@
 				<div>
 					<a class="flex flex-col items-start justify-between" href={'/riegen/' + _id}>
 						<div class="relative w-full">
-							{#if browser && image[0]}
+							{#if browser && image}
 								<img
 									src={urlFor(image[0]).url()}
 									alt={name}
