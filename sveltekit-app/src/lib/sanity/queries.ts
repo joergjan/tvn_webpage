@@ -13,18 +13,25 @@ export const blogPostQuery = (id: string) => {
 
 export const aboutQuery = groq`*[_type == "about"][0]`;
 
-export const kontaktVorstand = groq`*[_type == "kontaktVorstand"]`;
+export const kontaktVorstand = groq`*[_type == "kontaktVorstand"] | order(fullname asc)`;
 
 export const kontaktLeiter = groq`
-  *[_type == "kontaktLeiter"]{
+  *[_type == "kontaktLeiter"] | order(count(riegen) asc, count(additionalriegen) desc, fullname asc){
     ...,
-    "riege": riege[]->{
+    "riegen": riegen[]->{
       _id,
       name,
       age,
       body,
       image
-    }
+    },
+    "additionalriegen": additionalriegen[]->{
+      _id,
+      name,
+      age,
+      body,
+      image
+    } 
   }`;
 
 export const bolleQuery = groq`*[_type == 'bolle'] | order(date desc)`;
@@ -48,13 +55,19 @@ export const riegenQuery = groq`
 
 export const riegeQuery = (id: string) => {
 	return groq`
-	*[_type == 'riege' && _id == "${id}"]{
- ...,
-  "kontaktLeiter": *[_type == 'kontaktLeiter' && references(^._id)]{
-	...
-  },
-  training
- }`;
+    *[_type == 'riege' && _id == "${id}"]{
+      ...,
+      "hauptleiter": *[_type == 'kontaktLeiter' && ^._id in riegen[]._ref] | order(fullname asc){
+        fullname,
+        mail,
+      },
+      "hilfsleiter": *[_type == 'kontaktLeiter' && ^._id in additionalriegen[]._ref] | order(fullname asc){
+        fullname,
+        mail,
+      },
+      training
+    }
+  `;
 };
 
 export interface Person {
