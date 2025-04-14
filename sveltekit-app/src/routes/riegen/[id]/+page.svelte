@@ -13,7 +13,6 @@
 	let gallery: HTMLElement;
 	let { data } = $props();
 	let riege = data.riege;
-	console.log(riege.training);
 
 	$effect(() => {
 		$breadCrumbTitle = riege.name;
@@ -54,7 +53,15 @@
 
 		<dl class="mt-10 gap-8 border-t pt-10">
 			<h3 class="mb- -mt-0">Leiter</h3>
-			{#each riege.kontaktLeiter as { fullname, mail, mainImage }}
+
+			{#each riege.hauptleiter as { fullname, mail, mainImage }}
+				<PersonBadge
+					{fullname}
+					mail={riege.isJugendriege ? 'jugend@tvnussbaumen.ch' : mail}
+					{mainImage}
+				/>
+			{/each}
+			{#each riege.hilfsleiter as { fullname, mail, mainImage }}
 				<PersonBadge
 					{fullname}
 					mail={riege.isJugendriege ? 'jugend@tvnussbaumen.ch' : mail}

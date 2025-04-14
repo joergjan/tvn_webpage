@@ -28,7 +28,7 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'riege',
+      name: 'riegen',
       title: 'leitet folgende Riegen',
       type: 'array',
       of: [
@@ -38,11 +38,10 @@ export default defineType({
         },
       ],
 
-      validation: (rule) =>
-        rule.required().max(3).error('Es können maximal 3 Riegen ausgewählt werden.'),
+      validation: (rule) => rule.error('Es können maximal 3 Riegen ausgewählt werden.'),
     }),
     defineField({
-      name: 'riegeHelper',
+      name: 'additionalriegen',
       title: 'ist Hilfsleiter in folgenden Riegen:',
       type: 'array',
       of: [
@@ -52,8 +51,7 @@ export default defineType({
         },
       ],
 
-      validation: (rule) =>
-        rule.required().max(3).error('Es können maximal 3 Riegen ausgewählt werden.'),
+      validation: (rule) => rule.error('Es können maximal 3 Riegen ausgewählt werden.'),
     }),
     defineField({
       name: 'mainImage',

@@ -18,7 +18,14 @@ export const kontaktVorstand = groq`*[_type == "kontaktVorstand"]`;
 export const kontaktLeiter = groq`
   *[_type == "kontaktLeiter"]{
     ...,
-    "riege": riege[]->{
+    "riegen": riegen[]->{
+      _id,
+      name,
+      age,
+      body,
+      image
+    },
+    "additionalriegen": additionalriegen[]->{
       _id,
       name,
       age,
@@ -48,13 +55,19 @@ export const riegenQuery = groq`
 
 export const riegeQuery = (id: string) => {
 	return groq`
-	*[_type == 'riege' && _id == "${id}"]{
- ...,
-  "kontaktLeiter": *[_type == 'kontaktLeiter' && references(^._id)]{
-	...
-  },
-  training
- }`;
+    *[_type == 'riege' && _id == "${id}"]{
+      ...,
+      "hauptleiter": *[_type == 'kontaktLeiter' && ^._id in riegen[]._ref] | order(fullname asc){
+        fullname,
+        mail,
+      },
+      "hilfsleiter": *[_type == 'kontaktLeiter' && ^._id in additionalriegen[]._ref] | order(fullname asc){
+        fullname,
+        mail,
+      },
+      training
+    }
+  `;
 };
 
 export interface Person {

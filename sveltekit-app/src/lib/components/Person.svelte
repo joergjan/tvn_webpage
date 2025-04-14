@@ -4,6 +4,8 @@
 	import Avatar from '$lib/components/Avatar.svelte';
 	import { urlFor } from '$lib/sanity/image';
 	import Mail from 'lucide-svelte/icons/mail';
+
+	console.log(person);
 </script>
 
 <div class="">
@@ -28,20 +30,37 @@
 		<p class="text-center text-sm/6">{person.role}</p>
 	{/if}
 
-	{#if person.riege}
-		<div class="">
-			{#each person.riege as riege}
-				<div class="mx-auto flex justify-center">
-					<a
-						class="bg-tvbluelight hover:bg-tvblue my-0.5 rounded-full px-4 py-2 text-xs text-white transition-all duration-300"
-						href={'/riegen/' + riege._id}
-					>
-						{riege.name}
-					</a>
-				</div>
-			{/each}
-		</div>
-	{/if}
+	<div>
+		{#if person.riegen}
+			<div class="">
+				{#each person.riegen as riege}
+					<div class="mx-auto flex justify-center">
+						<a
+							class="bg-tvbluelight hover:bg-tvblue my-0.5 rounded-full px-4 py-2 text-xs text-white transition-all duration-300"
+							href={'/riegen/' + riege._id}
+						>
+							{riege.name}
+						</a>
+					</div>
+				{/each}
+			</div>
+		{/if}
+		{#if person.additionalriegen}
+			<div class="">
+				{#each person.additionalriegen as riege}
+					<div class="mx-auto flex justify-center">
+						<a
+							class="bg-tvbluelight hover:bg-tvblue my-0.5 rounded-full px-4 py-2 text-xs text-white transition-all duration-300"
+							href={'/riegen/' + riege._id}
+						>
+							{riege.name}
+						</a>
+					</div>
+				{/each}
+			</div>
+		{/if}
+	</div>
+
 	<ul role="list" class="mt-6 flex justify-center gap-x-6">
 		<li>
 			<a href={'mailto:' + person.mail} class="">
