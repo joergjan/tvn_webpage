@@ -16,7 +16,7 @@ export const aboutQuery = groq`*[_type == "about"][0]`;
 export const kontaktVorstand = groq`*[_type == "kontaktVorstand"]`;
 
 export const kontaktLeiter = groq`
-  *[_type == "kontaktLeiter"]{
+  *[_type == "kontaktLeiter"] | order(count(riegen) asc, count(additionalriegen) desc, fullname asc){
     ...,
     "riegen": riegen[]->{
       _id,
@@ -31,7 +31,7 @@ export const kontaktLeiter = groq`
       age,
       body,
       image
-    }
+    } 
   }`;
 
 export const bolleQuery = groq`*[_type == 'bolle'] | order(date desc)`;

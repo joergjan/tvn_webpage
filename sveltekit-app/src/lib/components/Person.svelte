@@ -4,8 +4,6 @@
 	import Avatar from '$lib/components/Avatar.svelte';
 	import { urlFor } from '$lib/sanity/image';
 	import Mail from 'lucide-svelte/icons/mail';
-
-	console.log(person);
 </script>
 
 <div class="">

@@ -5,8 +5,6 @@
 
 	export let data: PageData;
 	$: ({ leiter, vorstand } = data);
-
-	$: leiter && console.log(leiter);
 </script>
 
 <h1>Vorstand</h1>

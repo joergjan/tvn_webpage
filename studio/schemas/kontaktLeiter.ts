@@ -37,8 +37,6 @@ export default defineType({
           to: [{type: 'riege'}],
         },
       ],
-
-      validation: (rule) => rule.error('Es können maximal 3 Riegen ausgewählt werden.'),
     }),
     defineField({
       name: 'additionalriegen',
@@ -50,8 +48,6 @@ export default defineType({
           to: [{type: 'riege'}],
         },
       ],
-
-      validation: (rule) => rule.error('Es können maximal 3 Riegen ausgewählt werden.'),
     }),
     defineField({
       name: 'mainImage',
