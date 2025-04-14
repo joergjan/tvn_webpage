@@ -13,7 +13,7 @@ export const blogPostQuery = (id: string) => {
 
 export const aboutQuery = groq`*[_type == "about"][0]`;
 
-export const kontaktVorstand = groq`*[_type == "kontaktVorstand"]`;
+export const kontaktVorstand = groq`*[_type == "kontaktVorstand"] | order(fullname asc)`;
 
 export const kontaktLeiter = groq`
   *[_type == "kontaktLeiter"] | order(count(riegen) asc, count(additionalriegen) desc, fullname asc){
