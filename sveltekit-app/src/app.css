@@ -6,7 +6,7 @@
 
 	html {
 		font-family: "Montserrat", sans-serif;
-		@apply selection:bg-tvbluelight selection:text-white
+		@apply selection:bg-basecolorlight selection:text-white
 	}
 	:root {
 		--background: 0 0% 100%;
@@ -92,6 +92,6 @@
 		@apply font-bold text-lg mb-2 mt-5
 	}
 	h4 {
-		@apply text-tvbluelight text-base/7 font-semibold
+		@apply text-basecolorlight text-base/7 font-semibold
 	}
 }

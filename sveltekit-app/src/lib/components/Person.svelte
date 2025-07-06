@@ -34,7 +34,7 @@
 				{#each person.riegen as riege}
 					<div class="mx-auto flex justify-center">
 						<a
-							class="bg-tvbluelight hover:bg-tvblue my-0.5 rounded-full px-4 py-2 text-xs text-white transition-all duration-300"
+							class="bg-basecolorlight hover:bg-basecolor my-0.5 rounded-full px-4 py-2 text-xs text-white transition-all duration-300"
 							href={'/riegen/' + riege._id}
 						>
 							{riege.name}
@@ -48,7 +48,7 @@
 				{#each person.additionalriegen as riege}
 					<div class="mx-auto flex justify-center">
 						<a
-							class="bg-tvbluelight hover:bg-tvblue my-0.5 rounded-full px-4 py-2 text-xs text-white transition-all duration-300"
+							class="bg-basecolorlight hover:bg-basecolor my-0.5 rounded-full px-4 py-2 text-xs text-white transition-all duration-300"
 							href={'/riegen/' + riege._id}
 						>
 							{riege.name}

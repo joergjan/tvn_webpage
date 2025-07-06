@@ -30,7 +30,7 @@
 						</div>
 
 						<div class="w-full">
-							<div class="text-tvbluelight mt-5 items-center gap-x-4 text-sm">
+							<div class="text-basecolorlight mt-5 items-center gap-x-4 text-sm">
 								<p class="text-center">{age}</p>
 							</div>
 							<div class="group relative text-center">

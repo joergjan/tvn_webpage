@@ -37,7 +37,7 @@
 							{/if}
 						</div>
 						<div>
-							<div class="text-tvbluelight flex items-center gap-x-4 text-sm">
+							<div class="text-basecolorlight flex items-center gap-x-4 text-sm">
 								<time datetime="2020-03-16" class="">{formatDate(date)}</time>
 							</div>
 							<div class="group relative max-w-xl">

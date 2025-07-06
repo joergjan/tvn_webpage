@@ -45,8 +45,8 @@
 								page.url.pathname !== '/' &&
 								href !== '/') ||
 							(page.url.pathname === '/' && page.url.pathname === href)
-								? ' text-tvbluelight '
-								: ' hover:text-tvbluelight hover:transition-all hover:duration-[400ms]'} inline-flex items-center px-1 pt-1"
+								? ' text-basecolorlight '
+								: ' hover:text-basecolorlight hover:transition-all hover:duration-[400ms]'} inline-flex items-center px-1 pt-1"
 						>
 							<button class="group relative">
 								<a {href} class="rounded-md px-3 py-2 text-sm font-medium">
