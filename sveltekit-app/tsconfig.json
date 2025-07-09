@@ -10,9 +10,4 @@
 		"sourceMap": true,
 		"strict": true
 	},
-	"include": [
-		"src/**/*",
-		"src/app.d.ts" 
-	  ]
-	
 }
