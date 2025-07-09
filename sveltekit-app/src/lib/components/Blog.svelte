@@ -22,7 +22,7 @@
 				<a href={'/blog/' + _id}>
 					<article class="relative isolate flex flex-col gap-8 lg:flex-row">
 						<div
-							class=" relative aspect-video sm:aspect-[2/1] lg:aspect-square lg:w-64 lg:shrink-0"
+							class=" relative aspect-video sm:aspect-2/1 lg:aspect-square lg:w-64 lg:shrink-0"
 						>
 							{#if browser && image[0]}
 								<img
@@ -37,7 +37,7 @@
 							{/if}
 						</div>
 						<div>
-							<div class="text-tvbluelight flex items-center gap-x-4 text-sm">
+							<div class="text-basecolorlight flex items-center gap-x-4 text-sm">
 								<time datetime="2020-03-16" class="">{formatDate(date)}</time>
 							</div>
 							<div class="group relative max-w-xl">

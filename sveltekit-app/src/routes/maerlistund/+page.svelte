@@ -103,11 +103,11 @@
 				alt=""
 			/>
 		{:else}
-			<Skeleton class="-mb-4 aspect-[674/479] h-full w-full rounded-xl" />
+			<Skeleton class="-mb-4 aspect-674/479 h-full w-full rounded-xl" />
 		{/if}
 
 		<div class="relative" aria-hidden="true">
-			<div class="from-background absolute -inset-x-20 bottom-0 bg-gradient-to-t pt-[7%]"></div>
+			<div class="from-background absolute -inset-x-20 bottom-0 bg-linear-to-t pt-[7%]"></div>
 		</div>
 	</div>
 </div>

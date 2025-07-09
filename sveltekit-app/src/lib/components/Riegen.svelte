@@ -20,17 +20,17 @@
 								<img
 									src={urlFor(image[0]).url()}
 									alt={name}
-									class="aspect-video w-full rounded-xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+									class="aspect-video w-full rounded-xl bg-gray-100 object-cover sm:aspect-2/1 lg:aspect-3/2"
 								/>
 							{:else}
-								<div class="aspect-video h-full w-full sm:aspect-[2/1] lg:aspect-[3/2]">
+								<div class="aspect-video h-full w-full sm:aspect-2/1 lg:aspect-3/2">
 									<Skeleton class="h-full w-full rounded-xl" />
 								</div>
 							{/if}
 						</div>
 
 						<div class="w-full">
-							<div class="text-tvbluelight mt-5 items-center gap-x-4 text-sm">
+							<div class="text-basecolorlight mt-5 items-center gap-x-4 text-sm">
 								<p class="text-center">{age}</p>
 							</div>
 							<div class="group relative text-center">

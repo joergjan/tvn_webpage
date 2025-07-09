@@ -13,7 +13,7 @@
 
 	let className: $$Props["class"] = undefined;
 	export { className as class };
-	export let variant: VariantProps<typeof buttonVariants>["variant"] = "outline";
+	export let variant: VariantProps<typeof buttonVariants>["variant"] = "outline-solid";
 	export let size: VariantProps<typeof buttonVariants>["size"] = "icon";
 	const { orientation, canScrollNext, scrollNext, handleKeyDown } =
 		getEmblaContext("<Carousel.Next/>");

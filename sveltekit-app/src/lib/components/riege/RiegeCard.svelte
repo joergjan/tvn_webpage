@@ -21,7 +21,7 @@
 				<p>{mail}</p>
 				<p>{fullname}</p>
 				{#if mainImage}
-					<div class="relative aspect-video sm:aspect-[2/1] lg:aspect-square lg:w-64 lg:shrink-0">
+					<div class="relative aspect-video sm:aspect-2/1 lg:aspect-square lg:w-64 lg:shrink-0">
 						<img
 							src={mainImage ? urlFor(mainImage).url() : '/favicon.png'}
 							alt={fullname}
