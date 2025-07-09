@@ -22,7 +22,7 @@
 				<a href={'/blog/' + _id}>
 					<article class="relative isolate flex flex-col gap-8 lg:flex-row">
 						<div
-							class=" relative aspect-video sm:aspect-[2/1] lg:aspect-square lg:w-64 lg:shrink-0"
+							class=" relative aspect-video sm:aspect-2/1 lg:aspect-square lg:w-64 lg:shrink-0"
 						>
 							{#if browser && image[0]}
 								<img

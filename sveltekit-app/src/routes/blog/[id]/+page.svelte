@@ -44,7 +44,7 @@
 			<PortableText components={{}} value={blogPost.body} />
 		</div>
 	</div>
-	<div class="pt-16 lg:row-span-2 lg:-mr-16 lg:mt-[-12rem]">
+	<div class="pt-16 lg:row-span-2 lg:-mr-16 lg:-mt-48">
 		<div
 			bind:this={gallery}
 			class="-mx-8 grid grid-cols-2 gap-4 sm:-mx-16 sm:grid-cols-4 lg:mx-0 lg:grid-cols-2 lg:gap-4 xl:gap-8"
@@ -54,7 +54,7 @@
 					{#if browser && image}
 						<a
 							href={urlFor(image).url()}
-							class="lg:col-start-2 lg:row-start-{i} aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 transition-all duration-300 hover:scale-[1.02]"
+							class="lg:col-start-2 lg:row-start-{i} aspect-square overflow-hidden rounded-xl shadow-xl outline-solid outline-1 -outline-offset-1 outline-black/10 transition-all duration-300 hover:scale-[1.02]"
 						>
 							<img
 								alt={blogPost.title}
@@ -64,7 +64,7 @@
 						</a>
 					{:else}
 						<div
-							class="lg:col-start-2 lg:row-start-{i} aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 transition-all"
+							class="lg:col-start-2 lg:row-start-{i} aspect-square overflow-hidden rounded-xl shadow-xl outline-solid outline-1 -outline-offset-1 outline-black/10 transition-all"
 						>
 							<Skeleton class="size-full h-full w-full rounded-xl " />
 						</div>
@@ -72,7 +72,7 @@
 				{:else if browser && image}
 					<a
 						href={urlFor(image).url()}
-						class="-mt-12 lg:col-start-1 lg:row-start-{i} aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 transition-all duration-300 hover:scale-[1.02] lg:-mt-40"
+						class="-mt-12 lg:col-start-1 lg:row-start-{i} aspect-square overflow-hidden rounded-xl shadow-xl outline-solid outline-1 -outline-offset-1 outline-black/10 transition-all duration-300 hover:scale-[1.02] lg:-mt-40"
 					>
 						<img
 							alt={blogPost.title}
@@ -82,7 +82,7 @@
 					</a>
 				{:else}
 					<div
-						class="-mt-12 lg:col-start-1 lg:row-start-{i} aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 transition-all duration-300 hover:scale-[1.02] lg:-mt-40"
+						class="-mt-12 lg:col-start-1 lg:row-start-{i} aspect-square overflow-hidden rounded-xl shadow-xl outline-solid outline-1 -outline-offset-1 outline-black/10 transition-all duration-300 hover:scale-[1.02] lg:-mt-40"
 					>
 						<Skeleton class="h-full w-full rounded-xl " />
 					</div>

@@ -46,7 +46,7 @@
 								href !== '/') ||
 							(page.url.pathname === '/' && page.url.pathname === href)
 								? ' text-basecolorlight '
-								: ' hover:text-basecolorlight hover:transition-all hover:duration-[400ms]'} inline-flex items-center px-1 pt-1"
+								: ' hover:text-basecolorlight hover:transition-all hover:duration-400'} inline-flex items-center px-1 pt-1"
 						>
 							<button class="group relative">
 								<a {href} class="rounded-md px-3 py-2 text-sm font-medium">
@@ -64,7 +64,7 @@
 						<!-- Mobile menu button -->
 						<button
 							type="button"
-							class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white group-hover:bg-gray-300 group-hover:text-white hover:dark:bg-gray-700"
+							class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 transition-all duration-150 focus:outline-hidden focus:ring-2 focus:ring-inset focus:ring-white group-hover:bg-gray-300 group-hover:text-white dark:hover:bg-gray-700"
 							aria-controls="mobile-menu"
 							aria-expanded="false"
 							onclick={() => {

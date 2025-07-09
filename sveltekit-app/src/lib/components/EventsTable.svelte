@@ -14,7 +14,7 @@
 				<Accordion.Item value="value-${i}">
 					<Accordion.Trigger class="group">
 						<div class="md:flex">
-							<div class="text-left md:w-[10rem]">
+							<div class="text-left md:w-40">
 								{#if dateFrom == dateTo}
 									{formatDate(dateFrom)}
 								{:else}
