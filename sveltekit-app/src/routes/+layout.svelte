@@ -64,7 +64,7 @@
 						<!-- Mobile menu button -->
 						<button
 							type="button"
-							class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 transition-all duration-150 focus:outline-hidden focus:ring-2 focus:ring-inset focus:ring-white group-hover:bg-gray-300 group-hover:text-white dark:hover:bg-gray-700"
+							class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 transition-all duration-150 group-hover:bg-gray-300 group-hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset dark:hover:bg-gray-700"
 							aria-controls="mobile-menu"
 							aria-expanded="false"
 							onclick={() => {
@@ -101,7 +101,7 @@
 		</div>
 		{#if menu}
 			<div class="xl:hidden" id="mobile-menu" transition:slide>
-				<div class="space-y-1 px-2 pb-3 pt-2">
+				<div class="space-y-1 px-2 pt-2 pb-3">
 					{#each navItems as { name, href }}
 						<a
 							{href}
@@ -147,10 +147,10 @@
 		<div class="mt-16 flex justify-center">
 			<Button onclick={toggleMode} variant="outline" size="icon">
 				<Sun
-					class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
+					class="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90"
 				/>
 				<Moon
-					class="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
+					class="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0"
 				/>
 				<span class="sr-only">Toggle theme</span>
 			</Button>
