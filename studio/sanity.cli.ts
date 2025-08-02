@@ -6,9 +6,7 @@
  */
 
 import {defineCliConfig} from 'sanity/cli'
-
-const projectId = process.env.SANITY_STUDIO_TVN_PROJECT_ID || '<your project ID>'
-const dataset = process.env.SANITY_STUDIO_DATASET || 'production'
+import {projectId, dataset} from './env'
 
 export default defineCliConfig({
   api: {
