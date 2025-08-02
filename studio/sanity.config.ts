@@ -3,7 +3,7 @@ import {structureTool} from 'sanity/structure'
 import {media} from 'sanity-plugin-media'
 import {schemaTypes} from './schemas'
 
-const projectId = process.env.SANITY_STUDIO_PROJECT_ID!
+const projectId = process.env.SANITY_STUDIO_TVN_PROJECT_ID!
 const dataset = process.env.SANITY_STUDIO_DATASET!
 
 export default defineConfig({
