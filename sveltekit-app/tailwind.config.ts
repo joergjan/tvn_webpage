@@ -2,10 +2,7 @@ import type { Config } from 'tailwindcss';
 
 const config: Config = {
 	darkMode: ['class', ':global(.dark)'],
-	content: [
-		'./src/**/*.{html,js,svelte,ts}',
-		'./node_modules/svelte-lightbox-gallery/dist/*.svelte'
-	],
+	content: ['./src/**/*.{html,js,svelte,ts}'],
 
 	theme: {
 		container: {

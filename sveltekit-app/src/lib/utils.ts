@@ -1,6 +1,9 @@
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
-import { PUBLIC_SANITY_PROJECT_ID, PUBLIC_SANITY_DATASET } from '$env/static/public';
+import {
+	PUBLIC_SANITY_TVN_PROJECT_ID as sanity_project_id,
+	PUBLIC_SANITY_DATASET as sanity_dataset
+} from '$env/static/public';
 
 export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs));
@@ -25,5 +28,5 @@ export const getDownloadUrl = (ref: string) => {
 	// Example ref: file-207fd9951e759130053d37cf0a558ffe84ddd1c9-mp3
 	// We don't need the first part, unless we're using the same function for files and images
 	const [_file, id, extension] = ref.split('-');
-	return `https://cdn.sanity.io/files/${PUBLIC_SANITY_PROJECT_ID}/${PUBLIC_SANITY_DATASET}/${id}.${extension}?dl=`;
+	return `https://cdn.sanity.io/files/${sanity_project_id}/${sanity_dataset}/${id}.${extension}?dl=`;
 };
