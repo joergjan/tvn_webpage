@@ -20,6 +20,7 @@
     "react-is": "^19.2.3",
     "sanity": "^4.21.1",
     "sanity-plugin-media": "^4.1.0",
+    "@sanity/vision": "^4.21.1",
     "styled-components": "^6.1.15"
   },
   "devDependencies": {
