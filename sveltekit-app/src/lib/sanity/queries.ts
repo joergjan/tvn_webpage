@@ -3,12 +3,12 @@ import type { ImageAsset, Slug } from '@sanity/types';
 import groq from 'groq';
 
 export const eventsQuery = groq`*[_type == "event" && dateFrom >= now()]  | order(dateFrom asc)`;
-export const pastEventsQuery = groq`*[_type == "event" && dateTo < now()]  | order(dateFrom desc) [0..5]`;
+export const pastEventsQuery = groq`*[_type == "event" && dateTo < now()]  | order(dateFrom desc) [0..3]`;
 
 export const blogPostsQuery = groq`*[_type == "blogPost"] | order(date desc)`;
 export const recentBlogPostsQuery = groq`*[_type == "blogPost"] | order(date desc) [0..1]`;
 export const blogPostQuery = (id: string) => {
-	return groq`*[_type == "blogPost" && _id == "${id}"]`;
+  return groq`*[_type == "blogPost" && _id == "${id}"]`;
 };
 
 export const aboutQuery = groq`*[_type == "about"][0]`;
@@ -54,7 +54,7 @@ export const riegenQuery = groq`
 `;
 
 export const riegeQuery = (id: string) => {
-	return groq`
+  return groq`
     *[_type == 'riege' && _id == "${id}"]{
       ...,
       "hauptleiter": *[_type == 'kontaktLeiter' && ^._id in riegen[]._ref] | order(fullname asc){
@@ -71,38 +71,38 @@ export const riegeQuery = (id: string) => {
 };
 
 export interface Person {
-	_type: 'kontaktVorstand' | 'kontaktLeiter';
-	_createdAt: string;
-	fullname: string;
+  _type: 'kontaktVorstand' | 'kontaktLeiter';
+  _createdAt: string;
+  fullname: string;
 }
 
 export interface Gallery {
-	_type: 'galerieJugi' | 'galerieAktive';
-	_createdAt: string;
-	title: string;
+  _type: 'galerieJugi' | 'galerieAktive';
+  _createdAt: string;
+  title: string;
 }
 
 export interface Anlass {
-	_type: 'event';
-	_createdAt: string;
-	title: string;
-	dateFrom: Date;
-	dateTo: Date;
-	mainImage: ImageAsset;
-	description: string;
+  _type: 'event';
+  _createdAt: string;
+  title: string;
+  dateFrom: Date;
+  dateTo: Date;
+  mainImage: ImageAsset;
+  description: string;
 }
 
 export interface BlogPost {
-	_type: 'blog';
-	_createdAt: string;
-	title: string;
-	date: Date;
-	mainImage: ImageAsset;
-	body: string;
+  _type: 'blog';
+  _createdAt: string;
+  title: string;
+  date: Date;
+  mainImage: ImageAsset;
+  body: string;
 }
 
 export interface Riege {
-	_type: 'riege';
-	_createdAt: string;
-	kontaktLeiter: Person[];
+  _type: 'riege';
+  _createdAt: string;
+  kontaktLeiter: Person[];
 }
