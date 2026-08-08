@@ -1,4 +1,4 @@
-import {defineField, defineType} from 'sanity'
+import { defineField, defineType } from 'sanity'
 
 export default defineType({
   name: 'kontaktVorstand',
@@ -17,12 +17,12 @@ export default defineType({
       type: 'string',
       options: {
         list: [
-          {title: 'info@tvnussbaumen.ch', value: 'info@tvnussbaumen.ch'},
-          {title: 'jugend@tvnussbaumen.ch', value: 'jugend@tvnussbaumen.ch'},
-          {title: 'praesi@tvnussbaumen.ch', value: 'praesi@tvnussbaumen.ch'},
-          {title: 'oberturner@tvnussbaumen.ch', value: 'oberturner@tvnussbaumen.ch'},
-          {title: 'kassier@tvnussbaumen.ch', value: 'kassier@tvnussbaumen.ch'},
-          {title: 'vize@tvnussbaumen.ch', value: 'vize@tvnussbaumen.ch'},
+          { title: 'info@tvnussbaumen.ch', value: 'info@tvnussbaumen.ch' },
+          { title: 'jugend@tvnussbaumen.ch', value: 'jugend@tvnussbaumen.ch' },
+          { title: 'praesi@tvnussbaumen.ch', value: 'praesi@tvnussbaumen.ch' },
+          { title: 'oberturner@tvnussbaumen.ch', value: 'oberturner@tvnussbaumen.ch' },
+          { title: 'kassier@tvnussbaumen.ch', value: 'kassier@tvnussbaumen.ch' },
+          { title: 'vize@tvnussbaumen.ch', value: 'vize@tvnussbaumen.ch' },
         ],
       },
       validation: (rule) => rule.required(),
@@ -43,6 +43,8 @@ export default defineType({
           'Aktuarin',
           'Oberturner',
           'Oberturnerin',
+          'Beisitzer',
+          'Beisitzerin'
         ],
       },
       validation: (rule) => rule.required(),
@@ -64,8 +66,8 @@ export default defineType({
       media: 'mainImage',
     },
     prepare(selection) {
-      const {author} = selection
-      return {...selection, subtitle: author && `by ${author}`}
+      const { author } = selection
+      return { ...selection, subtitle: author && `by ${author}` }
     },
   },
 })

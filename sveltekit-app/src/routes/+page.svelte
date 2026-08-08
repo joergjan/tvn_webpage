@@ -2,13 +2,19 @@
 	import type { PageData } from './$types';
 	import EventsTable from '$lib/components/EventsTable.svelte';
 	import Blog from '$lib/components/Blog.svelte';
+	import About from '$lib/components/About.svelte';
 
 	export let data: PageData;
-	$: ({ events, pastEvents, blogPosts } = data);
+	$: ({ events, pastEvents, blogPosts, about } = data);
 </script>
 
 <div class="grid gap-20">
 	<section>
+		<About {about} />
+		<br />
+		<br />
+		<br />
+
 		<h1>Anlässe</h1>
 		<EventsTable {events} />
 		<br />

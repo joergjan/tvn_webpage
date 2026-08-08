@@ -1,4 +1,4 @@
-import {defineField, defineType} from 'sanity'
+import { defineField, defineType } from 'sanity'
 
 export default defineType({
   name: 'blogPost',
@@ -33,7 +33,7 @@ export default defineType({
       name: 'image',
       title: 'Fotos',
       type: 'array',
-      of: [{type: 'image', options: {hotspot: true}}],
+      of: [{ type: 'image', options: { hotspot: true } }],
       validation: (rule) => rule.max(8).error('Maximal 8 Fotos erlaubt'),
     }),
   ],
@@ -45,8 +45,8 @@ export default defineType({
       body: 'body',
     },
     prepare(selection) {
-      const {author} = selection
-      return {...selection, subtitle: author && `by ${author}`}
+      const { author } = selection
+      return { ...selection, subtitle: author && `by ${author}` }
     },
   },
 })
