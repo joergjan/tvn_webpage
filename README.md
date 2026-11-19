@@ -77,9 +77,10 @@ You have the freedom to deploy your SvelteKit app to your hosting provider of ch
 
 1. Create a GitHub repository from this project. [Learn more](https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github).
 2. Create a new Vercel project and connect it to your Github repository.
-3. Set the `Root Directory` to your SvelteKit app.
+3. Set the `Root Directory` to your SvelteKit app and enable **Include files outside the root directory in the Build Step** so the workspace lockfile and configuration are available.
 4. Configure your Environment Variables.
 5. Add the environment variable `ENABLE_EXPERIMENTAL_COREPACK=1` so Vercel uses the pinned pnpm version.
+6. Deploy with the install command in `sveltekit-app/vercel.json`, which uses the workspace's frozen lockfile instead of npm.
 
 #### 3. Invite a collaborator
 
