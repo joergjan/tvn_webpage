@@ -4,7 +4,7 @@
 	import Divider from '$lib/components/Divider.svelte';
 	import { page } from '$app/state';
 	import { mode } from 'mode-watcher';
-	import { browser } from '$app/environment';
+	import { browser } from '$app/env';
 	import Skeleton from '$lib/components/ui/skeleton/skeleton.svelte';
 	import { SquareArrowOutUpRight } from 'lucide-svelte';
 	import { formatDate } from '$lib/utils';

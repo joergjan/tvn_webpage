@@ -3,7 +3,7 @@ import {
 	PUBLIC_SANITY_TVN_PROJECT_ID as sanity_project_id,
 	PUBLIC_SANITY_TVN_API_VERSION as sanity_api_version,
 	PUBLIC_SANITY_TVN_STUDIO_URL as sanity_studio_url
-} from '$env/static/public';
+} from '$app/env/public';
 
 export function assertEnvVar<T>(value: T | undefined, name: string): T {
 	if (value === undefined) {

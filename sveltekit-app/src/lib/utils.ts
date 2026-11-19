@@ -3,7 +3,7 @@ import { twMerge } from 'tailwind-merge';
 import {
 	PUBLIC_SANITY_TVN_PROJECT_ID as sanity_project_id,
 	PUBLIC_SANITY_DATASET as sanity_dataset
-} from '$env/static/public';
+} from '$app/env/public';
 
 export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs));

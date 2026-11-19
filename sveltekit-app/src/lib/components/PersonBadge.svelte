@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { urlFor } from '$lib/sanity/image';
-	import { browser } from '$app/environment';
+	import { browser } from '$app/env';
 	import { Skeleton } from '$lib/components/ui/skeleton';
 	import Avatar from '$lib/components/Avatar.svelte';
 

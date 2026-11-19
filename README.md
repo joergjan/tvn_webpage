@@ -16,6 +16,8 @@ https://sanity-template-sveltekit-clean.sanity.build
 
 ## Getting Started
 
+Use Node.js 22.17 or newer for both the SvelteKit app and Sanity Studio.
+
 ### Install the template
 
 #### 1. Initialize template with Sanity CLI

@@ -6,9 +6,9 @@
 	import { breadCrumbTitle } from '$lib/stores';
 	import { onMount } from 'svelte';
 	import { formatDate } from '$lib/utils';
-	import { PUBLIC_LIGHTGALLERY_KEY } from '$env/static/public';
+	import { PUBLIC_LIGHTGALLERY_KEY } from '$app/env/public';
 	import { Skeleton } from '$lib/components/ui/skeleton';
-	import { browser } from '$app/environment';
+	import { browser } from '$app/env';
 	import lightGallery from 'lightgallery';
 
 	let gallery: HTMLElement;

@@ -3,3 +3,10 @@ packages:
   - 'studio'
 allowBuilds:
   esbuild: true
+overrides:
+  '@typescript-eslint/typescript-estree>minimatch@9.0.3': ^9.0.9
+  '@vercel/frameworks>js-yaml': ^3.15.2
+  '@vercel/frameworks>smol-toml': ^1.9.1
+patchedDependencies:
+  # SvelteKit 3.3.1 uses an unsupported Node.js styleText color in its build logger.
+  '@sveltejs/kit@3.3.1': patches/@sveltejs__kit@3.3.1.patch

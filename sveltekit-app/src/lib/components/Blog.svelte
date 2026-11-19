@@ -2,7 +2,7 @@
 	import { formatDate } from '$lib/utils';
 	import { urlFor } from '$lib/sanity/image';
 	import { Skeleton } from '$lib/components/ui/skeleton';
-	import { browser } from '$app/environment';
+	import { browser } from '$app/env';
 	import Divider from './Divider.svelte';
 
 	export let blogPosts: BlogPost[];

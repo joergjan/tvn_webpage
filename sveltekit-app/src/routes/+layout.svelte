@@ -3,8 +3,8 @@
 	import '../fonts.css';
 	import { page } from '$app/state';
 	import { navItems } from '$lib/navbar';
-	import { dev } from '$app/environment';
-	import { injectAnalytics } from '@vercel/analytics/sveltekit';
+	import { dev } from '$app/env';
+	import { inject, pageview } from '@vercel/analytics';
 	import BreadCrumb from '$lib/components/BreadCrumb.svelte';
 	import SEO from '$lib/components/SEO.svelte';
 	import Sun from 'lucide-svelte/icons/sun';
@@ -15,7 +15,17 @@
 	import PageTransition from '$lib/components/transition.svelte';
 	import { slide } from 'svelte/transition';
 
-	injectAnalytics({ mode: dev ? 'development' : 'production' });
+	$effect(() => {
+		inject({
+			mode: dev ? 'development' : 'production',
+			basePath: import.meta.env.VITE_VERCEL_OBSERVABILITY_BASEPATH,
+			disableAutoTrack: true,
+			framework: 'sveltekit'
+		});
+		if (page.route.id) {
+			pageview({ route: page.route.id, path: page.url.pathname });
+		}
+	});
 
 	let { children, data } = $props();
 	let menu: boolean = $state(false);

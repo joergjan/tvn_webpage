@@ -3,10 +3,10 @@
 	import 'lightgallery/css/lg-thumbnail.css';
 	import { onMount } from 'svelte';
 	import lightGallery from 'lightgallery';
-	import { browser } from '$app/environment';
+	import { browser } from '$app/env';
 	import { Skeleton } from '$lib/components/ui/skeleton';
 	import { urlFor } from '$lib/sanity/image';
-	import { PUBLIC_LIGHTGALLERY_KEY } from '$env/static/public';
+	import { PUBLIC_LIGHTGALLERY_KEY } from '$app/env/public';
 
 	export let photos: Gallery[] = [];
 

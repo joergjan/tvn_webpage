@@ -3,11 +3,11 @@
 	import 'lightgallery/css/lg-thumbnail.css';
 	import { urlFor } from '$lib/sanity/image';
 	import { breadCrumbTitle } from '$lib/stores';
-	import { PUBLIC_LIGHTGALLERY_KEY } from '$env/static/public';
+	import { PUBLIC_LIGHTGALLERY_KEY } from '$app/env/public';
 	import lightGallery from 'lightgallery';
 	import { onMount } from 'svelte';
 	import PersonBadge from '$lib/components/PersonBadge.svelte';
-	import { browser } from '$app/environment';
+	import { browser } from '$app/env';
 	import { Skeleton } from '$lib/components/ui/skeleton';
 
 	let gallery: HTMLElement;
