@@ -17,6 +17,7 @@ https://sanity-template-sveltekit-clean.sanity.build
 ## Getting Started
 
 Use Node.js 22.17 or newer for both the SvelteKit app and Sanity Studio.
+Use pnpm 11.11.0 for installing dependencies; the version is pinned in the root `package.json`.
 
 ### Install the template
 
@@ -78,6 +79,7 @@ You have the freedom to deploy your SvelteKit app to your hosting provider of ch
 2. Create a new Vercel project and connect it to your Github repository.
 3. Set the `Root Directory` to your SvelteKit app.
 4. Configure your Environment Variables.
+5. Add the environment variable `ENABLE_EXPERIMENTAL_COREPACK=1` so Vercel uses the pinned pnpm version.
 
 #### 3. Invite a collaborator
 
